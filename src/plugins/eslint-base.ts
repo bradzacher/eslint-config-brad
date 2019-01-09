@@ -1077,14 +1077,7 @@ const rules : Rules.Eslint = {
     // disallow declaration of variables that are not used in the code
     // https://eslint.org/docs/rules/no-unused-vars
     // We don't need this as  this is caught by the typescript compiler
-    'no-unused-vars': [
-        'off',
-        {
-            vars: 'all',
-            args: 'after-used',
-            ignoreRestSiblings: true,
-        },
-    ],
+    'no-unused-vars': 'off',
 
     // This rule will warn when it encounters a reference to an identifier that has not yet been declared
     // https://eslint.org/docs/rules/no-use-before-define

@@ -23,19 +23,35 @@ module.exports = {
                 'test/**/*',
             ],
             rules: {
-                'typescript/no-explicit-any': 'off',
-                'typescript/no-non-null-assertion': 'off',
                 'import/prefer-default-export': 'off',
                 'max-len': 'off',
                 strict: 'off',
+                'typescript/no-explicit-any': 'off',
+                'typescript/no-non-null-assertion': 'off',
             },
         },
         {
             // disable certain rules for typings as eslint misdetects them
             files: ['**/*.d.ts'],
             rules: {
-                'typescript/no-explicit-any': 'off',
+                'no-unused-vars': 'off',
                 strict: 'off',
+                'typescript/no-explicit-any': 'off',
+            },
+        },
+        {
+            // allow local tooling scripts to use node modules
+            files: [
+                'config/**/*.ts',
+                'config/**/*.tsx',
+                'scripts/**/*.ts',
+                'scripts/**/*.tsx',
+                'tools/**/*.ts',
+                'tools/**/*.tsx',
+            ],
+            rules: {
+                strict: 'off',
+                'import/no-nodejs-modules': 'off',
             },
         },
     ],

@@ -220,7 +220,7 @@ const rules : Rules.React = {
 
     // One JSX Element Per Line
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
-    'react/jsx-one-expression-per-line': 'error',
+    'react/jsx-one-expression-per-line': 'off',
 
     // Enforce PascalCase for user-defined JSX components
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
@@ -281,18 +281,8 @@ const rules : Rules.React = {
 
     // Prevent missing parentheses around multilines JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
-    'react/jsx-wrap-multilines': [
-        'error',
-        {
-            declaration: 'parens-new-line',
-            assignment: 'parens-new-line',
-            return: 'parens-new-line',
-            arrow: 'parens-new-line',
-            condition: 'parens-new-line',
-            logical: 'parens-new-line',
-            prop: 'parens-new-line',
-        },
-    ],
+    // taken care of by prettier
+    'react/jsx-wrap-multilines': 'off',
 
     // Prevent using this.state within a this.setState
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md
@@ -300,7 +290,7 @@ const rules : Rules.React = {
 
     // Prevent usage of Array index in keys
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
-    'react/no-array-index-key': 'error',
+    'react/no-array-index-key': 'warn',
 
     // Prevent passing of children as props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
@@ -417,14 +407,7 @@ const rules : Rules.React = {
 
     // Prevent missing props validation in a React component definition
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-    'react/prop-types': [
-        'error',
-        {
-            ignore: [],
-            customValidators: [],
-            skipUndeclared: false,
-        },
-    ],
+    'react/prop-types': 'off',
 
     // Prevent missing React when using JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
