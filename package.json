@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-brad",
-    "version": "1.0.0-rc.1",
+    "version": "1.0.0-rc.2",
     "private": true,
     "description": "Brad's ESlint config",
     "repository": "https://github.com/brad/eslint-config-brad.git",
@@ -36,7 +36,6 @@
         "format": "yarn format-no-write --write",
         "format-check": "yarn format-no-write --list-different",
         "precommit": "yarn format-check && yarn lint && yarn typecheck",
-        "prepare": "yarn build",
         "prepush": "make ci",
         "regenerate-types": "make regenerate-types",
         "typecheck": "tsc -p ./tsconfig.json --noEmit"

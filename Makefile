@@ -41,8 +41,10 @@ regenerate-types:
 
 .PHONY: publish-next
 publish-next:
+	@make build
 	@npm publish dist --tag=next
 
 .PHONY: publish
 publish:
+	@make build
 	@npm publish dist
