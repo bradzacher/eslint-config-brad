@@ -1,0 +1,40 @@
+{
+    "name": "eslint-config-brad",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Brad's ESlint config",
+    "repository": "https://github.com/brad/eslint-config-brad.git",
+    "author": "Brad Zacher <brad.zacher@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "eslint": "^5.12.0",
+        "eslint-plugin-dependencies": "^2.4.0",
+        "eslint-plugin-eslint-comments": "^3.0.1",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jest": "^22.1.2",
+        "eslint-plugin-react": "^7.12.3",
+        "eslint-plugin-typescript": "^1.0.0-rc.2",
+        "eslint-restricted-globals": "^0.2.0"
+    },
+    "devDependencies": {
+        "@types/eslint": "^4.16.5",
+        "@types/node": "^10.12.18",
+        "eslint-find-rules": "^3.3.1",
+        "eslint-import-resolver-node": "^0.3.2",
+        "prettier-eslint-cli": "^4.7.1",
+        "rimraf": "^2.6.3",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.2.2"
+    },
+    "scripts": {
+        "build": "tsc",
+        "ci": "make ci",
+        "clean": "rimraf -g ./dist/",
+        "lint": "eslint --cache ./src ./scripts --ext .ts",
+        "format-no-write": "prettier-eslint src/**/*.ts scripts/**/*.ts types/*.d.ts --eslint-config-path=.eslintrc.js --eslint-ignore --prettier-ignore --eslint-path=node_modules/eslint --config=.prettierrc",
+        "format": "yarn format-no-write --write",
+        "format-check": "yarn format-no-write --list-different",
+        "regenerate-types": "make regenerate-types",
+        "typecheck": "tsc -p ./tsconfig.json --noEmit"
+    }
+}

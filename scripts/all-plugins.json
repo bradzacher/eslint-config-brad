@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        "dependencies",
+        "eslint-comments",
+        "import",
+        "jest",
+        "react",
+        "typescript"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": false,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "declaration": false,
+        "lib": [
+            "es6",
+            "esnext.asynciterable"
+        ],
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "noEmit": false,
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "dist",
+        "pretty": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "es6"
+    },
+    "include": [
+        "src/**/*.ts",
+        "types/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
