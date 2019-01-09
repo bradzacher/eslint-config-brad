@@ -1,4 +1,4 @@
 declare module 'eslint-restricted-globals' {
-    const globals: string[]
+    const globals : string[]
     export = globals
 }

@@ -36,5 +36,8 @@
         "format-check": "yarn format-no-write --list-different",
         "regenerate-types": "make regenerate-types",
         "typecheck": "tsc -p ./tsconfig.json --noEmit"
+    },
+    "resolutions": {
+        "typescript-eslint-parser": "^21.0.2"
     }
 }

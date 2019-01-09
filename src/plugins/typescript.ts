@@ -1,4 +1,4 @@
-const rules: Rules.Typescript = {
+const rules : Rules.Typescript = {
     // Grouping overloaded members together can improve readability of the code.
     // https://github.com/bradzacher/eslint-plugin-typescript/blob/master/docs/rules/adjacent-overload-signatures.md
     'typescript/adjacent-overload-signatures': 'error',

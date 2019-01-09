@@ -5,7 +5,7 @@ import globals = require('eslint-restricted-globals')
 const pseudoAllowedGlobals = ['name', 'status', 'location', 'open', 'close', 'event']
 const restrictedGlobals = globals.filter(g => pseudoAllowedGlobals.indexOf(g) === -1)
 
-const rules: Rules.Eslint = {
+const rules : Rules.Eslint = {
     // This rule warns if setters are defined without getters
     // https://eslint.org/docs/rules/accessor-pairs
     'accessor-pairs': [

@@ -1,4 +1,4 @@
-const rules: Rules.Import = {
+const rules : Rules.Import = {
     // ensure default import coupled with default export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md
     'import/default': 'error',
