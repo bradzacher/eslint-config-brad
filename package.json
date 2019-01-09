@@ -1,6 +1,7 @@
 {
     "name": "eslint-config-brad",
     "version": "1.0.0-rc.1",
+    "private": true,
     "description": "Brad's ESlint config",
     "repository": "https://github.com/brad/eslint-config-brad.git",
     "author": "Brad Zacher <brad.zacher@gmail.com>",
@@ -27,7 +28,7 @@
         "typescript": "^3.2.2"
     },
     "scripts": {
-        "build": "tsc",
+        "build": "make build",
         "ci": "make ci",
         "clean": "rimraf -g ./dist/",
         "lint": "eslint --cache ./src ./scripts --ext .ts",
@@ -35,7 +36,7 @@
         "format": "yarn format-no-write --write",
         "format-check": "yarn format-no-write --list-different",
         "precommit": "yarn format-check && yarn lint && yarn typecheck",
-        "prepublish": "yarn build",
+        "prepare": "yarn build",
         "prepush": "make ci",
         "regenerate-types": "make regenerate-types",
         "typecheck": "tsc -p ./tsconfig.json --noEmit"

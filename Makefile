@@ -1,6 +1,10 @@
 .PHONY: build
 build:
-	@yarn build
+	@yarn tsc
+	@cp package.json dist
+	@cp README.md dist
+	@cp LICENCE dist
+	@node ./scripts/removePrivate.js
 
 .PHONY: format
 format:
@@ -34,3 +38,11 @@ ci:
 .PHONY: regenerate-types
 regenerate-types:
 	@yarn ts-node -P ./scripts/tsconfig.json --files ./scripts/generateTypes.ts
+
+.PHONY: publish-next
+publish-next:
+	@npm publish dist --tag=next
+
+.PHONY: publish
+publish:
+	@npm publish dist
