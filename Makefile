@@ -2,11 +2,17 @@
 build:
 	@yarn build
 
+.PHONY: format
+format:
+	@yarn format
+
+.PHONY: lint
 lint:
 	@yarn lint
 
 .PHONY: show-unused
 show-unused:
+	@echo checking for unused rules
 	@echo node...
 	@npx eslint-find-rules ./dist/index.js --unused
 	@echo Done
@@ -16,12 +22,13 @@ show-unused:
 
 .PHONY: ci
 ci:
+# check the format
+	@make format
 # build first because the lint is based off this package!
 	@make build
 # make sure there are no lint errors
 	@make lint
 # make sure there are no unused rules in any package
-	# show-unused
 	@make show-unused
 
 .PHONY: regenerate-types
