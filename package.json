@@ -3,7 +3,7 @@
     "version": "1.0.0-rc.2",
     "private": true,
     "description": "Brad's ESlint config",
-    "repository": "https://github.com/brad/eslint-config-brad.git",
+    "repository": "https://github.com/bradzacher/eslint-config-brad.git",
     "author": "Brad Zacher <brad.zacher@gmail.com>",
     "license": "MIT",
     "dependencies": {
