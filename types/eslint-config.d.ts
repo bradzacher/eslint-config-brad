@@ -262,6 +262,42 @@ declare namespace Rules {
         'yield-star-spacing' : RuleType
         yoda : RuleType
     }
+    export interface TypescriptEslint {
+        '@typescript-eslint/adjacent-overload-signatures' : RuleType
+        '@typescript-eslint/array-type' : RuleType
+        '@typescript-eslint/ban-types' : RuleType
+        '@typescript-eslint/camelcase' : RuleType
+        '@typescript-eslint/class-name-casing' : RuleType
+        '@typescript-eslint/explicit-function-return-type' : RuleType
+        '@typescript-eslint/explicit-member-accessibility' : RuleType
+        '@typescript-eslint/generic-type-naming' : RuleType
+        '@typescript-eslint/indent' : RuleType
+        '@typescript-eslint/interface-name-prefix' : RuleType
+        '@typescript-eslint/member-delimiter-style' : RuleType
+        '@typescript-eslint/member-naming' : RuleType
+        '@typescript-eslint/member-ordering' : RuleType
+        '@typescript-eslint/no-angle-bracket-type-assertion' : RuleType
+        '@typescript-eslint/no-array-constructor' : RuleType
+        '@typescript-eslint/no-empty-interface' : RuleType
+        '@typescript-eslint/no-explicit-any' : RuleType
+        '@typescript-eslint/no-extraneous-class' : RuleType
+        '@typescript-eslint/no-inferrable-types' : RuleType
+        '@typescript-eslint/no-misused-new' : RuleType
+        '@typescript-eslint/no-namespace' : RuleType
+        '@typescript-eslint/no-non-null-assertion' : RuleType
+        '@typescript-eslint/no-object-literal-type-assertion' : RuleType
+        '@typescript-eslint/no-parameter-properties' : RuleType
+        '@typescript-eslint/no-this-alias' : RuleType
+        '@typescript-eslint/no-triple-slash-reference' : RuleType
+        '@typescript-eslint/no-type-alias' : RuleType
+        '@typescript-eslint/no-unused-vars' : RuleType
+        '@typescript-eslint/no-use-before-define' : RuleType
+        '@typescript-eslint/no-var-requires' : RuleType
+        '@typescript-eslint/prefer-interface' : RuleType
+        '@typescript-eslint/prefer-namespace-keyword' : RuleType
+        '@typescript-eslint/restrict-plus-operands' : RuleType
+        '@typescript-eslint/type-annotation-spacing' : RuleType
+    }
     export interface Dependencies {
         'dependencies/case-sensitive' : RuleType
         'dependencies/no-cycles' : RuleType
@@ -305,6 +341,7 @@ declare namespace Rules {
         'import/no-named-as-default' : RuleType
         'import/no-named-as-default-member' : RuleType
         'import/no-named-default' : RuleType
+        'import/no-named-export' : RuleType
         'import/no-namespace' : RuleType
         'import/no-nodejs-modules' : RuleType
         'import/no-relative-parent-imports' : RuleType
@@ -425,40 +462,5 @@ declare namespace Rules {
         'react/sort-prop-types' : RuleType
         'react/style-prop-object' : RuleType
         'react/void-dom-elements-no-children' : RuleType
-    }
-    export interface Typescript {
-        'typescript/adjacent-overload-signatures' : RuleType
-        'typescript/array-type' : RuleType
-        'typescript/ban-types' : RuleType
-        'typescript/camelcase' : RuleType
-        'typescript/class-name-casing' : RuleType
-        'typescript/explicit-function-return-type' : RuleType
-        'typescript/explicit-member-accessibility' : RuleType
-        'typescript/generic-type-naming' : RuleType
-        'typescript/indent' : RuleType
-        'typescript/interface-name-prefix' : RuleType
-        'typescript/member-delimiter-style' : RuleType
-        'typescript/member-naming' : RuleType
-        'typescript/member-ordering' : RuleType
-        'typescript/no-angle-bracket-type-assertion' : RuleType
-        'typescript/no-array-constructor' : RuleType
-        'typescript/no-empty-interface' : RuleType
-        'typescript/no-explicit-any' : RuleType
-        'typescript/no-extraneous-class' : RuleType
-        'typescript/no-inferrable-types' : RuleType
-        'typescript/no-misused-new' : RuleType
-        'typescript/no-namespace' : RuleType
-        'typescript/no-non-null-assertion' : RuleType
-        'typescript/no-object-literal-type-assertion' : RuleType
-        'typescript/no-parameter-properties' : RuleType
-        'typescript/no-this-alias' : RuleType
-        'typescript/no-triple-slash-reference' : RuleType
-        'typescript/no-type-alias' : RuleType
-        'typescript/no-unused-vars' : RuleType
-        'typescript/no-use-before-define' : RuleType
-        'typescript/no-var-requires' : RuleType
-        'typescript/prefer-interface' : RuleType
-        'typescript/prefer-namespace-keyword' : RuleType
-        'typescript/type-annotation-spacing' : RuleType
     }
 }

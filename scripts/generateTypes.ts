@@ -6,8 +6,9 @@ import packageJson = require('../package.json')
 
 // get the list of all the eslint plugins installed
 const plugins = Object.keys(packageJson.dependencies)
-    .filter(d => d.startsWith('eslint-plugin-'))
+    .filter(d => d.startsWith('eslint-plugin-') || d.endsWith('/eslint-plugin'))
     .map(dep => dep.replace('eslint-plugin-', ''))
+    .map(dep => dep.replace('/eslint-plugin', ''))
 const allPluginsPath = path.resolve(__dirname, './all-plugins.json')
 fs.writeFileSync(allPluginsPath, JSON.stringify({ plugins }, null, 4))
 
@@ -39,12 +40,12 @@ const typesFile = [
     `${indent}}`,
     `${indent}export type RuleType = RuleString | RuleArray`,
     ...Object.keys(rulesPerPlugin).map(k => {
-        const interfaceCamel = k.replace(/(-\w)/g, m => m[1].toUpperCase())
+        const interfaceCamel = k.replace(/(-\w)/g, m => m[1].toUpperCase()).replace(/^(@\w)/, m => m[1].toUpperCase())
         const interfacePascal = interfaceCamel[0].toUpperCase() + interfaceCamel.substr(1)
 
         return [
             `export interface ${interfacePascal} {`,
-            ...rulesPerPlugin[k].map(rule => `${indent} '${rule}' : RuleType`),
+            ...rulesPerPlugin[k].map(rule => `${indent}'${rule}' : RuleType`),
             '}',
         ]
             .map(s => `${indent}${s}`)
