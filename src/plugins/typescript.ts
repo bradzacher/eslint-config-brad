@@ -189,7 +189,7 @@ const rules : Rules.TypescriptEslint = {
 
     // Prefer an interface declaration over a type literal (type T = { ... }).
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-interface.md
-    '@typescript-eslint/prefer-interface': 'error',
+    '@typescript-eslint/prefer-interface': 'off',
 
     // Require the use of the namespace keyword instead of the module keyword to declare custom TypeScript modules
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-namespace-keyword.md
