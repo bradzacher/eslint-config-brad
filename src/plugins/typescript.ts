@@ -5,7 +5,7 @@ const rules : Rules.TypescriptEslint = {
 
     // Requires using either T[] or Array<T> for arrays.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
-    '@typescript-eslint/array-type': 'error',
+    '@typescript-eslint/array-type': ['error', 'generic'],
 
     // Enforces that types will not to be used.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
