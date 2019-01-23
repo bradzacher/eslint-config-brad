@@ -56,7 +56,7 @@ module.exports = {
         },
     ],
     plugins: [eslintComments.name, imprt.name, jest.name, typescript.name],
-    parser: 'eslint-plugin-typescript/parser',
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2018,
         ecmaFeatures: {

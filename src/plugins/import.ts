@@ -138,6 +138,10 @@ const rules : Rules.Import = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
     'import/no-named-default': 'error',
 
+    // Prohibit named exports
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-export.md
+    'import/no-named-export': 'off',
+
     // disallow namespace imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
     'import/no-namespace': 'off',
