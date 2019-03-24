@@ -1280,6 +1280,11 @@ const rules : Rules.Eslint = {
         },
     ],
 
+    // Suggest using named capture group in regular expression
+    // https://eslint.org/docs/rules/prefer-named-capture-group
+    // TODO - enable this when it's widely supported?
+    'prefer-named-capture-group': 'off',
+
     // This rule disallows calls to parseInt() or Number.parseInt() if called with two arguments:
     // a string; and a radix option of 2 (binary), 8 (octal), or 16 (hexadecimal).
     // https://eslint.org/docs/rules/prefer-numeric-literals

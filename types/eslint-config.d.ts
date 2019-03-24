@@ -19,23 +19,23 @@ declare namespace Rules {
         'block-spacing' : RuleType
         'brace-style' : RuleType
         'callback-return' : RuleType
-        camelcase : RuleType
+        'camelcase' : RuleType
         'capitalized-comments' : RuleType
         'class-methods-use-this' : RuleType
         'comma-dangle' : RuleType
         'comma-spacing' : RuleType
         'comma-style' : RuleType
-        complexity : RuleType
+        'complexity' : RuleType
         'computed-property-spacing' : RuleType
         'consistent-return' : RuleType
         'consistent-this' : RuleType
         'constructor-super' : RuleType
-        curly : RuleType
+        'curly' : RuleType
         'default-case' : RuleType
         'dot-location' : RuleType
         'dot-notation' : RuleType
         'eol-last' : RuleType
-        eqeqeq : RuleType
+        'eqeqeq' : RuleType
         'for-direction' : RuleType
         'func-call-spacing' : RuleType
         'func-name-matching' : RuleType
@@ -51,7 +51,7 @@ declare namespace Rules {
         'id-length' : RuleType
         'id-match' : RuleType
         'implicit-arrow-linebreak' : RuleType
-        indent : RuleType
+        'indent' : RuleType
         'init-declarations' : RuleType
         'jsx-quotes' : RuleType
         'key-spacing' : RuleType
@@ -222,6 +222,7 @@ declare namespace Rules {
         'prefer-arrow-callback' : RuleType
         'prefer-const' : RuleType
         'prefer-destructuring' : RuleType
+        'prefer-named-capture-group' : RuleType
         'prefer-numeric-literals' : RuleType
         'prefer-object-spread' : RuleType
         'prefer-promise-reject-errors' : RuleType
@@ -229,14 +230,14 @@ declare namespace Rules {
         'prefer-spread' : RuleType
         'prefer-template' : RuleType
         'quote-props' : RuleType
-        quotes : RuleType
-        radix : RuleType
+        'quotes' : RuleType
+        'radix' : RuleType
         'require-atomic-updates' : RuleType
         'require-await' : RuleType
         'require-unicode-regexp' : RuleType
         'require-yield' : RuleType
         'rest-spread-spacing' : RuleType
-        semi : RuleType
+        'semi' : RuleType
         'semi-spacing' : RuleType
         'semi-style' : RuleType
         'sort-imports' : RuleType
@@ -248,7 +249,7 @@ declare namespace Rules {
         'space-infix-ops' : RuleType
         'space-unary-ops' : RuleType
         'spaced-comment' : RuleType
-        strict : RuleType
+        'strict' : RuleType
         'switch-colon-spacing' : RuleType
         'symbol-description' : RuleType
         'template-curly-spacing' : RuleType
@@ -260,11 +261,12 @@ declare namespace Rules {
         'wrap-iife' : RuleType
         'wrap-regex' : RuleType
         'yield-star-spacing' : RuleType
-        yoda : RuleType
+        'yoda' : RuleType
     }
     export interface TypescriptEslint {
         '@typescript-eslint/adjacent-overload-signatures' : RuleType
         '@typescript-eslint/array-type' : RuleType
+        '@typescript-eslint/ban-ts-ignore' : RuleType
         '@typescript-eslint/ban-types' : RuleType
         '@typescript-eslint/camelcase' : RuleType
         '@typescript-eslint/class-name-casing' : RuleType
@@ -281,22 +283,31 @@ declare namespace Rules {
         '@typescript-eslint/no-empty-interface' : RuleType
         '@typescript-eslint/no-explicit-any' : RuleType
         '@typescript-eslint/no-extraneous-class' : RuleType
+        '@typescript-eslint/no-for-in-array' : RuleType
         '@typescript-eslint/no-inferrable-types' : RuleType
         '@typescript-eslint/no-misused-new' : RuleType
         '@typescript-eslint/no-namespace' : RuleType
         '@typescript-eslint/no-non-null-assertion' : RuleType
         '@typescript-eslint/no-object-literal-type-assertion' : RuleType
         '@typescript-eslint/no-parameter-properties' : RuleType
+        '@typescript-eslint/no-require-imports' : RuleType
         '@typescript-eslint/no-this-alias' : RuleType
         '@typescript-eslint/no-triple-slash-reference' : RuleType
         '@typescript-eslint/no-type-alias' : RuleType
+        '@typescript-eslint/no-unnecessary-qualifier' : RuleType
+        '@typescript-eslint/no-unnecessary-type-assertion' : RuleType
         '@typescript-eslint/no-unused-vars' : RuleType
         '@typescript-eslint/no-use-before-define' : RuleType
+        '@typescript-eslint/no-useless-constructor' : RuleType
         '@typescript-eslint/no-var-requires' : RuleType
+        '@typescript-eslint/prefer-function-type' : RuleType
         '@typescript-eslint/prefer-interface' : RuleType
         '@typescript-eslint/prefer-namespace-keyword' : RuleType
+        '@typescript-eslint/promise-function-async' : RuleType
+        '@typescript-eslint/require-array-sort-compare' : RuleType
         '@typescript-eslint/restrict-plus-operands' : RuleType
         '@typescript-eslint/type-annotation-spacing' : RuleType
+        '@typescript-eslint/unified-signatures' : RuleType
     }
     export interface Dependencies {
         'dependencies/case-sensitive' : RuleType
@@ -361,6 +372,7 @@ declare namespace Rules {
         'jest/lowercase-name' : RuleType
         'jest/no-alias-methods' : RuleType
         'jest/no-disabled-tests' : RuleType
+        'jest/no-empty-title' : RuleType
         'jest/no-focused-tests' : RuleType
         'jest/no-hooks' : RuleType
         'jest/no-identical-title' : RuleType
@@ -371,6 +383,7 @@ declare namespace Rules {
         'jest/no-test-prefixes' : RuleType
         'jest/no-test-return-statement' : RuleType
         'jest/no-truthy-falsy' : RuleType
+        'jest/prefer-called-with' : RuleType
         'jest/prefer-expect-assertions' : RuleType
         'jest/prefer-inline-snapshots' : RuleType
         'jest/prefer-spy-on' : RuleType
@@ -379,6 +392,7 @@ declare namespace Rules {
         'jest/prefer-to-be-undefined' : RuleType
         'jest/prefer-to-contain' : RuleType
         'jest/prefer-to-have-length' : RuleType
+        'jest/prefer-todo' : RuleType
         'jest/require-tothrow-message' : RuleType
         'jest/valid-describe' : RuleType
         'jest/valid-expect' : RuleType

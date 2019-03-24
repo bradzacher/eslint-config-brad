@@ -30,6 +30,10 @@ const rules : Rules.Jest = {
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
     'jest/no-disabled-tests': 'warn',
 
+    // Disallow empty titles
+    // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
+    'jest/no-empty-title': 'error',
+
     // Avoid using a callback in asynchronous tests
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-callback.md
     'jest/no-test-callback': 'error',
@@ -70,6 +74,10 @@ const rules : Rules.Jest = {
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-truthy-falsy.md
     'jest/no-truthy-falsy': 'off',
 
+    // Suggest using toBeCalledWith OR toHaveBeenCalledWith
+    // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md
+    'jest/prefer-called-with': 'error',
+
     // Suggest using expect.assertions() OR expect.hasAssertions()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-expect-assertions.md
     // this rule adds no real value
@@ -102,6 +110,10 @@ const rules : Rules.Jest = {
     // Suggest using toHaveLength()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md
     'jest/prefer-to-have-length': 'error',
+
+    // Suggest using test.todo
+    // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-todo.md
+    'jest/prefer-todo': 'error',
 
     // Require a message for toThrow()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-tothrow-message.md

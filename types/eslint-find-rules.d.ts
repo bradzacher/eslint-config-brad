@@ -2,7 +2,7 @@ declare module 'eslint-find-rules' {
     type fn = (
         path : string,
     ) => {
-        getAllAvailableRules : () => string[]
+        getAllAvailableRules : () => Array<string>
     }
 
     const ret : fn
