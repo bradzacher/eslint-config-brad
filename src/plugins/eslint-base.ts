@@ -2,8 +2,17 @@
 import globals = require('eslint-restricted-globals')
 
 // we remove some because of how the eslint TS parser interacts with eslint when using interfaces
-const pseudoAllowedGlobals = ['name', 'status', 'location', 'open', 'close', 'event']
-const restrictedGlobals = globals.filter(g => pseudoAllowedGlobals.indexOf(g) === -1)
+const pseudoAllowedGlobals = [
+    'name',
+    'status',
+    'location',
+    'open',
+    'close',
+    'event',
+]
+const restrictedGlobals = globals.filter(
+    g => pseudoAllowedGlobals.indexOf(g) === -1,
+)
 
 const rules : Rules.Eslint = {
     // This rule warns if setters are defined without getters
@@ -415,7 +424,11 @@ const rules : Rules.Eslint = {
             newIsCap: true,
             newIsCapExceptions: [],
             capIsNew: false,
-            capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
+            capIsNewExceptions: [
+                'Immutable.Map',
+                'Immutable.Set',
+                'Immutable.List',
+            ],
         },
     ],
 
@@ -843,7 +856,11 @@ const rules : Rules.Eslint = {
 
     // This rule allows you to specify global variable names that you don’t want to use in your application
     // https://eslint.org/docs/rules/no-restricted-globals
-    'no-restricted-globals': ['error', 'isFinite', ...restrictedGlobals] as Rules.RuleType,
+    'no-restricted-globals': [
+        'error',
+        'isFinite',
+        ...restrictedGlobals,
+    ] as Rules.RuleType,
 
     // This rule allows you to specify imports that you don’t want to use in your application
     // https://eslint.org/docs/rules/no-restricted-imports
@@ -925,11 +942,13 @@ const rules : Rules.Eslint = {
         },
         {
             selector: 'LabeledStatement',
-            message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+            message:
+                'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
         },
         {
             selector: 'WithStatement',
-            message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+            message:
+                '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
         },
         /* eslint-enable max-len */
     ],

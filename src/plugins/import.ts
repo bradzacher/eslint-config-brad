@@ -191,7 +191,12 @@ const rules : Rules.Import = {
         // TODO - this rule doesn't seem to work...
         'off',
         {
-            groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index']],
+            groups: [
+                'builtin',
+                'external',
+                'internal',
+                ['parent', 'sibling', 'index'],
+            ],
             'newlines-between': 'ignore',
         },
     ],
@@ -216,6 +221,9 @@ export default {
         'import/parsers': {
             'typescript-eslint-parser': ['ts', 'tsx'],
         },
-        'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
+        'import/ignore': [
+            'node_modules',
+            '\\.(coffee|scss|css|less|hbs|svg|json)$',
+        ],
     },
 }

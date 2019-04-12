@@ -35,13 +35,16 @@ const typesFile = [
     '',
     'declare namespace Rules {',
     `${indent}type RuleString = 'off' | 'warn' | 'error'`,
-    `${indent}interface RuleArray extends Array<any> {`,
+    `${indent}interface RuleArray extends Array<unknown> {`,
     `${indent}${indent}0 : RuleString`,
     `${indent}}`,
     `${indent}export type RuleType = RuleString | RuleArray`,
     ...Object.keys(rulesPerPlugin).map(k => {
-        const interfaceCamel = k.replace(/(-\w)/g, m => m[1].toUpperCase()).replace(/^(@\w)/, m => m[1].toUpperCase())
-        const interfacePascal = interfaceCamel[0].toUpperCase() + interfaceCamel.substr(1)
+        const interfaceCamel = k
+            .replace(/(-\w)/g, m => m[1].toUpperCase())
+            .replace(/^(@\w)/, m => m[1].toUpperCase())
+        const interfacePascal =
+            interfaceCamel[0].toUpperCase() + interfaceCamel.substr(1)
 
         return [
             `export interface ${interfacePascal} {`,
@@ -55,5 +58,9 @@ const typesFile = [
     '',
 ].join('\n')
 
-fs.writeFileSync(path.resolve(__dirname, '../types/eslint-config.d.ts'), typesFile, 'utf8')
+fs.writeFileSync(
+    path.resolve(__dirname, '../types/eslint-config.d.ts'),
+    typesFile,
+    'utf8',
+)
 console.info('Successfully Written.')
