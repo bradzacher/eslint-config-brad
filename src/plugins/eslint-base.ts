@@ -204,7 +204,7 @@ const rules : Rules.Eslint = {
         'error',
         'always',
         {
-            null: 'ignore',
+            null: 'never',
         },
     ],
 
@@ -1404,7 +1404,7 @@ const rules : Rules.Eslint = {
 
     // This rule checks all property definitions of object expressions and verifies that all variables are sorted alphabetically
     // https://eslint.org/docs/rules/sort-keys
-    'sort-keys': 'off', // TODO - do we want this?
+    'sort-keys': 'off',
 
     // This rule checks all variable declaration blocks and verifies that all variables are sorted alphabetically
     // https://eslint.org/docs/rules/sort-vars

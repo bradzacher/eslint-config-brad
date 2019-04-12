@@ -86,9 +86,9 @@ const rules : Rules.Import = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
     'import/no-cycle': 'error',
 
-    // forbid default exports. this is a terrible rule, do not use it.
+    // forbid default exports.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
-    'import/no-default-export': 'off',
+    'import/no-default-export': 'error',
 
     // disallow use of jsdoc-marked-deprecated imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
@@ -203,7 +203,7 @@ const rules : Rules.Import = {
 
     // Require modules with a single export to use a default export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
-    'import/prefer-default-export': 'error',
+    'import/prefer-default-export': 'off',
 
     // Warn if a module could be mistakenly parsed as a script by a consumer
     // leveraging Unambiguous JavaScript Grammar

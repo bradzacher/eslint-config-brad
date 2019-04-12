@@ -25,7 +25,7 @@ const rules : Rules.TypescriptEslint = {
 
     // Explicit types for function return values makes it clear to any calling code what type is returned.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'warn',
 
     // Leaving off accessibility modifier and making everything public can make your interface hard to use by others
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
