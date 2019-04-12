@@ -28,6 +28,7 @@ show-unused:
 ci:
 # check the format
 	@make format
+	git diff --exit-code
 # build first because the lint is based off this package!
 	@make build
 # make sure there are no lint errors
