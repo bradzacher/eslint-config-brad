@@ -266,12 +266,14 @@ declare namespace Rules {
     export interface TypescriptEslint {
         '@typescript-eslint/adjacent-overload-signatures' : RuleType
         '@typescript-eslint/array-type' : RuleType
+        '@typescript-eslint/await-thenable' : RuleType
         '@typescript-eslint/ban-ts-ignore' : RuleType
         '@typescript-eslint/ban-types' : RuleType
         '@typescript-eslint/camelcase' : RuleType
         '@typescript-eslint/class-name-casing' : RuleType
         '@typescript-eslint/explicit-function-return-type' : RuleType
         '@typescript-eslint/explicit-member-accessibility' : RuleType
+        '@typescript-eslint/func-call-spacing' : RuleType
         '@typescript-eslint/generic-type-naming' : RuleType
         '@typescript-eslint/indent' : RuleType
         '@typescript-eslint/interface-name-prefix' : RuleType
@@ -282,6 +284,7 @@ declare namespace Rules {
         '@typescript-eslint/no-array-constructor' : RuleType
         '@typescript-eslint/no-empty-interface' : RuleType
         '@typescript-eslint/no-explicit-any' : RuleType
+        '@typescript-eslint/no-extra-parens' : RuleType
         '@typescript-eslint/no-extraneous-class' : RuleType
         '@typescript-eslint/no-for-in-array' : RuleType
         '@typescript-eslint/no-inferrable-types' : RuleType
@@ -300,13 +303,18 @@ declare namespace Rules {
         '@typescript-eslint/no-use-before-define' : RuleType
         '@typescript-eslint/no-useless-constructor' : RuleType
         '@typescript-eslint/no-var-requires' : RuleType
+        '@typescript-eslint/prefer-for-of' : RuleType
         '@typescript-eslint/prefer-function-type' : RuleType
+        '@typescript-eslint/prefer-includes' : RuleType
         '@typescript-eslint/prefer-interface' : RuleType
         '@typescript-eslint/prefer-namespace-keyword' : RuleType
+        '@typescript-eslint/prefer-string-starts-ends-with' : RuleType
         '@typescript-eslint/promise-function-async' : RuleType
         '@typescript-eslint/require-array-sort-compare' : RuleType
         '@typescript-eslint/restrict-plus-operands' : RuleType
+        '@typescript-eslint/semi' : RuleType
         '@typescript-eslint/type-annotation-spacing' : RuleType
+        '@typescript-eslint/unbound-method' : RuleType
         '@typescript-eslint/unified-signatures' : RuleType
     }
     export interface Dependencies {

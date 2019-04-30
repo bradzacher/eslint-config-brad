@@ -7,6 +7,10 @@ const rules : Rules.TypescriptEslint = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
     '@typescript-eslint/array-type': ['error', 'generic'],
 
+    // Disallows awaiting a value that is not a Promise
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
+    '@typescript-eslint/await-thenable': 'error',
+
     // Enforces that @ts-ignore will not to be used.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-ignore.md
     '@typescript-eslint/ban-ts-ignore': 'error',
@@ -25,11 +29,21 @@ const rules : Rules.TypescriptEslint = {
 
     // Explicit types for function return values makes it clear to any calling code what type is returned.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
-    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/explicit-function-return-type': [
+        'warn',
+        {
+            allowExpressions: true,
+            allowTypedFunctionExpressions: true,
+        },
+    ],
 
     // Leaving off accessibility modifier and making everything public can make your interface hard to use by others
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
     '@typescript-eslint/explicit-member-accessibility': 'error',
+
+    // require or disallow spacing between function identifiers and their invocations
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
+    '@typescript-eslint/func-call-spacing': ['error', 'never'],
 
     // Enforces naming of generic type variables.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/generic-type-naming.md
@@ -128,6 +142,10 @@ const rules : Rules.TypescriptEslint = {
     // warn discourage it - it can be specifically disabled in code if there's a valid use case
     '@typescript-eslint/no-explicit-any': 'warn',
 
+    // disallow unnecessary parentheses
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md
+    '@typescript-eslint/no-extra-parens': 'off',
+
     // Forbids the use of classes as namespaces.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
     '@typescript-eslint/no-extraneous-class': 'warn',
@@ -211,9 +229,17 @@ const rules : Rules.TypescriptEslint = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-var-requires.md
     '@typescript-eslint/no-var-requires': 'off',
 
+    // Use for-of loops instead of standard for loops over arrays
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-for-of.md
+    '@typescript-eslint/prefer-for-of': 'warn',
+
     // Use function types instead of interfaces with call signatures
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-function-type.md
     '@typescript-eslint/prefer-function-type': 'error',
+
+    // Enforce includes method over indexOf method
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-includes.md
+    '@typescript-eslint/prefer-includes': 'off',
 
     // Prefer an interface declaration over a type literal (type T = { ... }).
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-interface.md
@@ -222,6 +248,10 @@ const rules : Rules.TypescriptEslint = {
     // Require the use of the namespace keyword instead of the module keyword to declare custom TypeScript modules
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-namespace-keyword.md
     '@typescript-eslint/prefer-namespace-keyword': 'off',
+
+    // Enforce the use of String#startsWith and String#endsWith instead of other equivalent methods of checking substrings
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md
+    '@typescript-eslint/prefer-string-starts-ends-with': 'error',
 
     // Functions that return promises must be async
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/promise-function-async.md
@@ -235,6 +265,10 @@ const rules : Rules.TypescriptEslint = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-plus-operands.md
     '@typescript-eslint/restrict-plus-operands': 'error',
 
+    // require or disallow semicolons instead of ASI
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md
+    '@typescript-eslint/semi': ['error', 'never'],
+
     // Require consistent spacing around type annotations
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md
     '@typescript-eslint/type-annotation-spacing': [
@@ -244,6 +278,10 @@ const rules : Rules.TypescriptEslint = {
             after: true,
         },
     ],
+
+    // Enforces unbound methods are called with their expected scope
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unbound-method.md
+    '@typescript-eslint/unbound-method': 'off',
 
     // Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md

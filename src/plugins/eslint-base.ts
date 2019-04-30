@@ -214,7 +214,8 @@ const rules : Rules.Eslint = {
 
     // enforce spacing between functions and their invocations
     // https://eslint.org/docs/rules/func-call-spacing
-    'func-call-spacing': ['error', 'never'],
+    // extended rule in typescript plugin
+    'func-call-spacing': 'off',
 
     // requires function names to match the name of the variable or property to which they are assigned
     // https://eslint.org/docs/rules/func-name-matching
@@ -1377,7 +1378,8 @@ const rules : Rules.Eslint = {
 
     // This rule enforces consistent use of semicolons.
     // https://eslint.org/docs/rules/semi
-    semi: ['error', 'never'],
+    // extended in typescript plugin
+    semi: 'off',
 
     // This rule aims to enforce spacing around a semicolon.
     // https://eslint.org/docs/rules/semi-spacing

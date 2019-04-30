@@ -6,6 +6,7 @@ module.exports = {
     rules: {
         // disable this because copy pasta
         'multiline-comment-style': 'off',
+        'import/no-default-export': 'off',
     },
     settings: {
         'import/resolver': {
