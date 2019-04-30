@@ -39,7 +39,6 @@
         "format": "yarn format-no-write --write && yarn lint-no-cache --fix",
         "format-check": "yarn format-no-write --list-different",
         "postinstall": "yarn patch-package",
-        "precommit": "yarn format && git diff --exit-code && yarn typecheck",
         "prepush": "make ci",
         "regenerate-types": "make regenerate-types",
         "typecheck": "tsc -p ./tsconfig.json --noEmit"
@@ -50,7 +49,6 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn precommit",
             "pre-push": "yarn prepush"
         }
     }
