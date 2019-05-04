@@ -51,47 +51,8 @@ const rules : Rules.TypescriptEslint = {
 
     // Enforce consistent indentation.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
-    '@typescript-eslint/indent': [
-        'error',
-        4,
-        {
-            SwitchCase: 1,
-            VariableDeclarator: 1,
-            outerIIFEBody: 1,
-            FunctionDeclaration: {
-                parameters: 1,
-                body: 1,
-            },
-            FunctionExpression: {
-                parameters: 1,
-                body: 1,
-            },
-            CallExpression: {
-                arguments: 1,
-            },
-            ArrayExpression: 1,
-            ObjectExpression: 1,
-            ImportDeclaration: 1,
-            flatTernaryExpressions: false,
-            // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-            ignoredNodes: [
-                'JSXElement',
-                'JSXElement > *',
-                'JSXAttribute',
-                'JSXIdentifier',
-                'JSXNamespacedName',
-                'JSXMemberExpression',
-                'JSXSpreadAttribute',
-                'JSXExpressionContainer',
-                'JSXOpeningElement',
-                'JSXClosingElement',
-                'JSXText',
-                'JSXEmptyExpression',
-                'JSXSpreadChild',
-            ],
-            ignoreComments: false,
-        },
-    ],
+    // handled by prettier
+    '@typescript-eslint/indent': 'off',
 
     // Prefixing interfaces with "I" can help telling them apart at a glance.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/interface-name-prefix.md
