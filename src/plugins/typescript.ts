@@ -216,7 +216,7 @@ const rules : Rules.TypescriptEslint = {
 
     // Functions that return promises must be async
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/promise-function-async.md
-    '@typescript-eslint/promise-function-async': 'error',
+    '@typescript-eslint/promise-function-async': 'off',
 
     // Enforce giving compare argument to Array#sort
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-array-sort-compare.md
