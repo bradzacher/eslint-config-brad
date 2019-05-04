@@ -443,6 +443,7 @@ declare namespace Rules {
         'react/jsx-one-expression-per-line' : RuleType
         'react/jsx-pascal-case' : RuleType
         'react/jsx-props-no-multi-spaces' : RuleType
+        'react/jsx-props-no-spreading' : RuleType
         'react/jsx-sort-default-props' : RuleType
         'react/jsx-sort-props' : RuleType
         'react/jsx-tag-spacing' : RuleType
@@ -474,6 +475,7 @@ declare namespace Rules {
         'react/no-unused-state' : RuleType
         'react/no-will-update-set-state' : RuleType
         'react/prefer-es6-class' : RuleType
+        'react/prefer-read-only-props' : RuleType
         'react/prefer-stateless-function' : RuleType
         'react/prop-types' : RuleType
         'react/react-in-jsx-scope' : RuleType
@@ -483,6 +485,8 @@ declare namespace Rules {
         'react/self-closing-comp' : RuleType
         'react/sort-comp' : RuleType
         'react/sort-prop-types' : RuleType
+        'react/state-in-constructor' : RuleType
+        'react/static-property-placement' : RuleType
         'react/style-prop-object' : RuleType
         'react/void-dom-elements-no-children' : RuleType
     }

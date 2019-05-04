@@ -236,6 +236,11 @@ const rules : Rules.React = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md
     'react/jsx-props-no-multi-spaces': 'error',
 
+    // Disallow JSX props spreading
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+    // errors are well handled by typescript
+    'react/jsx-props-no-spreading': 'off',
+
     // Enforce defaultProps declarations alphabetical sorting
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-default-props.md
     'react/jsx-sort-default-props': [
@@ -396,12 +401,18 @@ const rules : Rules.React = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
     'react/prefer-es6-class': ['error', 'always'],
 
+    // Enforce that props are read-only
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md
+    // as at 7.13.0 - only supports flow types
+    'react/prefer-read-only-props': 'off',
+
     // Require stateless functions when not using lifecycle methods, setState or ref
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
     'react/prefer-stateless-function': [
         'error',
         {
-            ignorePureComponents: true,
+            // Can switch to React.memo
+            ignorePureComponents: false,
         },
     ],
 
@@ -415,21 +426,13 @@ const rules : Rules.React = {
 
     // Enforce a defaultProps definition for every prop that is not a required prop
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-    'react/require-default-props': [
-        'error',
-        {
-            forbidDefaultForRequired: true,
-        },
-    ],
+    // typescript handles this
+    'react/require-default-props': 'off',
 
     // require a shouldComponentUpdate method, or PureRenderMixin
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md
-    'react/require-optimization': [
-        'off',
-        {
-            allowDecorators: [],
-        },
-    ],
+    // functional components with hooks!
+    'react/require-optimization': 'off',
 
     // Require render() methods to return something
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
@@ -441,60 +444,23 @@ const rules : Rules.React = {
 
     // Enforce component methods order
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
-    // this rule is too breaking. it enforces a weird ordering that doesn't always make sense
-    'react/sort-comp': [
-        'off',
-        {
-            order: [
-                'static-methods',
-                'instance-variables',
-                'lifecycle',
-                '/^on.+$/',
-                'getters',
-                'setters',
-                '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
-                'instance-methods',
-                'everything-else',
-                'rendering',
-            ],
-            groups: {
-                lifecycle: [
-                    'displayName',
-                    'propTypes',
-                    'contextTypes',
-                    'childContextTypes',
-                    'mixins',
-                    'statics',
-                    'defaultProps',
-                    'constructor',
-                    'getDefaultProps',
-                    'getInitialState',
-                    'state',
-                    'getChildContext',
-                    'componentWillMount',
-                    'componentDidMount',
-                    'componentWillReceiveProps',
-                    'shouldComponentUpdate',
-                    'componentWillUpdate',
-                    'componentDidUpdate',
-                    'componentWillUnmount',
-                ],
-                rendering: ['/^render.+$/', 'render'],
-            },
-        },
-    ],
+    // functional components with hooks!
+    'react/sort-comp': 'off',
 
     // Enforce propTypes declarations alphabetical sorting
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
-    'react/sort-prop-types': [
-        'off',
-        {
-            ignoreCase: true,
-            callbacksLast: false,
-            requiredFirst: false,
-            sortShapeProp: true,
-        },
-    ],
+    // functional components with hooks!
+    'react/sort-prop-types': 'off',
+
+    // Enforce state initialization style
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
+    // functional components with hooks!
+    'react/state-in-constructor': 'off',
+
+    // Enforces where React component static properties should be positioned.
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md
+    // functional components with hooks!
+    'react/static-property-placement': 'off',
 
     // Require style prop value be an object or var
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
