@@ -62,6 +62,10 @@ const rules : Rules.Jest = {
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md
     'jest/no-large-snapshots': 'off',
 
+    // Disallow manually importing from `__mocks__`
+    // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md
+    'jest/no-mocks-import': 'off',
+
     // Use .only and .skip over f and x
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md
     'jest/no-test-prefixes': 'error',

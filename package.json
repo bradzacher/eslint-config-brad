@@ -7,13 +7,13 @@
     "author": "Brad Zacher <brad.zacher@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^1.7.1-alpha.18",
+        "@typescript-eslint/eslint-plugin": "^1.7.1-alpha.19",
         "@typescript-eslint/parser": "^1.7.0",
         "eslint": "^5.16.0",
         "eslint-plugin-dependencies": "^2.4.0",
         "eslint-plugin-eslint-comments": "^3.1.1",
         "eslint-plugin-import": "^2.17.2",
-        "eslint-plugin-jest": "^22.4.1",
+        "eslint-plugin-jest": "^22.5.1",
         "eslint-plugin-react": "^7.13.0",
         "eslint-restricted-globals": "^0.2.0"
     },

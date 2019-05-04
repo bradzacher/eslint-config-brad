@@ -388,6 +388,7 @@ declare namespace Rules {
         'jest/no-jasmine-globals' : RuleType
         'jest/no-jest-import' : RuleType
         'jest/no-large-snapshots' : RuleType
+        'jest/no-mocks-import' : RuleType
         'jest/no-test-callback' : RuleType
         'jest/no-test-prefixes' : RuleType
         'jest/no-test-return-statement' : RuleType
