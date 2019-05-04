@@ -177,6 +177,10 @@ const rules : Rules.Import = {
         },
     ],
 
+    // ensure modules both have an export and are imported in another module
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unused-modules.md
+    'import/no-unused-modules': 'error',
+
     // Ensures that there are no useless path segments
     // https://github.com/benmosher/eslint-plugin-import/issues/1032
     'import/no-useless-path-segments': 'off',

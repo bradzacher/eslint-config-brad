@@ -19,23 +19,23 @@ declare namespace Rules {
         'block-spacing' : RuleType
         'brace-style' : RuleType
         'callback-return' : RuleType
-        camelcase : RuleType
+        'camelcase' : RuleType
         'capitalized-comments' : RuleType
         'class-methods-use-this' : RuleType
         'comma-dangle' : RuleType
         'comma-spacing' : RuleType
         'comma-style' : RuleType
-        complexity : RuleType
+        'complexity' : RuleType
         'computed-property-spacing' : RuleType
         'consistent-return' : RuleType
         'consistent-this' : RuleType
         'constructor-super' : RuleType
-        curly : RuleType
+        'curly' : RuleType
         'default-case' : RuleType
         'dot-location' : RuleType
         'dot-notation' : RuleType
         'eol-last' : RuleType
-        eqeqeq : RuleType
+        'eqeqeq' : RuleType
         'for-direction' : RuleType
         'func-call-spacing' : RuleType
         'func-name-matching' : RuleType
@@ -51,7 +51,7 @@ declare namespace Rules {
         'id-length' : RuleType
         'id-match' : RuleType
         'implicit-arrow-linebreak' : RuleType
-        indent : RuleType
+        'indent' : RuleType
         'init-declarations' : RuleType
         'jsx-quotes' : RuleType
         'key-spacing' : RuleType
@@ -230,14 +230,14 @@ declare namespace Rules {
         'prefer-spread' : RuleType
         'prefer-template' : RuleType
         'quote-props' : RuleType
-        quotes : RuleType
-        radix : RuleType
+        'quotes' : RuleType
+        'radix' : RuleType
         'require-atomic-updates' : RuleType
         'require-await' : RuleType
         'require-unicode-regexp' : RuleType
         'require-yield' : RuleType
         'rest-spread-spacing' : RuleType
-        semi : RuleType
+        'semi' : RuleType
         'semi-spacing' : RuleType
         'semi-style' : RuleType
         'sort-imports' : RuleType
@@ -249,7 +249,7 @@ declare namespace Rules {
         'space-infix-ops' : RuleType
         'space-unary-ops' : RuleType
         'spaced-comment' : RuleType
-        strict : RuleType
+        'strict' : RuleType
         'switch-colon-spacing' : RuleType
         'symbol-description' : RuleType
         'template-curly-spacing' : RuleType
@@ -261,7 +261,7 @@ declare namespace Rules {
         'wrap-iife' : RuleType
         'wrap-regex' : RuleType
         'yield-star-spacing' : RuleType
-        yoda : RuleType
+        'yoda' : RuleType
     }
     export interface TypescriptEslint {
         '@typescript-eslint/adjacent-overload-signatures' : RuleType
@@ -368,6 +368,7 @@ declare namespace Rules {
         'import/no-self-import' : RuleType
         'import/no-unassigned-import' : RuleType
         'import/no-unresolved' : RuleType
+        'import/no-unused-modules' : RuleType
         'import/no-useless-path-segments' : RuleType
         'import/no-webpack-loader-syntax' : RuleType
         'import/order' : RuleType
