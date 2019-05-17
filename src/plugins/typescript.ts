@@ -276,7 +276,7 @@ const rules: Rules.TypescriptEslint = {
 export default {
     name: '@typescript-eslint',
     rules: Object.assign(
-    rules,
+        rules,
         disabledBaseRules,
         tsEslint.configs['eslint-base'],
     ),

@@ -45,9 +45,8 @@ const rules: Rules.EslintComments = {
             ],
         },
     ],
-}
-
+};
 export default {
     name: 'eslint-comments',
     rules,
-}
+};

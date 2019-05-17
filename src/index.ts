@@ -1,10 +1,10 @@
-import eslintBase from './plugins/eslint-base'
-import eslintComments from './plugins/eslint-comments'
-import jest from './plugins/jest'
-import imprt from './plugins/import'
-import typescript from './plugins/typescript'
+import eslintBase from './plugins/eslint-base';
+import eslintComments from './plugins/eslint-comments';
+import jest from './plugins/jest';
+import imprt from './plugins/import';
+import typescript from './plugins/typescript';
 
-module.exports = {
+export = {
     globals: {},
     env: {
         commonjs: true,
@@ -76,4 +76,4 @@ module.exports = {
         // settings for each plugin
         ...imprt.settings,
     },
-}
+};

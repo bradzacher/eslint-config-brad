@@ -469,9 +469,8 @@ const rules: Rules.React = {
     // Prevent void DOM elements from receiving children
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
     'react/void-dom-elements-no-children': 'error',
-}
-
+};
 export default {
     name: 'react',
     rules,
-}
+};

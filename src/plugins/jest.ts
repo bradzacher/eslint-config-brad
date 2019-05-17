@@ -134,9 +134,8 @@ const rules: Rules.Jest = {
     // Enforce having return statement when testing with promises
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md
     'jest/valid-expect-in-promise': 'error',
-}
-
+};
 export default {
     name: 'jest',
     rules,
-}
+};

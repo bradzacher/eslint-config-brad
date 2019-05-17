@@ -1,7 +1,5 @@
-node_modules
-dist
 .cache
-static
-build
-
-types/eslint-config.d.ts
+dist
+node_modules
+patches
+types

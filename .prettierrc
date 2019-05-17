@@ -1,10 +1,9 @@
 {
     "arrowParens": "avoid",
     "bracketSpacing": true,
-    "parser": "typescript",
     "jsxBracketSameLine": true,
     "proseWrap": "preserve",
-    "semi": false,
+    "semi": true,
     "singleQuote": true,
     "tabWidth": 4,
     "trailingComma": "all",

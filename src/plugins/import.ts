@@ -215,8 +215,7 @@ const rules: Rules.Import = {
     // this should not be enabled until this proposal has at least been *presented* to TC39.
     // At the moment, it's not a thing.
     'import/unambiguous': 'off',
-}
-
+};
 export default {
     name: 'import',
     rules,
@@ -230,4 +229,4 @@ export default {
             '\\.(coffee|scss|css|less|hbs|svg|json)$',
         ],
     },
-}
+};

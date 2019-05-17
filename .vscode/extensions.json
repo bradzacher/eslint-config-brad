@@ -3,10 +3,7 @@
         "msjsdiag.debugger-for-chrome",
         "dbaeumer.vscode-eslint",
         "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
+        "esbenp.prettier-vscode"
     ],
-    "unwantedRecommendations": [
-        "hookyqr.beautify",
-        "dbaeumer.jshint"
-    ]
+    "unwantedRecommendations": ["hookyqr.beautify", "dbaeumer.jshint"]
 }

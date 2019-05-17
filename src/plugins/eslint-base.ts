@@ -1,5 +1,5 @@
 // the global list of restricted terms that airbnb uses
-import globals = require('eslint-restricted-globals')
+import globals from 'eslint-restricted-globals';
 
 // we remove some because of how the eslint TS parser interacts with eslint when using interfaces
 const pseudoAllowedGlobals = [
@@ -9,11 +9,10 @@ const pseudoAllowedGlobals = [
     'open',
     'close',
     'event',
-]
+];
 const restrictedGlobals = globals.filter(
     g => pseudoAllowedGlobals.indexOf(g) === -1,
-)
-
+);
 const rules: Rules.Eslint = {
     // This rule warns if setters are defined without getters
     // https://eslint.org/docs/rules/accessor-pairs
@@ -1520,8 +1519,7 @@ const rules: Rules.Eslint = {
     // This rule aims to enforce consistent style of conditions which compare a variable to a literal value.
     // https://eslint.org/docs/rules/yoda
     yoda: 'error',
-}
-
+};
 export default {
     rules,
-}
+};

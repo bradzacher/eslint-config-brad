@@ -3,11 +3,7 @@
     "editor.formatOnSave": true,
 
     // An array of languages where Emmet abbreviations should not be expanded.
-    "emmet.excludeLanguages": [
-        "markdown",
-        "typescript",
-        "typescriptreact"
-    ],
+    "emmet.excludeLanguages": ["markdown", "typescript", "typescriptreact"],
 
     // Default normal quote, can be ' or ".
     "esQuotes.defaultQuote": "'",
@@ -29,9 +25,6 @@
     // When enabled, will trim trailing whitespace when saving a file.
     "files.trimTrailingWhitespace": true,
 
-    // Use 'prettier-eslint' instead of 'prettier'. Other settings will only be fallbacks in case they could not be inferred from eslint rules.
-    "prettier.eslintIntegration": true,
-
     // typescript auto-format settings
     "typescript.tsdk": "node_modules/typescript/lib",
     "javascript.preferences.importModuleSpecifier": "auto",
@@ -39,4 +32,5 @@
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -1,7 +1,7 @@
-import react from './plugins/react'
-import imprt from './plugins/import'
+import react from './plugins/react';
+import imprt from './plugins/import';
 
-module.exports = {
+export = {
     env: {
         browser: true,
     },
@@ -18,4 +18,4 @@ module.exports = {
         // No Node.js builtin modules
         'import/no-nodejs-modules': 'error',
     },
-}
+};

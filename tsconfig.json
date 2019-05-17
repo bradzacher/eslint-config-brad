@@ -1,13 +1,11 @@
 {
     "compilerOptions": {
-        "allowSyntheticDefaultImports": false,
+        "allowSyntheticDefaultImports": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "declaration": false,
-        "lib": [
-            "es6",
-            "esnext.asynciterable"
-        ],
+        "esModuleInterop": true,
+        "lib": ["es6", "esnext.asynciterable"],
         "moduleResolution": "node",
         "module": "commonjs",
         "noEmit": false,
@@ -25,11 +23,6 @@
         "strict": true,
         "target": "es6"
     },
-    "include": [
-        "src/**/*.ts",
-        "types/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*.ts", "types/**/*"],
+    "exclude": ["node_modules"]
 }
