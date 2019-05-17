@@ -490,12 +490,7 @@ const rules: Rules.Eslint = {
 
     // Disallow arrow functions where they could be confused with comparisons
     // https://eslint.org/docs/rules/no-confusing-arrow
-    'no-confusing-arrow': [
-        'error',
-        {
-            allowParens: true,
-        },
-    ],
+    'no-confusing-arrow': 'off',
 
     // This rule disallows calls to methods of the console object.
     // https://eslint.org/docs/rules/no-console
