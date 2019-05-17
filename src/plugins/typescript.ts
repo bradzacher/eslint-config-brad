@@ -1,4 +1,4 @@
-const rules : Rules.TypescriptEslint = {
+const rules: Rules.TypescriptEslint = {
     // Grouping overloaded members together can improve readability of the code.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md
     '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -235,7 +235,7 @@ const rules : Rules.TypescriptEslint = {
     '@typescript-eslint/type-annotation-spacing': [
         'error',
         {
-            before: true,
+            before: false,
             after: true,
         },
     ],

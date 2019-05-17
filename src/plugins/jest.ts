@@ -1,4 +1,4 @@
-const rules : Rules.Jest = {
+const rules: Rules.Jest = {
     // This rule gives you control over the usage of test/it keywords in your codebase
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/consistent-test-it.md
     'jest/consistent-test-it': [

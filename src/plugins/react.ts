@@ -1,4 +1,4 @@
-const rules : Rules.React = {
+const rules: Rules.React = {
     // Enforces consistent naming for boolean props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming
     'react/boolean-prop-naming': 'off',

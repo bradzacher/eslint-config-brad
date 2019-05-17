@@ -16,7 +16,7 @@ fs.writeFileSync(allPluginsPath, JSON.stringify({ plugins }, null, 4))
 const ruleFinder = getRuleFinder(allPluginsPath)
 const allRules = ruleFinder.getAllAvailableRules()
 
-const rulesPerPlugin : Record<string, Array<string>> = {
+const rulesPerPlugin: Record<string, Array<string>> = {
     eslint: [],
 }
 allRules.forEach(rule => {
