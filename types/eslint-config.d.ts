@@ -5,8 +5,8 @@ declare namespace Rules {
     interface RuleArray extends Array<unknown> {
         0: RuleString;
     }
-    export type RuleType = RuleString | RuleArray;
-    export interface Eslint {
+    type RuleType = RuleString | RuleArray;
+    interface Eslint {
         'accessor-pairs': RuleType;
         'array-bracket-newline': RuleType;
         'array-bracket-spacing': RuleType;
@@ -263,7 +263,7 @@ declare namespace Rules {
         'yield-star-spacing': RuleType;
         'yoda': RuleType;
     }
-    export interface TypescriptEslint {
+    interface TypescriptEslint {
         '@typescript-eslint/adjacent-overload-signatures': RuleType;
         '@typescript-eslint/array-type': RuleType;
         '@typescript-eslint/await-thenable': RuleType;
@@ -319,13 +319,13 @@ declare namespace Rules {
         '@typescript-eslint/unbound-method': RuleType;
         '@typescript-eslint/unified-signatures': RuleType;
     }
-    export interface Dependencies {
+    interface Dependencies {
         'dependencies/case-sensitive': RuleType;
         'dependencies/no-cycles': RuleType;
         'dependencies/no-unresolved': RuleType;
         'dependencies/require-json-ext': RuleType;
     }
-    export interface EslintComments {
+    interface EslintComments {
         'eslint-comments/disable-enable-pair': RuleType;
         'eslint-comments/no-aggregating-enable': RuleType;
         'eslint-comments/no-duplicate-disable': RuleType;
@@ -335,7 +335,7 @@ declare namespace Rules {
         'eslint-comments/no-unused-enable': RuleType;
         'eslint-comments/no-use': RuleType;
     }
-    export interface Import {
+    interface Import {
         'import/default': RuleType;
         'import/dynamic-import-chunkname': RuleType;
         'import/export': RuleType;
@@ -377,7 +377,7 @@ declare namespace Rules {
         'import/prefer-default-export': RuleType;
         'import/unambiguous': RuleType;
     }
-    export interface Jest {
+    interface Jest {
         'jest/consistent-test-it': RuleType;
         'jest/expect-expect': RuleType;
         'jest/lowercase-name': RuleType;
@@ -410,7 +410,7 @@ declare namespace Rules {
         'jest/valid-expect': RuleType;
         'jest/valid-expect-in-promise': RuleType;
     }
-    export interface React {
+    interface React {
         'react/boolean-prop-naming': RuleType;
         'react/button-has-type': RuleType;
         'react/default-props-match-prop-types': RuleType;
@@ -493,4 +493,15 @@ declare namespace Rules {
         'react/style-prop-object': RuleType;
         'react/void-dom-elements-no-children': RuleType;
     }
+
+    export {
+        RuleType,
+        Eslint,
+        TypescriptEslint,
+        Dependencies,
+        EslintComments,
+        Import,
+        Jest,
+        React,
+    };
 }

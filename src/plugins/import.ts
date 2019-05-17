@@ -37,7 +37,7 @@ const rules: Rules.Import = {
     // or when multiple assignments to CommonJS module.exports or exports object are present
     // in a single file.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/group-exports.md
-    'import/group-exports': 'off',
+    'import/group-exports': 'error',
 
     // Forbid modules to have too many dependencies
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/max-dependencies.md

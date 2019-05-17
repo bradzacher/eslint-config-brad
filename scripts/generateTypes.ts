@@ -28,6 +28,15 @@ allRules.forEach(rule => {
     }
 });
 
+function toPascalCase(name: string): string {
+    const camel = name
+        .replace(/(-\w)/g, m => m[1].toUpperCase())
+        .replace(/^(@\w)/, m => m[1].toUpperCase());
+    const pascal = camel[0].toUpperCase() + camel.substr(1);
+
+    return pascal;
+}
+
 const indent = '    ';
 const typesFile = [
     '// this file is auto-generated. Run `regenerate-types` to regenerate it.',
@@ -37,22 +46,21 @@ const typesFile = [
     `${indent}interface RuleArray extends Array<unknown> {`,
     `${indent}${indent}0: RuleString;`,
     `${indent}}`,
-    `${indent}export type RuleType = RuleString | RuleArray;`,
-    ...Object.keys(rulesPerPlugin).map(k => {
-        const interfaceCamel = k
-            .replace(/(-\w)/g, m => m[1].toUpperCase())
-            .replace(/^(@\w)/, m => m[1].toUpperCase());
-        const interfacePascal =
-            interfaceCamel[0].toUpperCase() + interfaceCamel.substr(1);
-
-        return [
-            `export interface ${interfacePascal} {`,
+    `${indent}type RuleType = RuleString | RuleArray;`,
+    ...Object.keys(rulesPerPlugin).map(k => [
+            `interface ${toPascalCase(k)} {`,
             ...rulesPerPlugin[k].map(rule => `${indent}'${rule}': RuleType;`),
             '}',
         ]
             .map(s => `${indent}${s}`)
-            .join('\n');
-    }),
+            .join('\n')),
+    '',
+    `${indent}export {`,
+    `${indent}${indent}RuleType,`,
+    ...Object.keys(rulesPerPlugin).map(
+        k => `${indent}${indent}${toPascalCase(k)},`,
+    ),
+    `${indent}};`,
     '}',
     '',
 ].join('\n');
