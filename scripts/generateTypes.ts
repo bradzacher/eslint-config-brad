@@ -47,13 +47,15 @@ const typesFile = [
     `${indent}${indent}0: RuleString;`,
     `${indent}}`,
     `${indent}type RuleType = RuleString | RuleArray;`,
-    ...Object.keys(rulesPerPlugin).map(k => [
+    ...Object.keys(rulesPerPlugin).map(k =>
+        [
             `interface ${toPascalCase(k)} {`,
             ...rulesPerPlugin[k].map(rule => `${indent}'${rule}': RuleType;`),
             '}',
         ]
             .map(s => `${indent}${s}`)
-            .join('\n')),
+            .join('\n'),
+    ),
     '',
     `${indent}export {`,
     `${indent}${indent}RuleType,`,

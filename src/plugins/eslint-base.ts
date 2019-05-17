@@ -242,7 +242,8 @@ const rules: Rules.Eslint = {
 
     // This rule enforces consistent line breaks inside parentheses of function parameters or arguments.
     // https://eslint.org/docs/rules/function-paren-newline
-    'function-paren-newline': ['error', 'consistent'],
+    // covered by prettier
+    'function-paren-newline': 'off',
 
     // Enforce spacing around the * in generator functions
     // https://eslint.org/docs/rules/generator-star-spacing
