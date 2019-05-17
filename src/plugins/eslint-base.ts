@@ -1229,17 +1229,8 @@ const rules: Rules.Eslint = {
 
     // This rule enforces a consistent linebreak style for operators.
     // https://eslint.org/docs/rules/operator-linebreak
-    'operator-linebreak': [
-        'error',
-        'before',
-        {
-            overrides: {
-                '=': 'after',
-                '?': 'before',
-                ':': 'before',
-            },
-        },
-    ],
+    // handled by prettier
+    'operator-linebreak': 'off',
 
     // This rule enforces consistent empty line padding within blocks
     // https://eslint.org/docs/rules/padded-blocks
@@ -1349,7 +1340,8 @@ const rules: Rules.Eslint = {
 
     // This rule enforces the consistent use of either backticks, double, or single quotes.
     // https://eslint.org/docs/rules/quotes
-    quotes: ['error', 'single'],
+    // handled by prettier
+    quotes: 'off',
 
     // This rule is aimed at preventing the unintended conversion of a string to a number of a different base
     // than intended or at preventing the redundant 10 radix if targeting modern environments only.
