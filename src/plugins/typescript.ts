@@ -1,3 +1,15 @@
+import tsEslint from '@typescript-eslint/eslint-plugin';
+
+// disable the rules covered by ts-eslint
+const disabledBaseRules = Object.keys(tsEslint.configs.all).reduce<
+    Record<string, 'off'>
+>((acc, rule) => {
+    if (!rule.startsWith('@typescript-eslint')) {
+        acc[rule] = 'off';
+    }
+
+    return acc;
+}, {});
 const rules: Rules.TypescriptEslint = {
     // Grouping overloaded members together can improve readability of the code.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md
@@ -64,11 +76,11 @@ const rules: Rules.TypescriptEslint = {
         'error',
         {
             multiline: {
-                delimiter: 'none',
+                delimiter: 'semi',
                 requireLast: true,
             },
             singleline: {
-                delimiter: 'comma',
+                delimiter: 'semi',
                 requireLast: false,
             },
         },
@@ -118,6 +130,10 @@ const rules: Rules.TypescriptEslint = {
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
     '@typescript-eslint/no-inferrable-types': 'error',
+
+    // Disallow Magic Numbers
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-magic-numbers.md
+    '@typescript-eslint/no-magic-numbers': 'off',
 
     // Enforce valid definition of new and constructor.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-new.md
@@ -210,6 +226,10 @@ const rules: Rules.TypescriptEslint = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-namespace-keyword.md
     '@typescript-eslint/prefer-namespace-keyword': 'off',
 
+    // Enforce to use RegExp#exec over String#match
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md
+    '@typescript-eslint/prefer-regexp-exec': 'error',
+
     // Enforce the use of String#startsWith and String#endsWith instead of other equivalent methods of checking substrings
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
@@ -228,15 +248,20 @@ const rules: Rules.TypescriptEslint = {
 
     // require or disallow semicolons instead of ASI
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md
-    '@typescript-eslint/semi': ['error', 'never'],
+    '@typescript-eslint/semi': ['error', 'always'],
 
     // Require consistent spacing around type annotations
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md
     '@typescript-eslint/type-annotation-spacing': [
         'error',
         {
-            before: false,
+            before: true,
             after: true,
+            overrides: {
+                colon: {
+                    before: false,
+                },
+            },
         },
     ],
 
@@ -247,9 +272,12 @@ const rules: Rules.TypescriptEslint = {
     // Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
     '@typescript-eslint/unified-signatures': 'error',
-}
-
+};
 export default {
     name: '@typescript-eslint',
+    rules: Object.assign(
     rules,
-}
+        disabledBaseRules,
+        tsEslint.configs['eslint-base'],
+    ),
+};

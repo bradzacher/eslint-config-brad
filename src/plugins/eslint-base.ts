@@ -1393,11 +1393,7 @@ const rules: Rules.Eslint = {
 
     // This rule reports line terminators around semicolons
     // https://eslint.org/docs/rules/semi-style
-    'semi-style': [
-        'error',
-        // the only time we use semis is for new lines with parentheses, so that's where we want the semi.
-        'first',
-    ],
+    'semi-style': ['error', 'last'],
 
     // This rule checks all import declarations and verifies that all imports are first sorted by the used member
     // syntax and then alphabetically by the first member or alias name.
