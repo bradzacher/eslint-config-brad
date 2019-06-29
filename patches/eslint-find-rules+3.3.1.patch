@@ -1,7 +1,16 @@
 diff --git a/node_modules/eslint-find-rules/dist/lib/rule-finder.js b/node_modules/eslint-find-rules/dist/lib/rule-finder.js
-index e717569..e98c18d 100644
+index e717569..8050ea6 100644
 --- a/node_modules/eslint-find-rules/dist/lib/rule-finder.js
 +++ b/node_modules/eslint-find-rules/dist/lib/rule-finder.js
+@@ -27,7 +27,7 @@ function _getConfig(configFile) {
+     // Point to the particular config
+     configFile: configFile
+   });
+-  return cliEngine.getConfigForFile();
++  return cliEngine.getConfigForFile(configFile);
+ }
+ 
+ function _getCurrentNamesRules(config) {
 @@ -35,20 +35,31 @@ function _getCurrentNamesRules(config) {
  }
  
@@ -46,10 +55,17 @@ index e717569..e98c18d 100644
  
  function _isDeprecated(rule) {
 diff --git a/node_modules/eslint-find-rules/src/lib/rule-finder.js b/node_modules/eslint-find-rules/src/lib/rule-finder.js
-index 3e84c05..b4a40b3 100644
+index 3e84c05..fcf65e1 100644
 --- a/node_modules/eslint-find-rules/src/lib/rule-finder.js
 +++ b/node_modules/eslint-find-rules/src/lib/rule-finder.js
-@@ -29,22 +29,32 @@ function _getConfig(configFile) {
+@@ -23,28 +23,38 @@ function _getConfig(configFile) {
+     // Point to the particular config
+     configFile
+   });
+-  return cliEngine.getConfigForFile();
++  return cliEngine.getConfigForFile(configFile);
+ }
+ 
  function _getCurrentNamesRules(config) {
    return Object.keys(config.rules);
  }
