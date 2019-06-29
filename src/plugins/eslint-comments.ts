@@ -1,4 +1,6 @@
-const rules: Rules.EslintComments = {
+import { EslintComments } from '../types/eslint-comments';
+
+const rules: EslintComments = {
     // require a eslint-enable comment for every eslint-disable comment
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
     'eslint-comments/disable-enable-pair': [
@@ -10,23 +12,23 @@ const rules: Rules.EslintComments = {
 
     // disallow a eslint-enable comment for multiple eslint-disable comments
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-aggregating-enable.html
-    'eslint-comments/no-aggregating-enable': 'error',
+    'eslint-comments/no-aggregating-enable': ['error'],
 
     // disallow duplicate eslint-disable comments
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-duplicate-disable.html
-    'eslint-comments/no-duplicate-disable': 'error',
+    'eslint-comments/no-duplicate-disable': ['error'],
 
     // disallow eslint-disable comments without rule names
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html
-    'eslint-comments/no-unlimited-disable': 'error',
+    'eslint-comments/no-unlimited-disable': ['error'],
 
     // disallow unused eslint-disable comments
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
-    'eslint-comments/no-unused-disable': 'error',
+    'eslint-comments/no-unused-disable': ['error'],
 
     // disallow unused eslint-enable comments
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unused-enable.html
-    'eslint-comments/no-unused-enable': 'error',
+    'eslint-comments/no-unused-enable': ['error'],
 
     // disallow eslint-disable comments about specific rules
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-restricted-disable.html

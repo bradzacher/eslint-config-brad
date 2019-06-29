@@ -1,4 +1,6 @@
-const rules: Rules.Jest = {
+import { Jest } from '../types/jest';
+
+const rules: Jest = {
     // This rule gives you control over the usage of test/it keywords in your codebase
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/consistent-test-it.md
     'jest/consistent-test-it': [
@@ -11,7 +13,7 @@ const rules: Rules.Jest = {
 
     // Ensure that there is at least one expect call made in a test
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/expect-expect.md
-    'jest/expect-expect': 'error',
+    'jest/expect-expect': ['error'],
 
     // Enforce it, test and describe to have descriptions that begin with a lowercase letter.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/lowercase-name.md
@@ -24,23 +26,23 @@ const rules: Rules.Jest = {
 
     // Don't use alias methods.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md
-    'jest/no-alias-methods': 'error',
+    'jest/no-alias-methods': ['error'],
 
     // This rule raises a warning about 'skip' tests.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
-    'jest/no-disabled-tests': 'warn',
+    'jest/no-disabled-tests': ['warn'],
 
     // Disallow empty titles
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
-    'jest/no-empty-title': 'error',
+    'jest/no-empty-title': ['error'],
 
     // Avoid using a callback in asynchronous tests
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-callback.md
-    'jest/no-test-callback': 'error',
+    'jest/no-test-callback': ['error'],
 
     // Disallow 'only' tests.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md
-    'jest/no-focused-tests': 'error',
+    'jest/no-focused-tests': ['error'],
 
     // Disallow beforeAll beforeEach afterAll afterEach
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-hooks.md
@@ -48,15 +50,15 @@ const rules: Rules.Jest = {
 
     // Having identical titles for two different tests or test suites may create confusion
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md
-    'jest/no-identical-title': 'error',
+    'jest/no-identical-title': ['error'],
 
     // Disallow Jasmine globals
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md
-    'jest/no-jasmine-globals': 'error',
+    'jest/no-jasmine-globals': ['error'],
 
     // Disallow importing Jest
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jest-import.md
-    'jest/no-jest-import': 'error',
+    'jest/no-jest-import': ['error'],
 
     // disallow large snapshots
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-large-snapshots.md
@@ -68,11 +70,11 @@ const rules: Rules.Jest = {
 
     // Use .only and .skip over f and x
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md
-    'jest/no-test-prefixes': 'error',
+    'jest/no-test-prefixes': ['error'],
 
     // Disallow explicitly returning from tests
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-return-statement.md
-    'jest/no-test-return-statement': 'error',
+    'jest/no-test-return-statement': ['error'],
 
     // Disallow using toBeTruthy() & toBeFalsy()
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-truthy-falsy.md
@@ -80,7 +82,7 @@ const rules: Rules.Jest = {
 
     // Suggest using toBeCalledWith OR toHaveBeenCalledWith
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md
-    'jest/prefer-called-with': 'error',
+    'jest/prefer-called-with': ['error'],
 
     // Suggest using expect.assertions() OR expect.hasAssertions()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-expect-assertions.md
@@ -93,7 +95,7 @@ const rules: Rules.Jest = {
 
     // Suggest using jest.spyOn()
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md
-    'jest/prefer-spy-on': 'error',
+    'jest/prefer-spy-on': ['error'],
 
     // Suggest using toStrictEqual()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-strict-equal.md
@@ -101,39 +103,39 @@ const rules: Rules.Jest = {
 
     // Suggest using toContain()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-contain.md
-    'jest/prefer-to-contain': 'error',
+    'jest/prefer-to-contain': ['error'],
 
     // Suggest using toBeNull()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-be-null.md
-    'jest/prefer-to-be-null': 'error',
+    'jest/prefer-to-be-null': ['error'],
 
     // Suggest using toBeUndefined()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-be-undefined.md
-    'jest/prefer-to-be-undefined': 'error',
+    'jest/prefer-to-be-undefined': ['error'],
 
     // Suggest using toHaveLength()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md
-    'jest/prefer-to-have-length': 'error',
+    'jest/prefer-to-have-length': ['error'],
 
     // Suggest using test.todo
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-todo.md
-    'jest/prefer-todo': 'error',
+    'jest/prefer-todo': ['error'],
 
     // Require a message for toThrow()
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-tothrow-message.md
-    'jest/require-tothrow-message': 'error',
+    'jest/require-tothrow-message': ['error'],
 
     // Enforce valid describe() callback
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe.md
-    'jest/valid-describe': 'error',
+    'jest/valid-describe': ['error'],
 
     // Enforce valid expect() usage
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md
-    'jest/valid-expect': 'error',
+    'jest/valid-expect': ['error'],
 
     // Enforce having return statement when testing with promises
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md
-    'jest/valid-expect-in-promise': 'error',
+    'jest/valid-expect-in-promise': ['error'],
 };
 export default {
     name: 'jest',

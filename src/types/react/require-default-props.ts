@@ -1,0 +1,10 @@
+// this file is auto-generated. Run `make regenerate-types` to regenerate it.
+
+type RequireDefaultProps0 = [
+    ('off' | 'error' | 'warn'),
+    {
+        forbidDefaultForRequired?: boolean;
+    },
+];
+
+export type RequireDefaultProps = 'off' | RequireDefaultProps0;

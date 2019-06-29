@@ -1,4 +1,6 @@
-const rules: Rules.React = {
+import { React } from '../types/react';
+
+const rules: React = {
     // Enforces consistent naming for boolean props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming
     'react/boolean-prop-naming': 'off',
@@ -66,7 +68,7 @@ const rules: Rules.React = {
     // Forbids using non-exported propTypes
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
     // TODO: enable?
-    'react/forbid-foreign-prop-types': 'error',
+    'react/forbid-foreign-prop-types': ['error'],
 
     // Forbid certain propTypes (any, array, object)
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
@@ -98,7 +100,7 @@ const rules: Rules.React = {
 
     // Validate closing tag location in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md
-    'react/jsx-closing-tag-location': 'error',
+    'react/jsx-closing-tag-location': ['error'],
 
     // Enforce curly braces or disallow unnecessary curly braces in JSX props and/or children
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
@@ -190,7 +192,7 @@ const rules: Rules.React = {
 
     // prevent accidental JS comments from being injected into JSX as text
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
-    'react/jsx-no-comment-textnodes': 'error',
+    'react/jsx-no-comment-textnodes': ['error'],
 
     // Prevent duplicate props in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-duplicate-props.md
@@ -212,11 +214,11 @@ const rules: Rules.React = {
 
     // Disallow target="_blank" on links
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
-    'react/jsx-no-target-blank': 'error',
+    'react/jsx-no-target-blank': ['error'],
 
     // Disallow undeclared variables in JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md
-    'react/jsx-no-undef': 'error',
+    'react/jsx-no-undef': ['error'],
 
     // One JSX Element Per Line
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
@@ -234,7 +236,7 @@ const rules: Rules.React = {
 
     // Disallow multiple spaces between inline JSX props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md
-    'react/jsx-props-no-multi-spaces': 'error',
+    'react/jsx-props-no-multi-spaces': ['error'],
 
     // Disallow JSX props spreading
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
@@ -282,7 +284,7 @@ const rules: Rules.React = {
 
     // Prevent variables used in JSX to be incorrectly marked as unused
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md
-    'react/jsx-uses-vars': 'error',
+    'react/jsx-uses-vars': ['error'],
 
     // Prevent missing parentheses around multilines JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
@@ -291,23 +293,23 @@ const rules: Rules.React = {
 
     // Prevent using this.state within a this.setState
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md
-    'react/no-access-state-in-setstate': 'error',
+    'react/no-access-state-in-setstate': ['error'],
 
     // Prevent usage of Array index in keys
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
-    'react/no-array-index-key': 'warn',
+    'react/no-array-index-key': ['warn'],
 
     // Prevent passing of children as props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
-    'react/no-children-prop': 'error',
+    'react/no-children-prop': ['error'],
 
     // Prevent usage of dangerous JSX properties
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
-    'react/no-danger': 'warn',
+    'react/no-danger': ['warn'],
 
     // Prevent problem with children and props.dangerouslySetInnerHTML
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md
-    'react/no-danger-with-children': 'error',
+    'react/no-danger-with-children': ['error'],
 
     // Prevent usage of deprecated methods
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md
@@ -320,7 +322,7 @@ const rules: Rules.React = {
 
     // Prevent usage of setState in componentDidUpdate
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
-    'react/no-did-update-set-state': 'error',
+    'react/no-did-update-set-state': ['error'],
 
     // Prevent direct mutation of this.state
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
@@ -328,11 +330,11 @@ const rules: Rules.React = {
 
     // warn against using findDOMNode()
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md
-    'react/no-find-dom-node': 'error',
+    'react/no-find-dom-node': ['error'],
 
     // Prevent usage of isMounted
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md
-    'react/no-is-mounted': 'error',
+    'react/no-is-mounted': ['error'],
 
     // Prevent multiple component definition per file
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
@@ -345,11 +347,11 @@ const rules: Rules.React = {
 
     // Prevent usage of shouldComponentUpdate when extending React.PureComponent
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md
-    'react/no-redundant-should-component-update': 'error',
+    'react/no-redundant-should-component-update': ['error'],
 
     // Prevent usage of the return value of React.render
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-render-return-value.md
-    'react/no-render-return-value': 'error',
+    'react/no-render-return-value': ['error'],
 
     // Prevent usage of setState
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
@@ -357,27 +359,27 @@ const rules: Rules.React = {
 
     // Prevent using string references
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md
-    'react/no-string-refs': 'error',
+    'react/no-string-refs': ['error'],
 
     // Prevent this from being used in stateless functional components
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md
-    'react/no-this-in-sfc': 'error',
+    'react/no-this-in-sfc': ['error'],
 
     // Prevents common casing typos
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-typos.md
-    'react/no-typos': 'error',
+    'react/no-typos': ['error'],
 
     // Prevent invalid characters from appearing in markup
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md
-    'react/no-unescaped-entities': 'error',
+    'react/no-unescaped-entities': ['error'],
 
     // Prevent usage of unknown DOM property
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
-    'react/no-unknown-property': 'error',
+    'react/no-unknown-property': ['error'],
 
     // Prevent usage of UNSAFE_ methods
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md
-    'react/no-unsafe': 'error',
+    'react/no-unsafe': ['error'],
 
     // Prevent unused propType definitions
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
@@ -391,11 +393,11 @@ const rules: Rules.React = {
 
     // Prevent unused state values
     // https://github.com/yannickcr/eslint-plugin-react/pull/1103/
-    'react/no-unused-state': 'error',
+    'react/no-unused-state': ['error'],
 
     // Prevent usage of setState in componentWillUpdate
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
-    'react/no-will-update-set-state': 'error',
+    'react/no-will-update-set-state': ['error'],
 
     // Require ES6 class declarations over React.createClass
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
@@ -422,7 +424,7 @@ const rules: Rules.React = {
 
     // Prevent missing React when using JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
-    'react/react-in-jsx-scope': 'error',
+    'react/react-in-jsx-scope': ['error'],
 
     // Enforce a defaultProps definition for every prop that is not a required prop
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
@@ -436,11 +438,11 @@ const rules: Rules.React = {
 
     // Require render() methods to return something
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
-    'react/require-render-return': 'error',
+    'react/require-render-return': ['error'],
 
     // Prevent extra closing tags for components without children
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
-    'react/self-closing-comp': 'error',
+    'react/self-closing-comp': ['error'],
 
     // Enforce component methods order
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
@@ -464,11 +466,11 @@ const rules: Rules.React = {
 
     // Require style prop value be an object or var
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
-    'react/style-prop-object': 'error',
+    'react/style-prop-object': ['error'],
 
     // Prevent void DOM elements from receiving children
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
-    'react/void-dom-elements-no-children': 'error',
+    'react/void-dom-elements-no-children': ['error'],
 };
 export default {
     name: 'react',

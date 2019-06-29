@@ -36,7 +36,7 @@
         "ci": "make ci",
         "clean": "rimraf -g ./dist/",
         "lint": "eslint ./src ./scripts ./types --ext .ts,.js --cache",
-        "format-no-write": "prettier \"./**/*.{ts,json,md}\" --config=.prettierrc",
+        "format-no-write": "prettier \"./**/*.{ts,json,md}\" --config=.prettierrc.json",
         "format": "yarn format-no-write --write",
         "format-check": "yarn format-no-write --list-different",
         "postinstall": "yarn patch-package",

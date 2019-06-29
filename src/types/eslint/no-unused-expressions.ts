@@ -1,0 +1,12 @@
+// this file is auto-generated. Run `make regenerate-types` to regenerate it.
+
+type NoUnusedExpressions0 = [
+    ('off' | 'error' | 'warn'),
+    {
+        allowShortCircuit?: boolean;
+        allowTernary?: boolean;
+        allowTaggedTemplates?: boolean;
+    },
+];
+
+export type NoUnusedExpressions = 'off' | NoUnusedExpressions0;

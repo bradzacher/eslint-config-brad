@@ -1,0 +1,71 @@
+// this file is auto-generated. Run `make regenerate-types` to regenerate it.
+
+import { ConsistentTestIt } from '../jest/consistent-test-it';
+import { ExpectExpect } from '../jest/expect-expect';
+import { LowercaseName } from '../jest/lowercase-name';
+import { NoAliasMethods } from '../jest/no-alias-methods';
+import { NoCommentedOutTests } from '../jest/no-commented-out-tests';
+import { NoDisabledTests } from '../jest/no-disabled-tests';
+import { NoEmptyTitle } from '../jest/no-empty-title';
+import { NoFocusedTests } from '../jest/no-focused-tests';
+import { NoHooks } from '../jest/no-hooks';
+import { NoIdenticalTitle } from '../jest/no-identical-title';
+import { NoJasmineGlobals } from '../jest/no-jasmine-globals';
+import { NoJestImport } from '../jest/no-jest-import';
+import { NoLargeSnapshots } from '../jest/no-large-snapshots';
+import { NoMocksImport } from '../jest/no-mocks-import';
+import { NoTestCallback } from '../jest/no-test-callback';
+import { NoTestPrefixes } from '../jest/no-test-prefixes';
+import { NoTestReturnStatement } from '../jest/no-test-return-statement';
+import { NoTruthyFalsy } from '../jest/no-truthy-falsy';
+import { PreferCalledWith } from '../jest/prefer-called-with';
+import { PreferExpectAssertions } from '../jest/prefer-expect-assertions';
+import { PreferInlineSnapshots } from '../jest/prefer-inline-snapshots';
+import { PreferSpyOn } from '../jest/prefer-spy-on';
+import { PreferStrictEqual } from '../jest/prefer-strict-equal';
+import { PreferToBeNull } from '../jest/prefer-to-be-null';
+import { PreferToBeUndefined } from '../jest/prefer-to-be-undefined';
+import { PreferToContain } from '../jest/prefer-to-contain';
+import { PreferToHaveLength } from '../jest/prefer-to-have-length';
+import { PreferTodo } from '../jest/prefer-todo';
+import { RequireTothrowMessage } from '../jest/require-tothrow-message';
+import { ValidDescribe } from '../jest/valid-describe';
+import { ValidExpect } from '../jest/valid-expect';
+import { ValidExpectInPromise } from '../jest/valid-expect-in-promise';
+
+interface Jest {
+    'jest/consistent-test-it': ConsistentTestIt;
+    'jest/expect-expect': ExpectExpect;
+    'jest/lowercase-name': LowercaseName;
+    'jest/no-alias-methods': NoAliasMethods;
+    'jest/no-commented-out-tests': NoCommentedOutTests;
+    'jest/no-disabled-tests': NoDisabledTests;
+    'jest/no-empty-title': NoEmptyTitle;
+    'jest/no-focused-tests': NoFocusedTests;
+    'jest/no-hooks': NoHooks;
+    'jest/no-identical-title': NoIdenticalTitle;
+    'jest/no-jasmine-globals': NoJasmineGlobals;
+    'jest/no-jest-import': NoJestImport;
+    'jest/no-large-snapshots': NoLargeSnapshots;
+    'jest/no-mocks-import': NoMocksImport;
+    'jest/no-test-callback': NoTestCallback;
+    'jest/no-test-prefixes': NoTestPrefixes;
+    'jest/no-test-return-statement': NoTestReturnStatement;
+    'jest/no-truthy-falsy': NoTruthyFalsy;
+    'jest/prefer-called-with': PreferCalledWith;
+    'jest/prefer-expect-assertions': PreferExpectAssertions;
+    'jest/prefer-inline-snapshots': PreferInlineSnapshots;
+    'jest/prefer-spy-on': PreferSpyOn;
+    'jest/prefer-strict-equal': PreferStrictEqual;
+    'jest/prefer-to-be-null': PreferToBeNull;
+    'jest/prefer-to-be-undefined': PreferToBeUndefined;
+    'jest/prefer-to-contain': PreferToContain;
+    'jest/prefer-to-have-length': PreferToHaveLength;
+    'jest/prefer-todo': PreferTodo;
+    'jest/require-tothrow-message': RequireTothrowMessage;
+    'jest/valid-describe': ValidDescribe;
+    'jest/valid-expect': ValidExpect;
+    'jest/valid-expect-in-promise': ValidExpectInPromise;
+}
+
+export { Jest };

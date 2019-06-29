@@ -1,75 +1,87 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { format } from 'prettier';
+
+import { toPascalCase } from './toPascalCase';
+import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
 
 import getRuleFinder = require('eslint-find-rules');
 import packageJson = require('../package.json');
+import prettierConfig = require('../.prettierrc.json');
 
-// get the list of all the eslint plugins installed
-const plugins = Object.keys(packageJson.dependencies)
-    .filter(d => d.startsWith('eslint-plugin-') || d.endsWith('/eslint-plugin'))
-    .map(dep => dep.replace('eslint-plugin-', ''))
-    .map(dep => dep.replace('/eslint-plugin', ''));
-const allPluginsPath = path.resolve(__dirname, './all-plugins.json');
-fs.writeFileSync(allPluginsPath, JSON.stringify({ plugins }, null, 4));
+async function main(): Promise<void> {
+    // get the list of all the eslint plugins installed
+    const plugins = Object.keys(packageJson.dependencies)
+        .filter(
+            d => d.startsWith('eslint-plugin-') || d.endsWith('/eslint-plugin'),
+        )
+        .map(dep => dep.replace('eslint-plugin-', ''))
+        .map(dep => dep.replace('/eslint-plugin', ''));
+    const allPluginsPath = path.resolve(__dirname, './all-plugins.json');
+    fs.writeFileSync(allPluginsPath, JSON.stringify({ plugins }, null, 4));
 
-// create the rule finder instance
-const ruleFinder = getRuleFinder(allPluginsPath);
-const allRules = ruleFinder.getAllAvailableRules();
-const rulesPerPlugin: Record<string, Array<string>> = {
-    eslint: [],
-};
-allRules.forEach(rule => {
-    const split = rule.split('/');
-    if (split.length > 1) {
-        rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] || [];
-        rulesPerPlugin[split[0]].push(rule);
-    } else {
-        rulesPerPlugin.eslint.push(rule);
-    }
-});
+    // create the rule finder instance
+    const ruleFinder = getRuleFinder(allPluginsPath);
+    const allRules = ruleFinder.getAllAvailableRules();
+    const rulesPerPlugin: Record<string, Array<string>> = {
+        eslint: [],
+    };
+    allRules.forEach(rule => {
+        const split = rule.split('/');
+        if (split.length > 1) {
+            rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] || [];
+            rulesPerPlugin[split[0]].push(rule);
+        } else {
+            rulesPerPlugin.eslint.push(rule);
+        }
+    });
 
-function toPascalCase(name: string): string {
-    const camel = name
-        .replace(/(-\w)/g, m => m[1].toUpperCase())
-        .replace(/^(@\w)/, m => m[1].toUpperCase());
-    const pascal = camel[0].toUpperCase() + camel.substr(1);
+    await Promise.all(
+        Object.keys(rulesPerPlugin).map(async plugin => {
+            await convertRuleOptionsToTypescriptTypes(plugin);
 
-    return pascal;
+            const ruleNames = rulesPerPlugin[plugin].map(rule => ({
+                name: rule,
+                safeName: toPascalCase(rule.replace(`${plugin}/`, '')),
+            }));
+            const interfaceName = toPascalCase(plugin);
+
+            const typesFile = [
+                '// this file is auto-generated. Run `make regenerate-types` to regenerate it.',
+                '',
+                ...ruleNames.map(
+                    rule =>
+                        `import { ${rule.safeName} } from '../${
+                            plugin === 'eslint' ? 'eslint/' : ''
+                        }${rule.name}'`,
+                ),
+                '',
+                `interface ${interfaceName} {`,
+                ...ruleNames.map(rule => `'${rule.name}': ${rule.safeName};`),
+                '}',
+                '',
+                'export {',
+                `    ${interfaceName}`,
+                '};',
+                '',
+            ].join('\n');
+
+            const formatted = format(typesFile, {
+                ...(prettierConfig as any),
+                parser: 'typescript',
+            });
+
+            fs.writeFileSync(
+                path.resolve(__dirname, `../src/types/${plugin}/index.ts`),
+                formatted,
+                'utf8',
+            );
+
+            console.info('Wrote types for', plugin);
+        }),
+    );
+
+    console.info('Done!');
 }
 
-const indent = '    ';
-const typesFile = [
-    '// this file is auto-generated. Run `regenerate-types` to regenerate it.',
-    '',
-    'declare namespace Rules {',
-    `${indent}type RuleString = 'off' | 'warn' | 'error';`,
-    `${indent}interface RuleArray extends Array<unknown> {`,
-    `${indent}${indent}0: RuleString;`,
-    `${indent}}`,
-    `${indent}type RuleType = RuleString | RuleArray;`,
-    ...Object.keys(rulesPerPlugin).map(k =>
-        [
-            `interface ${toPascalCase(k)} {`,
-            ...rulesPerPlugin[k].map(rule => `${indent}'${rule}': RuleType;`),
-            '}',
-        ]
-            .map(s => `${indent}${s}`)
-            .join('\n'),
-    ),
-    '',
-    `${indent}export {`,
-    `${indent}${indent}RuleType,`,
-    ...Object.keys(rulesPerPlugin).map(
-        k => `${indent}${indent}${toPascalCase(k)},`,
-    ),
-    `${indent}};`,
-    '}',
-    '',
-].join('\n');
-
-fs.writeFileSync(
-    path.resolve(__dirname, '../types/eslint-config.d.ts'),
-    typesFile,
-    'utf8',
-);
-console.info('Successfully Written.');
+main();

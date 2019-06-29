@@ -1,7 +1,9 @@
-const rules: Rules.Import = {
+import { Import } from '../types/import';
+
+const rules: Import = {
     // ensure default import coupled with default export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md
-    'import/default': 'error',
+    'import/default': ['error'],
 
     // This rule reports any dynamic imports without a webpackChunkName specified in a leading
     // block comment in the proper format.
@@ -10,7 +12,7 @@ const rules: Rules.Import = {
 
     // disallow invalid exports, e.g. multiple defaults
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md
-    'import/export': 'error',
+    'import/export': ['error'],
 
     // This rule enforces that all exports are declared at the bottom of the file.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/exports-last.md
@@ -31,13 +33,13 @@ const rules: Rules.Import = {
 
     // disallow non-import statements appearing before import statements
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md
-    'import/first': 'error',
+    'import/first': ['error'],
 
     // Reports when named exports are not grouped together in a single export declaration
     // or when multiple assignments to CommonJS module.exports or exports object are present
     // in a single file.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/group-exports.md
-    'import/group-exports': 'error',
+    'import/group-exports': ['error'],
 
     // Forbid modules to have too many dependencies
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/max-dependencies.md
@@ -54,15 +56,15 @@ const rules: Rules.Import = {
 
     // Require a newline after the last import/require in a group
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
-    'import/newline-after-import': 'error',
+    'import/newline-after-import': ['error'],
 
     // Forbid import of modules using absolute paths
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md
-    'import/no-absolute-path': 'error',
+    'import/no-absolute-path': ['error'],
 
     // disallow AMD require/define
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md
-    'import/no-amd': 'error',
+    'import/no-amd': ['error'],
 
     // Reports if a module's default export is unnamed
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-anonymous-default-export.md
@@ -84,11 +86,11 @@ const rules: Rules.Import = {
 
     // Ensures that there is no resolvable path back to this module via its dependencies.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
-    'import/no-cycle': 'error',
+    'import/no-cycle': ['error'],
 
     // forbid default exports.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
-    'import/no-default-export': 'error',
+    'import/no-default-export': ['error'],
 
     // disallow use of jsdoc-marked-deprecated imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
@@ -96,11 +98,11 @@ const rules: Rules.Import = {
 
     // disallow duplicate imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
-    'import/no-duplicates': 'error',
+    'import/no-duplicates': ['error'],
 
     // Forbid require() calls with expressions
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md
-    'import/no-dynamic-require': 'error',
+    'import/no-dynamic-require': ['error'],
 
     // Forbid the use of extraneous packages
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
@@ -124,19 +126,19 @@ const rules: Rules.Import = {
 
     // Forbid mutable exports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md
-    'import/no-mutable-exports': 'error',
+    'import/no-mutable-exports': ['error'],
 
     // do not allow a default import name to match a named export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
-    'import/no-named-as-default': 'error',
+    'import/no-named-as-default': ['error'],
 
     // warn on accessing default export property names that are also named exports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
-    'import/no-named-as-default-member': 'error',
+    'import/no-named-as-default-member': ['error'],
 
     // Prevent importing the default as if it were named
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
-    'import/no-named-default': 'error',
+    'import/no-named-default': ['error'],
 
     // Prohibit named exports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-export.md
@@ -160,7 +162,7 @@ const rules: Rules.Import = {
 
     // Forbid a module from importing itself
     // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
-    'import/no-self-import': 'error',
+    'import/no-self-import': ['error'],
 
     // Prevent unassigned imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unassigned-import.md
@@ -179,7 +181,7 @@ const rules: Rules.Import = {
 
     // ensure modules both have an export and are imported in another module
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unused-modules.md
-    'import/no-unused-modules': 'error',
+    'import/no-unused-modules': ['error'],
 
     // Ensures that there are no useless path segments
     // https://github.com/benmosher/eslint-plugin-import/issues/1032
@@ -187,7 +189,7 @@ const rules: Rules.Import = {
 
     // Forbid Webpack loader syntax in imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md
-    'import/no-webpack-loader-syntax': 'error',
+    'import/no-webpack-loader-syntax': ['error'],
 
     // Enforce a convention in module import order
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
@@ -210,10 +212,7 @@ const rules: Rules.Import = {
     'import/prefer-default-export': 'off',
 
     // Warn if a module could be mistakenly parsed as a script by a consumer
-    // leveraging Unambiguous JavaScript Grammar
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md
-    // this should not be enabled until this proposal has at least been *presented* to TC39.
-    // At the moment, it's not a thing.
+    // leveraging Unambiguous JavaScript Grammar // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md // this should not be enabled until this proposal has at least been *presented* to TC39. // At the moment, it's not a thing.
     'import/unambiguous': 'off',
 };
 export default {
@@ -222,11 +221,11 @@ export default {
     settings: {
         'import/extensions': ['js', 'jsx', 'ts', 'tsx'],
         'import/parsers': {
-            'typescript-eslint-parser': ['ts', 'tsx'],
+            'typescript-eslin t-parse r': [' ts', 'tsx'],
         },
         'import/ignore': [
             'node_modules',
-            '\\.(coffee|scss|css|less|hbs|svg|json)$',
+            '\\.(coffee|scss| css|less|hbs|svg|json)$',
         ],
     },
 };
