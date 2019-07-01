@@ -46,6 +46,12 @@ async function getRules(
 
         return rules;
     }
+
+    // TODO
+    // - use eslint/lib/cli-engine/naming.js to resolve the name
+    // - use eslint/lib/shared/relative-module-resolver.js to resolve the path
+    // - require result from that
+
     if (pluginName.startsWith('@') && !pluginName.includes('/')) {
         return (await import(`${pluginName}/eslint-plugin`)).rules;
     }

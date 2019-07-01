@@ -56,11 +56,11 @@ const rules: Import = {
 
     // Require a newline after the last import/require in a group
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
-    'import/newline-after-import': ['error'],
+    'import/newline-after-import': ['error', {}],
 
     // Forbid import of modules using absolute paths
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md
-    'import/no-absolute-path': ['error'],
+    'import/no-absolute-path': ['error', {}],
 
     // disallow AMD require/define
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md
@@ -86,7 +86,7 @@ const rules: Import = {
 
     // Ensures that there is no resolvable path back to this module via its dependencies.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
-    'import/no-cycle': ['error'],
+    'import/no-cycle': ['error', {}],
 
     // forbid default exports.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
@@ -181,7 +181,7 @@ const rules: Import = {
 
     // ensure modules both have an export and are imported in another module
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unused-modules.md
-    'import/no-unused-modules': ['error'],
+    'import/no-unused-modules': ['error', {}],
 
     // Ensures that there are no useless path segments
     // https://github.com/benmosher/eslint-plugin-import/issues/1032
@@ -212,7 +212,8 @@ const rules: Import = {
     'import/prefer-default-export': 'off',
 
     // Warn if a module could be mistakenly parsed as a script by a consumer
-    // leveraging Unambiguous JavaScript Grammar // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md // this should not be enabled until this proposal has at least been *presented* to TC39. // At the moment, it's not a thing.
+    // leveraging Unambiguous JavaScript Grammar
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md // this should not be enabled until this proposal has at least been *presented* to TC39. // At the moment, it's not a thing.
     'import/unambiguous': 'off',
 };
 export default {
@@ -221,11 +222,11 @@ export default {
     settings: {
         'import/extensions': ['js', 'jsx', 'ts', 'tsx'],
         'import/parsers': {
-            'typescript-eslin t-parse r': [' ts', 'tsx'],
+            '@typescript-eslint/parser': ['ts', 'tsx'],
         },
         'import/ignore': [
             'node_modules',
-            '\\.(coffee|scss| css|less|hbs|svg|json)$',
+            '\\.(coffee|scss|css|less|hbs|svg|json)$',
         ],
     },
 };
