@@ -13,20 +13,25 @@ const rules: Jest = {
 
     // Ensure that there is at least one expect call made in a test
     // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/expect-expect.md
-    'jest/expect-expect': ['error'],
+    'jest/expect-expect': ['error', {}],
 
     // Enforce it, test and describe to have descriptions that begin with a lowercase letter.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/lowercase-name.md
+    // TODO https://github.com/jest-community/eslint-plugin-jest/pull/291
     'jest/lowercase-name': [
         'error',
         {
             ignore: ['describe'],
         },
-    ],
+    ] as any,
 
     // Don't use alias methods.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md
     'jest/no-alias-methods': ['error'],
+
+    // Disallow commented out tests
+    // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md
+    'jest/no-commented-out-tests': ['warn'],
 
     // This rule raises a warning about 'skip' tests.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
