@@ -571,12 +571,8 @@ const rules: Eslint = {
 
     // This rule is aimed at eliminating empty functions.
     // https://eslint.org/docs/rules/no-empty-function
-    'no-empty-function': [
-        'error',
-        {
-            allow: ['arrowFunctions', 'functions', 'methods'],
-        },
-    ],
+    // covered by typescript
+    'no-empty-function': 'off',
 
     // This rule aims to flag any empty patterns in destructured objects and arrays, and as such,
     // will report a problem whenever one is encountered.

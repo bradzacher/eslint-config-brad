@@ -3,14 +3,12 @@
 type Semi0 =
     | [
           ('off' | 'error' | 'warn'),
-          ('off' | 'error' | 'warn'),
           'never',
           {
               beforeStatementContinuationChars?: 'always' | 'any' | 'never';
           },
       ]
     | [
-          ('off' | 'error' | 'warn'),
           ('off' | 'error' | 'warn'),
           'always',
           {

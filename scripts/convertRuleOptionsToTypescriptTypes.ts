@@ -1,15 +1,16 @@
-import { Rule } from 'eslint';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { TSESLint } from '@typescript-eslint/experimental-utils';
 import fs from 'fs';
 // eslint-disable-next-line import/no-unresolved
 import { JSONSchema4 } from 'json-schema';
 import { compile } from 'json-schema-to-typescript';
 import mkdirp from 'mkdirp';
 import path from 'path';
-import { format } from 'prettier';
+import { Options as PrettierOptions, format } from 'prettier';
 
 import { toPascalCase } from './toPascalCase';
 
-import prettierConfig = require('../.prettierrc.json');
+const prettierConfig: PrettierOptions = require('../.prettierrc.json');
 
 interface Definition {
     defs: string;
@@ -22,7 +23,7 @@ async function compileSchema(
 ): Promise<Definition> {
     const code = await compile(schema, `${typeName}${index}`, {
         bannerComment: '',
-        style: prettierConfig as any,
+        style: prettierConfig,
     });
 
     return {
@@ -31,16 +32,16 @@ async function compileSchema(
     };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type RuleModule = TSESLint.RuleModule<any, any, any>;
 async function getRules(
     pluginName: string,
-): Promise<Record<string, Rule.RuleModule>> {
+): Promise<Record<string, RuleModule>> {
     if (pluginName === 'eslint') {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        const lazyRules = await import('eslint/lib/rules'); // eslint-disable-line import/no-unresolved
+        const lazyRules = await import('eslint/lib/rules');
 
-        const rules: Record<string, Rule.RuleModule> = {};
-        lazyRules.default.forEach((rule: Rule.RuleModule, ruleId: string) => {
+        const rules: Record<string, RuleModule> = {};
+        lazyRules.default.forEach((rule, ruleId) => {
             rules[ruleId] = rule;
         });
 
@@ -70,31 +71,46 @@ function adjustSchema(schema: JSONSchema4): JSONSchema4 {
     }
 
     if (Array.isArray(schema.items)) {
-        schema.items.unshift(RuleLevelString);
+        if (schema.items[0] !== RuleLevelString) {
+            schema.items.unshift(RuleLevelString);
+        }
     } else if (schema.items !== undefined) {
         if (schema.items.oneOf || schema.items.anyOf) {
             const oldItem = schema.items;
-            schema.items = [
-                RuleLevelString,
-            ];
+            schema.items = [RuleLevelString];
             schema.additionalItems = oldItem;
         } else {
-            schema.items = [
-                RuleLevelString,
-                schema.items,
-            ];
+            schema.items = [RuleLevelString, schema.items];
         }
     } else {
         schema = {
             type: 'array',
-            items: [
-                RuleLevelString,
-                schema,
-            ],
+            items: [RuleLevelString, schema],
         };
     }
 
     return schema;
+}
+
+function recursivelyFixRefs(
+    schema: JSONSchema4 | string | null | boolean,
+    idx: number,
+): void {
+    if (schema == null || typeof schema !== 'object') {
+        return;
+    }
+
+    Object.keys(schema).forEach(key => {
+        if (key === '$ref' && schema[key]!.startsWith('#/')) {
+            schema[key] = `#/items/${idx + 1}/${schema[key]!.substring(2)}`;
+        } else if (Array.isArray(schema[key])) {
+            (schema[key] as JSONSchema4[]).forEach(subSchema =>
+                recursivelyFixRefs(subSchema, idx),
+            );
+        } else if (typeof schema[key] === 'object') {
+            recursivelyFixRefs(schema[key], idx);
+        }
+    });
 }
 
 async function convertRuleOptionsToTypescriptTypes(
@@ -104,7 +120,7 @@ async function convertRuleOptionsToTypescriptTypes(
 
     await Promise.all(
         Object.entries(rules).map(async ([ruleName, rule]) => {
-            if (ruleName === 'default') {
+            if (ruleName === 'default' && pluginName !== 'import') {
                 return;
             }
 
@@ -121,31 +137,30 @@ async function convertRuleOptionsToTypescriptTypes(
                 const schema = rule.meta.schema;
                 let fixedSchema: JSONSchema4;
                 if (Array.isArray(schema)) {
+                    schema.forEach(recursivelyFixRefs);
                     fixedSchema = {
                         type: 'array',
-                        items: [
-                            RuleLevelString,
-                            ...schema,
-                        ],
+                        items: [RuleLevelString, ...schema],
                     };
                 } else {
                     fixedSchema = adjustSchema(schema);
                 }
-                const unformattedCode = await compileSchema(typeName, fixedSchema);
+                const unformattedCode = await compileSchema(
+                    typeName,
+                    fixedSchema,
+                );
 
                 code = format(
                     `${unformattedCode.defs}\n${unformattedCode.typeExport}`,
                     {
                         ...prettierConfig,
                         parser: 'typescript',
-                    } as any,
+                    },
                 );
             }
 
-            const folderName = path.resolve(
-                __dirname,
-                `../src/types/${pluginName}`,
-            );
+            const root = path.resolve(__dirname, '..');
+            const folderName = path.resolve(root, `src/types/${pluginName}`);
             await new Promise((resolve, reject) =>
                 mkdirp(folderName, (err, made) => {
                     if (err) {
@@ -166,7 +181,7 @@ async function convertRuleOptionsToTypescriptTypes(
                 ].join('\n'),
             );
 
-            console.info('Wrote', filename);
+            console.info('Wrote', path.relative(root, filename));
         }),
     );
 }
