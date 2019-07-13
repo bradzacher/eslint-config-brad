@@ -229,7 +229,7 @@ const rules: Eslint = {
 
     // require function expressions to have a name
     // https://eslint.org/docs/rules/func-names
-    'func-names': ['warn', "never", {}],
+    'func-names': ['warn', 'never', {}],
 
     // This rule enforces a particular type of function style throughout a JavaScript file, either declarations or expressions
     // https://eslint.org/docs/rules/func-style
@@ -365,17 +365,8 @@ const rules: Eslint = {
     // This rule enforces a maximum line length to increase code readability and maintainability.
     // The length of a line is defined as the number of Unicode characters in the line.
     // https://eslint.org/docs/rules/max-len
-    'max-len': [
-        'warn',
-        {
-            code: 120,
-            tabWidth: 4,
-            ignoreComments: true,
-            ignoreUrls: true,
-        },
-        {},
-        {},
-    ],
+    // handled by prettier
+    'max-len': 'off',
 
     // This rule enforces a maximum number of lines per file, in order to aid in maintainability and reduce complexity.
     // https://eslint.org/docs/rules/max-lines
@@ -851,12 +842,12 @@ const rules: Eslint = {
 
     // This rule allows you to specify global variable names that you don’t want to use in your application
     // https://eslint.org/docs/rules/no-restricted-globals
-    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
     'no-restricted-globals': [
         'error',
         'isFinite',
         ...restrictedGlobals,
-    ] as any,
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
+    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
 
     // This rule allows you to specify imports that you don’t want to use in your application
     // https://eslint.org/docs/rules/no-restricted-imports
@@ -869,7 +860,6 @@ const rules: Eslint = {
     // This rule looks for accessing a given property key on a given object name, either when reading the property’s
     // value or invoking it as a function
     // https://eslint.org/docs/rules/no-restricted-properties
-    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
     'no-restricted-properties': [
         'error',
         {
@@ -920,11 +910,11 @@ const rules: Eslint = {
             property: 'pow',
             message: 'Use the exponentiation operator (**) instead.',
         },
-    ] as any,
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
+    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
 
     // This rule disallows specified (that is, user-defined) syntax
     // https://eslint.org/docs/rules/no-restricted-syntax
-    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
     'no-restricted-syntax': [
         'error',
         {
@@ -947,7 +937,8 @@ const rules: Eslint = {
             message:
                 '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
         },
-    ] as any,
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
+    // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
 
     // This rule aims to eliminate assignments from return statements
     // https://eslint.org/docs/rules/no-return-assign

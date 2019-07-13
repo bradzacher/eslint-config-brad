@@ -1,3 +1,10 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type NoLargeSnapshots = 'off' | ['warn' | 'error'];
+type NoLargeSnapshots0 = [
+    ('off' | 'error' | 'warn'),
+    {
+        maxSize?: number;
+    },
+];
+
+export type NoLargeSnapshots = 'off' | NoLargeSnapshots0;

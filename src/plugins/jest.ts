@@ -17,13 +17,13 @@ const rules: Jest = {
 
     // Enforce it, test and describe to have descriptions that begin with a lowercase letter.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/lowercase-name.md
-    // TODO https://github.com/jest-community/eslint-plugin-jest/pull/291
     'jest/lowercase-name': [
         'error',
         {
             ignore: ['describe'],
         },
-    ] as any,
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
+    // TODO https://github.com/jest-community/eslint-plugin-jest/pull/291
 
     // Don't use alias methods.
     // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md

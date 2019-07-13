@@ -3,6 +3,7 @@
 type NoExplicitAny0 = [
     ('off' | 'error' | 'warn'),
     {
+        fixToUnknown?: boolean;
         ignoreRestArgs?: boolean;
     },
 ];

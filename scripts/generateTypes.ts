@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { format } from 'prettier';
+import { format, Options } from 'prettier';
 
 import { toPascalCase } from './toPascalCase';
 import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
 
 import getRuleFinder = require('eslint-find-rules');
 import packageJson = require('../package.json');
-import prettierConfig = require('../.prettierrc.json');
+
+const prettierConfig: Options = require('../.prettierrc.json');
 
 async function main(): Promise<void> {
     // get the list of all the eslint plugins installed
@@ -29,6 +30,7 @@ async function main(): Promise<void> {
     allRules.forEach(rule => {
         const split = rule.split('/');
         if (split.length > 1) {
+            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
             rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] || [];
             rulesPerPlugin[split[0]].push(rule);
         } else {
@@ -67,7 +69,7 @@ async function main(): Promise<void> {
             ].join('\n');
 
             const formatted = format(typesFile, {
-                ...(prettierConfig as any),
+                ...prettierConfig,
                 parser: 'typescript',
             });
 
@@ -84,4 +86,5 @@ async function main(): Promise<void> {
     console.info('Done!');
 }
 
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 main();

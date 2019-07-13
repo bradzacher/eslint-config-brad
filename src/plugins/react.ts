@@ -331,8 +331,10 @@ const rules: React = {
 
     // Prevent usage of setState in componentDidUpdate
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
+    'react/no-did-update-set-state': [
+        'error',
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
     // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
-    'react/no-did-update-set-state': ['error'] as any,
 
     // Prevent direct mutation of this.state
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
@@ -407,8 +409,10 @@ const rules: React = {
 
     // Prevent usage of setState in componentWillUpdate
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
+    'react/no-will-update-set-state': [
+        'error',
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
     // TODO - https://github.com/bcherny/json-schema-to-typescript/issues/218
-    'react/no-will-update-set-state': ['error'] as any,
 
     // Require ES6 class declarations over React.createClass
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
@@ -449,8 +453,10 @@ const rules: React = {
 
     // Require render() methods to return something
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
+    'react/require-render-return': [
+        'error',
+    ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
     // TODO - https://github.com/yannickcr/eslint-plugin-react/pull/2340
-    'react/require-render-return': ['error'] as any,
 
     // Prevent extra closing tags for components without children
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md

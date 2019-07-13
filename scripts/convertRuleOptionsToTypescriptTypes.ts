@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 import fs from 'fs';
-// eslint-disable-next-line import/no-unresolved
 import { JSONSchema4 } from 'json-schema';
 import { compile } from 'json-schema-to-typescript';
 import mkdirp from 'mkdirp';
@@ -12,10 +11,10 @@ import { toPascalCase } from './toPascalCase';
 
 const prettierConfig: PrettierOptions = require('../.prettierrc.json');
 
-interface Definition {
+type Definition = {
     defs: string;
     typeExport: string;
-}
+};
 async function compileSchema(
     typeName: string,
     schema: JSONSchema4,
@@ -64,7 +63,7 @@ const RuleLevelString = {
     enum: ['off', 'error', 'warn'],
 };
 function adjustSchema(schema: JSONSchema4): JSONSchema4 {
-    if (schema.anyOf) {
+    if (schema.anyOf != null) {
         schema.anyOf.forEach(s => adjustSchema(s));
 
         return schema;
@@ -75,7 +74,7 @@ function adjustSchema(schema: JSONSchema4): JSONSchema4 {
             schema.items.unshift(RuleLevelString);
         }
     } else if (schema.items !== undefined) {
-        if (schema.items.oneOf || schema.items.anyOf) {
+        if (schema.items.oneOf != null || schema.items.anyOf != null) {
             const oldItem = schema.items;
             schema.items = [RuleLevelString];
             schema.additionalItems = oldItem;
@@ -100,15 +99,20 @@ function recursivelyFixRefs(
         return;
     }
 
-    Object.keys(schema).forEach(key => {
-        if (key === '$ref' && schema[key]!.startsWith('#/')) {
-            schema[key] = `#/items/${idx + 1}/${schema[key]!.substring(2)}`;
-        } else if (Array.isArray(schema[key])) {
-            (schema[key] as JSONSchema4[]).forEach(subSchema =>
+    Object.keys(schema).forEach((key: keyof JSONSchema4) => {
+        const current = schema[key];
+        if (current == null) {
+            return;
+        }
+
+        if (key === '$ref' && (current as string).startsWith('#/')) {
+            schema[key] = `#/items/${idx + 1}/${current.substring(2)}`;
+        } else if (Array.isArray(current)) {
+            (current as Array<JSONSchema4>).forEach(subSchema =>
                 recursivelyFixRefs(subSchema, idx),
             );
-        } else if (typeof schema[key] === 'object') {
-            recursivelyFixRefs(schema[key], idx);
+        } else if (typeof current === 'object') {
+            recursivelyFixRefs(current, idx);
         }
     });
 }
@@ -128,8 +132,8 @@ async function convertRuleOptionsToTypescriptTypes(
 
             let code: string;
             if (
-                !rule.meta ||
-                !rule.meta.schema ||
+                rule.meta == null ||
+                rule.meta.schema == null ||
                 rule.meta.schema.length === 0
             ) {
                 code = `export type ${typeName} = 'off' | ['warn' | 'error'];\n`;
@@ -163,7 +167,7 @@ async function convertRuleOptionsToTypescriptTypes(
             const folderName = path.resolve(root, `src/types/${pluginName}`);
             await new Promise((resolve, reject) =>
                 mkdirp(folderName, (err, made) => {
-                    if (err) {
+                    if (err != null) {
                         reject(err);
                     }
 

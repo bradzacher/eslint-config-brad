@@ -172,6 +172,7 @@ const rules: TypescriptEslint = {
     '@typescript-eslint/no-explicit-any': [
         'warn',
         {
+            fixToUnknown: true,
             ignoreRestArgs: false,
         },
     ],
@@ -242,12 +243,7 @@ const rules: TypescriptEslint = {
     // This rule disallows the use of parameter properties in constructors,
     // forcing the user to explicitly declare all properties in the class.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-parameter-properties.md
-    '@typescript-eslint/no-parameter-properties': [
-        'error',
-        {
-            allows: [],
-        },
-    ],
+    '@typescript-eslint/no-parameter-properties': ['error', {}],
 
     // Disallows invocation of require()
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-require-imports.md
@@ -263,11 +259,6 @@ const rules: TypescriptEslint = {
             allowedNames: [],
         },
     ],
-
-    // Does not allow the use of /// <reference /> comments.
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-triple-slash-reference.md
-    // warn discourage it - it can be specifically disabled in code if there's a valid use case
-    '@typescript-eslint/no-triple-slash-reference': ['warn'],
 
     // Disallow the use of type aliases
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-type-alias.md
@@ -326,6 +317,10 @@ const rules: TypescriptEslint = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-namespace-keyword.md
     '@typescript-eslint/prefer-namespace-keyword': 'off',
 
+    // Require never-modified private members be marked as
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly.md
+    '@typescript-eslint/prefer-readonly': ['error', {}],
+
     // Enforce to use RegExp#exec over String#match
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md
     '@typescript-eslint/prefer-regexp-exec': ['error'],
@@ -353,6 +348,22 @@ const rules: TypescriptEslint = {
         'always',
         {
             omitLastInOneLineBlock: false,
+        },
+    ],
+
+    // Boolean expressions are limited to booleans
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+    '@typescript-eslint/strict-boolean-expressions': ['error'],
+
+    // Does not allow the use of /// <reference /> comments.
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/triple-slash-reference.md
+    // warn discourage it - it can be specifically disabled in code if there's a valid use case
+    '@typescript-eslint/triple-slash-reference': [
+        'warn',
+        {
+            lib: 'never',
+            path: 'never',
+            types: 'never',
         },
     ],
 

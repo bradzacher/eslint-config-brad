@@ -7,19 +7,19 @@
     "author": "Brad Zacher <brad.zacher@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^1.11.0",
-        "@typescript-eslint/parser": "^1.11.0",
+        "@typescript-eslint/eslint-plugin": "^1.12.0",
+        "@typescript-eslint/parser": "^1.12.0",
         "eslint": "^6.0.1",
         "eslint-plugin-eslint-comments": "^3.1.2",
         "eslint-plugin-import": "^2.18.0",
-        "eslint-plugin-jest": "^22.7.1",
+        "eslint-plugin-jest": "^22.7.2",
         "eslint-plugin-react": "^7.14.2",
         "eslint-restricted-globals": "^0.2.0"
     },
     "devDependencies": {
         "@types/eslint": "^4.16.6",
         "@types/mkdirp": "^0.5.2",
-        "@types/node": "^12.0.10",
+        "@types/node": "^12.6.2",
         "eslint-find-rules": "^3.3.1",
         "eslint-import-resolver-node": "^0.3.2",
         "husky": "^2.7.0",
@@ -29,7 +29,7 @@
         "prettier": "^1.18.2",
         "rimraf": "^2.6.3",
         "ts-node": "^8.3.0",
-        "typescript": "^3.5.2"
+        "typescript": "^3.5.3"
     },
     "scripts": {
         "build": "make build",
