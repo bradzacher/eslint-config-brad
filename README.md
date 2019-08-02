@@ -26,6 +26,14 @@ If you're working on a react project:
 }
 ```
 
+### Prettier
+
+Standardised prettier config can be used by creating the following `.prettierrc.json` in your project root:
+
+```json
+"eslint-config-brad/prettier"
+```
+
 ## Developing
 
 Clone the repo, and then install the dependencies `yarn install`
