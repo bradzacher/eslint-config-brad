@@ -4,8 +4,12 @@ import path from 'path';
 import packageJson = require('../package.json');
 
 delete packageJson.private;
-// the postinstall should only be used locally...
-delete packageJson.scripts.postinstall;
+// no need to publis these props
+delete packageJson.scripts;
+delete packageJson.husky;
+delete packageJson.devDependencies;
+delete packageJson.resolutions;
+
 fs.writeFileSync(
   path.resolve(__dirname, '../dist/package.json'),
   JSON.stringify(packageJson, null, 2),

@@ -1,10 +1,11 @@
 .PHONY: build
 build:
 	@yarn tsc
-	@cp package.json dist
-	@cp README.md dist
-	@cp LICENCE dist
-	@ts-node ./scripts/removePrivate.ts
+	cp package.json dist
+	cp README.md dist
+	cp LICENCE dist
+	rm -fr dist/types
+	yarn ts-node ./scripts/removePrivate.ts
 
 .PHONY: format
 format:
