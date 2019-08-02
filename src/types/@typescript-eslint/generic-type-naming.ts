@@ -1,5 +1,8 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type GenericTypeNaming0 = [('off' | 'error' | 'warn'), string];
+type GenericTypeNaming0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [("off" | "error" | "warn"), string];
 
-export type GenericTypeNaming = 'off' | GenericTypeNaming0;
+export type GenericTypeNaming = "off" | GenericTypeNaming0;

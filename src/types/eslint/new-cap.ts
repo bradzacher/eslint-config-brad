@@ -1,8 +1,11 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type NewCap0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type NewCap0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         newIsCap?: boolean;
         capIsNew?: boolean;
         newIsCapExceptions?: string[];
@@ -10,7 +13,7 @@ type NewCap0 = [
         capIsNewExceptions?: string[];
         capIsNewExceptionPattern?: string;
         properties?: boolean;
-    },
-];
+      }
+    ];
 
-export type NewCap = 'off' | NewCap0;
+export type NewCap = "off" | NewCap0;

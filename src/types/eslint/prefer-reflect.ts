@@ -1,20 +1,23 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type PreferReflect0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type PreferReflect0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         exceptions?: (
-            | 'apply'
-            | 'call'
-            | 'delete'
-            | 'defineProperty'
-            | 'getOwnPropertyDescriptor'
-            | 'getPrototypeOf'
-            | 'setPrototypeOf'
-            | 'isExtensible'
-            | 'getOwnPropertyNames'
-            | 'preventExtensions')[];
-    },
-];
+          | "apply"
+          | "call"
+          | "delete"
+          | "defineProperty"
+          | "getOwnPropertyDescriptor"
+          | "getPrototypeOf"
+          | "setPrototypeOf"
+          | "isExtensible"
+          | "getOwnPropertyNames"
+          | "preventExtensions")[];
+      }
+    ];
 
-export type PreferReflect = 'off' | PreferReflect0;
+export type PreferReflect = "off" | PreferReflect0;

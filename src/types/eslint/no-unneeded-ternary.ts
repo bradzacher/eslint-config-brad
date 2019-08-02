@@ -1,10 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type NoUnneededTernary0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type NoUnneededTernary0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         defaultAssignment?: boolean;
-    },
-];
+      }
+    ];
 
-export type NoUnneededTernary = 'off' | NoUnneededTernary0;
+export type NoUnneededTernary = "off" | NoUnneededTernary0;

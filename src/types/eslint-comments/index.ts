@@ -10,14 +10,14 @@ import { NoUnusedEnable } from '../eslint-comments/no-unused-enable';
 import { NoUse } from '../eslint-comments/no-use';
 
 interface EslintComments {
-    'eslint-comments/disable-enable-pair': DisableEnablePair;
-    'eslint-comments/no-aggregating-enable': NoAggregatingEnable;
-    'eslint-comments/no-duplicate-disable': NoDuplicateDisable;
-    'eslint-comments/no-restricted-disable': NoRestrictedDisable;
-    'eslint-comments/no-unlimited-disable': NoUnlimitedDisable;
-    'eslint-comments/no-unused-disable': NoUnusedDisable;
-    'eslint-comments/no-unused-enable': NoUnusedEnable;
-    'eslint-comments/no-use': NoUse;
+  'eslint-comments/disable-enable-pair': DisableEnablePair;
+  'eslint-comments/no-aggregating-enable': NoAggregatingEnable;
+  'eslint-comments/no-duplicate-disable': NoDuplicateDisable;
+  'eslint-comments/no-restricted-disable': NoRestrictedDisable;
+  'eslint-comments/no-unlimited-disable': NoUnlimitedDisable;
+  'eslint-comments/no-unused-disable': NoUnusedDisable;
+  'eslint-comments/no-unused-enable': NoUnusedEnable;
+  'eslint-comments/no-use': NoUse;
 }
 
 export { EslintComments };

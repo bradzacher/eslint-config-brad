@@ -1,10 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type NoMultiComp0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type NoMultiComp0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         ignoreStateless?: boolean;
-    },
-];
+      }
+    ];
 
-export type NoMultiComp = 'off' | NoMultiComp0;
+export type NoMultiComp = "off" | NoMultiComp0;

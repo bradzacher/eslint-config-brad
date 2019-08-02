@@ -1,17 +1,20 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type FunctionParenNewline0 = [
-    ('off' | 'error' | 'warn'),
-    (
+type FunctionParenNewline0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      (
         | (
-              | 'always'
-              | 'never'
-              | 'consistent'
-              | 'multiline'
-              | 'multiline-arguments')
+            | "always"
+            | "never"
+            | "consistent"
+            | "multiline"
+            | "multiline-arguments")
         | {
-              minItems?: number;
-          }),
-];
+            minItems?: number;
+          })
+    ];
 
-export type FunctionParenNewline = 'off' | FunctionParenNewline0;
+export type FunctionParenNewline = "off" | FunctionParenNewline0;

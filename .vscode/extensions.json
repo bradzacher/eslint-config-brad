@@ -1,9 +1,9 @@
 {
-    "recommendations": [
-        "msjsdiag.debugger-for-chrome",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode"
-    ],
-    "unwantedRecommendations": ["hookyqr.beautify", "dbaeumer.jshint"]
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode"
+  ],
+  "unwantedRecommendations": ["hookyqr.beautify", "dbaeumer.jshint"]
 }

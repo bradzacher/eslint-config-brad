@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type StrictBooleanExpressions = 'off' | ['warn' | 'error'];
+type StrictBooleanExpressions0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
+        ignoreRhs?: boolean;
+      }
+    ];
+
+export type StrictBooleanExpressions = "off" | StrictBooleanExpressions0;

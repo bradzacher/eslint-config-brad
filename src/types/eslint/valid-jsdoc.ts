@@ -1,13 +1,16 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type ValidJsdoc0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type ValidJsdoc0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         prefer?: {
-            [k: string]: string;
+          [k: string]: string;
         };
         preferType?: {
-            [k: string]: string;
+          [k: string]: string;
         };
         requireReturn?: boolean;
         requireParamDescription?: boolean;
@@ -15,7 +18,7 @@ type ValidJsdoc0 = [
         matchDescription?: string;
         requireReturnType?: boolean;
         requireParamType?: boolean;
-    },
-];
+      }
+    ];
 
-export type ValidJsdoc = 'off' | ValidJsdoc0;
+export type ValidJsdoc = "off" | ValidJsdoc0;

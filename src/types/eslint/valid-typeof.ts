@@ -1,10 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type ValidTypeof0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type ValidTypeof0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         requireStringLiterals?: boolean;
-    },
-];
+      }
+    ];
 
-export type ValidTypeof = 'off' | ValidTypeof0;
+export type ValidTypeof = "off" | ValidTypeof0;

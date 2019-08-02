@@ -1,15 +1,18 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type ForbidElements0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type ForbidElements0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         forbid?: (
-            | string
-            | {
-                  element: string;
-                  message?: string;
-              })[];
-    },
-];
+          | string
+          | {
+              element: string;
+              message?: string;
+            })[];
+      }
+    ];
 
-export type ForbidElements = 'off' | ForbidElements0;
+export type ForbidElements = "off" | ForbidElements0;

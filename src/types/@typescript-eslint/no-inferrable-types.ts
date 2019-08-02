@@ -1,11 +1,14 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type NoInferrableTypes0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type NoInferrableTypes0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         ignoreParameters?: boolean;
         ignoreProperties?: boolean;
-    },
-];
+      }
+    ];
 
-export type NoInferrableTypes = 'off' | NoInferrableTypes0;
+export type NoInferrableTypes = "off" | NoInferrableTypes0;

@@ -1,11 +1,14 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-type NoWarningComments0 = [
-    ('off' | 'error' | 'warn'),
-    {
+type NoWarningComments0 =
+  | []
+  | [("off" | "error" | "warn")]
+  | [
+      ("off" | "error" | "warn"),
+      {
         terms?: string[];
-        location?: 'start' | 'anywhere';
-    },
-];
+        location?: "start" | "anywhere";
+      }
+    ];
 
-export type NoWarningComments = 'off' | NoWarningComments0;
+export type NoWarningComments = "off" | NoWarningComments0;
