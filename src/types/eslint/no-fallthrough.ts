@@ -2,12 +2,12 @@
 
 type NoFallthrough0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         commentPattern?: string;
-      }
+      },
     ];
 
-export type NoFallthrough = "off" | NoFallthrough0;
+export type NoFallthrough = 'off' | NoFallthrough0;

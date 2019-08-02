@@ -2,9 +2,9 @@
 
 type ForbidComponentProps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         forbid?: (
           | string
@@ -14,7 +14,7 @@ type ForbidComponentProps0 =
               [k: string]: any;
             })[];
         [k: string]: any;
-      }
+      },
     ];
 
-export type ForbidComponentProps = "off" | ForbidComponentProps0;
+export type ForbidComponentProps = 'off' | ForbidComponentProps0;

@@ -5,11 +5,10 @@ import { JSONSchema4 } from 'json-schema';
 import { compile } from 'json-schema-to-typescript';
 import mkdirp from 'mkdirp';
 import path from 'path';
-import { resolveConfig, format } from 'prettier';
+import { format } from 'prettier';
 
 import { toPascalCase } from './toPascalCase';
-
-const prettierConfig = resolveConfig(__dirname);
+import prettierConfig from '../src/prettier';
 
 type Definition = {
   defs: string;
@@ -22,8 +21,7 @@ async function compileSchema(
 ): Promise<Definition> {
   const code = await compile(schema, `${typeName}${index}`, {
     bannerComment: '',
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    style: (await prettierConfig)!,
+    style: prettierConfig,
   });
 
   return {
@@ -117,9 +115,11 @@ function recursivelyFixRefs(
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     if (key === '$ref' && (current as string).startsWith('#/')) {
       schema[key] = `#/items/${idx + 1}/${current.substring(2)}`;
     } else if (Array.isArray(current)) {
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
       (current as Array<JSONSchema4>).forEach(subSchema =>
         recursivelyFixRefs(subSchema, idx),
       );

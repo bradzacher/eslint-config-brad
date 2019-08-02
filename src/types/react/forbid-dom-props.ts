@@ -2,12 +2,12 @@
 
 type ForbidDomProps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         forbid?: string[];
-      }
+      },
     ];
 
-export type ForbidDomProps = "off" | ForbidDomProps0;
+export type ForbidDomProps = 'off' | ForbidDomProps0;

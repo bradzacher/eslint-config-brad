@@ -2,12 +2,12 @@
 
 type JsxNoLiterals0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         noStrings?: boolean;
-      }
+      },
     ];
 
-export type JsxNoLiterals = "off" | JsxNoLiterals0;
+export type JsxNoLiterals = 'off' | JsxNoLiterals0;

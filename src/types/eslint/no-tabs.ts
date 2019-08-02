@@ -2,12 +2,12 @@
 
 type NoTabs0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowIndentationTabs?: boolean;
-      }
+      },
     ];
 
-export type NoTabs = "off" | NoTabs0;
+export type NoTabs = 'off' | NoTabs0;

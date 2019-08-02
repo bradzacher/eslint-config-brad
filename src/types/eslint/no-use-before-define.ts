@@ -2,16 +2,16 @@
 
 type NoUseBeforeDefine0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | "nofunc"
+        | 'nofunc'
         | {
             functions?: boolean;
             classes?: boolean;
             variables?: boolean;
-          })
+          }),
     ];
 
-export type NoUseBeforeDefine = "off" | NoUseBeforeDefine0;
+export type NoUseBeforeDefine = 'off' | NoUseBeforeDefine0;

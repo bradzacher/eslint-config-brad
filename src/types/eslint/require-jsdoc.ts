@@ -2,9 +2,9 @@
 
 type RequireJsdoc0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         require?: {
           ClassDeclaration?: boolean;
@@ -13,7 +13,7 @@ type RequireJsdoc0 =
           ArrowFunctionExpression?: boolean;
           FunctionExpression?: boolean;
         };
-      }
+      },
     ];
 
-export type RequireJsdoc = "off" | RequireJsdoc0;
+export type RequireJsdoc = 'off' | RequireJsdoc0;

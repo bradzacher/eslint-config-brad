@@ -2,13 +2,13 @@
 
 type SemiSpacing0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         before?: boolean;
         after?: boolean;
-      }
+      },
     ];
 
-export type SemiSpacing = "off" | SemiSpacing0;
+export type SemiSpacing = 'off' | SemiSpacing0;

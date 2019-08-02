@@ -2,9 +2,9 @@
 
 type Typedef0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         arrayDestructuring?: boolean;
         arrowParameter?: boolean;
@@ -14,7 +14,7 @@ type Typedef0 =
         propertyDeclaration?: boolean;
         variableDeclaration?: boolean;
         [k: string]: any;
-      }
+      },
     ];
 
-export type Typedef = "off" | Typedef0;
+export type Typedef = 'off' | Typedef0;

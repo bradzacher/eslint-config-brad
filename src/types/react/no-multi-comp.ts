@@ -2,12 +2,12 @@
 
 type NoMultiComp0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreStateless?: boolean;
-      }
+      },
     ];
 
-export type NoMultiComp = "off" | NoMultiComp0;
+export type NoMultiComp = 'off' | NoMultiComp0;

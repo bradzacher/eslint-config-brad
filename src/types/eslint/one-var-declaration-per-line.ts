@@ -2,7 +2,7 @@
 
 type OneVarDeclarationPerLine0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "initializations")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'initializations')];
 
-export type OneVarDeclarationPerLine = "off" | OneVarDeclarationPerLine0;
+export type OneVarDeclarationPerLine = 'off' | OneVarDeclarationPerLine0;

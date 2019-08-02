@@ -2,12 +2,12 @@
 
 type NoDuplicateImports0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         includeExports?: boolean;
-      }
+      },
     ];
 
-export type NoDuplicateImports = "off" | NoDuplicateImports0;
+export type NoDuplicateImports = 'off' | NoDuplicateImports0;

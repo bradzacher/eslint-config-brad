@@ -2,21 +2,21 @@
 
 type OneVar0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("always" | "never" | "consecutive")
+        | ('always' | 'never' | 'consecutive')
         | {
             separateRequires?: boolean;
-            var?: "always" | "never" | "consecutive";
-            let?: "always" | "never" | "consecutive";
-            const?: "always" | "never" | "consecutive";
+            var?: 'always' | 'never' | 'consecutive';
+            let?: 'always' | 'never' | 'consecutive';
+            const?: 'always' | 'never' | 'consecutive';
           }
         | {
-            initialized?: "always" | "never" | "consecutive";
-            uninitialized?: "always" | "never" | "consecutive";
-          })
+            initialized?: 'always' | 'never' | 'consecutive';
+            uninitialized?: 'always' | 'never' | 'consecutive';
+          }),
     ];
 
-export type OneVar = "off" | OneVar0;
+export type OneVar = 'off' | OneVar0;

@@ -2,15 +2,15 @@
 
 type NoImplicitCoercion0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         boolean?: boolean;
         number?: boolean;
         string?: boolean;
-        allow?: ("~" | "!!" | "+" | "*")[];
-      }
+        allow?: ('~' | '!!' | '+' | '*')[];
+      },
     ];
 
-export type NoImplicitCoercion = "off" | NoImplicitCoercion0;
+export type NoImplicitCoercion = 'off' | NoImplicitCoercion0;

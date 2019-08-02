@@ -2,9 +2,9 @@
 
 type LinesAroundComment0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         beforeBlockComment?: boolean;
         afterBlockComment?: boolean;
@@ -20,7 +20,7 @@ type LinesAroundComment0 =
         allowArrayEnd?: boolean;
         ignorePattern?: string;
         applyDefaultIgnorePatterns?: boolean;
-      }
+      },
     ];
 
-export type LinesAroundComment = "off" | LinesAroundComment0;
+export type LinesAroundComment = 'off' | LinesAroundComment0;

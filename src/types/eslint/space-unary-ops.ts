@@ -2,16 +2,16 @@
 
 type SpaceUnaryOps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         words?: boolean;
         nonwords?: boolean;
         overrides?: {
           [k: string]: boolean;
         };
-      }
+      },
     ];
 
-export type SpaceUnaryOps = "off" | SpaceUnaryOps0;
+export type SpaceUnaryOps = 'off' | SpaceUnaryOps0;

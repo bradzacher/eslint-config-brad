@@ -2,9 +2,9 @@
 
 type SortComp0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         order?: string[];
         groups?: {
@@ -14,7 +14,7 @@ type SortComp0 =
            */
           [k: string]: string[];
         };
-      }
+      },
     ];
 
-export type SortComp = "off" | SortComp0;
+export type SortComp = 'off' | SortComp0;

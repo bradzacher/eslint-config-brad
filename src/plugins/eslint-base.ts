@@ -838,11 +838,7 @@ const rules: Eslint = {
 
   // This rule allows you to specify global variable names that you don’t want to use in your application
   // https://eslint.org/docs/rules/no-restricted-globals
-  'no-restricted-globals': [
-    'error',
-    'isFinite',
-    ...restrictedGlobals,
-  ],
+  'no-restricted-globals': ['error', 'isFinite', ...restrictedGlobals],
 
   // This rule allows you to specify imports that you don’t want to use in your application
   // https://eslint.org/docs/rules/no-restricted-imports
@@ -909,6 +905,7 @@ const rules: Eslint = {
 
   // This rule disallows specified (that is, user-defined) syntax
   // https://eslint.org/docs/rules/no-restricted-syntax
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   'no-restricted-syntax': [
     'error',
     {
@@ -1109,7 +1106,7 @@ const rules: Eslint = {
 
   // This rule flags class constructors that can be safely removed without changing how the class works.
   // https://eslint.org/docs/rules/no-useless-constructor
-  'no-useless-constructor': ['error'],
+  'no-useless-constructor': 'off',
 
   // This rule flags escapes that can be safely removed without changing behavior.
   // https://eslint.org/docs/rules/no-useless-escape

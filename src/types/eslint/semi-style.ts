@@ -2,7 +2,7 @@
 
 type SemiStyle0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("last" | "first")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('last' | 'first')];
 
-export type SemiStyle = "off" | SemiStyle0;
+export type SemiStyle = 'off' | SemiStyle0;

@@ -2,13 +2,13 @@
 
 type DotNotation0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowKeywords?: boolean;
         allowPattern?: string;
-      }
+      },
     ];
 
-export type DotNotation = "off" | DotNotation0;
+export type DotNotation = 'off' | DotNotation0;

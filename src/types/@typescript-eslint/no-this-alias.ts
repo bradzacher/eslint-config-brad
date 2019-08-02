@@ -2,13 +2,13 @@
 
 type NoThisAlias0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowDestructuring?: boolean;
         allowedNames?: string[];
-      }
+      },
     ];
 
-export type NoThisAlias = "off" | NoThisAlias0;
+export type NoThisAlias = 'off' | NoThisAlias0;

@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type NoHooks = 'off' | ['warn' | 'error'];
+type NoHooks0 =
+  | []
+  | [('off' | 'error' | 'warn')]
+  | [
+      ('off' | 'error' | 'warn'),
+      {
+        allow?: any[];
+      },
+    ];
+
+export type NoHooks = 'off' | NoHooks0;

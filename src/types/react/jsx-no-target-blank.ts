@@ -2,12 +2,12 @@
 
 type JsxNoTargetBlank0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
-        enforceDynamicLinks?: "always" | "never";
-      }
+        enforceDynamicLinks?: 'always' | 'never';
+      },
     ];
 
-export type JsxNoTargetBlank = "off" | JsxNoTargetBlank0;
+export type JsxNoTargetBlank = 'off' | JsxNoTargetBlank0;

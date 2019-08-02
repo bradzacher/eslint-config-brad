@@ -2,12 +2,12 @@
 
 type RequireOptimization0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowDecorators?: string[];
-      }
+      },
     ];
 
-export type RequireOptimization = "off" | RequireOptimization0;
+export type RequireOptimization = 'off' | RequireOptimization0;

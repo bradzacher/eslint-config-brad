@@ -2,12 +2,12 @@
 
 type ObjectCurlyNewline0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | (
-            | ("always" | "never")
+            | ('always' | 'never')
             | {
                 multiline?: boolean;
                 minProperties?: number;
@@ -15,34 +15,34 @@ type ObjectCurlyNewline0 =
               })
         | {
             ObjectExpression?:
-              | ("always" | "never")
+              | ('always' | 'never')
               | {
                   multiline?: boolean;
                   minProperties?: number;
                   consistent?: boolean;
                 };
             ObjectPattern?:
-              | ("always" | "never")
+              | ('always' | 'never')
               | {
                   multiline?: boolean;
                   minProperties?: number;
                   consistent?: boolean;
                 };
             ImportDeclaration?:
-              | ("always" | "never")
+              | ('always' | 'never')
               | {
                   multiline?: boolean;
                   minProperties?: number;
                   consistent?: boolean;
                 };
             ExportDeclaration?:
-              | ("always" | "never")
+              | ('always' | 'never')
               | {
                   multiline?: boolean;
                   minProperties?: number;
                   consistent?: boolean;
                 };
-          })
+          }),
     ];
 
-export type ObjectCurlyNewline = "off" | ObjectCurlyNewline0;
+export type ObjectCurlyNewline = 'off' | ObjectCurlyNewline0;

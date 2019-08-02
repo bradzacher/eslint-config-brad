@@ -2,12 +2,12 @@
 
 type UnboundMethod0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreStatic?: boolean;
-      }
+      },
     ];
 
-export type UnboundMethod = "off" | UnboundMethod0;
+export type UnboundMethod = 'off' | UnboundMethod0;

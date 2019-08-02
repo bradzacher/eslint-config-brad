@@ -2,12 +2,12 @@
 
 type DisableEnablePair0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowWholeFile?: boolean;
-      }
+      },
     ];
 
-export type DisableEnablePair = "off" | DisableEnablePair0;
+export type DisableEnablePair = 'off' | DisableEnablePair0;

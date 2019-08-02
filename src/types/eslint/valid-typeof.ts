@@ -2,12 +2,12 @@
 
 type ValidTypeof0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         requireStringLiterals?: boolean;
-      }
+      },
     ];
 
-export type ValidTypeof = "off" | ValidTypeof0;
+export type ValidTypeof = 'off' | ValidTypeof0;

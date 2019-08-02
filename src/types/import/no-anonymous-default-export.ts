@@ -2,9 +2,9 @@
 
 type NoAnonymousDefaultExport0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         /**
          * If `false`, will report default of an array
@@ -34,7 +34,7 @@ type NoAnonymousDefaultExport0 =
          * If `false`, will report default of an object expression
          */
         allowObject?: boolean;
-      }
+      },
     ];
 
-export type NoAnonymousDefaultExport = "off" | NoAnonymousDefaultExport0;
+export type NoAnonymousDefaultExport = 'off' | NoAnonymousDefaultExport0;

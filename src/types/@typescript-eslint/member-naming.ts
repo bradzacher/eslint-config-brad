@@ -2,14 +2,14 @@
 
 type MemberNaming0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         public?: string;
         protected?: string;
         private?: string;
-      }
+      },
     ];
 
-export type MemberNaming = "off" | MemberNaming0;
+export type MemberNaming = 'off' | MemberNaming0;

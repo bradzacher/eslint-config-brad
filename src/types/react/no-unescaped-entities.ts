@@ -2,9 +2,9 @@
 
 type NoUnescapedEntities0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         forbid?: (
           | string
@@ -13,7 +13,7 @@ type NoUnescapedEntities0 =
               alternatives?: string[];
               [k: string]: any;
             })[];
-      }
+      },
     ];
 
-export type NoUnescapedEntities = "off" | NoUnescapedEntities0;
+export type NoUnescapedEntities = 'off' | NoUnescapedEntities0;

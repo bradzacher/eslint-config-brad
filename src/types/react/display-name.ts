@@ -2,12 +2,12 @@
 
 type DisplayName0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreTranspilerName?: boolean;
-      }
+      },
     ];
 
-export type DisplayName = "off" | DisplayName0;
+export type DisplayName = 'off' | DisplayName0;

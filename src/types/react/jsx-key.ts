@@ -2,12 +2,12 @@
 
 type JsxKey0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         checkFragmentShorthand?: boolean;
-      }
+      },
     ];
 
-export type JsxKey = "off" | JsxKey0;
+export type JsxKey = 'off' | JsxKey0;

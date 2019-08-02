@@ -2,12 +2,12 @@
 
 type MaxStatementsPerLine0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         max?: number;
-      }
+      },
     ];
 
-export type MaxStatementsPerLine = "off" | MaxStatementsPerLine0;
+export type MaxStatementsPerLine = 'off' | MaxStatementsPerLine0;

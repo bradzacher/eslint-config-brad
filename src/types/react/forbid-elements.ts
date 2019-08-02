@@ -2,9 +2,9 @@
 
 type ForbidElements0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         forbid?: (
           | string
@@ -12,7 +12,7 @@ type ForbidElements0 =
               element: string;
               message?: string;
             })[];
-      }
+      },
     ];
 
-export type ForbidElements = "off" | ForbidElements0;
+export type ForbidElements = 'off' | ForbidElements0;

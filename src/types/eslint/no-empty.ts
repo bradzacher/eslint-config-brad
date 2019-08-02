@@ -2,12 +2,12 @@
 
 type NoEmpty0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowEmptyCatch?: boolean;
-      }
+      },
     ];
 
-export type NoEmpty = "off" | NoEmpty0;
+export type NoEmpty = 'off' | NoEmpty0;

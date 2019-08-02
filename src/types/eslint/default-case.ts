@@ -2,12 +2,12 @@
 
 type DefaultCase0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         commentPattern?: string;
-      }
+      },
     ];
 
-export type DefaultCase = "off" | DefaultCase0;
+export type DefaultCase = 'off' | DefaultCase0;

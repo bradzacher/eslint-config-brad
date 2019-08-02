@@ -2,14 +2,14 @@
 
 type NoMultipleEmptyLines0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         max: number;
         maxEOF?: number;
         maxBOF?: number;
-      }
+      },
     ];
 
-export type NoMultipleEmptyLines = "off" | NoMultipleEmptyLines0;
+export type NoMultipleEmptyLines = 'off' | NoMultipleEmptyLines0;

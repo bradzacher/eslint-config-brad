@@ -2,12 +2,12 @@
 
 type ConsistentReturn0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         treatUndefinedAsUnspecified?: boolean;
-      }
+      },
     ];
 
-export type ConsistentReturn = "off" | ConsistentReturn0;
+export type ConsistentReturn = 'off' | ConsistentReturn0;

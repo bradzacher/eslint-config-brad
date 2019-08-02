@@ -2,10 +2,10 @@
 
 type JsxFirstPropNewLine0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
-      ("always" | "never" | "multiline" | "multiline-multiprop")
+      ('off' | 'error' | 'warn'),
+      ('always' | 'never' | 'multiline' | 'multiline-multiprop'),
     ];
 
-export type JsxFirstPropNewLine = "off" | JsxFirstPropNewLine0;
+export type JsxFirstPropNewLine = 'off' | JsxFirstPropNewLine0;

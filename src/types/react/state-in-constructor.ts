@@ -2,7 +2,7 @@
 
 type StateInConstructor0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "never")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'never')];
 
-export type StateInConstructor = "off" | StateInConstructor0;
+export type StateInConstructor = 'off' | StateInConstructor0;

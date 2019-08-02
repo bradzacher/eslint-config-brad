@@ -2,16 +2,16 @@
 
 type CommaStyle0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("first" | "last")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('first' | 'last')]
   | [
-      ("off" | "error" | "warn"),
-      ("first" | "last"),
+      ('off' | 'error' | 'warn'),
+      ('first' | 'last'),
       {
         exceptions?: {
           [k: string]: boolean;
         };
-      }
+      },
     ];
 
-export type CommaStyle = "off" | CommaStyle0;
+export type CommaStyle = 'off' | CommaStyle0;

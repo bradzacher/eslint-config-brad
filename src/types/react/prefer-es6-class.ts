@@ -2,7 +2,7 @@
 
 type PreferEs6Class0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "never")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'never')];
 
-export type PreferEs6Class = "off" | PreferEs6Class0;
+export type PreferEs6Class = 'off' | PreferEs6Class0;

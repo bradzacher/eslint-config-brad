@@ -331,9 +331,7 @@ const rules: React = {
 
   // Prevent usage of setState in componentDidUpdate
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
-  'react/no-did-update-set-state': [
-    'error',
-  ],
+  'react/no-did-update-set-state': ['error'],
 
   // Prevent direct mutation of this.state
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
@@ -408,9 +406,7 @@ const rules: React = {
 
   // Prevent usage of setState in componentWillUpdate
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
-  'react/no-will-update-set-state': [
-    'error',
-  ],
+  'react/no-will-update-set-state': ['error'],
 
   // Require ES6 class declarations over React.createClass
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
@@ -451,9 +447,7 @@ const rules: React = {
 
   // Require render() methods to return something
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
-  'react/require-render-return': [
-    'error',
-  ],
+  'react/require-render-return': ['error'],
 
   // Prevent extra closing tags for components without children
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md

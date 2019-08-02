@@ -2,9 +2,9 @@
 
 type PreferDestructuring0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             VariableDeclarator?: {
@@ -19,10 +19,10 @@ type PreferDestructuring0 =
         | {
             array?: boolean;
             object?: boolean;
-          })
+          }),
     ]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             VariableDeclarator?: {
@@ -40,7 +40,7 @@ type PreferDestructuring0 =
           }),
       {
         enforceForRenamedProperties?: boolean;
-      }
+      },
     ];
 
-export type PreferDestructuring = "off" | PreferDestructuring0;
+export type PreferDestructuring = 'off' | PreferDestructuring0;

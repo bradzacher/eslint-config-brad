@@ -2,21 +2,21 @@
 
 type NoUnusedVars0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("all" | "local")
+        | ('all' | 'local')
         | {
-            vars?: "all" | "local";
+            vars?: 'all' | 'local';
             varsIgnorePattern?: string;
-            args?: "all" | "after-used" | "none";
+            args?: 'all' | 'after-used' | 'none';
             ignoreRestSiblings?: boolean;
             argsIgnorePattern?: string;
-            caughtErrors?: "all" | "none";
+            caughtErrors?: 'all' | 'none';
             caughtErrorsIgnorePattern?: string;
             [k: string]: any;
-          })
+          }),
     ];
 
-export type NoUnusedVars = "off" | NoUnusedVars0;
+export type NoUnusedVars = 'off' | NoUnusedVars0;

@@ -4,7 +4,7 @@ build:
 	@cp package.json dist
 	@cp README.md dist
 	@cp LICENCE dist
-	@node ./scripts/removePrivate.js
+	@ts-node ./scripts/removePrivate.ts
 
 .PHONY: format
 format:

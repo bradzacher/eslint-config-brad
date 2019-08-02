@@ -1,18 +1,18 @@
 import { Options } from 'prettier';
 
 const options: Options = {
-  arrowParens: "avoid",
+  arrowParens: 'avoid',
   bracketSpacing: true,
-  endOfLine: "lf",
+  endOfLine: 'lf',
   jsxSingleQuote: false,
   jsxBracketSameLine: true,
-  proseWrap: "preserve",
-  quoteProps: "as-needed",
+  proseWrap: 'preserve',
+  quoteProps: 'as-needed',
   semi: true,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: "all",
+  trailingComma: 'all',
   useTabs: false,
 };
 
-module.exports = options;
+export = options;

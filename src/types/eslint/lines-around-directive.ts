@@ -2,15 +2,15 @@
 
 type LinesAroundDirective0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("always" | "never")
+        | ('always' | 'never')
         | {
-            before?: "always" | "never";
-            after?: "always" | "never";
-          })
+            before?: 'always' | 'never';
+            after?: 'always' | 'never';
+          }),
     ];
 
-export type LinesAroundDirective = "off" | LinesAroundDirective0;
+export type LinesAroundDirective = 'off' | LinesAroundDirective0;

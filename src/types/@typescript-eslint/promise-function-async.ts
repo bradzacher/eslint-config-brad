@@ -2,9 +2,9 @@
 
 type PromiseFunctionAsync0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowAny?: boolean;
         allowedPromiseNames?: string[];
@@ -12,7 +12,7 @@ type PromiseFunctionAsync0 =
         checkFunctionDeclarations?: boolean;
         checkFunctionExpressions?: boolean;
         checkMethodDeclarations?: boolean;
-      }
+      },
     ];
 
-export type PromiseFunctionAsync = "off" | PromiseFunctionAsync0;
+export type PromiseFunctionAsync = 'off' | PromiseFunctionAsync0;

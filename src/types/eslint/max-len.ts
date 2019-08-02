@@ -2,9 +2,9 @@
 
 type MaxLen0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             code?: number;
@@ -18,10 +18,10 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number)
+        | number),
     ]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             code?: number;
@@ -49,10 +49,10 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number)
+        | number),
     ]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             code?: number;
@@ -92,7 +92,7 @@ type MaxLen0 =
         ignoreTemplateLiterals?: boolean;
         ignoreRegExpLiterals?: boolean;
         ignoreTrailingComments?: boolean;
-      }
+      },
     ];
 
-export type MaxLen = "off" | MaxLen0;
+export type MaxLen = 'off' | MaxLen0;

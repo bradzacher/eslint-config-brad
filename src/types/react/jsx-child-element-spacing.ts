@@ -2,7 +2,7 @@
 
 type JsxChildElementSpacing0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), {}];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), {}];
 
-export type JsxChildElementSpacing = "off" | JsxChildElementSpacing0;
+export type JsxChildElementSpacing = 'off' | JsxChildElementSpacing0;

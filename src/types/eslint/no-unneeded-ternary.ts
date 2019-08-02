@@ -2,12 +2,12 @@
 
 type NoUnneededTernary0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         defaultAssignment?: boolean;
-      }
+      },
     ];
 
-export type NoUnneededTernary = "off" | NoUnneededTernary0;
+export type NoUnneededTernary = 'off' | NoUnneededTernary0;

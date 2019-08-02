@@ -2,12 +2,12 @@
 
 type NoExtendNative0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         exceptions?: string[];
-      }
+      },
     ];
 
-export type NoExtendNative = "off" | NoExtendNative0;
+export type NoExtendNative = 'off' | NoExtendNative0;

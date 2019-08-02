@@ -2,12 +2,12 @@
 
 type NoUnsafe0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         checkAliases?: boolean;
-      }
+      },
     ];
 
-export type NoUnsafe = "off" | NoUnsafe0;
+export type NoUnsafe = 'off' | NoUnsafe0;

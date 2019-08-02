@@ -2,9 +2,9 @@
 
 type JsxSortProps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         callbacksLast?: boolean;
         shorthandFirst?: boolean;
@@ -12,7 +12,7 @@ type JsxSortProps0 =
         ignoreCase?: boolean;
         noSortAlphabetically?: boolean;
         reservedFirst?: any[] | boolean;
-      }
+      },
     ];
 
-export type JsxSortProps = "off" | JsxSortProps0;
+export type JsxSortProps = 'off' | JsxSortProps0;

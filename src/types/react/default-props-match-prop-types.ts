@@ -2,12 +2,12 @@
 
 type DefaultPropsMatchPropTypes0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowRequiredDefaults?: boolean;
-      }
+      },
     ];
 
-export type DefaultPropsMatchPropTypes = "off" | DefaultPropsMatchPropTypes0;
+export type DefaultPropsMatchPropTypes = 'off' | DefaultPropsMatchPropTypes0;

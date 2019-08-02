@@ -2,12 +2,12 @@
 
 type NoConsole0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allow?: [string, ...(string)[]];
-      }
+      },
     ];
 
-export type NoConsole = "off" | NoConsole0;
+export type NoConsole = 'off' | NoConsole0;

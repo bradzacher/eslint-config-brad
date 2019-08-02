@@ -2,10 +2,10 @@
 
 type MultilineCommentStyle0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
-      ("starred-block" | "separate-lines" | "bare-block")
+      ('off' | 'error' | 'warn'),
+      ('starred-block' | 'separate-lines' | 'bare-block'),
     ];
 
-export type MultilineCommentStyle = "off" | MultilineCommentStyle0;
+export type MultilineCommentStyle = 'off' | MultilineCommentStyle0;

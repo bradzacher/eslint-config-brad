@@ -2,13 +2,13 @@
 
 type NoUnusedPropTypes0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         customValidators?: string[];
         skipShapeProps?: boolean;
-      }
+      },
     ];
 
-export type NoUnusedPropTypes = "off" | NoUnusedPropTypes0;
+export type NoUnusedPropTypes = 'off' | NoUnusedPropTypes0;

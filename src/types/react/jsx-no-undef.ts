@@ -2,12 +2,12 @@
 
 type JsxNoUndef0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowGlobals?: boolean;
-      }
+      },
     ];
 
-export type JsxNoUndef = "off" | JsxNoUndef0;
+export type JsxNoUndef = 'off' | JsxNoUndef0;

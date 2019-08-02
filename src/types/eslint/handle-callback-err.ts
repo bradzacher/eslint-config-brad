@@ -2,7 +2,7 @@
 
 type HandleCallbackErr0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), string];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), string];
 
-export type HandleCallbackErr = "off" | HandleCallbackErr0;
+export type HandleCallbackErr = 'off' | HandleCallbackErr0;

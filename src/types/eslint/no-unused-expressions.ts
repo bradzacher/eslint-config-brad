@@ -2,14 +2,14 @@
 
 type NoUnusedExpressions0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowShortCircuit?: boolean;
         allowTernary?: boolean;
         allowTaggedTemplates?: boolean;
-      }
+      },
     ];
 
-export type NoUnusedExpressions = "off" | NoUnusedExpressions0;
+export type NoUnusedExpressions = 'off' | NoUnusedExpressions0;

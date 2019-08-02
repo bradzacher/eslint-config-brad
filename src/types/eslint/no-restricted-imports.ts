@@ -2,31 +2,31 @@
 
 type NoRestrictedImports0 =
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       ...(
         | string
         | {
             name: string;
             message?: string;
             importNames?: string[];
-          })[]
+          })[],
     ]
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         paths?: [
-          ("off" | "error" | "warn"),
+          ('off' | 'error' | 'warn'),
           ...(
             | string
             | {
                 name: string;
                 message?: string;
                 importNames?: string[];
-              })[]
+              })[],
         ];
         patterns?: string[];
-      }
+      },
     ];
 
-export type NoRestrictedImports = "off" | NoRestrictedImports0;
+export type NoRestrictedImports = 'off' | NoRestrictedImports0;

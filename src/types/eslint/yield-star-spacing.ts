@@ -2,15 +2,15 @@
 
 type YieldStarSpacing0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("before" | "after" | "both" | "neither")
+        | ('before' | 'after' | 'both' | 'neither')
         | {
             before?: boolean;
             after?: boolean;
-          })
+          }),
     ];
 
-export type YieldStarSpacing = "off" | YieldStarSpacing0;
+export type YieldStarSpacing = 'off' | YieldStarSpacing0;

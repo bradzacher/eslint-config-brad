@@ -2,9 +2,9 @@
 
 type NewCap0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         newIsCap?: boolean;
         capIsNew?: boolean;
@@ -13,7 +13,7 @@ type NewCap0 =
         capIsNewExceptions?: string[];
         capIsNewExceptionPattern?: string;
         properties?: boolean;
-      }
+      },
     ];
 
-export type NewCap = "off" | NewCap0;
+export type NewCap = 'off' | NewCap0;

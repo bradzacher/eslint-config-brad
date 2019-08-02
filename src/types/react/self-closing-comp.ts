@@ -2,13 +2,13 @@
 
 type SelfClosingComp0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         component?: boolean;
         html?: boolean;
-      }
+      },
     ];
 
-export type SelfClosingComp = "off" | SelfClosingComp0;
+export type SelfClosingComp = 'off' | SelfClosingComp0;

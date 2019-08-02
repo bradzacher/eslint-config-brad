@@ -2,11 +2,11 @@
 
 type CapitalizedComments0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "never")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'never')]
   | [
-      ("off" | "error" | "warn"),
-      ("always" | "never"),
+      ('off' | 'error' | 'warn'),
+      ('always' | 'never'),
       (
         | {
             ignorePattern?: string;
@@ -24,7 +24,7 @@ type CapitalizedComments0 =
               ignoreInlineComments?: boolean;
               ignoreConsecutiveComments?: boolean;
             };
-          })
+          }),
     ];
 
-export type CapitalizedComments = "off" | CapitalizedComments0;
+export type CapitalizedComments = 'off' | CapitalizedComments0;

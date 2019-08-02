@@ -2,12 +2,12 @@
 
 type ArrayCallbackReturn0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowImplicit?: boolean;
-      }
+      },
     ];
 
-export type ArrayCallbackReturn = "off" | ArrayCallbackReturn0;
+export type ArrayCallbackReturn = 'off' | ArrayCallbackReturn0;

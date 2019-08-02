@@ -2,14 +2,14 @@
 
 type NoMisusedPromises0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         checksConditionals?: boolean;
         checksVoidReturn?: boolean;
         [k: string]: any;
-      }
+      },
     ];
 
-export type NoMisusedPromises = "off" | NoMisusedPromises0;
+export type NoMisusedPromises = 'off' | NoMisusedPromises0;

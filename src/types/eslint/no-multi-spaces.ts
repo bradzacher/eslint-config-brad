@@ -2,9 +2,9 @@
 
 type NoMultiSpaces0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         exceptions?: {
           /**
@@ -14,7 +14,7 @@ type NoMultiSpaces0 =
           [k: string]: boolean;
         };
         ignoreEOLComments?: boolean;
-      }
+      },
     ];
 
-export type NoMultiSpaces = "off" | NoMultiSpaces0;
+export type NoMultiSpaces = 'off' | NoMultiSpaces0;

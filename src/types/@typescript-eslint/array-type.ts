@@ -2,14 +2,14 @@
 
 type ArrayType0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
-        default?: "array" | "generic" | "array-simple";
-        readonly?: "array" | "generic" | "array-simple";
+        default?: 'array' | 'generic' | 'array-simple';
+        readonly?: 'array' | 'generic' | 'array-simple';
         [k: string]: any;
-      }
+      },
     ];
 
-export type ArrayType = "off" | ArrayType0;
+export type ArrayType = 'off' | ArrayType0;

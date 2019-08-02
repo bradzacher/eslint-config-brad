@@ -2,15 +2,15 @@
 
 type ArrayElementNewline0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("always" | "never" | "consistent")
+        | ('always' | 'never' | 'consistent')
         | {
             multiline?: boolean;
             minItems?: number | null;
-          })
+          }),
     ];
 
-export type ArrayElementNewline = "off" | ArrayElementNewline0;
+export type ArrayElementNewline = 'off' | ArrayElementNewline0;

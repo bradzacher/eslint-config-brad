@@ -2,9 +2,9 @@
 
 type NoMagicNumbers0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         detectObjects?: boolean;
         enforceConst?: boolean;
@@ -12,7 +12,7 @@ type NoMagicNumbers0 =
         ignoreArrayIndexes?: boolean;
         ignoreNumericLiteralTypes?: boolean;
         ignoreEnums?: boolean;
-      }
+      },
     ];
 
-export type NoMagicNumbers = "off" | NoMagicNumbers0;
+export type NoMagicNumbers = 'off' | NoMagicNumbers0;

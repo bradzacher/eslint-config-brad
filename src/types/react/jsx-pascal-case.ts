@@ -2,13 +2,13 @@
 
 type JsxPascalCase0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowAllCaps?: boolean;
         ignore?: any[];
-      }
+      },
     ];
 
-export type JsxPascalCase = "off" | JsxPascalCase0;
+export type JsxPascalCase = 'off' | JsxPascalCase0;

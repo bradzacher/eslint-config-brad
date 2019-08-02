@@ -2,12 +2,12 @@
 
 type JsxMaxDepth0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         max?: number;
-      }
+      },
     ];
 
-export type JsxMaxDepth = "off" | JsxMaxDepth0;
+export type JsxMaxDepth = 'off' | JsxMaxDepth0;

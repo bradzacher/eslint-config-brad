@@ -36,9 +36,21 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
   'jest/no-disabled-tests': ['warn'],
 
+  // Disallow duplicate setup and teardown hooks
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
+  'jest/no-duplicate-hooks': ['error'],
+
   // Disallow empty titles
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
   'jest/no-empty-title': ['error'],
+
+  // no export from test file
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md
+  'jest/no-export': ['error'],
+
+  // Disallow conditional logic.
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
+  'jest/no-if': ['error'],
 
   // Avoid using a callback in asynchronous tests
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-callback.md
@@ -72,6 +84,10 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md
   'jest/no-mocks-import': 'off',
 
+  // No standalone expect in a describe block
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md
+  'jest/no-standalone-expect': ['error'],
+
   // Use .only and .skip over f and x
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md
   'jest/no-test-prefixes': ['error'],
@@ -83,6 +99,10 @@ const rules: Jest = {
   // Disallow using toBeTruthy() & toBeFalsy()
   // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-truthy-falsy.md
   'jest/no-truthy-falsy': 'off',
+
+  // Prevent catch assertions in tests
+  // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-try-expect.md
+  'jest/no-try-expect': ['error'],
 
   // Suggest using toBeCalledWith OR toHaveBeenCalledWith
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md

@@ -2,61 +2,61 @@
 
 type KeySpacing0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             align?:
-              | ("colon" | "value")
+              | ('colon' | 'value')
               | {
-                  mode?: "strict" | "minimum";
-                  on?: "colon" | "value";
+                  mode?: 'strict' | 'minimum';
+                  on?: 'colon' | 'value';
                   beforeColon?: boolean;
                   afterColon?: boolean;
                 };
-            mode?: "strict" | "minimum";
+            mode?: 'strict' | 'minimum';
             beforeColon?: boolean;
             afterColon?: boolean;
           }
         | {
             singleLine?: {
-              mode?: "strict" | "minimum";
+              mode?: 'strict' | 'minimum';
               beforeColon?: boolean;
               afterColon?: boolean;
             };
             multiLine?: {
               align?:
-                | ("colon" | "value")
+                | ('colon' | 'value')
                 | {
-                    mode?: "strict" | "minimum";
-                    on?: "colon" | "value";
+                    mode?: 'strict' | 'minimum';
+                    on?: 'colon' | 'value';
                     beforeColon?: boolean;
                     afterColon?: boolean;
                   };
-              mode?: "strict" | "minimum";
+              mode?: 'strict' | 'minimum';
               beforeColon?: boolean;
               afterColon?: boolean;
             };
           }
         | {
             singleLine?: {
-              mode?: "strict" | "minimum";
+              mode?: 'strict' | 'minimum';
               beforeColon?: boolean;
               afterColon?: boolean;
             };
             multiLine?: {
-              mode?: "strict" | "minimum";
+              mode?: 'strict' | 'minimum';
               beforeColon?: boolean;
               afterColon?: boolean;
             };
             align?: {
-              mode?: "strict" | "minimum";
-              on?: "colon" | "value";
+              mode?: 'strict' | 'minimum';
+              on?: 'colon' | 'value';
               beforeColon?: boolean;
               afterColon?: boolean;
             };
-          })
+          }),
     ];
 
-export type KeySpacing = "off" | KeySpacing0;
+export type KeySpacing = 'off' | KeySpacing0;

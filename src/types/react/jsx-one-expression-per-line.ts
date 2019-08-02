@@ -2,12 +2,12 @@
 
 type JsxOneExpressionPerLine0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
-        allow?: "none" | "literal" | "single-child";
-      }
+        allow?: 'none' | 'literal' | 'single-child';
+      },
     ];
 
-export type JsxOneExpressionPerLine = "off" | JsxOneExpressionPerLine0;
+export type JsxOneExpressionPerLine = 'off' | JsxOneExpressionPerLine0;

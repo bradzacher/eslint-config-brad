@@ -2,7 +2,7 @@
 
 type InterfaceNamePrefix0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("never" | "always")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('never' | 'always')];
 
-export type InterfaceNamePrefix = "off" | InterfaceNamePrefix0;
+export type InterfaceNamePrefix = 'off' | InterfaceNamePrefix0;

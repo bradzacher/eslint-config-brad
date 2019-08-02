@@ -2,9 +2,9 @@
 
 type MaxLinesPerFunction0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
         | {
             max?: number;
@@ -12,7 +12,7 @@ type MaxLinesPerFunction0 =
             skipBlankLines?: boolean;
             IIFEs?: boolean;
           }
-        | number)
+        | number),
     ];
 
-export type MaxLinesPerFunction = "off" | MaxLinesPerFunction0;
+export type MaxLinesPerFunction = 'off' | MaxLinesPerFunction0;

@@ -2,12 +2,12 @@
 
 type NoPlusplus0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowForLoopAfterthoughts?: boolean;
-      }
+      },
     ];
 
-export type NoPlusplus = "off" | NoPlusplus0;
+export type NoPlusplus = 'off' | NoPlusplus0;

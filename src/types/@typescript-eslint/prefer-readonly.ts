@@ -2,13 +2,13 @@
 
 type PreferReadonly0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         onlyInlineLambdas?: boolean;
         [k: string]: any;
-      }
+      },
     ];
 
-export type PreferReadonly = "off" | PreferReadonly0;
+export type PreferReadonly = 'off' | PreferReadonly0;

@@ -1,7 +1,7 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
 type NoRestrictedProperties0 = [
-  ("off" | "error" | "warn"),
+  ('off' | 'error' | 'warn'),
   ...(
     | {
         object: string;
@@ -12,7 +12,7 @@ type NoRestrictedProperties0 = [
         object?: string;
         property: string;
         message?: string;
-      })[]
+      })[],
 ];
 
-export type NoRestrictedProperties = "off" | NoRestrictedProperties0;
+export type NoRestrictedProperties = 'off' | NoRestrictedProperties0;

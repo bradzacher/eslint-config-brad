@@ -2,9 +2,9 @@
 
 type BanTypes0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         types?: {
           [k: string]:
@@ -15,7 +15,7 @@ type BanTypes0 =
                 fixWith?: string;
               };
         };
-      }
+      },
     ];
 
-export type BanTypes = "off" | BanTypes0;
+export type BanTypes = 'off' | BanTypes0;

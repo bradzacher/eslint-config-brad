@@ -2,12 +2,12 @@
 
 type NoStringRefs0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         noTemplateLiterals?: boolean;
-      }
+      },
     ];
 
-export type NoStringRefs = "off" | NoStringRefs0;
+export type NoStringRefs = 'off' | NoStringRefs0;

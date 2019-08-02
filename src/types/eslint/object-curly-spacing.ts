@@ -2,15 +2,15 @@
 
 type ObjectCurlySpacing0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "never")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'never')]
   | [
-      ("off" | "error" | "warn"),
-      ("always" | "never"),
+      ('off' | 'error' | 'warn'),
+      ('always' | 'never'),
       {
         arraysInObjects?: boolean;
         objectsInObjects?: boolean;
-      }
+      },
     ];
 
-export type ObjectCurlySpacing = "off" | ObjectCurlySpacing0;
+export type ObjectCurlySpacing = 'off' | ObjectCurlySpacing0;

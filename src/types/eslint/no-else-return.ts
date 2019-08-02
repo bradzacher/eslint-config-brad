@@ -2,12 +2,12 @@
 
 type NoElseReturn0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowElseIf?: boolean;
-      }
+      },
     ];
 
-export type NoElseReturn = "off" | NoElseReturn0;
+export type NoElseReturn = 'off' | NoElseReturn0;

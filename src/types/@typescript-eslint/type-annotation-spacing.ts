@@ -2,9 +2,9 @@
 
 type TypeAnnotationSpacing0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         before?: boolean;
         after?: boolean;
@@ -18,7 +18,7 @@ type TypeAnnotationSpacing0 =
             after?: boolean;
           };
         };
-      }
+      },
     ];
 
-export type TypeAnnotationSpacing = "off" | TypeAnnotationSpacing0;
+export type TypeAnnotationSpacing = 'off' | TypeAnnotationSpacing0;

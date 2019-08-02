@@ -2,14 +2,14 @@
 
 type NoShadow0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         builtinGlobals?: boolean;
-        hoist?: "all" | "functions" | "never";
+        hoist?: 'all' | 'functions' | 'never';
         allow?: string[];
-      }
+      },
     ];
 
-export type NoShadow = "off" | NoShadow0;
+export type NoShadow = 'off' | NoShadow0;

@@ -2,13 +2,13 @@
 
 type NoUnnecessaryTypeAssertion0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         typesToIgnore?: string[];
         [k: string]: any;
-      }
+      },
     ];
 
-export type NoUnnecessaryTypeAssertion = "off" | NoUnnecessaryTypeAssertion0;
+export type NoUnnecessaryTypeAssertion = 'off' | NoUnnecessaryTypeAssertion0;

@@ -2,12 +2,12 @@
 
 type JsxNoDuplicateProps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreCase?: boolean;
-      }
+      },
     ];
 
-export type JsxNoDuplicateProps = "off" | JsxNoDuplicateProps0;
+export type JsxNoDuplicateProps = 'off' | JsxNoDuplicateProps0;

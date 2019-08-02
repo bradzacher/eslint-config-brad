@@ -2,14 +2,14 @@
 
 type WrapIife0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("outside" | "inside" | "any")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('outside' | 'inside' | 'any')]
   | [
-      ("off" | "error" | "warn"),
-      ("outside" | "inside" | "any"),
+      ('off' | 'error' | 'warn'),
+      ('outside' | 'inside' | 'any'),
       {
         functionPrototypeMethods?: boolean;
-      }
+      },
     ];
 
-export type WrapIife = "off" | WrapIife0;
+export type WrapIife = 'off' | WrapIife0;

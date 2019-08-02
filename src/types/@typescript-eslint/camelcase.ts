@@ -2,14 +2,14 @@
 
 type Camelcase0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreDestructuring?: boolean;
-        properties?: "always" | "never";
+        properties?: 'always' | 'never';
         allow?: [] | [string];
-      }
+      },
     ];
 
-export type Camelcase = "off" | Camelcase0;
+export type Camelcase = 'off' | Camelcase0;

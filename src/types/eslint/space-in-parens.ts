@@ -2,14 +2,14 @@
 
 type SpaceInParens0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("always" | "never")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('always' | 'never')]
   | [
-      ("off" | "error" | "warn"),
-      ("always" | "never"),
+      ('off' | 'error' | 'warn'),
+      ('always' | 'never'),
       {
-        exceptions?: ("{}" | "[]" | "()" | "empty")[];
-      }
+        exceptions?: ('{}' | '[]' | '()' | 'empty')[];
+      },
     ];
 
-export type SpaceInParens = "off" | SpaceInParens0;
+export type SpaceInParens = 'off' | SpaceInParens0;

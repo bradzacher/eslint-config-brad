@@ -2,7 +2,7 @@
 
 type NoCondAssign0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("except-parens" | "always")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('except-parens' | 'always')];
 
-export type NoCondAssign = "off" | NoCondAssign0;
+export type NoCondAssign = 'off' | NoCondAssign0;

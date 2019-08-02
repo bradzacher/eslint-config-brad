@@ -1,14 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { format, resolveConfig } from 'prettier';
+import { format } from 'prettier';
 
 import { toPascalCase } from './toPascalCase';
 import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
 
+import prettierConfig from '../src/prettier';
+
 import getRuleFinder = require('eslint-find-rules');
 import packageJson = require('../package.json');
-
-const prettierConfig = resolveConfig(__dirname);
 
 async function main(): Promise<void> {
   // get the list of all the eslint plugins installed
@@ -67,7 +67,7 @@ async function main(): Promise<void> {
       ].join('\n');
 
       const formatted = format(typesFile, {
-        ...(await prettierConfig),
+        ...prettierConfig,
         parser: 'typescript',
       });
 

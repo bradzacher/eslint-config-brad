@@ -2,12 +2,12 @@
 
 type ClassMethodsUseThis0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         exceptMethods?: string[];
-      }
+      },
     ];
 
-export type ClassMethodsUseThis = "off" | ClassMethodsUseThis0;
+export type ClassMethodsUseThis = 'off' | ClassMethodsUseThis0;

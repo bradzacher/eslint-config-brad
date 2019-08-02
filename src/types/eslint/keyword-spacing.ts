@@ -2,9 +2,9 @@
 
 type KeywordSpacing0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         before?: boolean;
         after?: boolean;
@@ -282,7 +282,7 @@ type KeywordSpacing0 =
             after?: boolean;
           };
         };
-      }
+      },
     ];
 
-export type KeywordSpacing = "off" | KeywordSpacing0;
+export type KeywordSpacing = 'off' | KeywordSpacing0;

@@ -2,11 +2,11 @@
 
 type IndentLegacy0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("tab" | number)]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('tab' | number)]
   | [
-      ("off" | "error" | "warn"),
-      ("tab" | number),
+      ('off' | 'error' | 'warn'),
+      ('tab' | number),
       {
         SwitchCase?: number;
         VariableDeclarator?:
@@ -20,22 +20,22 @@ type IndentLegacy0 =
         outerIIFEBody?: number;
         MemberExpression?: number;
         FunctionDeclaration?: {
-          parameters?: number | "first";
+          parameters?: number | 'first';
           body?: number;
           [k: string]: any;
         };
         FunctionExpression?: {
-          parameters?: number | "first";
+          parameters?: number | 'first';
           body?: number;
           [k: string]: any;
         };
         CallExpression?: {
-          parameters?: number | "first";
+          parameters?: number | 'first';
           [k: string]: any;
         };
-        ArrayExpression?: number | "first";
-        ObjectExpression?: number | "first";
-      }
+        ArrayExpression?: number | 'first';
+        ObjectExpression?: number | 'first';
+      },
     ];
 
-export type IndentLegacy = "off" | IndentLegacy0;
+export type IndentLegacy = 'off' | IndentLegacy0;

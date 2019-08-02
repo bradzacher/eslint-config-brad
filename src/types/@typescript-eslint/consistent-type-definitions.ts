@@ -2,7 +2,7 @@
 
 type ConsistentTypeDefinitions0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("interface" | "type")];
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('interface' | 'type')];
 
-export type ConsistentTypeDefinitions = "off" | ConsistentTypeDefinitions0;
+export type ConsistentTypeDefinitions = 'off' | ConsistentTypeDefinitions0;

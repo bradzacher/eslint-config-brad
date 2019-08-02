@@ -2,13 +2,13 @@
 
 type NoInferrableTypes0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignoreParameters?: boolean;
         ignoreProperties?: boolean;
-      }
+      },
     ];
 
-export type NoInferrableTypes = "off" | NoInferrableTypes0;
+export type NoInferrableTypes = 'off' | NoInferrableTypes0;

@@ -2,9 +2,9 @@
 
 type NoCycle0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         commonjs?: boolean;
         amd?: boolean;
@@ -14,7 +14,7 @@ type NoCycle0 =
          * maximum dependency depth to traverse
          */
         maxDepth?: number;
-      }
+      },
     ];
 
-export type NoCycle = "off" | NoCycle0;
+export type NoCycle = 'off' | NoCycle0;

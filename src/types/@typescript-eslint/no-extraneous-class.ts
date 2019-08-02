@@ -2,14 +2,14 @@
 
 type NoExtraneousClass0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowConstructorOnly?: boolean;
         allowEmpty?: boolean;
         allowStaticOnly?: boolean;
-      }
+      },
     ];
 
-export type NoExtraneousClass = "off" | NoExtraneousClass0;
+export type NoExtraneousClass = 'off' | NoExtraneousClass0;

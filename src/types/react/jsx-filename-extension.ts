@@ -2,12 +2,12 @@
 
 type JsxFilenameExtension0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         extensions?: string[];
-      }
+      },
     ];
 
-export type JsxFilenameExtension = "off" | JsxFilenameExtension0;
+export type JsxFilenameExtension = 'off' | JsxFilenameExtension0;

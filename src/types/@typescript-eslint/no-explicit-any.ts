@@ -2,13 +2,13 @@
 
 type NoExplicitAny0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         fixToUnknown?: boolean;
         ignoreRestArgs?: boolean;
-      }
+      },
     ];
 
-export type NoExplicitAny = "off" | NoExplicitAny0;
+export type NoExplicitAny = 'off' | NoExplicitAny0;

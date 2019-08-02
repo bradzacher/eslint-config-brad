@@ -2,14 +2,14 @@
 
 type ExplicitFunctionReturnType0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowExpressions?: boolean;
         allowTypedFunctionExpressions?: boolean;
         allowHigherOrderFunctions?: boolean;
-      }
+      },
     ];
 
-export type ExplicitFunctionReturnType = "off" | ExplicitFunctionReturnType0;
+export type ExplicitFunctionReturnType = 'off' | ExplicitFunctionReturnType0;

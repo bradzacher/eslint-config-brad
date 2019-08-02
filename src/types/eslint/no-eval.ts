@@ -2,12 +2,12 @@
 
 type NoEval0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowIndirect?: boolean;
-      }
+      },
     ];
 
-export type NoEval = "off" | NoEval0;
+export type NoEval = 'off' | NoEval0;

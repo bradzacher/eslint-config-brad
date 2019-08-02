@@ -2,15 +2,15 @@
 
 type NoExtraneousDependencies0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         devDependencies?: boolean | any[];
         optionalDependencies?: boolean | any[];
         peerDependencies?: boolean | any[];
         packageDir?: string | any[];
-      }
+      },
     ];
 
-export type NoExtraneousDependencies = "off" | NoExtraneousDependencies0;
+export type NoExtraneousDependencies = 'off' | NoExtraneousDependencies0;

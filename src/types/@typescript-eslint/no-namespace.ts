@@ -2,13 +2,13 @@
 
 type NoNamespace0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowDeclarations?: boolean;
         allowDefinitionFiles?: boolean;
-      }
+      },
     ];
 
-export type NoNamespace = "off" | NoNamespace0;
+export type NoNamespace = 'off' | NoNamespace0;

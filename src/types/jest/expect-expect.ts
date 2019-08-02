@@ -2,12 +2,12 @@
 
 type ExpectExpect0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         assertFunctionNames?: [] | [string];
-      }
+      },
     ];
 
-export type ExpectExpect = "off" | ExpectExpect0;
+export type ExpectExpect = 'off' | ExpectExpect0;

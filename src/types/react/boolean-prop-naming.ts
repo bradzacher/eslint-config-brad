@@ -2,15 +2,15 @@
 
 type BooleanPropNaming0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         propTypeNames?: [string, ...(string)[]];
         rule?: string;
         message?: string;
         validateNested?: boolean;
-      }
+      },
     ];
 
-export type BooleanPropNaming = "off" | BooleanPropNaming0;
+export type BooleanPropNaming = 'off' | BooleanPropNaming0;

@@ -2,15 +2,15 @@
 
 type ArrayBracketNewline0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("always" | "never" | "consistent")
+        | ('always' | 'never' | 'consistent')
         | {
             multiline?: boolean;
             minItems?: number | null;
-          })
+          }),
     ];
 
-export type ArrayBracketNewline = "off" | ArrayBracketNewline0;
+export type ArrayBracketNewline = 'off' | ArrayBracketNewline0;

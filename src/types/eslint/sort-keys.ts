@@ -2,16 +2,16 @@
 
 type SortKeys0 =
   | []
-  | [("off" | "error" | "warn")]
-  | [("off" | "error" | "warn"), ("asc" | "desc")]
+  | [('off' | 'error' | 'warn')]
+  | [('off' | 'error' | 'warn'), ('asc' | 'desc')]
   | [
-      ("off" | "error" | "warn"),
-      ("asc" | "desc"),
+      ('off' | 'error' | 'warn'),
+      ('asc' | 'desc'),
       {
         caseSensitive?: boolean;
         natural?: boolean;
         minKeys?: number;
-      }
+      },
     ];
 
-export type SortKeys = "off" | SortKeys0;
+export type SortKeys = 'off' | SortKeys0;

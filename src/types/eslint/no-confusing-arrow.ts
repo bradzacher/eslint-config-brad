@@ -2,12 +2,12 @@
 
 type NoConfusingArrow0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         allowParens?: boolean;
-      }
+      },
     ];
 
-export type NoConfusingArrow = "off" | NoConfusingArrow0;
+export type NoConfusingArrow = 'off' | NoConfusingArrow0;

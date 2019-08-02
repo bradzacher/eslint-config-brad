@@ -2,17 +2,17 @@
 
 type LineCommentPosition0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       (
-        | ("above" | "beside")
+        | ('above' | 'beside')
         | {
-            position?: "above" | "beside";
+            position?: 'above' | 'beside';
             ignorePattern?: string;
             applyDefaultPatterns?: boolean;
             applyDefaultIgnorePatterns?: boolean;
-          })
+          }),
     ];
 
-export type LineCommentPosition = "off" | LineCommentPosition0;
+export type LineCommentPosition = 'off' | LineCommentPosition0;

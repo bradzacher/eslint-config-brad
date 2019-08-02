@@ -2,13 +2,13 @@
 
 type JsxHandlerNames0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         eventHandlerPrefix?: string;
         eventHandlerPropPrefix?: string;
-      }
+      },
     ];
 
-export type JsxHandlerNames = "off" | JsxHandlerNames0;
+export type JsxHandlerNames = 'off' | JsxHandlerNames0;

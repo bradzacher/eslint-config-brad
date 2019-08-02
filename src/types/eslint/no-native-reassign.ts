@@ -2,12 +2,12 @@
 
 type NoNativeReassign0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         exceptions?: string[];
-      }
+      },
     ];
 
-export type NoNativeReassign = "off" | NoNativeReassign0;
+export type NoNativeReassign = 'off' | NoNativeReassign0;

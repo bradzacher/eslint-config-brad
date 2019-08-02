@@ -2,12 +2,12 @@
 
 type PreferStatelessFunction0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         ignorePureComponents?: boolean;
-      }
+      },
     ];
 
-export type PreferStatelessFunction = "off" | PreferStatelessFunction0;
+export type PreferStatelessFunction = 'off' | PreferStatelessFunction0;

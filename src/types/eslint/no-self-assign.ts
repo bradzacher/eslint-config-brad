@@ -2,12 +2,12 @@
 
 type NoSelfAssign0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         props?: boolean;
-      }
+      },
     ];
 
-export type NoSelfAssign = "off" | NoSelfAssign0;
+export type NoSelfAssign = 'off' | NoSelfAssign0;

@@ -2,22 +2,22 @@
 
 type PreferReflect0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         exceptions?: (
-          | "apply"
-          | "call"
-          | "delete"
-          | "defineProperty"
-          | "getOwnPropertyDescriptor"
-          | "getPrototypeOf"
-          | "setPrototypeOf"
-          | "isExtensible"
-          | "getOwnPropertyNames"
-          | "preventExtensions")[];
-      }
+          | 'apply'
+          | 'call'
+          | 'delete'
+          | 'defineProperty'
+          | 'getOwnPropertyDescriptor'
+          | 'getPrototypeOf'
+          | 'setPrototypeOf'
+          | 'isExtensible'
+          | 'getOwnPropertyNames'
+          | 'preventExtensions')[];
+      },
     ];
 
-export type PreferReflect = "off" | PreferReflect0;
+export type PreferReflect = 'off' | PreferReflect0;

@@ -2,12 +2,12 @@
 
 type RequireDefaultProps0 =
   | []
-  | [("off" | "error" | "warn")]
+  | [('off' | 'error' | 'warn')]
   | [
-      ("off" | "error" | "warn"),
+      ('off' | 'error' | 'warn'),
       {
         forbidDefaultForRequired?: boolean;
-      }
+      },
     ];
 
-export type RequireDefaultProps = "off" | RequireDefaultProps0;
+export type RequireDefaultProps = 'off' | RequireDefaultProps0;
