@@ -3,17 +3,15 @@ import globals from 'eslint-restricted-globals';
 import { Eslint } from '../types/eslint';
 
 // we remove some because of how the eslint TS parser interacts with eslint when using interfaces
-const pseudoAllowedGlobals = [
+const pseudoAllowedGlobals = new Set([
   'name',
   'status',
   'location',
   'open',
   'close',
   'event',
-];
-const restrictedGlobals = globals.filter(
-  g => pseudoAllowedGlobals.indexOf(g) === -1,
-);
+]);
+const restrictedGlobals = globals.filter(g => !pseudoAllowedGlobals.has(g));
 const rules: Eslint = {
   // This rule warns if setters are defined without getters
   // https://eslint.org/docs/rules/accessor-pairs

@@ -19,7 +19,7 @@ async function main(): Promise<void> {
   const allPluginsPath = path.resolve(__dirname, './all-plugins.json');
   fs.writeFileSync(
     allPluginsPath,
-    JSON.stringify({ plugins, rules: {} }, null, 4),
+    `${JSON.stringify({ plugins, rules: {} }, null, 2)}\n`,
   );
 
   // create the rule finder instance
@@ -31,8 +31,8 @@ async function main(): Promise<void> {
   allRules.forEach(rule => {
     const split = rule.split('/');
     if (split.length > 1) {
-      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-      rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] || [];
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
+      rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] ?? [];
       rulesPerPlugin[split[0]].push(rule);
     } else {
       rulesPerPlugin.eslint.push(rule);

@@ -172,7 +172,7 @@ const rules: TypescriptEslint = {
   '@typescript-eslint/no-empty-function': [
     'error',
     {
-      allow: [],
+      allow: ['private-constructors', 'protected-constructors'],
     },
   ],
 
@@ -420,7 +420,10 @@ const rules: TypescriptEslint = {
 
   // Enforce template literal expressions to be of string type
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
-  '@typescript-eslint/restrict-template-expressions': ['error'],
+  '@typescript-eslint/restrict-template-expressions': [
+    'error',
+    { allowNumber: true },
+  ],
 
   // Require/Disallow returning awaited values in specific contexts
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md

@@ -1,11 +1,11 @@
 {
-    "plugins": [
-        "@typescript-eslint",
-        "eslint-comments",
-        "import",
-        "jest",
-        "react",
-        "react-hooks"
-    ],
-    "rules": {}
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-comments",
+    "import",
+    "jest",
+    "react",
+    "react-hooks"
+  ],
+  "rules": {}
 }

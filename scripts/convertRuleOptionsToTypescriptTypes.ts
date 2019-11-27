@@ -110,19 +110,19 @@ function recursivelyFixRefs(
   }
 
   Object.keys(schema).forEach((key: keyof JSONSchema4) => {
-    const current = schema[key];
+    const current: Array<JSONSchema4> | string = schema[key];
     if (current == null) {
       return;
     }
 
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    if (key === '$ref' && (current as string).startsWith('#/')) {
+    if (Array.isArray(current)) {
+      current.forEach(subSchema => recursivelyFixRefs(subSchema, idx));
+    } else if (
+      key === '$ref' &&
+      typeof current === 'string' &&
+      current.startsWith('#/')
+    ) {
       schema[key] = `#/items/${idx + 1}/${current.substring(2)}`;
-    } else if (Array.isArray(current)) {
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-      (current as Array<JSONSchema4>).forEach(subSchema =>
-        recursivelyFixRefs(subSchema, idx),
-      );
     } else if (typeof current === 'object') {
       recursivelyFixRefs(current, idx);
     }

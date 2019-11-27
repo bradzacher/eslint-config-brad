@@ -15,6 +15,8 @@ type NoEmptyFunction0 =
           | 'getters'
           | 'setters'
           | 'constructors'
+          | 'private-constructors'
+          | 'protected-constructors'
         )[];
       },
     ];
