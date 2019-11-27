@@ -2,11 +2,12 @@
 
 type Camelcase0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreDestructuring?: boolean;
+        ignoreImports?: boolean;
         properties?: 'always' | 'never';
         allow?: [] | [string];
       },

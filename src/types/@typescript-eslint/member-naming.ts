@@ -2,9 +2,9 @@
 
 type MemberNaming0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         public?: string;
         protected?: string;

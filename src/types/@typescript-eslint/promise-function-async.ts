@@ -2,9 +2,9 @@
 
 type PromiseFunctionAsync0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowAny?: boolean;
         allowedPromiseNames?: string[];

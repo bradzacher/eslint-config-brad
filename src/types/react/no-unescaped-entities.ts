@@ -2,9 +2,9 @@
 
 type NoUnescapedEntities0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         forbid?: (
           | string
@@ -12,7 +12,8 @@ type NoUnescapedEntities0 =
               char?: string;
               alternatives?: string[];
               [k: string]: any;
-            })[];
+            }
+        )[];
       },
     ];
 

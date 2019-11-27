@@ -2,7 +2,7 @@
 
 type NoReturnAssign0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('except-parens' | 'always')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'except-parens' | 'always'];
 
 export type NoReturnAssign = 'off' | NoReturnAssign0;

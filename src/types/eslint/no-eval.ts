@@ -2,9 +2,9 @@
 
 type NoEval0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowIndirect?: boolean;
       },

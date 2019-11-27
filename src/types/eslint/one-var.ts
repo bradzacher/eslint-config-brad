@@ -2,9 +2,9 @@
 
 type OneVar0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | ('always' | 'never' | 'consecutive')
         | {
@@ -16,7 +16,8 @@ type OneVar0 =
         | {
             initialized?: 'always' | 'never' | 'consecutive';
             uninitialized?: 'always' | 'never' | 'consecutive';
-          }),
+          }
+      ),
     ];
 
 export type OneVar = 'off' | OneVar0;

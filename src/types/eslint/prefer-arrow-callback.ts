@@ -2,9 +2,9 @@
 
 type PreferArrowCallback0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowNamedFunctions?: boolean;
         allowUnboundThis?: boolean;

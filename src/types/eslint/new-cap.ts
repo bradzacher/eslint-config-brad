@@ -2,9 +2,9 @@
 
 type NewCap0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         newIsCap?: boolean;
         capIsNew?: boolean;

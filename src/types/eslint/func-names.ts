@@ -1,10 +1,10 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
 type FuncNames0 =
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), Value]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', Value]
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       Value,
       {
         generators?: Value;

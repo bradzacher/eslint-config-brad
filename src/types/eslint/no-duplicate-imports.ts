@@ -2,9 +2,9 @@
 
 type NoDuplicateImports0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         includeExports?: boolean;
       },

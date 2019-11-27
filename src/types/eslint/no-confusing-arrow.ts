@@ -2,9 +2,9 @@
 
 type NoConfusingArrow0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowParens?: boolean;
       },

@@ -2,9 +2,9 @@
 
 type ArrowSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         before?: boolean;
         after?: boolean;

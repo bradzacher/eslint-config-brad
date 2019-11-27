@@ -2,9 +2,9 @@
 
 type NoTypeAlias0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowAliases?:
           | 'always'
@@ -13,6 +13,8 @@ type NoTypeAlias0 =
           | 'in-intersections'
           | 'in-unions-and-intersections';
         allowCallbacks?: 'always' | 'never';
+        allowConditionalTypes?: 'always' | 'never';
+        allowConstructors?: 'always' | 'never';
         allowLiterals?:
           | 'always'
           | 'never'
@@ -20,6 +22,12 @@ type NoTypeAlias0 =
           | 'in-intersections'
           | 'in-unions-and-intersections';
         allowMappedTypes?:
+          | 'always'
+          | 'never'
+          | 'in-unions'
+          | 'in-intersections'
+          | 'in-unions-and-intersections';
+        allowTupleTypes?:
           | 'always'
           | 'never'
           | 'in-unions'

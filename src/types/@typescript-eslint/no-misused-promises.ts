@@ -2,9 +2,9 @@
 
 type NoMisusedPromises0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         checksConditionals?: boolean;
         checksVoidReturn?: boolean;

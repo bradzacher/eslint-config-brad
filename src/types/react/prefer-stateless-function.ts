@@ -2,9 +2,9 @@
 
 type PreferStatelessFunction0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignorePureComponents?: boolean;
       },

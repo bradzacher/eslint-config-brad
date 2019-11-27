@@ -2,7 +2,7 @@
 
 type LinebreakStyle0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('unix' | 'windows')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'unix' | 'windows'];
 
 export type LinebreakStyle = 'off' | LinebreakStyle0;

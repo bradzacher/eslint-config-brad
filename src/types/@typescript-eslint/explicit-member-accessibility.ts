@@ -2,9 +2,9 @@
 
 type ExplicitMemberAccessibility0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         accessibility?: 'explicit' | 'no-public' | 'off';
         overrides?: {
@@ -14,6 +14,7 @@ type ExplicitMemberAccessibility0 =
           properties?: 'explicit' | 'no-public' | 'off';
           parameterProperties?: 'explicit' | 'no-public' | 'off';
         };
+        ignoredMethodNames?: string[];
       },
     ];
 

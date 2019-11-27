@@ -2,9 +2,9 @@
 
 type PreferReflect0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         exceptions?: (
           | 'apply'
@@ -16,7 +16,8 @@ type PreferReflect0 =
           | 'setPrototypeOf'
           | 'isExtensible'
           | 'getOwnPropertyNames'
-          | 'preventExtensions')[];
+          | 'preventExtensions'
+        )[];
       },
     ];
 

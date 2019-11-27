@@ -2,9 +2,9 @@
 
 type NoElseReturn0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowElseIf?: boolean;
       },

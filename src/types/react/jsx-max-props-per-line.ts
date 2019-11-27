@@ -2,9 +2,9 @@
 
 type JsxMaxPropsPerLine0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         maximum?: number;
         when?: 'always' | 'multiline';

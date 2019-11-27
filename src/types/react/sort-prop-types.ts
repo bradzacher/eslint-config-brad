@@ -2,9 +2,9 @@
 
 type SortPropTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         requiredFirst?: boolean;
         callbacksLast?: boolean;

@@ -2,9 +2,9 @@
 
 type JsxPascalCase0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowAllCaps?: boolean;
         ignore?: any[];

@@ -2,9 +2,9 @@
 
 type PreferPromiseRejectErrors0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowEmptyReject?: boolean;
       },

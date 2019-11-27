@@ -2,11 +2,12 @@
 
 type StrictBooleanExpressions0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreRhs?: boolean;
+        allowNullable?: boolean;
       },
     ];
 

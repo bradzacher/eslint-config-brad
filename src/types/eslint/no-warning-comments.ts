@@ -2,9 +2,9 @@
 
 type NoWarningComments0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         terms?: string[];
         location?: 'start' | 'anywhere';

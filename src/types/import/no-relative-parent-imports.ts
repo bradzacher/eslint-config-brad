@@ -2,14 +2,14 @@
 
 type NoRelativeParentImports0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         commonjs?: boolean;
         amd?: boolean;
         esmodule?: boolean;
-        ignore?: [string, ...(string)[]];
+        ignore?: [string, ...string[]];
       },
     ];
 

@@ -2,7 +2,7 @@
 
 type JsxQuotes0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('prefer-single' | 'prefer-double')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'prefer-single' | 'prefer-double'];
 
 export type JsxQuotes = 'off' | JsxQuotes0;

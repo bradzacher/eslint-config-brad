@@ -2,9 +2,9 @@
 
 type DisplayName0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreTranspilerName?: boolean;
       },

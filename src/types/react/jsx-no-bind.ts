@@ -2,9 +2,9 @@
 
 type JsxNoBind0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowArrowFunctions?: boolean;
         allowBind?: boolean;

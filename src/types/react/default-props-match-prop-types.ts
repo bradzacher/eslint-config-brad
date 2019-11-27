@@ -2,9 +2,9 @@
 
 type DefaultPropsMatchPropTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowRequiredDefaults?: boolean;
       },

@@ -2,9 +2,9 @@
 
 type SwitchColonSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         before?: boolean;
         after?: boolean;

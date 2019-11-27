@@ -2,9 +2,9 @@
 
 type NoIrregularWhitespace0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         skipComments?: boolean;
         skipStrings?: boolean;

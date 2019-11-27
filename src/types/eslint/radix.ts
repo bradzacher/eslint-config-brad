@@ -2,7 +2,7 @@
 
 type Radix0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'as-needed')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'as-needed'];
 
 export type Radix = 'off' | Radix0;

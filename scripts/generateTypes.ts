@@ -17,7 +17,10 @@ async function main(): Promise<void> {
     .map(dep => dep.replace('eslint-plugin-', ''))
     .map(dep => dep.replace('/eslint-plugin', ''));
   const allPluginsPath = path.resolve(__dirname, './all-plugins.json');
-  fs.writeFileSync(allPluginsPath, JSON.stringify({ plugins }, null, 4));
+  fs.writeFileSync(
+    allPluginsPath,
+    JSON.stringify({ plugins, rules: {} }, null, 4),
+  );
 
   // create the rule finder instance
   const ruleFinder = getRuleFinder(allPluginsPath);
@@ -77,7 +80,7 @@ async function main(): Promise<void> {
         'utf8',
       );
 
-      console.info('Wrote types for', plugin);
+      console.info('Wrote types for', plugin, '\n');
     }),
   );
 

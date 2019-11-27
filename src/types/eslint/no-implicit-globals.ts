@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type NoImplicitGlobals = 'off' | ['warn' | 'error'];
+type NoImplicitGlobals0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        lexicalBindings?: boolean;
+      },
+    ];
+
+export type NoImplicitGlobals = 'off' | NoImplicitGlobals0;

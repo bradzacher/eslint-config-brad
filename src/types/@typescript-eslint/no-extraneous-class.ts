@@ -2,13 +2,14 @@
 
 type NoExtraneousClass0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowConstructorOnly?: boolean;
         allowEmpty?: boolean;
         allowStaticOnly?: boolean;
+        allowWithDecorator?: boolean;
       },
     ];
 

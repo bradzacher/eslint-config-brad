@@ -2,9 +2,9 @@
 
 type JsxTagSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         closingSlash?: 'always' | 'never' | 'allow';
         beforeSelfClosing?: 'always' | 'never' | 'allow';

@@ -2,7 +2,7 @@
 
 type DotLocation0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('object' | 'property')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'object' | 'property'];
 
 export type DotLocation = 'off' | DotLocation0;

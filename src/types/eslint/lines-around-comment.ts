@@ -2,9 +2,9 @@
 
 type LinesAroundComment0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         beforeBlockComment?: boolean;
         afterBlockComment?: boolean;

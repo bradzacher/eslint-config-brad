@@ -2,11 +2,11 @@
 
 type Indent0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('tab' | number)]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'tab' | number]
   | [
-      ('off' | 'error' | 'warn'),
-      ('tab' | number),
+      'off' | 'error' | 'warn',
+      'tab' | number,
       {
         SwitchCase?: number;
         VariableDeclarator?:

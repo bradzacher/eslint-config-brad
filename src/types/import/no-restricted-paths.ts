@@ -2,19 +2,19 @@
 
 type NoRestrictedPaths0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         zones?: [
           {
             target?: string;
             from?: string;
           },
-          ...({
+          ...{
             target?: string;
             from?: string;
-          })[],
+          }[],
         ];
         basePath?: string;
       },

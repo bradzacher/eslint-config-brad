@@ -2,9 +2,9 @@
 
 type NoSelfAssign0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         props?: boolean;
       },

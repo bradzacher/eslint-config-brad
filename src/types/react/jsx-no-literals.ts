@@ -2,11 +2,12 @@
 
 type JsxNoLiterals0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         noStrings?: boolean;
+        allowedStrings?: string[];
       },
     ];
 

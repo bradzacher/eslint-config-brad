@@ -2,11 +2,12 @@
 
 type LowercaseName0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignore?: ('describe' | 'test' | 'it')[];
+        allowedPrefixes?: string[];
       },
     ];
 

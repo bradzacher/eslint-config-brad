@@ -2,16 +2,17 @@
 
 type ForbidElements0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         forbid?: (
           | string
           | {
               element: string;
               message?: string;
-            })[];
+            }
+        )[];
       },
     ];
 

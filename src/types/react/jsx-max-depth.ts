@@ -2,9 +2,9 @@
 
 type JsxMaxDepth0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         max?: number;
       },

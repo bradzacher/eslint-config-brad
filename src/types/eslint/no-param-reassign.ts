@@ -2,9 +2,9 @@
 
 type NoParamReassign0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             props?: false;
@@ -12,7 +12,9 @@ type NoParamReassign0 =
         | {
             props?: true;
             ignorePropertyModificationsFor?: string[];
-          }),
+            ignorePropertyModificationsForRegex?: string[];
+          }
+      ),
     ];
 
 export type NoParamReassign = 'off' | NoParamReassign0;

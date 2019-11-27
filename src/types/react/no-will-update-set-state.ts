@@ -2,7 +2,7 @@
 
 type NoWillUpdateSetState0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), 'disallow-in-func'];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'disallow-in-func'];
 
 export type NoWillUpdateSetState = 'off' | NoWillUpdateSetState0;

@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type NoUselessComputedKey = 'off' | ['warn' | 'error'];
+type NoUselessComputedKey0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        enforceForClassMembers?: boolean;
+      },
+    ];
+
+export type NoUselessComputedKey = 'off' | NoUselessComputedKey0;

@@ -2,9 +2,9 @@
 
 type UnboundMethod0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreStatic?: boolean;
       },

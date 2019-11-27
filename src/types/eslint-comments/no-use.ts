@@ -2,9 +2,9 @@
 
 type NoUse0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allow?: (
           | 'eslint'
@@ -15,7 +15,8 @@ type NoUse0 =
           | 'eslint-env'
           | 'exported'
           | 'global'
-          | 'globals')[];
+          | 'globals'
+        )[];
       },
     ];
 

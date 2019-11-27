@@ -2,9 +2,9 @@
 
 type JsxWrapMultilines0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         declaration?: true | false | 'ignore' | 'parens' | 'parens-new-line';
         assignment?: true | false | 'ignore' | 'parens' | 'parens-new-line';

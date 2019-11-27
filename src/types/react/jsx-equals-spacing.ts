@@ -2,7 +2,7 @@
 
 type JsxEqualsSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'never')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'never'];
 
 export type JsxEqualsSpacing = 'off' | JsxEqualsSpacing0;

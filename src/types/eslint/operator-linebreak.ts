@@ -2,11 +2,11 @@
 
 type OperatorLinebreak0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('after' | 'before' | 'none' | null)]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'after' | 'before' | 'none' | null]
   | [
-      ('off' | 'error' | 'warn'),
-      ('after' | 'before' | 'none' | null),
+      'off' | 'error' | 'warn',
+      'after' | 'before' | 'none' | null,
       {
         overrides?: {
           anyOf?: 'after' | 'before' | 'none' | 'ignore';

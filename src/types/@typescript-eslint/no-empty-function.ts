@@ -2,9 +2,9 @@
 
 type NoEmptyFunction0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allow?: (
           | 'functions'
@@ -14,7 +14,8 @@ type NoEmptyFunction0 =
           | 'generatorMethods'
           | 'getters'
           | 'setters'
-          | 'constructors')[];
+          | 'constructors'
+        )[];
       },
     ];
 

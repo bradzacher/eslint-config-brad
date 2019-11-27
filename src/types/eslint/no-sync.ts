@@ -2,9 +2,9 @@
 
 type NoSync0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowAtRootLevel?: boolean;
       },

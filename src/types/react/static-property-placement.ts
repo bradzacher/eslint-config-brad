@@ -2,14 +2,14 @@
 
 type StaticPropertyPlacement0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
-      ('static public field' | 'static getter' | 'property assignment'),
+      'off' | 'error' | 'warn',
+      'static public field' | 'static getter' | 'property assignment',
     ]
   | [
-      ('off' | 'error' | 'warn'),
-      ('static public field' | 'static getter' | 'property assignment'),
+      'off' | 'error' | 'warn',
+      'static public field' | 'static getter' | 'property assignment',
       {
         propTypes?:
           | 'static public field'

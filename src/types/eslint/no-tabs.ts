@@ -2,9 +2,9 @@
 
 type NoTabs0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowIndentationTabs?: boolean;
       },

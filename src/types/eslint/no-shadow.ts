@@ -2,9 +2,9 @@
 
 type NoShadow0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         builtinGlobals?: boolean;
         hoist?: 'all' | 'functions' | 'never';

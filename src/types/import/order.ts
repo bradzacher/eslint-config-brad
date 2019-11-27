@@ -2,9 +2,9 @@
 
 type Order0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         groups?: any[];
         'newlines-between'?:

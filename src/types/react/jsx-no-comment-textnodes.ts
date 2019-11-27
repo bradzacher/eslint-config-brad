@@ -2,7 +2,7 @@
 
 type JsxNoCommentTextnodes0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), {}];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', {}];
 
 export type JsxNoCommentTextnodes = 'off' | JsxNoCommentTextnodes0;

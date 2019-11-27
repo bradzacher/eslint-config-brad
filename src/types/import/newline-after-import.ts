@@ -2,9 +2,9 @@
 
 type NewlineAfterImport0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         count?: number;
       },

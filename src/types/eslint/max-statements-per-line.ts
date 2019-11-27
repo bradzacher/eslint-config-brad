@@ -2,9 +2,9 @@
 
 type MaxStatementsPerLine0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         max?: number;
       },

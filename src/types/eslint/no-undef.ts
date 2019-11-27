@@ -2,9 +2,9 @@
 
 type NoUndef0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         typeof?: boolean;
       },

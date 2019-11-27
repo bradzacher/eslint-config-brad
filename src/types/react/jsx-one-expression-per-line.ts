@@ -2,9 +2,9 @@
 
 type JsxOneExpressionPerLine0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allow?: 'none' | 'literal' | 'single-child';
       },

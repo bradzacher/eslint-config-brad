@@ -2,13 +2,14 @@
 
 type NoUnderscoreDangle0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allow?: string[];
         allowAfterThis?: boolean;
         allowAfterSuper?: boolean;
+        allowAfterThisConstructor?: boolean;
         enforceInMethodNames?: boolean;
       },
     ];

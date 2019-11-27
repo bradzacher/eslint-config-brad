@@ -2,7 +2,7 @@
 
 type JsxIndentProps0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), (('tab' | 'first') | number)];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', ('tab' | 'first') | number];
 
 export type JsxIndentProps = 'off' | JsxIndentProps0;

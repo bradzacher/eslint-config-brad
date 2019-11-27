@@ -2,11 +2,11 @@
 
 type LinesBetweenClassMembers0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'never')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'never']
   | [
-      ('off' | 'error' | 'warn'),
-      ('always' | 'never'),
+      'off' | 'error' | 'warn',
+      'always' | 'never',
       {
         exceptAfterSingleLine?: boolean;
       },

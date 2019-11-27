@@ -2,9 +2,9 @@
 
 type PropTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignore?: string[];
         customValidators?: string[];

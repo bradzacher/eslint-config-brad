@@ -2,9 +2,9 @@
 
 type PreferReadonly0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         onlyInlineLambdas?: boolean;
         [k: string]: any;

@@ -2,7 +2,7 @@
 
 type GenericTypeNaming0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), string];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', string];
 
 export type GenericTypeNaming = 'off' | GenericTypeNaming0;

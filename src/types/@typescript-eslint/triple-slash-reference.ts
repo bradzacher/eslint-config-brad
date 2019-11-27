@@ -2,9 +2,9 @@
 
 type TripleSlashReference0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         lib?: 'always' | 'never';
         path?: 'always' | 'never';

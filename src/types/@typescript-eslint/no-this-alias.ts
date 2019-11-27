@@ -2,9 +2,9 @@
 
 type NoThisAlias0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowDestructuring?: boolean;
         allowedNames?: string[];

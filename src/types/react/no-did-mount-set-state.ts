@@ -2,7 +2,7 @@
 
 type NoDidMountSetState0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), 'disallow-in-func'];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'disallow-in-func'];
 
 export type NoDidMountSetState = 'off' | NoDidMountSetState0;

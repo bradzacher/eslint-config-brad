@@ -2,9 +2,9 @@
 
 type NoTrailingSpaces0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         skipBlankLines?: boolean;
         ignoreComments?: boolean;

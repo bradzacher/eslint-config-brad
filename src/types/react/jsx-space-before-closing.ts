@@ -2,7 +2,7 @@
 
 type JsxSpaceBeforeClosing0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'never')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'never'];
 
 export type JsxSpaceBeforeClosing = 'off' | JsxSpaceBeforeClosing0;

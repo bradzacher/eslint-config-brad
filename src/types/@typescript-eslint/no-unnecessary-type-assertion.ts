@@ -2,9 +2,9 @@
 
 type NoUnnecessaryTypeAssertion0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         typesToIgnore?: string[];
         [k: string]: any;

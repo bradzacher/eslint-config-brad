@@ -2,7 +2,7 @@
 
 type BlockSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'never')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'never'];
 
 export type BlockSpacing = 'off' | BlockSpacing0;

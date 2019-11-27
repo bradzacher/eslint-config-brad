@@ -2,9 +2,9 @@
 
 type NoUselessPathSegments0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         commonjs?: boolean;
         noUselessIndex?: boolean;

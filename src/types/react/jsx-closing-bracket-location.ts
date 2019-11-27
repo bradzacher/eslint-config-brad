@@ -2,9 +2,9 @@
 
 type JsxClosingBracketLocation0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | ('after-props' | 'props-aligned' | 'tag-aligned' | 'line-aligned')
         | {
@@ -27,7 +27,8 @@ type JsxClosingBracketLocation0 =
               | 'tag-aligned'
               | 'line-aligned'
               | false;
-          }),
+          }
+      ),
     ];
 
 export type JsxClosingBracketLocation = 'off' | JsxClosingBracketLocation0;

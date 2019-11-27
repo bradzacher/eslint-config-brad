@@ -2,11 +2,11 @@
 
 type NonblockStatementBodyPosition0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('beside' | 'below' | 'any')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'beside' | 'below' | 'any']
   | [
-      ('off' | 'error' | 'warn'),
-      ('beside' | 'below' | 'any'),
+      'off' | 'error' | 'warn',
+      'beside' | 'below' | 'any',
       {
         overrides?: {
           if?: 'beside' | 'below' | 'any';

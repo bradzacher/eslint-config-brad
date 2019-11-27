@@ -2,9 +2,9 @@
 
 type SpaceInfixOps0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         int32Hint?: boolean;
       },

@@ -2,11 +2,11 @@
 
 type SortKeys0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('asc' | 'desc')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'asc' | 'desc']
   | [
-      ('off' | 'error' | 'warn'),
-      ('asc' | 'desc'),
+      'off' | 'error' | 'warn',
+      'asc' | 'desc',
       {
         caseSensitive?: boolean;
         natural?: boolean;

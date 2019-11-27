@@ -2,9 +2,9 @@
 
 type KeySpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             align?:
@@ -56,7 +56,8 @@ type KeySpacing0 =
               beforeColon?: boolean;
               afterColon?: boolean;
             };
-          }),
+          }
+      ),
     ];
 
 export type KeySpacing = 'off' | KeySpacing0;

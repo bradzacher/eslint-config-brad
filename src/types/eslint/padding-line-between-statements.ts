@@ -1,9 +1,9 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
 type PaddingLineBetweenStatements0 =
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         blankLine: PaddingType;
         prev: StatementType;
@@ -50,7 +50,8 @@ type StatementType =
       | 'try'
       | 'var'
       | 'while'
-      | 'with')
+      | 'with'
+    )
   | [
       (
         | '*'
@@ -90,7 +91,8 @@ type StatementType =
         | 'try'
         | 'var'
         | 'while'
-        | 'with'),
+        | 'with'
+      ),
       ...(
         | '*'
         | 'block-like'
@@ -129,7 +131,8 @@ type StatementType =
         | 'try'
         | 'var'
         | 'while'
-        | 'with')[],
+        | 'with'
+      )[],
     ];
 
 export type PaddingLineBetweenStatements =

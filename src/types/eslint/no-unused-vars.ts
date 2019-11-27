@@ -2,9 +2,9 @@
 
 type NoUnusedVars0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | ('all' | 'local')
         | {
@@ -16,7 +16,8 @@ type NoUnusedVars0 =
             caughtErrors?: 'all' | 'none';
             caughtErrorsIgnorePattern?: string;
             [k: string]: any;
-          }),
+          }
+      ),
     ];
 
 export type NoUnusedVars = 'off' | NoUnusedVars0;

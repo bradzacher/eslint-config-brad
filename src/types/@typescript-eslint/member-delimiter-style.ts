@@ -2,9 +2,9 @@
 
 type MemberDelimiterStyle0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         multiline?: {
           delimiter?: 'none' | 'semi' | 'comma';

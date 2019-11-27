@@ -2,11 +2,11 @@
 
 type BooleanPropNaming0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
-        propTypeNames?: [string, ...(string)[]];
+        propTypeNames?: [string, ...string[]];
         rule?: string;
         message?: string;
         validateNested?: boolean;

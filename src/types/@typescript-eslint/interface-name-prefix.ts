@@ -2,7 +2,19 @@
 
 type InterfaceNamePrefix0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('never' | 'always')];
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      (
+        | ('never' | 'always')
+        | {
+            prefixWithI?: 'never';
+          }
+        | {
+            prefixWithI: 'always';
+            allowUnderscorePrefix?: boolean;
+          }
+      ),
+    ];
 
 export type InterfaceNamePrefix = 'off' | InterfaceNamePrefix0;

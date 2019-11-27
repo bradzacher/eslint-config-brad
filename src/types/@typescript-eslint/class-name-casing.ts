@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type ClassNameCasing = 'off' | ['warn' | 'error'];
+type ClassNameCasing0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        allowUnderscorePrefix?: boolean;
+      },
+    ];
+
+export type ClassNameCasing = 'off' | ClassNameCasing0;

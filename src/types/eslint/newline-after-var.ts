@@ -2,7 +2,7 @@
 
 type NewlineAfterVar0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('never' | 'always')];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'never' | 'always'];
 
 export type NewlineAfterVar = 'off' | NewlineAfterVar0;

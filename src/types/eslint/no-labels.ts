@@ -2,9 +2,9 @@
 
 type NoLabels0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowLoop?: boolean;
         allowSwitch?: boolean;

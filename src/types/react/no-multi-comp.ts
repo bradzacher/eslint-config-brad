@@ -2,9 +2,9 @@
 
 type NoMultiComp0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreStateless?: boolean;
       },

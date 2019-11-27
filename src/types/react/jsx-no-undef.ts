@@ -2,9 +2,9 @@
 
 type JsxNoUndef0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowGlobals?: boolean;
       },

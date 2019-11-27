@@ -2,24 +2,26 @@
 
 type MaxStatements0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | number
         | {
             maximum?: number;
             max?: number;
-          }),
+          }
+      ),
     ]
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | number
         | {
             maximum?: number;
             max?: number;
-          }),
+          }
+      ),
       {
         ignoreTopLevelFunctions?: boolean;
       },

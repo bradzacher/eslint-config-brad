@@ -2,9 +2,9 @@
 
 type GetterReturn0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowImplicit?: boolean;
       },

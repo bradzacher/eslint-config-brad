@@ -2,9 +2,9 @@
 
 type Typedef0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         arrayDestructuring?: boolean;
         arrowParameter?: boolean;

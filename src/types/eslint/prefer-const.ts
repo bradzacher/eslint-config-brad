@@ -2,9 +2,9 @@
 
 type PreferConst0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         destructuring?: 'any' | 'all';
         ignoreReadBeforeAssign?: boolean;

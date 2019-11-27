@@ -2,9 +2,9 @@
 
 type MemberOrdering0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         default?:
           | 'never'
@@ -15,28 +15,37 @@ type MemberOrdering0 =
               | 'public-static-field'
               | 'instance-field'
               | 'public-instance-field'
+              | 'abstract-field'
+              | 'public-abstract-field'
               | 'protected-field'
               | 'protected-static-field'
               | 'protected-instance-field'
+              | 'protected-abstract-field'
               | 'private-field'
               | 'private-static-field'
               | 'private-instance-field'
+              | 'private-abstract-field'
               | 'method'
               | 'public-method'
               | 'static-method'
               | 'public-static-method'
               | 'instance-method'
               | 'public-instance-method'
+              | 'abstract-method'
+              | 'public-abstract-method'
               | 'protected-method'
               | 'protected-static-method'
               | 'protected-instance-method'
+              | 'protected-abstract-method'
               | 'private-method'
               | 'private-static-method'
               | 'private-instance-method'
+              | 'private-abstract-method'
               | 'constructor'
               | 'public-constructor'
               | 'protected-constructor'
-              | 'private-constructor')[];
+              | 'private-constructor'
+            )[];
         classes?:
           | 'never'
           | (
@@ -46,28 +55,37 @@ type MemberOrdering0 =
               | 'public-static-field'
               | 'instance-field'
               | 'public-instance-field'
+              | 'abstract-field'
+              | 'public-abstract-field'
               | 'protected-field'
               | 'protected-static-field'
               | 'protected-instance-field'
+              | 'protected-abstract-field'
               | 'private-field'
               | 'private-static-field'
               | 'private-instance-field'
+              | 'private-abstract-field'
               | 'method'
               | 'public-method'
               | 'static-method'
               | 'public-static-method'
               | 'instance-method'
               | 'public-instance-method'
+              | 'abstract-method'
+              | 'public-abstract-method'
               | 'protected-method'
               | 'protected-static-method'
               | 'protected-instance-method'
+              | 'protected-abstract-method'
               | 'private-method'
               | 'private-static-method'
               | 'private-instance-method'
+              | 'private-abstract-method'
               | 'constructor'
               | 'public-constructor'
               | 'protected-constructor'
-              | 'private-constructor')[];
+              | 'private-constructor'
+            )[];
         classExpressions?:
           | 'never'
           | (
@@ -77,28 +95,37 @@ type MemberOrdering0 =
               | 'public-static-field'
               | 'instance-field'
               | 'public-instance-field'
+              | 'abstract-field'
+              | 'public-abstract-field'
               | 'protected-field'
               | 'protected-static-field'
               | 'protected-instance-field'
+              | 'protected-abstract-field'
               | 'private-field'
               | 'private-static-field'
               | 'private-instance-field'
+              | 'private-abstract-field'
               | 'method'
               | 'public-method'
               | 'static-method'
               | 'public-static-method'
               | 'instance-method'
               | 'public-instance-method'
+              | 'abstract-method'
+              | 'public-abstract-method'
               | 'protected-method'
               | 'protected-static-method'
               | 'protected-instance-method'
+              | 'protected-abstract-method'
               | 'private-method'
               | 'private-static-method'
               | 'private-instance-method'
+              | 'private-abstract-method'
               | 'constructor'
               | 'public-constructor'
               | 'protected-constructor'
-              | 'private-constructor')[];
+              | 'private-constructor'
+            )[];
         interfaces?: 'never' | ('field' | 'method' | 'constructor')[];
         typeLiterals?: 'never' | ('field' | 'method' | 'constructor')[];
       },

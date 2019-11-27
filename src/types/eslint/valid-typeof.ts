@@ -2,9 +2,9 @@
 
 type ValidTypeof0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         requireStringLiterals?: boolean;
       },

@@ -2,9 +2,9 @@
 
 type ConsistentTypeAssertions0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             assertionStyle: 'never';
@@ -15,7 +15,8 @@ type ConsistentTypeAssertions0 =
               | 'allow'
               | 'allow-as-parameter'
               | 'never';
-          }),
+          }
+      ),
     ];
 
 export type ConsistentTypeAssertions = 'off' | ConsistentTypeAssertions0;

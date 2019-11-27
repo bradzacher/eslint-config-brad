@@ -2,9 +2,9 @@
 
 type BanTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         types?: {
           [k: string]:

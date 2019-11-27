@@ -2,9 +2,9 @@
 
 type ValidJsdoc0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         prefer?: {
           [k: string]: string;

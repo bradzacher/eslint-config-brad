@@ -2,9 +2,9 @@
 
 type SpaceUnaryOps0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         words?: boolean;
         nonwords?: boolean;

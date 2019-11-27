@@ -7,7 +7,7 @@ import { NoAliasMethods } from '../jest/no-alias-methods';
 import { NoCommentedOutTests } from '../jest/no-commented-out-tests';
 import { NoDisabledTests } from '../jest/no-disabled-tests';
 import { NoDuplicateHooks } from '../jest/no-duplicate-hooks';
-import { NoEmptyTitle } from '../jest/no-empty-title';
+import { NoExpectResolves } from '../jest/no-expect-resolves';
 import { NoExport } from '../jest/no-export';
 import { NoFocusedTests } from '../jest/no-focused-tests';
 import { NoHooks } from '../jest/no-hooks';
@@ -25,6 +25,7 @@ import { NoTruthyFalsy } from '../jest/no-truthy-falsy';
 import { NoTryExpect } from '../jest/no-try-expect';
 import { PreferCalledWith } from '../jest/prefer-called-with';
 import { PreferExpectAssertions } from '../jest/prefer-expect-assertions';
+import { PreferHooksOnTop } from '../jest/prefer-hooks-on-top';
 import { PreferInlineSnapshots } from '../jest/prefer-inline-snapshots';
 import { PreferSpyOn } from '../jest/prefer-spy-on';
 import { PreferStrictEqual } from '../jest/prefer-strict-equal';
@@ -33,10 +34,12 @@ import { PreferToBeUndefined } from '../jest/prefer-to-be-undefined';
 import { PreferToContain } from '../jest/prefer-to-contain';
 import { PreferToHaveLength } from '../jest/prefer-to-have-length';
 import { PreferTodo } from '../jest/prefer-todo';
-import { RequireTothrowMessage } from '../jest/require-tothrow-message';
+import { RequireToThrowMessage } from '../jest/require-to-throw-message';
+import { RequireTopLevelDescribe } from '../jest/require-top-level-describe';
 import { ValidDescribe } from '../jest/valid-describe';
 import { ValidExpect } from '../jest/valid-expect';
 import { ValidExpectInPromise } from '../jest/valid-expect-in-promise';
+import { ValidTitle } from '../jest/valid-title';
 
 interface Jest {
   'jest/consistent-test-it': ConsistentTestIt;
@@ -46,7 +49,7 @@ interface Jest {
   'jest/no-commented-out-tests': NoCommentedOutTests;
   'jest/no-disabled-tests': NoDisabledTests;
   'jest/no-duplicate-hooks': NoDuplicateHooks;
-  'jest/no-empty-title': NoEmptyTitle;
+  'jest/no-expect-resolves': NoExpectResolves;
   'jest/no-export': NoExport;
   'jest/no-focused-tests': NoFocusedTests;
   'jest/no-hooks': NoHooks;
@@ -64,6 +67,7 @@ interface Jest {
   'jest/no-try-expect': NoTryExpect;
   'jest/prefer-called-with': PreferCalledWith;
   'jest/prefer-expect-assertions': PreferExpectAssertions;
+  'jest/prefer-hooks-on-top': PreferHooksOnTop;
   'jest/prefer-inline-snapshots': PreferInlineSnapshots;
   'jest/prefer-spy-on': PreferSpyOn;
   'jest/prefer-strict-equal': PreferStrictEqual;
@@ -72,10 +76,12 @@ interface Jest {
   'jest/prefer-to-contain': PreferToContain;
   'jest/prefer-to-have-length': PreferToHaveLength;
   'jest/prefer-todo': PreferTodo;
-  'jest/require-tothrow-message': RequireTothrowMessage;
+  'jest/require-to-throw-message': RequireToThrowMessage;
+  'jest/require-top-level-describe': RequireTopLevelDescribe;
   'jest/valid-describe': ValidDescribe;
   'jest/valid-expect': ValidExpect;
   'jest/valid-expect-in-promise': ValidExpectInPromise;
+  'jest/valid-title': ValidTitle;
 }
 
 export { Jest };

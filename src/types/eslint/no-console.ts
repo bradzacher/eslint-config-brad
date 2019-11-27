@@ -2,11 +2,11 @@
 
 type NoConsole0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
-        allow?: [string, ...(string)[]];
+        allow?: [string, ...string[]];
       },
     ];
 

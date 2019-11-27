@@ -2,9 +2,9 @@
 
 type NoUnusedPropTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         customValidators?: string[];
         skipShapeProps?: boolean;

@@ -2,9 +2,9 @@
 
 type NewlinePerChainedCall0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreChainWithDepth?: number;
       },

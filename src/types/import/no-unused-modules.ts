@@ -2,9 +2,9 @@
 
 type NoUnusedModules0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             [k: string]: any;
@@ -19,7 +19,8 @@ type NoUnusedModules0 =
         | {
             missingExports: true;
             [k: string]: any;
-          }),
+          }
+      ),
     ];
 
 export type NoUnusedModules = 'off' | NoUnusedModules0;

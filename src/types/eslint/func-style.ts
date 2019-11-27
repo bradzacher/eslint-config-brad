@@ -2,11 +2,11 @@
 
 type FuncStyle0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('declaration' | 'expression')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'declaration' | 'expression']
   | [
-      ('off' | 'error' | 'warn'),
-      ('declaration' | 'expression'),
+      'off' | 'error' | 'warn',
+      'declaration' | 'expression',
       {
         allowArrowFunctions?: boolean;
       },

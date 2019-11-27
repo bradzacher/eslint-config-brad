@@ -2,9 +2,9 @@
 
 type DisableEnablePair0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowWholeFile?: boolean;
       },

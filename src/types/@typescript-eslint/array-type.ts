@@ -2,9 +2,9 @@
 
 type ArrayType0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         default?: 'array' | 'generic' | 'array-simple';
         readonly?: 'array' | 'generic' | 'array-simple';

@@ -2,9 +2,9 @@
 
 type NoMultiSpaces0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         exceptions?: {
           /**

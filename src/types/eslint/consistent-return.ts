@@ -2,9 +2,9 @@
 
 type ConsistentReturn0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         treatUndefinedAsUnspecified?: boolean;
       },

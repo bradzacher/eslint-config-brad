@@ -2,9 +2,9 @@
 
 type NoLargeSnapshots0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         maxSize?: number;
         whitelistedSnapshots?: {

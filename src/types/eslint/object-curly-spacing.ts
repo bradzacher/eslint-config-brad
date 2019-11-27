@@ -2,11 +2,11 @@
 
 type ObjectCurlySpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'never')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'never']
   | [
-      ('off' | 'error' | 'warn'),
-      ('always' | 'never'),
+      'off' | 'error' | 'warn',
+      'always' | 'never',
       {
         arraysInObjects?: boolean;
         objectsInObjects?: boolean;

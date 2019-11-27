@@ -2,10 +2,10 @@
 
 type IdMatch0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), string]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', string]
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       string,
       {
         properties?: boolean;

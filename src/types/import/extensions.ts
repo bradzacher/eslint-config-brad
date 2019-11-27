@@ -1,13 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
 type Extensions0 =
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'ignorePackages' | 'never')]
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'ignorePackages' | 'never')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'ignorePackages' | 'never']
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'ignorePackages' | 'never']
   | [
-      ('off' | 'error' | 'warn'),
-      ('always' | 'ignorePackages' | 'never'),
+      'off' | 'error' | 'warn',
+      'always' | 'ignorePackages' | 'never',
       {
         pattern?: {
           /**
@@ -20,9 +20,9 @@ type Extensions0 =
         [k: string]: any;
       },
     ]
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         pattern?: {
           /**
@@ -35,9 +35,9 @@ type Extensions0 =
         [k: string]: any;
       },
     ]
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         /**
          * This interface was referenced by `undefined`'s JSON-Schema definition
@@ -46,11 +46,11 @@ type Extensions0 =
         [k: string]: 'always' | 'ignorePackages' | 'never';
       },
     ]
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('always' | 'ignorePackages' | 'never')]
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'always' | 'ignorePackages' | 'never']
   | [
-      ('off' | 'error' | 'warn'),
-      ('always' | 'ignorePackages' | 'never'),
+      'off' | 'error' | 'warn',
+      'always' | 'ignorePackages' | 'never',
       {
         /**
          * This interface was referenced by `undefined`'s JSON-Schema definition

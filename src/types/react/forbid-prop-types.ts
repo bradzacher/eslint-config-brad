@@ -2,9 +2,9 @@
 
 type ForbidPropTypes0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         forbid?: string[];
         checkContextTypes?: boolean;

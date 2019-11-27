@@ -2,9 +2,9 @@
 
 type GeneratorStarSpacing0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | ('before' | 'after' | 'both' | 'neither')
         | {
@@ -28,7 +28,8 @@ type GeneratorStarSpacing0 =
                   before?: boolean;
                   after?: boolean;
                 };
-          }),
+          }
+      ),
     ];
 
 export type GeneratorStarSpacing = 'off' | GeneratorStarSpacing0;

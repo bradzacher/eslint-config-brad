@@ -2,9 +2,9 @@
 
 type NoNamespace0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowDeclarations?: boolean;
         allowDefinitionFiles?: boolean;

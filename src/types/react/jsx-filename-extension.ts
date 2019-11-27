@@ -2,9 +2,9 @@
 
 type JsxFilenameExtension0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         extensions?: string[];
       },

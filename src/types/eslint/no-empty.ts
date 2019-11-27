@@ -2,9 +2,9 @@
 
 type NoEmpty0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowEmptyCatch?: boolean;
       },

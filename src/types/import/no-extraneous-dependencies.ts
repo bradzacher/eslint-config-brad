@@ -2,9 +2,9 @@
 
 type NoExtraneousDependencies0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         devDependencies?: boolean | any[];
         optionalDependencies?: boolean | any[];

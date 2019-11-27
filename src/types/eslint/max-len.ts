@@ -2,9 +2,9 @@
 
 type MaxLen0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             code?: number;
@@ -18,10 +18,11 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number),
+        | number
+      ),
     ]
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             code?: number;
@@ -35,7 +36,8 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number),
+        | number
+      ),
       (
         | {
             code?: number;
@@ -49,10 +51,11 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number),
+        | number
+      ),
     ]
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | {
             code?: number;
@@ -66,7 +69,8 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number),
+        | number
+      ),
       (
         | {
             code?: number;
@@ -80,7 +84,8 @@ type MaxLen0 =
             ignoreRegExpLiterals?: boolean;
             ignoreTrailingComments?: boolean;
           }
-        | number),
+        | number
+      ),
       {
         code?: number;
         comments?: number;

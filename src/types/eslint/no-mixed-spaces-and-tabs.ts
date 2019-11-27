@@ -2,7 +2,7 @@
 
 type NoMixedSpacesAndTabs0 =
   | []
-  | [('off' | 'error' | 'warn')]
-  | [('off' | 'error' | 'warn'), ('smart-tabs' | true | false)];
+  | ['off' | 'error' | 'warn']
+  | ['off' | 'error' | 'warn', 'smart-tabs' | true | false];
 
 export type NoMixedSpacesAndTabs = 'off' | NoMixedSpacesAndTabs0;

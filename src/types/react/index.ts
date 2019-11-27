@@ -33,6 +33,7 @@ import { JsxNoDuplicateProps } from '../react/jsx-no-duplicate-props';
 import { JsxNoLiterals } from '../react/jsx-no-literals';
 import { JsxNoTargetBlank } from '../react/jsx-no-target-blank';
 import { JsxNoUndef } from '../react/jsx-no-undef';
+import { JsxNoUselessFragment } from '../react/jsx-no-useless-fragment';
 import { JsxOneExpressionPerLine } from '../react/jsx-one-expression-per-line';
 import { JsxPascalCase } from '../react/jsx-pascal-case';
 import { JsxPropsNoMultiSpaces } from '../react/jsx-props-no-multi-spaces';
@@ -117,6 +118,7 @@ interface React {
   'react/jsx-no-literals': JsxNoLiterals;
   'react/jsx-no-target-blank': JsxNoTargetBlank;
   'react/jsx-no-undef': JsxNoUndef;
+  'react/jsx-no-useless-fragment': JsxNoUselessFragment;
   'react/jsx-one-expression-per-line': JsxOneExpressionPerLine;
   'react/jsx-pascal-case': JsxPascalCase;
   'react/jsx-props-no-multi-spaces': JsxPropsNoMultiSpaces;

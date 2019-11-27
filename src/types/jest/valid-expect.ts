@@ -2,9 +2,9 @@
 
 type ValidExpect0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         alwaysAwait?: boolean;
       },

@@ -2,9 +2,9 @@
 
 type NoUselessRename0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         ignoreDestructuring?: boolean;
         ignoreImport?: boolean;

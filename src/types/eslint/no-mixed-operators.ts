@@ -2,9 +2,9 @@
 
 type NoMixedOperators0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         groups?: [
           (
@@ -32,7 +32,9 @@ type NoMixedOperators0 =
             | '&&'
             | '||'
             | 'in'
-            | 'instanceof'),
+            | 'instanceof'
+            | '?:'
+          ),
           (
             | '+'
             | '-'
@@ -58,7 +60,9 @@ type NoMixedOperators0 =
             | '&&'
             | '||'
             | 'in'
-            | 'instanceof'),
+            | 'instanceof'
+            | '?:'
+          ),
           ...(
             | '+'
             | '-'
@@ -84,7 +88,9 @@ type NoMixedOperators0 =
             | '&&'
             | '||'
             | 'in'
-            | 'instanceof')[],
+            | 'instanceof'
+            | '?:'
+          )[],
         ][];
         allowSamePrecedence?: boolean;
       },

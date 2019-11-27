@@ -2,9 +2,9 @@
 
 type NoBitwise0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allow?: (
           | '^'
@@ -19,7 +19,8 @@ type NoBitwise0 =
           | '<<='
           | '>>='
           | '>>>='
-          | '~')[];
+          | '~'
+        )[];
         int32Hint?: boolean;
       },
     ];

@@ -2,13 +2,14 @@
 
 type ExplicitFunctionReturnType0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         allowExpressions?: boolean;
         allowTypedFunctionExpressions?: boolean;
         allowHigherOrderFunctions?: boolean;
+        allowDirectConstAssertionInArrowFunctions?: boolean;
       },
     ];
 

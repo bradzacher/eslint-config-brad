@@ -2,9 +2,9 @@
 
 type NoConstantCondition0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         checkLoops?: boolean;
       },

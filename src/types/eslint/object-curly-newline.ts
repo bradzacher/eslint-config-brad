@@ -2,9 +2,9 @@
 
 type ObjectCurlyNewline0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       (
         | (
             | ('always' | 'never')
@@ -12,7 +12,8 @@ type ObjectCurlyNewline0 =
                 multiline?: boolean;
                 minProperties?: number;
                 consistent?: boolean;
-              })
+              }
+          )
         | {
             ObjectExpression?:
               | ('always' | 'never')
@@ -42,7 +43,8 @@ type ObjectCurlyNewline0 =
                   minProperties?: number;
                   consistent?: boolean;
                 };
-          }),
+          }
+      ),
     ];
 
 export type ObjectCurlyNewline = 'off' | ObjectCurlyNewline0;

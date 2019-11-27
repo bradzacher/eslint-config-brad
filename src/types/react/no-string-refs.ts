@@ -2,9 +2,9 @@
 
 type NoStringRefs0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         noTemplateLiterals?: boolean;
       },

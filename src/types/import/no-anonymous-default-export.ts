@@ -2,9 +2,9 @@
 
 type NoAnonymousDefaultExport0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         /**
          * If `false`, will report default of an array

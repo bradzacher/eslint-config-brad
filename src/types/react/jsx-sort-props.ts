@@ -2,9 +2,9 @@
 
 type JsxSortProps0 =
   | []
-  | [('off' | 'error' | 'warn')]
+  | ['off' | 'error' | 'warn']
   | [
-      ('off' | 'error' | 'warn'),
+      'off' | 'error' | 'warn',
       {
         callbacksLast?: boolean;
         shorthandFirst?: boolean;
