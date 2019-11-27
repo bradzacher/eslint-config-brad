@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-brad",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "private": true,
   "description": "Brad's ESlint config",
   "repository": "https://github.com/bradzacher/eslint-config-brad.git",

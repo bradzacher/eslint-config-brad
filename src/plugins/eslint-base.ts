@@ -431,7 +431,7 @@ const rules: Eslint = {
 
   // disallow the omission of parentheses when invoking a constructor with no arguments
   // https://eslint.org/docs/rules/new-parens
-  'new-parens': ['error', 'never'],
+  'new-parens': ['error', 'always'],
 
   // enforces new line after each method call in the chain to make it
   // more readable and easy to maintain
