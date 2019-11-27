@@ -4,7 +4,8 @@
         "eslint-comments",
         "import",
         "jest",
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {}
 }

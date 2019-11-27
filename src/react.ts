@@ -1,4 +1,5 @@
 import react from './plugins/react';
+import reactHooks from './plugins/react-hooks';
 import imprt from './plugins/import';
 
 export = {
@@ -6,7 +7,7 @@ export = {
     browser: true,
   },
   extends: ['./index.js'],
-  plugins: [react.name, imprt.name],
+  plugins: [react.name, reactHooks.name, imprt.name],
   parserOptions: {
     exmaFeatures: {
       jsx: true,
@@ -14,6 +15,7 @@ export = {
   },
   rules: {
     ...react.rules,
+    ...reactHooks.rules,
 
     // No Node.js builtin modules
     'import/no-nodejs-modules': 'error',

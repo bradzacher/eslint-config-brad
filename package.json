@@ -17,6 +17,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^23.0.5",
     "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-restricted-globals": "^0.2.0"
   },
   "devDependencies": {
