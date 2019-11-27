@@ -151,12 +151,8 @@ const rules: Eslint = {
 
   // This rule requires return statements to either always or never specify values.
   // https://eslint.org/docs/rules/consistent-return
-  'consistent-return': [
-    'error',
-    {
-      treatUndefinedAsUnspecified: false,
-    },
-  ],
+  // https://github.com/typescript-eslint/typescript-eslint/issues/1277
+  'consistent-return': 'off',
 
   // This rule enforces two things about variables with the designated alias names for this:
   // - If a variable with a designated name is declared, it must be either initialized (in the declaration) or assigned (in the same scope as the declaration) the value this.

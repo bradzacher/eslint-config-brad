@@ -215,7 +215,7 @@ const rules: TypescriptEslint = {
   '@typescript-eslint/no-floating-promises': [
     'error',
     {
-      ignoreVoid: false,
+      ignoreVoid: true,
     },
   ],
 
