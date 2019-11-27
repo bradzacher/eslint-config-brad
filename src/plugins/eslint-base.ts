@@ -71,7 +71,8 @@ const rules: Eslint = {
 
   // This rule enforces consistent brace style for blocks.
   // https://eslint.org/docs/rules/brace-style
-  'brace-style': ['error', '1tbs'],
+  // extended in @typescript-eslint
+  'brace-style': 'off',
 
   // This rule is aimed at ensuring that callbacks used outside of the main function block are always part-of
   // or immediately preceding a return statement.
@@ -85,6 +86,7 @@ const rules: Eslint = {
   // Otherwise, a warning will be thrown. This rule only flags definitions and assignments but not function calls.
   // In case of ES6 import statements, this rule only targets the name of the variable that will be imported into the local module scope.
   // https://eslint.org/docs/rules/camelcase
+  // extended in @typescript-eslint
   camelcase: 'off',
 
   // This rule aims to enforce a consistent style of comments across your codebase.
@@ -181,6 +183,10 @@ const rules: Eslint = {
     },
   ],
 
+  // enforce default parameters to be last
+  // https://eslint.org/docs/rules/default-param-last
+  'default-param-last': ['error'],
+
   // enforces consistent newlines before or after dots
   // https://eslint.org/docs/rules/dot-location
   'dot-location': ['error', 'property'],
@@ -214,7 +220,7 @@ const rules: Eslint = {
 
   // enforce spacing between functions and their invocations
   // https://eslint.org/docs/rules/func-call-spacing
-  // extended rule in typescript plugin
+  // extended in @typescript-eslint
   'func-call-spacing': 'off',
 
   // requires function names to match the name of the variable or property to which they are assigned
@@ -241,6 +247,11 @@ const rules: Eslint = {
     },
   ],
 
+  // enforce line breaks between arguments of a function call
+  // https://eslint.org/docs/rules/function-call-argument-newline
+  // covered by prettier
+  'function-call-argument-newline': 'off',
+
   // This rule enforces consistent line breaks inside parentheses of function parameters or arguments.
   // https://eslint.org/docs/rules/function-paren-newline
   // covered by prettier
@@ -258,16 +269,16 @@ const rules: Eslint = {
 
   // This rule enforces that a return statement is present in property getters.
   // https://eslint.org/docs/rules/getter-return
-  'getter-return': [
-    'error',
-    {
-      allowImplicit: false,
-    },
-  ],
+  // covered by typescript
+  'getter-return': 'off',
 
   // This rule requires all calls to require() to be at the top level of the module, similar to ES6 import and export statements.
   // https://eslint.org/docs/rules/global-require
   'global-require': ['error'],
+
+  // Require grouped accessor pairs in object literals and classes
+  // https://eslint.org/docs/rules/grouped-accessor-pairs
+  'grouped-accessor-pairs': 'off',
 
   // make sure for-in loops have an if statement
   // https://eslint.org/docs/rules/guard-for-in
@@ -296,6 +307,7 @@ const rules: Eslint = {
 
   // This rule enforces a consistent indentation style.
   // https://eslint.org/docs/rules/indent
+  // extended in @typescript-eslint
   indent: 'off',
 
   // This rule is aimed at enforcing or eliminating variable initializations during declaration.
@@ -439,7 +451,8 @@ const rules: Eslint = {
 
   // This rule disallows Array constructors for anything other than using it to create an empty array of length N.
   // https://eslint.org/docs/rules/no-array-constructor
-  'no-array-constructor': ['error'],
+  // extended in @typescript-eslint
+  'no-array-constructor': 'off',
 
   // The new Promise constructor accepts an executor function as an argument, which has resolve and reject parameters that can be used to control the state of the created Promise
   // https://eslint.org/docs/rules/no-async-promise-executor
@@ -493,7 +506,8 @@ const rules: Eslint = {
 
   // This rule is aimed to flag modifying variables that are declared using const keyword.
   // https://eslint.org/docs/rules/no-const-assign
-  'no-const-assign': ['error'],
+  // covered by typescript
+  'no-const-assign': 'off',
 
   // This rule disallows constant expressions in the test condition.
   // https://eslint.org/docs/rules/no-constant-condition
@@ -506,6 +520,10 @@ const rules: Eslint = {
   // This rule disallows control characters in regular expressions.
   // https://eslint.org/docs/rules/no-control-regex
   'no-control-regex': ['error'],
+
+  // Disallow returning value in constructor
+  // https://eslint.org/docs/rules/no-constructor-return
+  'no-constructor-return': ['error'],
 
   // This rule disallows debugger statements
   // https://eslint.org/docs/rules/no-debugger
@@ -521,15 +539,22 @@ const rules: Eslint = {
 
   // This rule disallows duplicate parameter names in function declarations or expressions
   // https://eslint.org/docs/rules/no-dupe-args
-  'no-dupe-args': ['error'],
+  // covered by typescript
+  'no-dupe-args': 'off',
 
   // This rule is aimed to flag the use of duplicate names in class members.
   // https://eslint.org/docs/rules/no-dupe-class-members
-  'no-dupe-class-members': ['error'],
+  // covered by typescript
+  'no-dupe-class-members': 'off',
+
+  // Disallow duplicate conditions in if-else-if chains
+  // https://eslint.org/docs/rules/no-dupe-else-if
+  'no-dupe-else-if': ['error'],
 
   // This rule disallows duplicate keys in object literals.
   // https://eslint.org/docs/rules/no-dupe-keys
-  'no-dupe-keys': ['error'],
+  // covered by typescript
+  'no-dupe-keys': 'off',
 
   // This rule disallows duplicate test expressions in case clauses of switch statements.
   // https://eslint.org/docs/rules/no-duplicate-case
@@ -558,7 +583,7 @@ const rules: Eslint = {
 
   // This rule is aimed at eliminating empty functions.
   // https://eslint.org/docs/rules/no-empty-function
-  // covered by typescript
+  // extended in @typescript-eslint
   'no-empty-function': 'off',
 
   // This rule aims to flag any empty patterns in destructured objects and arrays, and as such,
@@ -599,6 +624,7 @@ const rules: Eslint = {
 
   // disallow unnecessary parentheses
   // https://eslint.org/docs/rules/no-extra-parens
+  // extended in @typescript-eslint
   'no-extra-parens': 'off',
 
   // This rule disallows unnecessary semicolons
@@ -633,6 +659,10 @@ const rules: Eslint = {
   // This rule aims to eliminate implied eval() through the use of setTimeout(), setInterval() or execScript().
   // https://eslint.org/docs/rules/no-implied-eval
   'no-implied-eval': ['error'],
+
+  // disallow assigning to imported bindings
+  // https://eslint.org/docs/rules/no-import-assign
+  'no-import-assign': 'off',
 
   // This rule disallows comments on the same line as code.
   // https://eslint.org/docs/rules/no-inline-comments
@@ -683,6 +713,7 @@ const rules: Eslint = {
 
   // This rule aims to make code more readable by ensuring that special numbers are declared as constants
   // https://eslint.org/docs/rules/no-magic-numbers
+  // extended in @typescript-eslint
   'no-magic-numbers': 'off',
 
   // Disallow characters which are made with multiple code points in character class syntax, basically disallows emojis to be used as class names
@@ -777,7 +808,8 @@ const rules: Eslint = {
 
   // This rule is aimed at preventing the accidental calling of Symbol with the new operator
   // https://eslint.org/docs/rules/no-new-symbol
-  'no-new-symbol': ['error'],
+  // covered by typescript
+  'no-new-symbol': 'off',
 
   // This rule aims to eliminate the use of String, Number, and Boolean with the new operator
   // https://eslint.org/docs/rules/no-new-wrappers
@@ -830,7 +862,8 @@ const rules: Eslint = {
 
   // This rule is aimed at eliminating variables that have multiple declarations in the same scope
   // https://eslint.org/docs/rules/no-redeclare
-  'no-redeclare': ['error'],
+  // covered by typescript
+  'no-redeclare': 'off',
 
   // This rule disallows multiple spaces in regular expression literals
   // https://eslint.org/docs/rules/no-regex-spaces
@@ -905,7 +938,6 @@ const rules: Eslint = {
 
   // This rule disallows specified (that is, user-defined) syntax
   // https://eslint.org/docs/rules/no-restricted-syntax
-  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   'no-restricted-syntax': [
     'error',
     {
@@ -928,8 +960,7 @@ const rules: Eslint = {
       message:
         '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
     },
-  ] as any /* eslint-disable-line @typescript-eslint/no-explicit-any */,
-  // TODO - https://github.com/eslint/eslint/pull/12051
+  ],
 
   // This rule aims to eliminate assignments from return statements
   // https://eslint.org/docs/rules/no-return-assign
@@ -954,6 +985,11 @@ const rules: Eslint = {
   // Disallow Use of the Comma Operator
   // https://eslint.org/docs/rules/no-sequences
   'no-sequences': ['error'],
+
+  // Disallow returning values from setters
+  // https://eslint.org/docs/rules/no-setter-return
+  // covered by typescript
+  'no-setter-return': 'off',
 
   // disallow variable declarations from shadowing variables declared in the outer scope
   // https://eslint.org/docs/rules/no-shadow
@@ -985,7 +1021,8 @@ const rules: Eslint = {
 
   // This rule is aimed to flag this/super keywords before super() callings
   // https://eslint.org/docs/rules/no-this-before-super
-  'no-this-before-super': ['error'],
+  // covered by typescript
+  'no-this-before-super': 'off',
 
   // This rule is aimed at maintaining consistency when throwing exception by disallowing to throw literals and other
   // expressions which cannot possibly be an Error object
@@ -1004,7 +1041,7 @@ const rules: Eslint = {
 
   // Disallow Undeclared Variables
   // https://eslint.org/docs/rules/no-undef
-  // off because typescript will catch this for us
+  // covered by typescript
   'no-undef': 'off',
 
   // Disallow Initializing to undefined
@@ -1046,7 +1083,8 @@ const rules: Eslint = {
 
   // This rule disallows unreachable code after return, throw, continue, and break statements
   // https://eslint.org/docs/rules/no-unreachable
-  'no-unreachable': ['error'],
+  // covered by typescript
+  'no-unreachable': 'off',
 
   // This rule disallows return, throw, break, and continue statements inside finally blocks.
   // https://eslint.org/docs/rules/no-unsafe-finally
@@ -1058,14 +1096,8 @@ const rules: Eslint = {
 
   // disallow usage of expressions in statement position
   // https://eslint.org/docs/rules/no-unused-expressions
-  'no-unused-expressions': [
-    'error',
-    {
-      allowShortCircuit: true,
-      allowTernary: false,
-      allowTaggedTemplates: false,
-    },
-  ],
+  // extended in @typescript-eslint
+  'no-unused-expressions': 'off',
 
   // disallow unused labels
   // https://eslint.org/docs/rules/no-unused-labels
@@ -1073,19 +1105,13 @@ const rules: Eslint = {
 
   // disallow declaration of variables that are not used in the code
   // https://eslint.org/docs/rules/no-unused-vars
-  // We don't need this as  this is caught by the typescript compiler
+  // extended in @typescript-eslint
   'no-unused-vars': 'off',
 
   // This rule will warn when it encounters a reference to an identifier that has not yet been declared
   // https://eslint.org/docs/rules/no-use-before-define
-  'no-use-before-define': [
-    'error',
-    {
-      functions: true,
-      classes: true,
-      variables: true,
-    },
-  ],
+  // extended in @typescript-eslint
+  'no-use-before-define': 'off',
 
   // This rule is aimed to flag usage of Function.prototype.call() and Function.prototype.apply()
   // that can be replaced with the normal function invocation.
@@ -1106,6 +1132,7 @@ const rules: Eslint = {
 
   // This rule flags class constructors that can be safely removed without changing how the class works.
   // https://eslint.org/docs/rules/no-useless-constructor
+  // extended in @typescript-eslint
   'no-useless-constructor': 'off',
 
   // This rule flags escapes that can be safely removed without changing behavior.
@@ -1270,6 +1297,10 @@ const rules: Eslint = {
     {},
   ],
 
+  // Disallow the use of Math.pow in favor of the ** operator
+  // https://eslint.org/docs/rules/prefer-exponentiation-operator
+  'prefer-exponentiation-operator': ['error'],
+
   // Suggest using named capture group in regular expression
   // https://eslint.org/docs/rules/prefer-named-capture-group
   // TODO - enable this when it's widely supported?
@@ -1292,6 +1323,10 @@ const rules: Eslint = {
       allowEmptyReject: true,
     },
   ],
+
+  // Disallow use of the RegExp constructor in favor of regular expression literals
+  // https://eslint.org/docs/rules/prefer-regex-literals
+  'prefer-regex-literals': ['error'],
 
   // use rest parameters instead of arguments
   // https://eslint.org/docs/rules/prefer-rest-params
@@ -1319,7 +1354,7 @@ const rules: Eslint = {
 
   // This rule enforces the consistent use of either backticks, double, or single quotes.
   // https://eslint.org/docs/rules/quotes
-  // handled by prettier
+  // extended in @typescript-eslint
   quotes: 'off',
 
   // This rule is aimed at preventing the unintended conversion of a string to a number of a different base
@@ -1333,7 +1368,8 @@ const rules: Eslint = {
 
   // This rule warns async functions which have no await expression
   // https://eslint.org/docs/rules/require-await
-  'require-await': ['error'],
+  // extended in @typescript-eslint
+  'require-await': 'off',
 
   // Enforce the use of u flag on RegExp
   // https://eslint.org/docs/rules/require-unicode-regexp
@@ -1349,7 +1385,7 @@ const rules: Eslint = {
 
   // This rule enforces consistent use of semicolons.
   // https://eslint.org/docs/rules/semi
-  // extended in typescript plugin
+  // extended in @typescript-eslint
   semi: 'off',
 
   // This rule aims to enforce spacing around a semicolon.
@@ -1385,14 +1421,8 @@ const rules: Eslint = {
 
   // This rule aims to enforce consistent spacing before function parentheses.
   // https://eslint.org/docs/rules/space-before-function-paren
-  'space-before-function-paren': [
-    'error',
-    {
-      anonymous: 'always',
-      named: 'never',
-      asyncArrow: 'always',
-    },
-  ],
+  // extended in @typescript-eslint
+  'space-before-function-paren': 'off',
 
   // This rule will enforce consistency of spacing directly inside of parentheses.
   // https://eslint.org/docs/rules/space-in-parens
@@ -1459,12 +1489,8 @@ const rules: Eslint = {
 
   // This rule enforces comparing typeof expressions to valid string literals
   // https://eslint.org/docs/rules/valid-typeof
-  'valid-typeof': [
-    'error',
-    {
-      requireStringLiterals: true,
-    },
-  ],
+  // covered by typescript
+  'valid-typeof': 'off',
 
   // Require Variable Declarations to be at the top of their scope
   // https://eslint.org/docs/rules/vars-on-top

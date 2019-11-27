@@ -40,9 +40,9 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
   'jest/no-duplicate-hooks': ['error'],
 
-  // Disallow empty titles
-  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
-  'jest/no-empty-title': ['error'],
+  // Avoid using expect().resolves
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-expect-resolves.md
+  'jest/no-expect-resolves': ['error'],
 
   // no export from test file
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md
@@ -113,6 +113,10 @@ const rules: Jest = {
   // this rule adds no real value
   'jest/prefer-expect-assertions': 'off',
 
+  // Suggest to have all hooks at top-level before tests
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-hooks-on-top.md
+  'jest/prefer-hooks-on-top': ['error'],
+
   // Suggest using inline snapshots
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
   'jest/prefer-inline-snapshots': 'off',
@@ -146,8 +150,12 @@ const rules: Jest = {
   'jest/prefer-todo': ['error'],
 
   // Require a message for toThrow()
-  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-tothrow-message.md
-  'jest/require-tothrow-message': ['error'],
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-to-throw-message.md
+  'jest/require-to-throw-message': ['error'],
+
+  // Require top-level describe block
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/require-top-level-describe.md
+  'jest/require-top-level-describe': ['error'],
 
   // Enforce valid describe() callback
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe.md
@@ -160,6 +168,10 @@ const rules: Jest = {
   // Enforce having return statement when testing with promises
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md
   'jest/valid-expect-in-promise': ['error'],
+
+  // Disallow empty titles
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
+  'jest/valid-title': ['error'],
 };
 export default {
   name: 'jest',
