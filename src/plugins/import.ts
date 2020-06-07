@@ -26,10 +26,13 @@ const rules: Import = {
     'error',
     'ignorePackages',
     {
-      js: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never',
+      ignorePackages: true,
+      pattern: {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
     },
   ],
 

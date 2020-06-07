@@ -450,7 +450,7 @@ const rules: Eslint = {
 
   // This rule disallows continue statements.
   // https://eslint.org/docs/rules/no-continue
-  'no-continue': ['error'],
+  'no-continue': 'off',
 
   // This rule disallows control characters in regular expressions.
   // https://eslint.org/docs/rules/no-control-regex
