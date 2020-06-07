@@ -16,6 +16,7 @@ type NoExtraParens0 =
         enforceForArrowConditionals?: boolean;
         enforceForSequenceExpressions?: boolean;
         enforceForNewInMemberExpressions?: boolean;
+        enforceForFunctionPrototypeMethods?: boolean;
       },
     ];
 

@@ -47,7 +47,12 @@ const rules: EslintComments = {
       ],
     },
   ],
+
+  // require include descriptions in ESLint directive-comments
+  // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html
+  'eslint-comments/require-description': ['error'],
 };
+
 export default {
   name: 'eslint-comments',
   rules,

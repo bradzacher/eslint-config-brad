@@ -25,11 +25,13 @@ const rules: Eslint = {
 
   // This rule enforces line breaks after opening and before closing array brackets.
   // https://eslint.org/docs/rules/array-bracket-newline
-  'array-bracket-newline': ['error', 'consistent'],
+  // covered by prettier
+  'array-bracket-newline': 'off',
 
   // This rule enforces consistent spacing inside array brackets.
   // https://eslint.org/docs/rules/array-bracket-spacing
-  'array-bracket-spacing': ['error', 'never'],
+  // covered by prettier
+  'array-bracket-spacing': 'off',
 
   // This rule finds callback functions of the following methods, then checks usage of return statement
   // https://eslint.org/docs/rules/array-callback-return
@@ -37,6 +39,7 @@ const rules: Eslint = {
 
   // This rule enforces line breaks between array elements.
   // https://eslint.org/docs/rules/array-element-newline
+  // covered by prettier
   'array-element-newline': 'off',
 
   // This rule can enforce or disallow the use of braces around arrow function body.
@@ -45,17 +48,13 @@ const rules: Eslint = {
 
   // This rule enforces parentheses around arrow function parameters regardless of arity.
   // https://eslint.org/docs/rules/arrow-parens
-  'arrow-parens': ['error', 'as-needed'],
+  // covered by prettier
+  'arrow-parens': 'off',
 
-  // This rule takes an object argument with before and after properties, each with a Boolean value.
+  // Require space before/after arrow function's arrow
   // https://eslint.org/docs/rules/arrow-spacing
-  'arrow-spacing': [
-    'error',
-    {
-      before: true,
-      after: true,
-    },
-  ],
+  // covered by prettier
+  'arrow-spacing': 'off',
 
   // This rule aims to reduce the usage of variables outside of their binding context and emulate
   // traditional block scope from other languages.
@@ -65,22 +64,17 @@ const rules: Eslint = {
   // This rule enforces consistent spacing inside an open block token and the next token on the same line.
   // This rule also enforces consistent spacing inside a close block token and previous token on the same line.
   // https://eslint.org/docs/rules/block-spacing
-  'block-spacing': ['error', 'always'],
+  // covered by prettier
+  'block-spacing': 'off',
 
   // This rule enforces consistent brace style for blocks.
   // https://eslint.org/docs/rules/brace-style
   // extended in @typescript-eslint
   'brace-style': 'off',
 
-  // This rule is aimed at ensuring that callbacks used outside of the main function block are always part-of
-  // or immediately preceding a return statement.
-  // This rule decides what is a callback based on the name of the function being called.
-  // https://eslint.org/docs/rules/callback-return
-  'callback-return': 'off',
-
   // This rule looks for any underscores (_) located within the source code.
   // It ignores leading and trailing underscores and only checks those in the middle of a variable name.
-  // If ESLint decides that the variable is a constant (all uppercase), then no warning will be thrown.
+  // If ESLint decides that the variable is a constant (all upper case), then no warning will be thrown.
   // Otherwise, a warning will be thrown. This rule only flags definitions and assignments but not function calls.
   // In case of ES6 import statements, this rule only targets the name of the variable that will be imported into the local module scope.
   // https://eslint.org/docs/rules/camelcase
@@ -97,49 +91,19 @@ const rules: Eslint = {
 
   // This rule enforces consistent use of trailing commas in object and array literals.
   // https://eslint.org/docs/rules/comma-dangle
-  'comma-dangle': [
-    'error',
-    {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'always-multiline',
-    },
-  ],
+  // covered by prettier
+  'comma-dangle': 'off',
 
   // This rule enforces consistent spacing before and after commas in variable declarations,
   // array literals, object literals, function parameters, and sequences.
   // https://eslint.org/docs/rules/comma-spacing
-  'comma-spacing': [
-    'error',
-    {
-      before: false,
-      after: true,
-    },
-  ],
+  // extended in @typescript-eslint
+  'comma-spacing': 'off',
 
   // This rule enforce consistent comma style in array literals, object literals, and variable declarations.
   // https://eslint.org/docs/rules/comma-style
-  'comma-style': [
-    'error',
-    'last',
-    {
-      exceptions: {
-        ArrayExpression: false,
-        ArrayPattern: false,
-        ArrowFunctionExpression: false,
-        CallExpression: false,
-        FunctionDeclaration: false,
-        FunctionExpression: false,
-        ImportDeclaration: false,
-        ObjectExpression: false,
-        ObjectPattern: false,
-        VariableDeclaration: false,
-        NewExpression: false,
-      },
-    },
-  ],
+  // covered by prettier
+  'comma-style': 'off',
 
   // This rule is aimed at reducing code complexity by capping the amount of cyclomatic complexity allowed in a program.
   // https://eslint.org/docs/rules/complexity
@@ -147,7 +111,8 @@ const rules: Eslint = {
 
   // This rule enforces consistent spacing inside computed property brackets.
   // https://eslint.org/docs/rules/computed-property-spacing
-  'computed-property-spacing': ['error', 'never'],
+  // covered by prettier
+  'computed-property-spacing': 'off',
 
   // This rule requires return statements to either always or never specify values.
   // https://eslint.org/docs/rules/consistent-return
@@ -177,16 +142,23 @@ const rules: Eslint = {
     },
   ],
 
+  // Enforce default clauses in switch statements to be last
+  // https://eslint.org/docs/rules/default-case-last
+  'default-case-last': ['error'],
+
   // enforce default parameters to be last
   // https://eslint.org/docs/rules/default-param-last
-  'default-param-last': ['error'],
+  // extended in @typescript-eslint
+  'default-param-last': 'off',
 
   // enforces consistent newlines before or after dots
   // https://eslint.org/docs/rules/dot-location
-  'dot-location': ['error', 'property'],
+  // covered by prettier
+  'dot-location': 'off',
 
   // encourages use of dot notation whenever possible
   // https://eslint.org/docs/rules/dot-notation
+  // extended in @typescript-eslint
   'dot-notation': [
     'error',
     {
@@ -196,7 +168,8 @@ const rules: Eslint = {
 
   // enforce newline at the end of file, with no multiple empty lines
   // https://eslint.org/docs/rules/eol-last
-  'eol-last': ['error', 'always'],
+  // covered by prettier
+  'eol-last': 'off',
 
   // require the use of === and !==
   // https://eslint.org/docs/rules/eqeqeq
@@ -253,22 +226,13 @@ const rules: Eslint = {
 
   // Enforce spacing around the * in generator functions
   // https://eslint.org/docs/rules/generator-star-spacing
-  'generator-star-spacing': [
-    'error',
-    {
-      before: false,
-      after: true,
-    },
-  ],
+  // covered by prettier
+  'generator-star-spacing': 'off',
 
   // This rule enforces that a return statement is present in property getters.
   // https://eslint.org/docs/rules/getter-return
   // covered by typescript
   'getter-return': 'off',
-
-  // This rule requires all calls to require() to be at the top level of the module, similar to ES6 import and export statements.
-  // https://eslint.org/docs/rules/global-require
-  'global-require': ['error'],
 
   // Require grouped accessor pairs in object literals and classes
   // https://eslint.org/docs/rules/grouped-accessor-pairs
@@ -277,10 +241,6 @@ const rules: Eslint = {
   // make sure for-in loops have an if statement
   // https://eslint.org/docs/rules/guard-for-in
   'guard-for-in': ['error'],
-
-  // enforces error handling in callbacks (node environment)
-  // https://eslint.org/docs/rules/handle-callback-err
-  'handle-callback-err': 'off',
 
   // This rule disallows specified identifiers in assignments and function definitions.
   // https://eslint.org/docs/rules/id-blacklist
@@ -296,7 +256,7 @@ const rules: Eslint = {
 
   // This rule aims to enforce a consistent location for an arrow function containing an implicit return.
   // https://eslint.org/docs/rules/implicit-arrow-linebreak
-  // In testing - this rule is again just plain annoying because it prevents you from breaking a line if it's long
+  // covered by prettier
   'implicit-arrow-linebreak': 'off',
 
   // This rule enforces a consistent indentation style.
@@ -310,38 +270,18 @@ const rules: Eslint = {
 
   // specify whether double or single quotes should be used in JSX attributes
   // https://eslint.org/docs/rules/jsx-quotes
-  'jsx-quotes': ['error', 'prefer-single'],
+  // covered by prettier
+  'jsx-quotes': 'off',
 
   // This rule enforces consistent spacing between keys and values in object literal properties
   // https://eslint.org/docs/rules/key-spacing
-  'key-spacing': [
-    'error',
-    {
-      beforeColon: false,
-      afterColon: true,
-    },
-  ],
+  // covered by prettier
+  'key-spacing': 'off',
 
   // This rule enforces consistent spacing around keywords and keyword-like tokens.
   // https://eslint.org/docs/rules/keyword-spacing
-  'keyword-spacing': [
-    'error',
-    {
-      before: true,
-      after: true,
-      overrides: {
-        return: {
-          after: true,
-        },
-        throw: {
-          after: true,
-        },
-        case: {
-          after: true,
-        },
-      },
-    },
-  ],
+  // covered by prettier
+  'keyword-spacing': 'off',
 
   // This rule enforces consistent position of line comments.
   // https://eslint.org/docs/rules/line-comment-position
@@ -349,10 +289,12 @@ const rules: Eslint = {
 
   // This rule enforces consistent line endings across your codebase.
   // https://eslint.org/docs/rules/linebreak-style
-  'linebreak-style': ['error', 'unix'],
+  // covered by prettier
+  'linebreak-style': 'off',
 
   // enforces empty lines around comments
   // https://eslint.org/docs/rules/lines-around-comment
+  // covered by prettier
   'lines-around-comment': 'off',
 
   // require or disallow an empty line between class members
@@ -371,7 +313,7 @@ const rules: Eslint = {
   // This rule enforces a maximum line length to increase code readability and maintainability.
   // The length of a line is defined as the number of Unicode characters in the line.
   // https://eslint.org/docs/rules/max-len
-  // handled by prettier
+  // covered by prettier
   'max-len': 'off',
 
   // This rule enforces a maximum number of lines per file, in order to aid in maintainability and reduce complexity.
@@ -415,6 +357,7 @@ const rules: Eslint = {
   // Note: The location of the operators is not enforced by this rule.
   // Please see the operator-linebreak rule if you are interested in enforcing the location of the operators themselves.
   // https://eslint.org/docs/rules/multiline-ternary
+  // covered by prettier
   'multiline-ternary': 'off',
 
   // This rule requires constructor names to begin with a capital letter.
@@ -431,12 +374,14 @@ const rules: Eslint = {
 
   // disallow the omission of parentheses when invoking a constructor with no arguments
   // https://eslint.org/docs/rules/new-parens
-  'new-parens': ['error', 'always'],
+  // covered by prettier
+  'new-parens': 'off',
 
   // enforces new line after each method call in the chain to make it
   // more readable and easy to maintain
   // https://eslint.org/docs/rules/newline-per-chained-call
-  'newline-per-chained-call': ['error', { ignoreChainWithDepth: 4 }],
+  // covered by prettier
+  'newline-per-chained-call': 'off',
 
   // This rule is aimed at catching debugging code that should be removed and popup UI elements that should be
   // replaced with less obtrusive, custom UIs
@@ -459,10 +404,6 @@ const rules: Eslint = {
   // disallow use of bitwise operators
   // https://eslint.org/docs/rules/no-bitwise
   'no-bitwise': ['error'],
-
-  // This rule disallows calling and constructing the Buffer() constructor.
-  // https://eslint.org/docs/rules/no-buffer-constructor
-  'no-buffer-constructor': ['error'],
 
   // This rule is aimed at discouraging the use of deprecated and sub-optimal code,
   // by disallowing the use of arguments.caller and arguments.callee
@@ -623,7 +564,8 @@ const rules: Eslint = {
 
   // This rule disallows unnecessary semicolons
   // https://eslint.org/docs/rules/no-extra-semi
-  'no-extra-semi': ['error'],
+  // extended in @typescript-eslint
+  'no-extra-semi': 'off',
 
   // This rule is aimed at eliminating unintentional fallthrough of one case to the other.
   // https://eslint.org/docs/rules/no-fallthrough
@@ -632,7 +574,8 @@ const rules: Eslint = {
   // This rule is aimed at eliminating floating decimal points and will warn whenever a numeric value has a
   // decimal point but is missing a number either before or after it.
   // https://eslint.org/docs/rules/no-floating-decimal
-  'no-floating-decimal': ['error'],
+  // covered by prettier
+  'no-floating-decimal': 'off',
 
   // This rule disallows reassigning function declarations
   // https://eslint.org/docs/rules/no-func-assign
@@ -652,7 +595,8 @@ const rules: Eslint = {
 
   // This rule aims to eliminate implied eval() through the use of setTimeout(), setInterval() or execScript().
   // https://eslint.org/docs/rules/no-implied-eval
-  'no-implied-eval': ['error'],
+  // extended in @typescript-eslint
+  'no-implied-eval': 'off',
 
   // disallow assigning to imported bindings
   // https://eslint.org/docs/rules/no-import-assign
@@ -688,7 +632,7 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-label-var
   'no-label-var': ['error'],
 
-  // This rule aims to eliminate the use of labeled statements in JavaScript
+  // This rule aims to eliminate the use of labelled statements in JavaScript
   // Seriously. WHY WOULD YOU USE LABEL STATEMENTS IN JAVASCRIPT. WTF.
   // https://eslint.org/docs/rules/no-labels
   'no-labels': ['error'],
@@ -705,6 +649,10 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-loop-func
   'no-loop-func': ['error'],
 
+  // Disallow Number Literals That Lose Precision
+  // https://eslint.org/docs/rules/no-loss-of-precision
+  'no-loss-of-precision': ['error'],
+
   // This rule aims to make code more readable by ensuring that special numbers are declared as constants
   // https://eslint.org/docs/rules/no-magic-numbers
   // extended in @typescript-eslint
@@ -719,7 +667,7 @@ const rules: Eslint = {
   'no-mixed-operators': [
     'error',
     {
-      // the list of arthmetic groups disallows mixing `%` and `**` with other arithmetic operators.
+      // the list of arithmetic groups disallows mixing `%` and `**` with other arithmetic operators.
       groups: [
         ['%', '**'],
         ['%', '+'],
@@ -739,13 +687,10 @@ const rules: Eslint = {
     },
   ],
 
-  // disallow require calls to be mixed with regular variable declarations
-  // https://eslint.org/docs/rules/no-mixed-requires
-  'no-mixed-requires': 'off',
-
   // disallow mixed spaces and tabs for indentation
   // https://eslint.org/docs/rules/no-mixed-spaces-and-tabs
-  'no-mixed-spaces-and-tabs': ['error', false],
+  // covered by prettier
+  'no-mixed-spaces-and-tabs': 'off',
 
   // Disallow Use of Chained Assignment Expressions
   // https://eslint.org/docs/rules/no-multi-assign
@@ -753,14 +698,8 @@ const rules: Eslint = {
 
   // Disallow multiple spaces
   // https://eslint.org/docs/rules/no-multi-spaces
-  'no-multi-spaces': [
-    'warn',
-    {
-      exceptions: {
-        VariableDeclarator: true,
-      },
-    },
-  ],
+  // covered by prettier
+  'no-multi-spaces': 'off',
 
   // This rule is aimed at preventing the use of multiline strings
   // https://eslint.org/docs/rules/no-multi-str
@@ -768,13 +707,8 @@ const rules: Eslint = {
 
   // This rule aims to reduce the scrolling required when reading through your code
   // https://eslint.org/docs/rules/no-multiple-empty-lines
-  'no-multiple-empty-lines': [
-    'error',
-    {
-      max: 2,
-      maxEOF: 0,
-    },
-  ],
+  // covered by prettier
+  'no-multiple-empty-lines': 'off',
 
   // disallow negated conditions
   // https://eslint.org/docs/rules/no-negated-condition
@@ -795,10 +729,6 @@ const rules: Eslint = {
   // disallow `Object` constructors
   // https://eslint.org/docs/rules/no-new-object
   'no-new-object': ['error'],
-
-  // This rule aims to eliminate use of the new require expression
-  // https://eslint.org/docs/rules/no-new-require
-  'no-new-require': ['error'],
 
   // This rule is aimed at preventing the accidental calling of Symbol with the new operator
   // https://eslint.org/docs/rules/no-new-symbol
@@ -825,10 +755,6 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-param-reassign
   'no-param-reassign': 'off',
 
-  // Disallow string concatenation when using __dirname and __filename
-  // https://eslint.org/docs/rules/no-path-concat
-  'no-path-concat': ['error'],
-
   // disallow the unary operators ++ and --
   // https://eslint.org/docs/rules/no-plusplus
   'no-plusplus': [
@@ -837,14 +763,6 @@ const rules: Eslint = {
       allowForLoopAfterthoughts: false,
     },
   ],
-
-  // This rule is aimed at discouraging use of process.env to avoid global dependencies
-  // https://eslint.org/docs/rules/no-process-env
-  'no-process-env': 'off',
-
-  // This rule aims to prevent the use of process.exit() in Node.js JavaScript
-  // https://eslint.org/docs/rules/no-process-exit
-  'no-process-exit': 'off',
 
   // When an object is created __proto__ is set to the original prototype property of the object’s constructor function.
   // https://eslint.org/docs/rules/no-proto
@@ -867,13 +785,13 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-restricted-globals
   'no-restricted-globals': ['error', 'isFinite', ...restrictedGlobals],
 
+  // Disallow specified names in exports
+  // https://eslint.org/docs/rules/no-restricted-exports
+  'no-restricted-exports': 'off',
+
   // This rule allows you to specify imports that you don’t want to use in your application
   // https://eslint.org/docs/rules/no-restricted-imports
   'no-restricted-imports': 'off',
-
-  // This rule allows you to specify modules that you don’t want to use in your application
-  // https://eslint.org/docs/rules/no-restricted-modules
-  'no-restricted-modules': 'off',
 
   // This rule looks for accessing a given property key on a given object name, either when reading the property’s
   // value or invoking it as a function
@@ -940,16 +858,6 @@ const rules: Eslint = {
         'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
     },
     {
-      selector: 'ForOfStatement',
-      message:
-        'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
-    },
-    {
-      selector: 'LabeledStatement',
-      message:
-        'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
-    },
-    {
       selector: 'WithStatement',
       message:
         '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
@@ -997,15 +905,12 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-sparse-arrays
   'no-sparse-arrays': ['error'],
 
-  // This rule is aimed at preventing synchronous methods from being called in Node.js
-  // https://eslint.org/docs/rules/no-sync
-  'no-sync': 'off',
-
   // This rule looks for tabs anywhere inside a file: code, comments or anything else
   // https://eslint.org/docs/rules/no-tabs
+  // covered by prettier, but leave it on to be really explicit
   'no-tabs': ['error'],
 
-  // Disallow template literal placeholder syntax in regular strings
+  // Disallow template literal place-holder syntax in regular strings
   // https://eslint.org/docs/rules/no-template-curly-in-string
   'no-template-curly-in-string': ['error'],
 
@@ -1021,17 +926,13 @@ const rules: Eslint = {
   // This rule is aimed at maintaining consistency when throwing exception by disallowing to throw literals and other
   // expressions which cannot possibly be an Error object
   // https://eslint.org/docs/rules/no-throw-literal
-  'no-throw-literal': ['error'],
+  // extended in @typescript-eslint
+  'no-throw-literal': 'off',
 
   // This rule disallows trailing whitespace (spaces, tabs, and other Unicode whitespace characters) at the end of lines
   // https://eslint.org/docs/rules/no-trailing-spaces
-  'no-trailing-spaces': [
-    'error',
-    {
-      skipBlankLines: false,
-      ignoreComments: false,
-    },
-  ],
+  // covered by prettier
+  'no-trailing-spaces': 'off',
 
   // Disallow Undeclared Variables
   // https://eslint.org/docs/rules/no-undef
@@ -1102,6 +1003,10 @@ const rules: Eslint = {
   // extended in @typescript-eslint
   'no-unused-vars': 'off',
 
+  // Disallow useless back references in regular expressions
+  // https://eslint.org/docs/rules/no-useless-backreference
+  'no-useless-backreference': 'off',
+
   // This rule will warn when it encounters a reference to an identifier that has not yet been declared
   // https://eslint.org/docs/rules/no-use-before-define
   // extended in @typescript-eslint
@@ -1154,7 +1059,12 @@ const rules: Eslint = {
 
   // This rule aims to eliminate use of void operator
   // https://eslint.org/docs/rules/no-void
-  'no-void': ['error'],
+  'no-void': [
+    'error',
+    {
+      allowAsStatement: true,
+    },
+  ],
 
   // This rule reports comments that include any of the predefined terms specified in its configuration
   // https://eslint.org/docs/rules/no-warning-comments
@@ -1163,7 +1073,8 @@ const rules: Eslint = {
   // This rule disallows whitespace around the dot or before the opening bracket before properties of objects
   // if they are on the same line
   // https://eslint.org/docs/rules/no-whitespace-before-property
-  'no-whitespace-before-property': ['error'],
+  // covered by prettier
+  'no-whitespace-before-property': 'off',
 
   // This rule disallows with statements
   // https://eslint.org/docs/rules/no-with
@@ -1181,12 +1092,8 @@ const rules: Eslint = {
 
   // This rule enforces consistent line breaks inside braces of object literals or destructuring assignments
   // https://eslint.org/docs/rules/object-curly-newline
-  'object-curly-newline': [
-    'error',
-    {
-      consistent: true,
-    },
-  ],
+  // covered by prettier
+  'object-curly-newline': 'off',
 
   // This rule enforce consistent spacing inside braces of object literals, destructuring assignments,
   // and import/export specifiers
@@ -1219,7 +1126,8 @@ const rules: Eslint = {
 
   // require or disallow newlines around variable declarations
   // https://eslint.org/docs/rules/one-var-declaration-per-line
-  'one-var-declaration-per-line': ['error', 'always'],
+  // covered by prettier
+  'one-var-declaration-per-line': 'off',
 
   // require or disallow assignment operator shorthand where possible
   // https://eslint.org/docs/rules/operator-assignment
@@ -1232,26 +1140,12 @@ const rules: Eslint = {
 
   // This rule enforces consistent empty line padding within blocks
   // https://eslint.org/docs/rules/padded-blocks
-  'padded-blocks': [
-    'error',
-    {
-      blocks: 'never',
-      classes: 'never',
-      switches: 'never',
-    },
-    {},
-  ],
+  // covered by prettier
+  'padded-blocks': 'off',
 
   // Require or disallow padding lines between statements
   // https://eslint.org/docs/rules/padding-line-between-statements
-  'padding-line-between-statements': [
-    'error',
-    {
-      blankLine: 'always',
-      prev: '*',
-      next: 'return',
-    },
-  ],
+  'padding-line-between-statements': 'off',
 
   // Require using arrow functions for callbacks
   // https://eslint.org/docs/rules/prefer-arrow-callback
@@ -1291,7 +1185,7 @@ const rules: Eslint = {
     {},
   ],
 
-  // Disallow the use of Math.pow in favor of the ** operator
+  // Disallow the use of Math.pow in favour of the ** operator
   // https://eslint.org/docs/rules/prefer-exponentiation-operator
   'prefer-exponentiation-operator': ['error'],
 
@@ -1318,7 +1212,7 @@ const rules: Eslint = {
     },
   ],
 
-  // Disallow use of the RegExp constructor in favor of regular expression literals
+  // Disallow use of the RegExp constructor in favour of regular expression literals
   // https://eslint.org/docs/rules/prefer-regex-literals
   'prefer-regex-literals': ['error'],
 
@@ -1336,15 +1230,8 @@ const rules: Eslint = {
 
   // require quotes around object literal property names
   // https://eslint.org/docs/rules/quote-props
-  'quote-props': [
-    'error',
-    'as-needed',
-    {
-      keywords: false,
-      unnecessary: true,
-      numbers: false,
-    },
-  ],
+  // covered by prettier
+  'quote-props': 'off',
 
   // This rule enforces the consistent use of either backticks, double, or single quotes.
   // https://eslint.org/docs/rules/quotes
@@ -1375,7 +1262,8 @@ const rules: Eslint = {
 
   // This rule aims to enforce consistent spacing between rest and spread operators and their expressions.
   // https://eslint.org/docs/rules/rest-spread-spacing
-  'rest-spread-spacing': ['error', 'never'],
+  // covered by prettier
+  'rest-spread-spacing': 'off',
 
   // This rule enforces consistent use of semicolons.
   // https://eslint.org/docs/rules/semi
@@ -1384,17 +1272,13 @@ const rules: Eslint = {
 
   // This rule aims to enforce spacing around a semicolon.
   // https://eslint.org/docs/rules/semi-spacing
-  'semi-spacing': [
-    'error',
-    {
-      before: false,
-      after: true,
-    },
-  ],
+  // covered by prettier
+  'semi-spacing': 'off',
 
   // This rule reports line terminators around semicolons
   // https://eslint.org/docs/rules/semi-style
-  'semi-style': ['error', 'last'],
+  // covered by prettier
+  'semi-style': 'off',
 
   // This rule checks all import declarations and verifies that all imports are first sorted by the used member
   // syntax and then alphabetically by the first member or alias name.
@@ -1411,7 +1295,8 @@ const rules: Eslint = {
 
   // This rule will enforce consistency of spacing before blocks
   // https://eslint.org/docs/rules/space-before-blocks
-  'space-before-blocks': ['error', 'always'],
+  // covered by prettier
+  'space-before-blocks': 'off',
 
   // This rule aims to enforce consistent spacing before function parentheses.
   // https://eslint.org/docs/rules/space-before-function-paren
@@ -1420,22 +1305,18 @@ const rules: Eslint = {
 
   // This rule will enforce consistency of spacing directly inside of parentheses.
   // https://eslint.org/docs/rules/space-in-parens
-  'space-in-parens': ['error', 'never'],
+  // covered by prettier
+  'space-in-parens': 'off',
 
   // require spaces around operators
   // https://eslint.org/docs/rules/space-infix-ops
-  'space-infix-ops': ['error'],
+  // covered by prettier
+  'space-infix-ops': 'off',
 
   // Require or disallow spaces before/after unary operators
   // https://eslint.org/docs/rules/space-unary-ops
-  'space-unary-ops': [
-    'error',
-    {
-      words: true,
-      nonwords: false,
-      overrides: {},
-    },
-  ],
+  // covered by prettier
+  'space-unary-ops': 'off',
 
   // require or disallow a space immediately following the // or /* in a comment
   // https://eslint.org/docs/rules/spaced-comment
@@ -1453,13 +1334,8 @@ const rules: Eslint = {
 
   // This rule controls spacing around colons of case and default clauses in switch statements
   // https://eslint.org/docs/rules/switch-colon-spacing
-  'switch-colon-spacing': [
-    'error',
-    {
-      after: true,
-      before: false,
-    },
-  ],
+  // covered by prettier
+  'switch-colon-spacing': 'off',
 
   // This rules requires a description when creating symbols
   // https://eslint.org/docs/rules/symbol-description
@@ -1467,15 +1343,18 @@ const rules: Eslint = {
 
   // enforce usage of spacing in template strings
   // https://eslint.org/docs/rules/template-curly-spacing
-  'template-curly-spacing': ['error', 'never'],
+  // covered by prettier
+  'template-curly-spacing': 'off',
 
   // Require or disallow spacing between template tags and their literals
   // https://eslint.org/docs/rules/template-tag-spacing
-  'template-tag-spacing': ['error', 'never'],
+  // covered by prettier
+  'template-tag-spacing': 'off',
 
   // Require or disallow the Unicode Byte Order Mark (BOM)
   // https://eslint.org/docs/rules/unicode-bom
-  'unicode-bom': ['error', 'never'],
+  // covered by prettier
+  'unicode-bom': 'off',
 
   // require calls to isNaN() when checking for NaN
   // https://eslint.org/docs/rules/use-isnan
@@ -1492,26 +1371,24 @@ const rules: Eslint = {
 
   // require immediate function invocation to be wrapped in parentheses
   // https://eslint.org/docs/rules/wrap-iife.html
-  'wrap-iife': [
-    'error',
-    'outside',
-    {
-      functionPrototypeMethods: false,
-    },
-  ],
+  // covered by prettier
+  'wrap-iife': 'off',
 
   // Require Regex Literals to be Wrapped
   // https://eslint.org/docs/rules/wrap-regex
+  // covered by prettier
   'wrap-regex': 'off',
 
   // This rule enforces spacing around the * in yield* expressions
   // https://eslint.org/docs/rules/yield-star-spacing
-  'yield-star-spacing': ['error', 'after'],
+  // covered by prettier
+  'yield-star-spacing': 'off',
 
   // This rule aims to enforce consistent style of conditions which compare a variable to a literal value.
   // https://eslint.org/docs/rules/yoda
   yoda: ['error', 'never'],
 };
+
 export default {
   rules,
 };

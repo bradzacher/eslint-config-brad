@@ -25,10 +25,6 @@ ci:
 # make sure there are no lint errors
 	@make lint
 
-.PHONY: regenerate-types
-regenerate-types:
-	@yarn ts-node -P ./scripts/tsconfig.json --files ./scripts/generateTypes.ts
-
 .PHONY: publish-next
 publish-next:
 	@make build

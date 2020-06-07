@@ -3,7 +3,8 @@ import { Import } from '../types/import';
 const rules: Import = {
   // ensure default import coupled with default export
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md
-  'import/default': ['error'],
+  // covered by typescript
+  'import/default': 'off',
 
   // This rule reports any dynamic imports without a webpackChunkName specified in a leading
   // block comment in the proper format.
@@ -53,6 +54,7 @@ const rules: Import = {
 
   // enforces names exist at the time they are dereferenced
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/namespace.md
+  // covered by typescript
   'import/namespace': 'off',
 
   // Require a newline after the last import/require in a group
@@ -87,7 +89,7 @@ const rules: Import = {
 
   // Ensures that there is no resolvable path back to this module via its dependencies.
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md
-  'import/no-cycle': ['error'],
+  'import/no-cycle': 'off',
 
   // forbid default exports.
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
@@ -131,11 +133,12 @@ const rules: Import = {
 
   // do not allow a default import name to match a named export
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
-  'import/no-named-as-default': ['error'],
+  'import/no-named-as-default': 'off',
 
   // warn on accessing default export property names that are also named exports
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
-  'import/no-named-as-default-member': ['error'],
+  // covered by typescript
+  'import/no-named-as-default-member': 'off',
 
   // Prevent importing the default as if it were named
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
@@ -211,6 +214,7 @@ const rules: Import = {
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md // this should not be enabled until this proposal has at least been *presented* to TC39. // At the moment, it's not a thing.
   'import/unambiguous': 'off',
 };
+
 export default {
   name: 'import',
   rules,

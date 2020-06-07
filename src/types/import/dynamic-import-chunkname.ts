@@ -8,7 +8,7 @@ type DynamicImportChunkname0 =
       {
         importFunctions?: string[];
         webpackChunknameFormat?: string;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

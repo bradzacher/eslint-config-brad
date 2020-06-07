@@ -8,6 +8,7 @@ type PreferNullishCoalescing0 =
       {
         ignoreConditionalTests?: boolean;
         ignoreMixedLogicalExpressions?: boolean;
+        forceSuggestionFixer?: boolean;
       },
     ];
 

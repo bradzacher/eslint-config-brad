@@ -11,7 +11,7 @@ type IdMatch0 =
         properties?: boolean;
         onlyDeclarations?: boolean;
         ignoreDestructuring?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

@@ -31,7 +31,7 @@ async function main(): Promise<void> {
   allRules.forEach(rule => {
     const split = rule.split('/');
     if (split.length > 1) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- TS index access
       rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] ?? [];
       rulesPerPlugin[split[0]].push(rule);
     } else {
@@ -39,53 +39,51 @@ async function main(): Promise<void> {
     }
   });
 
-  await Promise.all(
-    Object.keys(rulesPerPlugin).map(async plugin => {
-      await convertRuleOptionsToTypescriptTypes(plugin);
+  for (const plugin of Object.keys(rulesPerPlugin)) {
+    // eslint-disable-next-line no-await-in-loop -- intentionally awaiting in the loop so plugins are processed consecutively
+    await convertRuleOptionsToTypescriptTypes(plugin);
 
-      const ruleNames = rulesPerPlugin[plugin].map(rule => ({
-        name: rule,
-        safeName: toPascalCase(rule.replace(`${plugin}/`, '')),
-      }));
-      const interfaceName = toPascalCase(plugin);
+    const ruleNames = rulesPerPlugin[plugin].map(rule => ({
+      name: rule,
+      safeName: toPascalCase(rule.replace(`${plugin}/`, '')),
+    }));
+    const interfaceName = toPascalCase(plugin);
 
-      const typesFile = [
-        '// this file is auto-generated. Run `make regenerate-types` to regenerate it.',
-        '',
-        ...ruleNames.map(
-          rule =>
-            `import { ${rule.safeName} } from '../${
-              plugin === 'eslint' ? 'eslint/' : ''
-            }${rule.name}'`,
-        ),
-        '',
-        `interface ${interfaceName} {`,
-        ...ruleNames.map(rule => `'${rule.name}': ${rule.safeName};`),
-        '}',
-        '',
-        'export {',
-        `    ${interfaceName}`,
-        '};',
-        '',
-      ].join('\n');
+    const typesFile = [
+      '// this file is auto-generated. Run `make regenerate-types` to regenerate it.',
+      '',
+      ...ruleNames.map(
+        rule =>
+          `import { ${rule.safeName} } from '../${
+            plugin === 'eslint' ? 'eslint/' : ''
+          }${rule.name}'`,
+      ),
+      '',
+      `interface ${interfaceName} {`,
+      ...ruleNames.map(rule => `'${rule.name}': ${rule.safeName};`),
+      '}',
+      '',
+      'export {',
+      `    ${interfaceName}`,
+      '};',
+      '',
+    ].join('\n');
 
-      const formatted = format(typesFile, {
-        ...prettierConfig,
-        parser: 'typescript',
-      });
+    const formatted = format(typesFile, {
+      ...prettierConfig,
+      parser: 'typescript',
+    });
 
-      fs.writeFileSync(
-        path.resolve(__dirname, `../src/types/${plugin}/index.ts`),
-        formatted,
-        'utf8',
-      );
+    fs.writeFileSync(
+      path.resolve(__dirname, `../src/types/${plugin}/index.ts`),
+      formatted,
+      'utf8',
+    );
 
-      console.info('Wrote types for', plugin, '\n');
-    }),
-  );
+    console.info('Wrote types for', plugin, '\n');
+  }
 
   console.info('Done!');
 }
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
-main();
+void main();

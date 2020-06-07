@@ -1,8 +1,9 @@
 import { React } from '../types/react';
 
+// 'react/function-component-definition', 'react/jsx-no-script-url', 'react/no-adjacent-inline-elements'
 const rules: React = {
   // Enforces consistent naming for boolean props
-  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming
+  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
   'react/boolean-prop-naming': 'off',
 
   // Prevent usage of button elements without an explicit type attribute
@@ -80,6 +81,16 @@ const rules: React = {
     },
   ],
 
+  // Enforce a specific function type for function components
+  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+  'react/function-component-definition': [
+    'error',
+    {
+      namedComponents: 'function-expression',
+      unnamedComponents: 'arrow-function',
+    },
+  ],
+
   // Enforce boolean attributes notation in JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
   'react/jsx-boolean-value': [
@@ -91,15 +102,19 @@ const rules: React = {
   ],
 
   // Ensures inline tags are not rendered without spaces between them
+  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-child-element-spacing.md
+  // covered by prettier
   'react/jsx-child-element-spacing': 'off',
 
   // Validate closing bracket location in JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md
-  'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+  // covered by prettier
+  'react/jsx-closing-bracket-location': 'off',
 
   // Validate closing tag location in JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md
-  'react/jsx-closing-tag-location': ['error'],
+  // covered by prettier
+  'react/jsx-closing-tag-location': 'off',
 
   // Enforce curly braces or disallow unnecessary curly braces in JSX props and/or children
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
@@ -113,27 +128,18 @@ const rules: React = {
 
   // Enforce linebreaks in curly braces in JSX attributes and expressions.
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md
-  'react/jsx-curly-newline': [
-    'error',
-    {
-      multiline: 'require',
-      singleline: 'consistent',
-    },
-  ],
+  // covered by prettier
+  'react/jsx-curly-newline': 'off',
 
   // Enforce or disallow spaces inside of curly braces in JSX attributes
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md
-  'react/jsx-curly-spacing': [
-    'error',
-    'never',
-    {
-      allowMultiline: true,
-    },
-  ],
+  // covered by prettier
+  'react/jsx-curly-spacing': 'off',
 
   // Enforce spacing around jsx equals signs
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
-  'react/jsx-equals-spacing': ['error', 'never'],
+  // covered by prettier
+  'react/jsx-equals-spacing': 'off',
 
   // only .jsx files may have JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
@@ -146,7 +152,8 @@ const rules: React = {
 
   // Require that the first prop in a JSX element be on a new line when the element is multiline
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
-  'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
+  // covered by prettier
+  'react/jsx-first-prop-new-line': 'off',
 
   // Enforce shorthand or standard form for React fragments
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md
@@ -164,11 +171,13 @@ const rules: React = {
 
   // Enforce JSX indentation
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
-  'react/jsx-indent': ['error', 4],
+  // covered by prettier
+  'react/jsx-indent': 'off',
 
   // Validate props indentation in JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
-  'react/jsx-indent-props': ['error', 4],
+  // covered by prettier
+  'react/jsx-indent-props': 'off',
 
   // Validate JSX has key prop when in array or iterator
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
@@ -180,13 +189,8 @@ const rules: React = {
 
   // Limit maximum of props on a single line in JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md
-  'react/jsx-max-props-per-line': [
-    'error',
-    {
-      maximum: 1,
-      when: 'multiline',
-    },
-  ],
+  // covered by prettier
+  'react/jsx-max-props-per-line': 'off',
 
   // Prevent usage of .bind() in JSX props
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
@@ -221,6 +225,10 @@ const rules: React = {
     },
   ],
 
+  // Prevent usage of `javascript:` URLs
+  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md
+  'react/jsx-no-script-url': ['error'],
+
   // Disallow target="_blank" on links
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
   'react/jsx-no-target-blank': ['error'],
@@ -235,6 +243,7 @@ const rules: React = {
 
   // One JSX Element Per Line
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
+  // covered by prettier
   'react/jsx-one-expression-per-line': 'off',
 
   // Enforce PascalCase for user-defined JSX components
@@ -249,7 +258,8 @@ const rules: React = {
 
   // Disallow multiple spaces between inline JSX props
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md
-  'react/jsx-props-no-multi-spaces': ['error'],
+  // covered by prettier
+  'react/jsx-props-no-multi-spaces': 'off',
 
   // Disallow JSX props spreading
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
@@ -281,15 +291,8 @@ const rules: React = {
 
   // Validate whitespace in and around the JSX opening and closing brackets
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md
-  'react/jsx-tag-spacing': [
-    'error',
-    {
-      closingSlash: 'never',
-      beforeSelfClosing: 'always',
-      afterOpening: 'never',
-      beforeClosing: 'never',
-    },
-  ],
+  // covered by prettier
+  'react/jsx-tag-spacing': 'off',
 
   // Prevent React to be incorrectly marked as unused
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md
@@ -301,12 +304,16 @@ const rules: React = {
 
   // Prevent missing parentheses around multilines JSX
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
-  // taken care of by prettier
+  // covered by prettier
   'react/jsx-wrap-multilines': 'off',
 
   // Prevent using this.state within a this.setState
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md
   'react/no-access-state-in-setstate': ['error'],
+
+  // Prevent adjacent inline elements not separated by whitespace.
+  // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-adjacent-inline-elements.md
+  'react/no-adjacent-inline-elements': 'off',
 
   // Prevent usage of Array index in keys
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
@@ -485,6 +492,7 @@ const rules: React = {
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
   'react/void-dom-elements-no-children': ['error'],
 };
+
 export default {
   name: 'react',
   rules,

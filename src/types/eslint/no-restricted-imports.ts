@@ -10,7 +10,7 @@ type NoRestrictedImports0 =
             message?: string;
             importNames?: string[];
           }
-      )[],
+      )[]
     ]
   | ['off' | 'error' | 'warn']
   | [
@@ -25,7 +25,7 @@ type NoRestrictedImports0 =
                 message?: string;
                 importNames?: string[];
               }
-          )[],
+          )[]
         ];
         patterns?: string[];
       },

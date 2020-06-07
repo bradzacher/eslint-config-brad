@@ -17,6 +17,8 @@ type NoEmptyFunction0 =
           | 'constructors'
           | 'private-constructors'
           | 'protected-constructors'
+          | 'asyncFunctions'
+          | 'asyncMethods'
         )[];
       },
     ];

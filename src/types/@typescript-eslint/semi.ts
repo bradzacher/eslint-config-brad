@@ -15,7 +15,7 @@ type Semi0 =
       {
         beforeStatementContinuationChars?: 'always' | 'any' | 'never';
       },
-      any,
+      unknown,
     ]
   | ['off' | 'error' | 'warn', 'always']
   | [
@@ -31,7 +31,7 @@ type Semi0 =
       {
         omitLastInOneLineBlock?: boolean;
       },
-      any,
+      unknown,
     ];
 
 export type Semi = 'off' | Semi0;

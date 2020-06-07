@@ -6,9 +6,9 @@ type NoUnassignedImport0 =
   | [
       'off' | 'error' | 'warn',
       {
-        devDependencies?: boolean | any[];
-        optionalDependencies?: boolean | any[];
-        peerDependencies?: boolean | any[];
+        devDependencies?: boolean | unknown[];
+        optionalDependencies?: boolean | unknown[];
+        peerDependencies?: boolean | unknown[];
         allow?: string[];
       },
     ];

@@ -30,9 +30,18 @@ const rules: TypescriptEslint = {
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
   '@typescript-eslint/await-thenable': ['error'],
 
-  // Enforces that @ts-ignore will not to be used.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-ignore.md
-  '@typescript-eslint/ban-ts-ignore': ['error'],
+  // Bans // @ts-<directive> comments from being used or requires descriptions after directive
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md
+  '@typescript-eslint/ban-ts-comment': [
+    'error',
+    {
+      'ts-check': false,
+      'ts-expect-error': 'allow-with-description',
+      'ts-ignore': true,
+      'ts-nocheck': true,
+      minimumDescriptionLength: 5,
+    },
+  ],
 
   // Enforces that types will not to be used.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
@@ -75,20 +84,19 @@ const rules: TypescriptEslint = {
   // covered by prettier
   '@typescript-eslint/brace-style': 'off',
 
-  // Enforce camelCase naming convention.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/camelcase.md
-  '@typescript-eslint/camelcase': [
+  // Ensures that literals on classes are exposed in a consistent style
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
+  '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
+
+  // Enforces consistent spacing before and after commas
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md
+  '@typescript-eslint/comma-spacing': [
     'error',
     {
-      allow: ['^UNSAFE_'],
-      ignoreDestructuring: false,
-      properties: 'never',
+      before: false,
+      after: true,
     },
   ],
-
-  // This rule enforces PascalCased names for classes and interfaces.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-name-casing.md
-  '@typescript-eslint/class-name-casing': ['error'],
 
   // Enforces consistent usage of type assertions.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-assertions.md
@@ -102,6 +110,15 @@ const rules: TypescriptEslint = {
   // Consistent with type definition either interface or type.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
   '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+
+  // Enforce default parameters to be last
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
+  '@typescript-eslint/default-param-last': ['error'],
+
+  // enforce dot notation whenever possible
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+  // we don't need the type-checked version
+  '@typescript-eslint/dot-notation': 'off',
 
   // Explicit types for function return values makes it clear to any calling code what type is returned.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
@@ -123,45 +140,97 @@ const rules: TypescriptEslint = {
     },
   ],
 
+  // Require explicit return and argument types on exported functions' and classes' public class methods
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
+  // we use explicit-function-return-type and noImplicitAny instead
+  '@typescript-eslint/explicit-module-boundary-types': 'off',
+
   // require or disallow spacing between function identifiers and their invocations
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
   // covered by prettier
   '@typescript-eslint/func-call-spacing': ['off', 'never'],
-
-  // Enforces naming of generic type variables.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/generic-type-naming.md
-  '@typescript-eslint/generic-type-naming': [
-    'error',
-    '^T([A-Z0-9][a-zA-Z0-9]*){0,1}$',
-  ],
 
   // Enforce consistent indentation.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
   // covered by prettier
   '@typescript-eslint/indent': 'off',
 
-  // Prefixing interfaces with "I" can help telling them apart at a glance.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/interface-name-prefix.md
-  '@typescript-eslint/interface-name-prefix': ['error', 'never'],
+  // require or disallow initialization in variable declarations
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/init-declarations.md
+  '@typescript-eslint/init-declarations': 'off',
+
+  // Enforce consistent spacing before and after keywords
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md
+  // covered by prettier
+  '@typescript-eslint/keyword-spacing': 'off',
+
+  // Require or disallow an empty line between class members
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
+  '@typescript-eslint/lines-between-class-members': 'off',
 
   // Enforces a consistent member delimiter style in interfaces and type literals.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
   // covered by prettier
   '@typescript-eslint/member-delimiter-style': 'off',
 
-  // It can be helpful to enforce naming conventions for private (and sometimes protected) members of an object.
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-naming.md
-  '@typescript-eslint/member-naming': 'off',
-
   // A consistent ordering of fields, methods and constructors can make interfaces, type literals,
   // classes and class expressions easier to read, navigate and edit.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-ordering.md
   '@typescript-eslint/member-ordering': 'off',
 
-  // Use of the Array constructor to construct a new array is generally discouraged in favor of array literal
+  // Enforces using a particular method signature syntax
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/method-signature-style.md
+  '@typescript-eslint/method-signature-style': ['error', 'property'],
+
+  // Enforces naming conventions for everything across a codebase
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
+  '@typescript-eslint/naming-convention': [
+    'error',
+    // basic camel case style
+    {
+      selector: 'default',
+      format: ['camelCase'],
+    },
+
+    {
+      selector: 'variable',
+      format: ['camelCase', 'UPPER_CASE'],
+    },
+
+    {
+      selector: 'typeLike',
+      format: ['PascalCase'],
+    },
+    // enforce interfaces _don't_ start with an I
+    {
+      selector: 'interface',
+      format: ['PascalCase'],
+      custom: {
+        regex: '^I[A-Z]',
+        match: false,
+      },
+    },
+    // enforce that generics start with a T
+    {
+      selector: 'typeParameter',
+      format: ['PascalCase'],
+      prefix: ['T'],
+    },
+  ],
+
+  // Use of the Array constructor to construct a new array is generally discouraged in favour of array literal
   // notation because of the single-argument pitfall and because the Array global may be redefined
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
   '@typescript-eslint/no-array-constructor': ['error'],
+
+  // Requires that .toString() is only called on objects which provide useful information when stringified
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-base-to-string.md
+  '@typescript-eslint/no-base-to-string': 'off',
+
+  // Disallow duplicate class members
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
+  // covered by typescript
+  '@typescript-eslint/no-dupe-class-members': 'off',
 
   // Disallow the delete operator with computed key expressions
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
@@ -199,6 +268,11 @@ const rules: TypescriptEslint = {
   // covered by prettier
   '@typescript-eslint/no-extra-parens': 'off',
 
+  // Disallow unnecessary semicolons
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md
+  // covered by prettier
+  '@typescript-eslint/no-extra-semi': 'off',
+
   // Forbids the use of classes as namespaces.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
   '@typescript-eslint/no-extraneous-class': [
@@ -223,6 +297,10 @@ const rules: TypescriptEslint = {
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-for-in-array.md
   '@typescript-eslint/no-for-in-array': ['error'],
 
+  // Disallow the use of eval()-like methods
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md
+  '@typescript-eslint/no-implied-eval': ['error'],
+
   // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
   '@typescript-eslint/no-inferrable-types': [
@@ -232,6 +310,14 @@ const rules: TypescriptEslint = {
       ignoreProperties: true,
     },
   ],
+
+  // disallow this keywords outside of classes or class-like objects
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
+  '@typescript-eslint/no-invalid-this': 'off',
+
+  // Disallows usage of void type outside of generic or return types
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md
+  '@typescript-eslint/no-invalid-void-type': ['error'],
 
   // Disallow Magic Numbers
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-magic-numbers.md
@@ -254,6 +340,10 @@ const rules: TypescriptEslint = {
       allowDefinitionFiles: true,
     },
   ],
+
+  // Disallows using a non-null assertion after an optional chain expression
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-asserted-optional-chain.md
+  '@typescript-eslint/no-non-null-asserted-optional-chain': ['error'],
 
   // Using non-null assertions cancels the benefits of the strict null-checking mode
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-assertion.md
@@ -280,9 +370,17 @@ const rules: TypescriptEslint = {
     },
   ],
 
+  // Disallow throwing literals as exceptions
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
+  '@typescript-eslint/no-throw-literal': ['error'],
+
   // Disallow the use of type aliases
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-type-alias.md
   '@typescript-eslint/no-type-alias': 'off',
+
+  // Flags unnecessary equality comparisons against boolean literals
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md
+  '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
 
   // Condition expressions must be necessary
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
@@ -308,9 +406,21 @@ const rules: TypescriptEslint = {
     },
   ],
 
-  // Disallow untyped public methods
-  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-untyped-public-signature.md
-  '@typescript-eslint/no-untyped-public-signature': 'off',
+  // Disallows assigning any to variables and properties
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
+  '@typescript-eslint/no-unsafe-assignment': ['error'],
+
+  // Disallows calling an any type value
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md
+  '@typescript-eslint/no-unsafe-call': ['error'],
+
+  // Disallows member access on any typed variables
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md
+  '@typescript-eslint/no-unsafe-member-access': ['error'],
+
+  // Disallows returning any from a function
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-return.md
+  '@typescript-eslint/no-unsafe-return': ['error'],
 
   // Disallow Unused Expressions
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md
@@ -349,6 +459,10 @@ const rules: TypescriptEslint = {
   // should use `import foo = require('foo');` instead
   '@typescript-eslint/no-var-requires': ['error'],
 
+  // Prefer usage of as const over literal type
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md
+  '@typescript-eslint/prefer-as-const': ['error'],
+
   // Use for-of loops instead of standard for loops over arrays
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-for-of.md
   '@typescript-eslint/prefer-for-of': ['warn'],
@@ -375,13 +489,21 @@ const rules: TypescriptEslint = {
     },
   ],
 
-  // Prefer using concise optional chain expressions instead of chained logical ands
+  // Prefer using concise optional chain expressions instead of chained logical and
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md
   '@typescript-eslint/prefer-optional-chain': ['error'],
 
   // Require never-modified private members be marked as
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly.md
   '@typescript-eslint/prefer-readonly': ['error'],
+
+  // Requires that function parameters are typed as readonly to prevent accidental mutation of inputs
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
+  '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+
+  // Prefer using type parameter when calling Array#reduce instead of casting
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
+  '@typescript-eslint/prefer-reduce-type-parameter': ['error'],
 
   // Enforce to use RegExp#exec over String#match
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md
@@ -391,20 +513,18 @@ const rules: TypescriptEslint = {
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md
   '@typescript-eslint/prefer-string-starts-ends-with': ['error'],
 
+  // Recommends using // @ts-expect-error over // @ts-ignore
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md
+  '@typescript-eslint/prefer-ts-expect-error': ['error'],
+
   // Functions that return promises must be async
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/promise-function-async.md
   '@typescript-eslint/promise-function-async': ['error'],
 
   // Enforce the consistent use of either backticks, double, or single quotes
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
-  '@typescript-eslint/quotes': [
-    'error',
-    'single',
-    {
-      avoidEscape: true,
-      allowTemplateLiterals: false,
-    },
-  ],
+  // covered by prettier
+  '@typescript-eslint/quotes': 'off',
 
   // Enforce giving compare argument to Array#sort
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-array-sort-compare.md
@@ -443,6 +563,10 @@ const rules: TypescriptEslint = {
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
   '@typescript-eslint/strict-boolean-expressions': ['error'],
 
+  // Exhaustiveness checking in switch with union type
+  // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
+  '@typescript-eslint/switch-exhaustiveness-check': ['error'],
+
   // Does not allow the use of /// <reference /> comments.
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/triple-slash-reference.md
   '@typescript-eslint/triple-slash-reference': [
@@ -471,6 +595,7 @@ const rules: TypescriptEslint = {
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
   '@typescript-eslint/unified-signatures': ['error'],
 };
+
 export default {
   name: '@typescript-eslint',
   rules: Object.assign(

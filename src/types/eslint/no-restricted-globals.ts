@@ -8,7 +8,7 @@ type NoRestrictedGlobals0 = [
         name: string;
         message?: string;
       }
-  )[],
+  )[]
 ];
 
 export type NoRestrictedGlobals = 'off' | NoRestrictedGlobals0;

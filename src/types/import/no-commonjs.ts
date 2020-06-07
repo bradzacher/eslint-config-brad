@@ -9,6 +9,7 @@ type NoCommonjs0 =
       {
         allowPrimitiveModules?: boolean;
         allowRequire?: boolean;
+        allowConditionalRequire?: boolean;
       },
     ];
 

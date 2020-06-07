@@ -26,7 +26,7 @@ type PaddedBlocks0 =
       ),
       {
         allowSingleLineBlocks?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

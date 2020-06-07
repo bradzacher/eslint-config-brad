@@ -8,6 +8,7 @@ import { NoUnlimitedDisable } from '../eslint-comments/no-unlimited-disable';
 import { NoUnusedDisable } from '../eslint-comments/no-unused-disable';
 import { NoUnusedEnable } from '../eslint-comments/no-unused-enable';
 import { NoUse } from '../eslint-comments/no-use';
+import { RequireDescription } from '../eslint-comments/require-description';
 
 interface EslintComments {
   'eslint-comments/disable-enable-pair': DisableEnablePair;
@@ -18,6 +19,7 @@ interface EslintComments {
   'eslint-comments/no-unused-disable': NoUnusedDisable;
   'eslint-comments/no-unused-enable': NoUnusedEnable;
   'eslint-comments/no-use': NoUse;
+  'eslint-comments/require-description': RequireDescription;
 }
 
 export { EslintComments };

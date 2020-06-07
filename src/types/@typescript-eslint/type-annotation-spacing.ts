@@ -17,6 +17,22 @@ type TypeAnnotationSpacing0 =
             before?: boolean;
             after?: boolean;
           };
+          variable?: {
+            before?: boolean;
+            after?: boolean;
+          };
+          parameter?: {
+            before?: boolean;
+            after?: boolean;
+          };
+          property?: {
+            before?: boolean;
+            after?: boolean;
+          };
+          returnType?: {
+            before?: boolean;
+            after?: boolean;
+          };
         };
       },
     ];

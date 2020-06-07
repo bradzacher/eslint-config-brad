@@ -132,7 +132,7 @@ type StatementType =
         | 'var'
         | 'while'
         | 'with'
-      )[],
+      )[]
     ];
 
 export type PaddingLineBetweenStatements =

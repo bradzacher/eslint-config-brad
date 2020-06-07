@@ -5,6 +5,7 @@ const rules: ReactHooks = {
   'react-hooks/rules-of-hooks': ['error'],
   'react-hooks/exhaustive-deps': ['error'],
 };
+
 export default {
   name: 'react-hooks',
   rules,

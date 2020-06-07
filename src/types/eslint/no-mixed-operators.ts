@@ -34,6 +34,7 @@ type NoMixedOperators0 =
             | 'in'
             | 'instanceof'
             | '?:'
+            | '??'
           ),
           (
             | '+'
@@ -62,6 +63,7 @@ type NoMixedOperators0 =
             | 'in'
             | 'instanceof'
             | '?:'
+            | '??'
           ),
           ...(
             | '+'
@@ -90,7 +92,8 @@ type NoMixedOperators0 =
             | 'in'
             | 'instanceof'
             | '?:'
-          )[],
+            | '??'
+          )[]
         ][];
         allowSamePrecedence?: boolean;
       },

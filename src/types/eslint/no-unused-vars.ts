@@ -15,7 +15,7 @@ type NoUnusedVars0 =
             argsIgnorePattern?: string;
             caughtErrors?: 'all' | 'none';
             caughtErrorsIgnorePattern?: string;
-            [k: string]: any;
+            [k: string]: unknown;
           }
       ),
     ];

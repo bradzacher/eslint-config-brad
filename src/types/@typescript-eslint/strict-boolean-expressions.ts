@@ -6,8 +6,13 @@ type StrictBooleanExpressions0 =
   | [
       'off' | 'error' | 'warn',
       {
-        ignoreRhs?: boolean;
-        allowNullable?: boolean;
+        allowString?: boolean;
+        allowNumber?: boolean;
+        allowNullableObject?: boolean;
+        allowNullableBoolean?: boolean;
+        allowNullableString?: boolean;
+        allowNullableNumber?: boolean;
+        allowAny?: boolean;
       },
     ];
 

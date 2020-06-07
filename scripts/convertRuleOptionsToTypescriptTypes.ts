@@ -1,6 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { TSESLint } from '@typescript-eslint/experimental-utils';
 import fs from 'fs';
+// eslint-disable-next-line import/no-extraneous-dependencies -- included as @types/json-schema
 import { JSONSchema4 } from 'json-schema';
 import { compile } from 'json-schema-to-typescript';
 import mkdirp from 'mkdirp';
@@ -30,7 +30,7 @@ async function compileSchema(
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- we don't care about the types
 type RuleModule = TSESLint.RuleModule<any, any, any>;
 async function getRules(
   pluginName: string,
@@ -52,13 +52,21 @@ async function getRules(
   // - require result from that
 
   if (pluginName.startsWith('@') && !pluginName.includes('/')) {
-    return (await import(`${pluginName}/eslint-plugin`)).rules;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- dynamic import
+    const plugin: { rules: Record<string, RuleModule> } = await import(
+      `${pluginName}/eslint-plugin`
+    );
+    return plugin.rules;
   }
 
-  return (await import(`eslint-plugin-${pluginName}`)).rules;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- dynamic import
+  const plugin: { rules: Record<string, RuleModule> } = await import(
+    `eslint-plugin-${pluginName}`
+  );
+  return plugin.rules;
 }
 
-const RuleLevelString = {
+const ruleLevelString = {
   enum: ['off', 'error', 'warn'],
 };
 function adjustSchema(schema: JSONSchema4): JSONSchema4 {
@@ -70,21 +78,21 @@ function adjustSchema(schema: JSONSchema4): JSONSchema4 {
 
   if (Array.isArray(schema.items)) {
     // work around shared / nested schemas
-    if (schema.items[0] !== RuleLevelString) {
-      schema.items.unshift(RuleLevelString);
+    if (schema.items[0] !== ruleLevelString) {
+      schema.items.unshift(ruleLevelString);
     }
   } else if (schema.items !== undefined) {
     if (schema.items.oneOf != null || schema.items.anyOf != null) {
       const oldItem = schema.items;
-      schema.items = [RuleLevelString];
+      schema.items = [ruleLevelString];
       schema.additionalItems = oldItem;
     } else {
-      schema.items = [RuleLevelString, schema.items];
+      schema.items = [ruleLevelString, schema.items];
     }
   } else {
     schema = {
       type: 'array',
-      items: [RuleLevelString, schema],
+      items: [ruleLevelString, schema],
     };
   }
 
@@ -110,7 +118,8 @@ function recursivelyFixRefs(
   }
 
   Object.keys(schema).forEach((key: keyof JSONSchema4) => {
-    const current: Array<JSONSchema4> | string = schema[key];
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- known safe
+    const current: Array<JSONSchema4> | string | null = schema[key];
     if (current == null) {
       return;
     }
@@ -144,8 +153,8 @@ async function convertRuleOptionsToTypescriptTypes(
 
       let code: string;
       if (
-        rule.meta == null ||
-        rule.meta.schema == null ||
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- types aren't strictly correct
+        rule.meta?.schema == null ||
         rule.meta.schema.length === 0
       ) {
         code = `export type ${typeName} = 'off' | ['warn' | 'error'];\n`;
@@ -156,7 +165,7 @@ async function convertRuleOptionsToTypescriptTypes(
           schema.forEach(recursivelyFixRefs);
           fixedSchema = {
             type: 'array',
-            items: [RuleLevelString, ...schema],
+            items: [ruleLevelString, ...schema],
           };
         } else {
           fixedSchema = adjustSchema(schema);
@@ -174,15 +183,11 @@ async function convertRuleOptionsToTypescriptTypes(
 
       const root = path.resolve(__dirname, '..');
       const folderName = path.resolve(root, `src/types/${pluginName}`);
-      await new Promise((resolve, reject) =>
-        mkdirp(folderName, (err, made) => {
-          if (err != null) {
-            reject(err);
-          }
-
-          resolve(made);
-        }),
-      );
+      await mkdirp(folderName);
+      if (ruleName.includes('/')) {
+        const ruleFolder = ruleName.substr(0, ruleName.lastIndexOf('/'));
+        await mkdirp(path.join(folderName, ruleFolder));
+      }
 
       const filename = path.resolve(folderName, `${ruleName}.ts`);
       fs.writeFileSync(

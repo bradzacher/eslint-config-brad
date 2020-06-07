@@ -1,3 +1,14 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type StylePropObject = 'off' | ['warn' | 'error'];
+type StylePropObject0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        allow?: string[];
+        [k: string]: unknown;
+      },
+    ];
+
+export type StylePropObject = 'off' | StylePropObject0;

@@ -6,10 +6,11 @@ type NoExtraneousDependencies0 =
   | [
       'off' | 'error' | 'warn',
       {
-        devDependencies?: boolean | any[];
-        optionalDependencies?: boolean | any[];
-        peerDependencies?: boolean | any[];
-        packageDir?: string | any[];
+        devDependencies?: boolean | unknown[];
+        optionalDependencies?: boolean | unknown[];
+        peerDependencies?: boolean | unknown[];
+        bundledDependencies?: boolean | unknown[];
+        packageDir?: string | unknown[];
       },
     ];
 

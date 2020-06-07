@@ -7,7 +7,6 @@ type NoUnnecessaryCondition0 =
       'off' | 'error' | 'warn',
       {
         allowConstantLoopConditions?: boolean;
-        ignoreRhs?: boolean;
       },
     ];
 

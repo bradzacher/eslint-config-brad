@@ -8,7 +8,7 @@ type NoMisusedPromises0 =
       {
         checksConditionals?: boolean;
         checksVoidReturn?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

@@ -17,7 +17,7 @@ type Extensions0 =
           [k: string]: 'always' | 'ignorePackages' | 'never';
         };
         ignorePackages?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ]
   | ['off' | 'error' | 'warn']
@@ -32,7 +32,7 @@ type Extensions0 =
           [k: string]: 'always' | 'ignorePackages' | 'never';
         };
         ignorePackages?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ]
   | ['off' | 'error' | 'warn']

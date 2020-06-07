@@ -10,6 +10,7 @@ type ExplicitFunctionReturnType0 =
         allowTypedFunctionExpressions?: boolean;
         allowHigherOrderFunctions?: boolean;
         allowDirectConstAssertionInArrowFunctions?: boolean;
+        allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean;
       },
     ];
 

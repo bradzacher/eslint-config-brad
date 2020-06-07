@@ -2,7 +2,7 @@
 
 type NoExtraParens0 =
   | ['off' | 'error' | 'warn', 'functions']
-  | ['off' | 'error' | 'warn', 'functions', any]
+  | ['off' | 'error' | 'warn', 'functions', unknown]
   | ['off' | 'error' | 'warn', 'all']
   | [
       'off' | 'error' | 'warn',
@@ -15,6 +15,7 @@ type NoExtraParens0 =
         enforceForArrowConditionals?: boolean;
         enforceForSequenceExpressions?: boolean;
         enforceForNewInMemberExpressions?: boolean;
+        enforceForFunctionPrototypeMethods?: boolean;
       },
     ]
   | [
@@ -28,8 +29,9 @@ type NoExtraParens0 =
         enforceForArrowConditionals?: boolean;
         enforceForSequenceExpressions?: boolean;
         enforceForNewInMemberExpressions?: boolean;
+        enforceForFunctionPrototypeMethods?: boolean;
       },
-      any,
+      unknown,
     ];
 
 export type NoExtraParens = 'off' | NoExtraParens0;

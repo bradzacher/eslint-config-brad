@@ -9,7 +9,7 @@ type NoRestrictedModules0 =
             name: string;
             message?: string;
           }
-      )[],
+      )[]
     ]
   | ['off' | 'error' | 'warn']
   | [
@@ -23,7 +23,7 @@ type NoRestrictedModules0 =
                 name: string;
                 message?: string;
               }
-          )[],
+          )[]
         ];
         patterns?: string[];
       },

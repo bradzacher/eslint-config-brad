@@ -6,6 +6,7 @@ type JsxNoTargetBlank0 =
   | [
       'off' | 'error' | 'warn',
       {
+        allowReferrer?: boolean;
         enforceDynamicLinks?: 'always' | 'never';
       },
     ];

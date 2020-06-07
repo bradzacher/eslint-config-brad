@@ -6,10 +6,11 @@ type RestrictTemplateExpressions0 =
   | [
       'off' | 'error' | 'warn',
       {
-        allowBoolean?: boolean;
-        allowNullable?: boolean;
         allowNumber?: boolean;
-        [k: string]: any;
+        allowBoolean?: boolean;
+        allowAny?: boolean;
+        allowNullish?: boolean;
+        [k: string]: unknown;
       },
     ];
 

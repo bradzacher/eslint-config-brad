@@ -32,6 +32,10 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md
   'jest/no-commented-out-tests': ['warn'],
 
+  // Disallow use of deprecated functions
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md
+  'jest/no-deprecated-functions': ['error'],
+
   // This rule raises a warning about 'skip' tests.
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md
   'jest/no-disabled-tests': ['warn'],
@@ -39,10 +43,6 @@ const rules: Jest = {
   // Disallow duplicate setup and teardown hooks
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-duplicate-hooks.md
   'jest/no-duplicate-hooks': ['error'],
-
-  // Avoid using expect().resolves
-  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-expect-resolves.md
-  'jest/no-expect-resolves': ['error'],
 
   // no export from test file
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md
@@ -84,6 +84,15 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md
   'jest/no-mocks-import': 'off',
 
+  // Disallow specific matchers & modifiers
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-restricted-matchers.md
+  'jest/no-restricted-matchers': [
+    'error',
+    {
+      resolves: 'Use `expect(await promise)` instead.',
+    },
+  ],
+
   // No standalone expect in a describe block
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md
   'jest/no-standalone-expect': ['error'],
@@ -95,10 +104,6 @@ const rules: Jest = {
   // Disallow explicitly returning from tests
   // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-return-statement.md
   'jest/no-test-return-statement': ['error'],
-
-  // Disallow using toBeTruthy() & toBeFalsy()
-  // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-truthy-falsy.md
-  'jest/no-truthy-falsy': 'off',
 
   // Prevent catch assertions in tests
   // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-try-expect.md
@@ -116,10 +121,6 @@ const rules: Jest = {
   // Suggest to have all hooks at top-level before tests
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-hooks-on-top.md
   'jest/prefer-hooks-on-top': ['error'],
-
-  // Suggest using inline snapshots
-  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-inline-snapshots.md
-  'jest/prefer-inline-snapshots': 'off',
 
   // Suggest using jest.spyOn()
   // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md
@@ -173,6 +174,7 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-empty-title.md
   'jest/valid-title': ['error'],
 };
+
 export default {
   name: 'jest',
   rules,

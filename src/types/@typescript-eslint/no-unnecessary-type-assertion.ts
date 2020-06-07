@@ -7,7 +7,7 @@ type NoUnnecessaryTypeAssertion0 =
       'off' | 'error' | 'warn',
       {
         typesToIgnore?: string[];
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

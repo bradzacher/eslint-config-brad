@@ -7,6 +7,7 @@ type ArrayCallbackReturn0 =
       'off' | 'error' | 'warn',
       {
         allowImplicit?: boolean;
+        checkForEach?: boolean;
       },
     ];
 

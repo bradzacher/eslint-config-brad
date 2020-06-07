@@ -6,7 +6,9 @@ type ForbidDomProps0 =
   | [
       'off' | 'error' | 'warn',
       {
-        forbid?: string[];
+        forbid?: {
+          [k: string]: unknown;
+        }[];
       },
     ];
 

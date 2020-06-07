@@ -10,7 +10,7 @@ type OperatorLinebreak0 =
       {
         overrides?: {
           anyOf?: 'after' | 'before' | 'none' | 'ignore';
-          [k: string]: any;
+          [k: string]: unknown;
         };
       },
     ];

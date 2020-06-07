@@ -8,7 +8,7 @@ type NoRestrictedSyntax0 = [
         selector: string;
         message?: string;
       }
-  )[],
+  )[]
 ];
 
 export type NoRestrictedSyntax = 'off' | NoRestrictedSyntax0;

@@ -6,7 +6,7 @@ type NoHooks0 =
   | [
       'off' | 'error' | 'warn',
       {
-        allow?: any[];
+        allow?: unknown[];
       },
     ];
 

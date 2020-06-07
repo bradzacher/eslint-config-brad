@@ -1,7 +1,8 @@
 import eslintBase from './plugins/eslint-base';
 import eslintComments from './plugins/eslint-comments';
-import jest from './plugins/jest';
 import imprt from './plugins/import';
+import jest from './plugins/jest';
+import node from './plugins/node';
 import typescript from './plugins/typescript';
 
 export = {
@@ -55,7 +56,13 @@ export = {
       },
     },
   ],
-  plugins: [eslintComments.name, imprt.name, jest.name, typescript.name],
+  plugins: [
+    eslintComments.name,
+    imprt.name,
+    jest.name,
+    node.name,
+    typescript.name,
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
@@ -68,8 +75,9 @@ export = {
     // rules for each plugin
     ...eslintBase.rules,
     ...eslintComments.rules,
-    ...jest.rules,
     ...imprt.rules,
+    ...jest.rules,
+    ...node.rules,
     ...typescript.rules,
   },
   settings: {

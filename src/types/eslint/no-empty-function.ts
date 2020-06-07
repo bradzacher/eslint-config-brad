@@ -15,6 +15,8 @@ type NoEmptyFunction0 =
           | 'getters'
           | 'setters'
           | 'constructors'
+          | 'asyncFunctions'
+          | 'asyncMethods'
         )[];
       },
     ];

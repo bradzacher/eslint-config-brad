@@ -9,7 +9,7 @@ type ForbidPropTypes0 =
         forbid?: string[];
         checkContextTypes?: boolean;
         checkChildContextTypes?: boolean;
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

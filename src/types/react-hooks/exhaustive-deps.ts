@@ -7,6 +7,7 @@ type ExhaustiveDeps0 =
       'off' | 'error' | 'warn',
       {
         additionalHooks?: string;
+        enableDangerousAutofixThisMayCauseInfiniteLoops?: boolean;
       },
     ];
 

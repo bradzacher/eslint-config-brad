@@ -13,7 +13,7 @@ type NoRestrictedProperties0 = [
         property: string;
         message?: string;
       }
-  )[],
+  )[]
 ];
 
 export type NoRestrictedProperties = 'off' | NoRestrictedProperties0;

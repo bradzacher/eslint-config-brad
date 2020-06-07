@@ -3,6 +3,6 @@
 type RequireRenderReturn0 =
   | []
   | ['off' | 'error' | 'warn']
-  | ['off' | 'error' | 'warn', any];
+  | ['off' | 'error' | 'warn', unknown];
 
 export type RequireRenderReturn = 'off' | RequireRenderReturn0;

@@ -9,9 +9,9 @@ type JsxPropsNoSpreading0 =
         html?: 'enforce' | 'ignore';
         custom?: 'enforce' | 'ignore';
         exceptions?: string[];
-        [k: string]: any;
+        [k: string]: unknown;
       } & {
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

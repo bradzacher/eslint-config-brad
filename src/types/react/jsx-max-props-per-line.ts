@@ -8,7 +8,7 @@ type JsxMaxPropsPerLine0 =
       {
         maximum?: number;
         when?: 'always' | 'multiline';
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

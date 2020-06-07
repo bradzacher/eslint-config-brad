@@ -10,6 +10,7 @@ type NoUseBeforeDefine0 =
         | {
             functions?: boolean;
             classes?: boolean;
+            enums?: boolean;
             variables?: boolean;
             typedefs?: boolean;
           }

@@ -7,6 +7,7 @@ type NoFloatingPromises0 =
       'off' | 'error' | 'warn',
       {
         ignoreVoid?: boolean;
+        ignoreIIFE?: boolean;
       },
     ];
 

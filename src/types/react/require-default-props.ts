@@ -7,6 +7,7 @@ type RequireDefaultProps0 =
       'off' | 'error' | 'warn',
       {
         forbidDefaultForRequired?: boolean;
+        ignoreFunctionalComponents?: boolean;
       },
     ];
 

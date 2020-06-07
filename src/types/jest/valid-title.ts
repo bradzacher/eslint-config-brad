@@ -7,6 +7,7 @@ type ValidTitle0 =
       'off' | 'error' | 'warn',
       {
         ignoreTypeOfDescribeName?: boolean;
+        disallowedWords?: string[];
       },
     ];
 

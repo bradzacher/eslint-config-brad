@@ -7,7 +7,7 @@ type JsxPascalCase0 =
       'off' | 'error' | 'warn',
       {
         allowAllCaps?: boolean;
-        ignore?: any[];
+        ignore?: unknown[];
       },
     ];
 

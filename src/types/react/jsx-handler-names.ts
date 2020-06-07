@@ -9,14 +9,20 @@ type JsxHandlerNames0 =
         | {
             eventHandlerPrefix?: string;
             eventHandlerPropPrefix?: string;
+            checkLocalVariables?: boolean;
           }
         | {
             eventHandlerPrefix?: string;
             eventHandlerPropPrefix?: false;
+            checkLocalVariables?: boolean;
           }
         | {
             eventHandlerPrefix?: false;
             eventHandlerPropPrefix?: string;
+            checkLocalVariables?: boolean;
+          }
+        | {
+            checkLocalVariables?: boolean;
           }
       ),
     ];

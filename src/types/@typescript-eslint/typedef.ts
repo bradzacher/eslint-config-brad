@@ -13,7 +13,8 @@ type Typedef0 =
         parameter?: boolean;
         propertyDeclaration?: boolean;
         variableDeclaration?: boolean;
-        [k: string]: any;
+        variableDeclarationIgnoreFunction?: boolean;
+        [k: string]: unknown;
       },
     ];
 

@@ -8,7 +8,7 @@ type NoMagicNumbers0 =
       {
         detectObjects?: boolean;
         enforceConst?: boolean;
-        ignore?: number[];
+        ignore?: (number | string)[];
         ignoreArrayIndexes?: boolean;
       },
     ];

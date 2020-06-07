@@ -8,7 +8,7 @@ type ArrayType0 =
       {
         default?: 'array' | 'generic' | 'array-simple';
         readonly?: 'array' | 'generic' | 'array-simple';
-        [k: string]: any;
+        [k: string]: unknown;
       },
     ];
 

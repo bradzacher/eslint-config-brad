@@ -16,7 +16,7 @@ type Indent0 =
               let?: number | ('first' | 'off');
               const?: number | ('first' | 'off');
             };
-        outerIIFEBody?: number;
+        outerIIFEBody?: number | 'off';
         MemberExpression?: number | 'off';
         FunctionDeclaration?: {
           parameters?: number | ('first' | 'off');
@@ -33,6 +33,7 @@ type Indent0 =
         ObjectExpression?: number | ('first' | 'off');
         ImportDeclaration?: number | ('first' | 'off');
         flatTernaryExpressions?: boolean;
+        offsetTernaryExpressions?: boolean;
         ignoredNodes?: string[];
         ignoreComments?: boolean;
       },

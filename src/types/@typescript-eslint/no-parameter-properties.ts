@@ -24,7 +24,7 @@ type NoParameterProperties0 =
             | 'private readonly'
             | 'protected readonly'
             | 'public readonly'
-          )[],
+          )[]
         ];
       },
     ];

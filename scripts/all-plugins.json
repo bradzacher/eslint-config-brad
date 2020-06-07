@@ -4,6 +4,7 @@
     "eslint-comments",
     "import",
     "jest",
+    "node",
     "react",
     "react-hooks"
   ],

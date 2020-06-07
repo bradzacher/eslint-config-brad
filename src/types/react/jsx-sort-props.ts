@@ -11,7 +11,7 @@ type JsxSortProps0 =
         shorthandLast?: boolean;
         ignoreCase?: boolean;
         noSortAlphabetically?: boolean;
-        reservedFirst?: any[] | boolean;
+        reservedFirst?: unknown[] | boolean;
       },
     ];
 

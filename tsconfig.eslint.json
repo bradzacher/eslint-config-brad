@@ -3,6 +3,6 @@
   "compilerOptions": {
     "allowJs": true
   },
-  "include": ["src/**/*.ts", "types/**/*", "scripts/**/*"],
+  "include": ["src/**/*.ts", "types/**/*", "scripts/**/*", "./.eslintrc.js"],
   "exclude": ["node_modules"]
 }

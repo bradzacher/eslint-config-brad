@@ -8,7 +8,7 @@ type JsxCurlySpacing0 =
         | (BasicConfig & {
             attributes?: BasicConfigOrBoolean;
             children?: BasicConfigOrBoolean;
-            [k: string]: any;
+            [k: string]: unknown;
           })
         | ('always' | 'never')
       ),
@@ -19,7 +19,7 @@ type JsxCurlySpacing0 =
         | (BasicConfig & {
             attributes?: BasicConfigOrBoolean;
             children?: BasicConfigOrBoolean;
-            [k: string]: any;
+            [k: string]: unknown;
           })
         | ('always' | 'never')
       ),
@@ -27,7 +27,7 @@ type JsxCurlySpacing0 =
         allowMultiline?: boolean;
         spacing?: {
           objectLiterals?: 'always' | 'never';
-          [k: string]: any;
+          [k: string]: unknown;
         };
       },
     ];
@@ -38,9 +38,9 @@ interface BasicConfig {
   allowMultiline?: boolean;
   spacing?: {
     objectLiterals?: 'always' | 'never';
-    [k: string]: any;
+    [k: string]: unknown;
   };
-  [k: string]: any;
+  [k: string]: unknown;
 }
 
 export type JsxCurlySpacing = 'off' | JsxCurlySpacing0;
