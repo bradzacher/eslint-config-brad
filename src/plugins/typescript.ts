@@ -198,6 +198,13 @@ const rules: TypescriptEslint = {
     },
 
     {
+      selector: 'parameter',
+      format: ['camelCase'],
+      // to allow unused parameters
+      leadingUnderscore: 'allow',
+    },
+
+    {
       selector: 'typeLike',
       format: ['PascalCase'],
     },
