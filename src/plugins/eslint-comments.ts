@@ -1,4 +1,4 @@
-import { EslintComments } from '../types/eslint-comments';
+import type { EslintComments } from '../types/eslint-comments';
 
 const rules: EslintComments = {
   // require a eslint-enable comment for every eslint-disable comment

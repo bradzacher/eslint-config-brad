@@ -11,6 +11,7 @@ type NoUnderscoreDangle0 =
         allowAfterSuper?: boolean;
         allowAfterThisConstructor?: boolean;
         enforceInMethodNames?: boolean;
+        allowFunctionParams?: boolean;
       },
     ];
 

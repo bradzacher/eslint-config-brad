@@ -7,6 +7,7 @@ type NoUnnecessaryCondition0 =
       'off' | 'error' | 'warn',
       {
         allowConstantLoopConditions?: boolean;
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean;
       },
     ];
 

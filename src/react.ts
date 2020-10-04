@@ -1,6 +1,6 @@
+import imprt from './plugins/import';
 import react from './plugins/react';
 import reactHooks from './plugins/react-hooks';
-import imprt from './plugins/import';
 
 export = {
   env: {

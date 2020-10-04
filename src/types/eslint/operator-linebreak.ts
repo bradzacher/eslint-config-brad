@@ -9,8 +9,7 @@ type OperatorLinebreak0 =
       'after' | 'before' | 'none' | null,
       {
         overrides?: {
-          anyOf?: 'after' | 'before' | 'none' | 'ignore';
-          [k: string]: unknown;
+          [k: string]: 'after' | 'before' | 'none' | 'ignore';
         };
       },
     ];

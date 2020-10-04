@@ -20,7 +20,8 @@ type Order0 =
             | 'unknown'
             | 'parent'
             | 'sibling'
-            | 'index';
+            | 'index'
+            | 'object';
           position?: 'after' | 'before';
           [k: string]: unknown;
         }[];

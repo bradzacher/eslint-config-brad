@@ -7,14 +7,6 @@ build:
 	rm -fr dist/types
 	yarn ts-node ./scripts/removePrivate.ts
 
-.PHONY: format
-format:
-	@yarn format
-
-.PHONY: lint
-lint:
-	@yarn lint
-
 .PHONY: ci
 ci:
 # check the format

@@ -11,11 +11,13 @@ type NoRestrictedPaths0 =
             target?: string;
             from?: string;
             except?: string[];
+            message?: string;
           },
           ...{
             target?: string;
             from?: string;
             except?: string[];
+            message?: string;
           }[]
         ];
         basePath?: string;

@@ -1,4 +1,4 @@
-import { ReactHooks } from '../types/react-hooks';
+import type { ReactHooks } from '../types/react-hooks';
 
 const rules: ReactHooks = {
   // https://reactjs.org/docs/hooks-rules.html

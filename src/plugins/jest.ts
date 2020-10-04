@@ -1,4 +1,4 @@
-import { Jest } from '../types/jest';
+import type { Jest } from '../types/jest';
 
 const rules: Jest = {
   // This rule gives you control over the usage of test/it keywords in your codebase
@@ -32,6 +32,14 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md
   'jest/no-commented-out-tests': ['warn'],
 
+  // Prevent catch assertions in tests
+  // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-try-expect.md
+  'jest/no-conditional-expect': ['error'],
+
+  // Avoid using a callback in asynchronous tests
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md
+  'jest/no-done-callback': ['error'],
+
   // Disallow use of deprecated functions
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md
   'jest/no-deprecated-functions': ['error'],
@@ -52,10 +60,6 @@ const rules: Jest = {
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-if.md
   'jest/no-if': ['error'],
 
-  // Avoid using a callback in asynchronous tests
-  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-callback.md
-  'jest/no-test-callback': ['error'],
-
   // Disallow 'only' tests.
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md
   'jest/no-focused-tests': ['error'],
@@ -67,6 +71,10 @@ const rules: Jest = {
   // Having identical titles for two different tests or test suites may create confusion
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md
   'jest/no-identical-title': ['error'],
+
+  // Disallow string interpolation inside snapshots
+  // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md
+  'jest/no-interpolation-in-snapshots': ['error'],
 
   // Disallow Jasmine globals
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md
@@ -104,10 +112,6 @@ const rules: Jest = {
   // Disallow explicitly returning from tests
   // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-return-statement.md
   'jest/no-test-return-statement': ['error'],
-
-  // Prevent catch assertions in tests
-  // https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-try-expect.md
-  'jest/no-try-expect': ['error'],
 
   // Suggest using toBeCalledWith OR toHaveBeenCalledWith
   // https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-called-with.md

@@ -8,6 +8,7 @@ type LowercaseName0 =
       {
         ignore?: ('describe' | 'test' | 'it')[];
         allowedPrefixes?: string[];
+        ignoreTopLevelDescribe?: boolean;
       },
     ];
 

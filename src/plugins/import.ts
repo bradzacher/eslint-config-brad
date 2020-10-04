@@ -1,4 +1,4 @@
-import { Import } from '../types/import';
+import type { Import } from '../types/import';
 
 const rules: Import = {
   // ensure default import coupled with default export
@@ -194,26 +194,13 @@ const rules: Import = {
 
   // Enforce a convention in module import order
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
-  'import/order': [
-    // TODO - this rule doesn't seem to work...
-    'off',
-    {
-      groups: [
-        'builtin',
-        'external',
-        'internal',
-        ['parent', 'sibling', 'index'],
-      ],
-      'newlines-between': 'ignore',
-    },
-  ],
+  'import/order': 'off',
 
   // Require modules with a single export to use a default export
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
   'import/prefer-default-export': 'off',
 
-  // Warn if a module could be mistakenly parsed as a script by a consumer
-  // leveraging Unambiguous JavaScript Grammar
+  // Warn if a module could be mistakenly parsed as a script by a consumer leveraging Unambiguous JavaScript Grammar
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md // this should not be enabled until this proposal has at least been *presented* to TC39. // At the moment, it's not a thing.
   'import/unambiguous': 'off',
 };

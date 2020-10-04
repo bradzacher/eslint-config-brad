@@ -10,6 +10,7 @@ type NoMagicNumbers0 =
         enforceConst?: boolean;
         ignore?: (number | string)[];
         ignoreArrayIndexes?: boolean;
+        ignoreDefaultValues?: boolean;
         ignoreNumericLiteralTypes?: boolean;
         ignoreEnums?: boolean;
         ignoreReadonlyClassProperties?: boolean;

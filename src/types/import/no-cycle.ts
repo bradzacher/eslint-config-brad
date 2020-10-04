@@ -10,10 +10,11 @@ type NoCycle0 =
         amd?: boolean;
         esmodule?: boolean;
         ignore?: [string, ...string[]];
+        maxDepth?: number | '∞';
         /**
-         * maximum dependency depth to traverse
+         * ignore external modules
          */
-        maxDepth?: number;
+        ignoreExternal?: boolean;
       },
     ];
 

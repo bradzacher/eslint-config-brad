@@ -7,50 +7,48 @@
   "author": "Brad Zacher <brad.zacher@gmail.com>",
   "license": "MIT",
   "resolutions": {
-    "eslint": "^7.2.0"
+    "eslint": "7.10.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.1.0",
-    "@typescript-eslint/parser": "^3.1.0",
-    "eslint": "^7.2.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.13.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "eslint-restricted-globals": "^0.2.0"
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
+    "eslint": "7.10.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.0.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-react": "7.21.3",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "eslint-plugin-simple-import-sort": "5.0.3",
+    "eslint-restricted-globals": "0.2.0"
   },
   "devDependencies": {
-    "@types/json-schema": "^7.0.4",
+    "@types/json-schema": "^7.0.6",
     "@types/mkdirp": "^1.0.1",
-    "@types/node": "^14.0.11",
-    "@types/prettier": "^2.0.1",
-    "@typescript-eslint/experimental-utils": "^3.1.0",
-    "eslint-find-rules": "^3.5.0",
-    "eslint-import-resolver-node": "^0.3.3",
-    "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "json-schema-to-typescript": "^9.1.0",
+    "@types/node": "^14.11.2",
+    "@types/prettier": "^2.1.1",
+    "@typescript-eslint/experimental-utils": "^4.3.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "json-schema-to-typescript": "^9.1.1",
     "mkdirp": "^1.0.4",
-    "patch-package": "^6.2.2",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.5"
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "build": "make build",
+    "check:format": "yarn format-no-write --list-different",
+    "check:types": "tsc -p ./tsconfig.json --noEmit",
     "ci": "make ci",
     "clean": "rimraf -g ./dist/",
-    "lint": "eslint ./src ./scripts ./types --ext .ts,.js --cache",
     "format-no-write": "prettier \"./**/*.{ts,json,md}\" --config=.prettierrc.js",
     "format": "yarn format-no-write --write",
-    "format-check": "yarn format-no-write --list-different",
-    "postinstall": "yarn patch-package",
-    "prepush": "make ci",
-    "regenerate-types": "ts-node -P ./scripts/tsconfig.json --files ./scripts/generateTypes.ts",
-    "typecheck": "tsc -p ./tsconfig.json --noEmit"
+    "generate:types": "ts-node -P ./scripts/tsconfig.json --files ./scripts/generateTypes.ts",
+    "lint": "eslint ./src ./scripts ./types --ext .ts,.js --cache",
+    "prepush": "make ci"
   },
   "husky": {
     "hooks": {

@@ -6,6 +6,7 @@ type JsxFilenameExtension0 =
   | [
       'off' | 'error' | 'warn',
       {
+        allow?: 'always' | 'as-needed';
         extensions?: string[];
       },
     ];

@@ -1,10 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
-import packageJson = require('../package.json');
+import packageJsonImport = require('../package.json');
 
+const packageJson: Record<keyof typeof packageJsonImport, unknown> = {
+  ...packageJsonImport,
+};
 delete packageJson.private;
-// no need to publis these props
+// no need to publish these props
 delete packageJson.scripts;
 delete packageJson.husky;
 delete packageJson.devDependencies;

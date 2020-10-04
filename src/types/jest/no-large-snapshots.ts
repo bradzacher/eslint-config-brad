@@ -8,11 +8,7 @@ type NoLargeSnapshots0 =
       {
         maxSize?: number;
         inlineMaxSize?: number;
-        whitelistedSnapshots?: {
-          /**
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` ".*".
-           */
+        allowedSnapshots?: {
           [k: string]: unknown[];
         };
       },

@@ -1,66 +1,112 @@
+import type { TSESLint } from '@typescript-eslint/experimental-utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import { format } from 'prettier';
 
-import { toPascalCase } from './toPascalCase';
-import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
-
 import prettierConfig from '../src/prettier';
+import type { Plugin } from './convertRuleOptionsToTypescriptTypes';
+import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
+import { toPascalCase } from './toPascalCase';
 
-import getRuleFinder = require('eslint-find-rules');
 import packageJson = require('../package.json');
+
+type PendingPlugin = {
+  name: string;
+  rules: TSESLint.Linter.Plugin['rules'] | null;
+  shortName: string;
+};
+
+async function getESLintCoreRules(): Promise<PendingPlugin> {
+  const eslintRules = await import('eslint/lib/rules');
+  const plugin: Plugin = {
+    name: 'eslint',
+    rules: {},
+    shortName: 'eslint',
+  };
+  eslintRules.default.forEach((rule, ruleId) => {
+    // we need to explicitly iterate over each rule to ensure it gets loaded
+    plugin.rules[ruleId] = rule;
+  });
+
+  return plugin;
+}
 
 async function main(): Promise<void> {
   // get the list of all the eslint plugins installed
-  const plugins = Object.keys(packageJson.dependencies)
-    .filter(d => d.startsWith('eslint-plugin-') || d.endsWith('/eslint-plugin'))
-    .map(dep => dep.replace('eslint-plugin-', ''))
-    .map(dep => dep.replace('/eslint-plugin', ''));
-  const allPluginsPath = path.resolve(__dirname, './all-plugins.json');
-  fs.writeFileSync(
-    allPluginsPath,
-    `${JSON.stringify({ plugins, rules: {} }, null, 2)}\n`,
-  );
+  const plugins: Array<Promise<PendingPlugin>> = Object.keys(
+    packageJson.dependencies,
+  )
+    .filter(
+      d =>
+        d.startsWith('eslint-plugin-') ||
+        d.endsWith('/eslint-plugin') ||
+        d.includes('/eslint-plugin-'),
+    )
+    .map<Promise<PendingPlugin>>(async d => {
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- dynamic import is untyped
+      const plugin = (await import(d)) as TSESLint.Linter.Plugin;
+      return {
+        rules: plugin.rules ? { ...plugin.rules } : null,
+        name: d,
+        shortName: d
+          .replace(/^eslint-plugin-/u, '')
+          .replace(/\/eslint-plugin$/u, '')
+          .replace(/\/eslint-plugin-/u, '/'),
+      };
+    })
+    .concat(getESLintCoreRules());
 
-  // create the rule finder instance
-  const ruleFinder = getRuleFinder(allPluginsPath);
-  const allRules = ruleFinder.getAllAvailableRules();
-  const rulesPerPlugin: Record<string, Array<string>> = {
-    eslint: [],
-  };
-  allRules.forEach(rule => {
-    const split = rule.split('/');
-    if (split.length > 1) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- TS index access
-      rulesPerPlugin[split[0]] = rulesPerPlugin[split[0]] ?? [];
-      rulesPerPlugin[split[0]].push(rule);
-    } else {
-      rulesPerPlugin.eslint.push(rule);
+  for await (const plugin of plugins) {
+    if (!plugin.rules) {
+      continue;
     }
-  });
 
-  for (const plugin of Object.keys(rulesPerPlugin)) {
-    // eslint-disable-next-line no-await-in-loop -- intentionally awaiting in the loop so plugins are processed consecutively
-    await convertRuleOptionsToTypescriptTypes(plugin);
+    const rules: Plugin['rules'] = {};
+    for (const [ruleName, rule] of Object.entries(plugin.rules)) {
+      if (typeof rule === 'function') {
+        // normalise functional rules
+        rules[ruleName] = {
+          meta: {
+            messages: {},
+            schema: {},
+            type: 'suggestion',
+          },
+          create: rule,
+        };
+      } else if (rule.meta.deprecated === true) {
+        // filter deprecated rules
+        continue;
+      } else {
+        rules[ruleName] = rule;
+      }
+    }
 
-    const ruleNames = rulesPerPlugin[plugin].map(rule => ({
+    await convertRuleOptionsToTypescriptTypes({
+      ...plugin,
+      rules,
+    });
+
+    const ruleNames = Object.keys(rules).map(rule => ({
       name: rule,
-      safeName: toPascalCase(rule.replace(`${plugin}/`, '')),
+      safeName: toPascalCase(rule.replace(`${plugin.shortName}/`, '')),
     }));
-    const interfaceName = toPascalCase(plugin);
+    const interfaceName = toPascalCase(plugin.shortName);
 
     const typesFile = [
       '// this file is auto-generated. Run `make regenerate-types` to regenerate it.',
       '',
       ...ruleNames.map(
         rule =>
-          `import { ${rule.safeName} } from '../${
-            plugin === 'eslint' ? 'eslint/' : ''
-          }${rule.name}'`,
+          `import { ${rule.safeName} } from '../${plugin.shortName}/${rule.name}'`,
       ),
       '',
       `interface ${interfaceName} {`,
-      ...ruleNames.map(rule => `'${rule.name}': ${rule.safeName};`),
+      ...ruleNames.map(
+        rule =>
+          `'${plugin.shortName === 'eslint' ? '' : `${plugin.shortName}/`}${
+            rule.name
+          }': ${rule.safeName};`,
+      ),
       '}',
       '',
       'export {',
@@ -75,15 +121,17 @@ async function main(): Promise<void> {
     });
 
     fs.writeFileSync(
-      path.resolve(__dirname, `../src/types/${plugin}/index.ts`),
+      path.resolve(__dirname, `../src/types/${plugin.shortName}/index.ts`),
       formatted,
       'utf8',
     );
 
-    console.info('Wrote types for', plugin, '\n');
+    console.info('Wrote types for', plugin.name, '\n');
   }
 
   console.info('Done!');
 }
 
 void main();
+
+export type { Plugin };

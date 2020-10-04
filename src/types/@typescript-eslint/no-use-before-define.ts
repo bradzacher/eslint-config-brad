@@ -13,6 +13,7 @@ type NoUseBeforeDefine0 =
             enums?: boolean;
             variables?: boolean;
             typedefs?: boolean;
+            ignoreTypeReferences?: boolean;
           }
       ),
     ];

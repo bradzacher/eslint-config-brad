@@ -30,8 +30,66 @@ type NamingConvention0 = [
               regex: string;
               [k: string]: unknown;
             };
+        selector: (
+          | 'default'
+          | 'variableLike'
+          | 'memberLike'
+          | 'typeLike'
+          | 'variable'
+          | 'function'
+          | 'parameter'
+          | 'property'
+          | 'parameterProperty'
+          | 'method'
+          | 'accessor'
+          | 'enumMember'
+          | 'class'
+          | 'interface'
+          | 'typeAlias'
+          | 'enum'
+          | 'typeParameter'
+        )[];
+        modifiers?: (
+          | 'const'
+          | 'readonly'
+          | 'static'
+          | 'public'
+          | 'protected'
+          | 'private'
+          | 'abstract'
+        )[];
+        types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?: 'forbid' | 'allow' | 'require';
+        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        prefix?: string[];
+        suffix?: string[];
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
         selector: 'default';
         modifiers?: (
+          | 'const'
           | 'readonly'
           | 'static'
           | 'public'
@@ -97,6 +155,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'variable';
+        modifiers?: 'const'[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
     | {

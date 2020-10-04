@@ -7,6 +7,7 @@ type NoInvalidVoidType0 =
       'off' | 'error' | 'warn',
       {
         allowInGenericTypeArguments?: boolean | string[];
+        allowAsThisParameter?: boolean;
       },
     ];
 

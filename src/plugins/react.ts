@@ -1,6 +1,5 @@
-import { React } from '../types/react';
+import type { React } from '../types/react';
 
-// 'react/function-component-definition', 'react/jsx-no-script-url', 'react/no-adjacent-inline-elements'
 const rules: React = {
   // Enforces consistent naming for boolean props
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md

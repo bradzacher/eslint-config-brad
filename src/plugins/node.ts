@@ -1,4 +1,4 @@
-import { Node } from '../types/node';
+import type { Node } from '../types/node';
 
 const rules: Node = {
   // require return statements after callbacks
@@ -16,7 +16,8 @@ const rules: Node = {
 
   // require require() calls to be placed at top-level module scope
   // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/global-require.md
-  'node/global-require': ['error'],
+  // we don't use requires
+  'node/global-require': 'off',
 
   // require error handling in callbacks
   // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/handle-callback-err.md

@@ -15,6 +15,7 @@ type SortImports0 =
         ];
         ignoreDeclarationSort?: boolean;
         ignoreMemberSort?: boolean;
+        allowSeparatedGroups?: boolean;
       },
     ];
 

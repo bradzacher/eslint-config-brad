@@ -3,6 +3,7 @@ import eslintComments from './plugins/eslint-comments';
 import imprt from './plugins/import';
 import jest from './plugins/jest';
 import node from './plugins/node';
+import simpleImportSort from './plugins/simple-import-sort';
 import typescript from './plugins/typescript';
 
 export = {
@@ -32,7 +33,7 @@ export = {
       },
     },
     {
-      // disable certain rules for typings as eslint misdetects them
+      // disable certain rules for typings as eslint mis-detects them
       files: ['**/*.d.ts'],
       rules: {
         'no-unused-vars': 'off',
@@ -61,6 +62,7 @@ export = {
     imprt.name,
     jest.name,
     node.name,
+    simpleImportSort.name,
     typescript.name,
   ],
   parser: '@typescript-eslint/parser',
@@ -78,6 +80,7 @@ export = {
     ...imprt.rules,
     ...jest.rules,
     ...node.rules,
+    ...simpleImportSort.rules,
     ...typescript.rules,
   },
   settings: {

@@ -1,6 +1,7 @@
 // the global list of restricted terms that airbnb uses
 import globals from 'eslint-restricted-globals';
-import { Eslint } from '../types/eslint';
+
+import type { Eslint } from '../types/eslint';
 
 // we remove some because of how the eslint TS parser interacts with eslint when using interfaces
 const pseudoAllowedGlobals = new Set([
@@ -243,8 +244,8 @@ const rules: Eslint = {
   'guard-for-in': ['error'],
 
   // This rule disallows specified identifiers in assignments and function definitions.
-  // https://eslint.org/docs/rules/id-blacklist
-  'id-blacklist': 'off',
+  // https://eslint.org/docs/rules/id-denylist
+  'id-denylist': 'off',
 
   // this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
   // https://eslint.org/docs/rules/id-length
@@ -497,7 +498,8 @@ const rules: Eslint = {
 
   // This rules requires that all imports from a single module exists in a single import statement.
   // https://eslint.org/docs/rules/no-duplicate-imports
-  'no-duplicate-imports': ['error'],
+  // using import/no-duplicates instead
+  'no-duplicate-imports': 'off',
 
   // This rule is aimed at highlighting an unnecessary block of code following an if containing a return statement.
   // https://eslint.org/docs/rules/no-else-return
@@ -647,11 +649,13 @@ const rules: Eslint = {
 
   // Disallow Functions in Loops.
   // https://eslint.org/docs/rules/no-loop-func
-  'no-loop-func': ['error'],
+  // extended in @typescript-eslint
+  'no-loop-func': 'off',
 
   // Disallow Number Literals That Lose Precision
   // https://eslint.org/docs/rules/no-loss-of-precision
-  'no-loss-of-precision': ['error'],
+  // extended in @typescript-eslint
+  'no-loss-of-precision': 'off',
 
   // This rule aims to make code more readable by ensuring that special numbers are declared as constants
   // https://eslint.org/docs/rules/no-magic-numbers
@@ -763,6 +767,10 @@ const rules: Eslint = {
       allowForLoopAfterthoughts: false,
     },
   ],
+
+  // Disallow returning values from Promise executor functions
+  // https://eslint.org/docs/rules/no-promise-executor-return
+  'no-promise-executor-return': ['error'],
 
   // When an object is created __proto__ is set to the original prototype property of the object’s constructor function.
   // https://eslint.org/docs/rules/no-proto
@@ -895,7 +903,8 @@ const rules: Eslint = {
 
   // disallow variable declarations from shadowing variables declared in the outer scope
   // https://eslint.org/docs/rules/no-shadow
-  'no-shadow': ['error'],
+  // extended in @typescript-eslint
+  'no-shadow': 'off',
 
   // Disallow Shadowing of Restricted Names
   // https://eslint.org/docs/rules/no-shadow-restricted-names
@@ -980,6 +989,10 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-unreachable
   // covered by typescript
   'no-unreachable': 'off',
+
+  // Disallow loops with a body that allows only one iteration
+  // https://eslint.org/docs/rules/no-unreachable-loop
+  'no-unreachable-loop': ['error'],
 
   // This rule disallows return, throw, break, and continue statements inside finally blocks.
   // https://eslint.org/docs/rules/no-unsafe-finally
@@ -1098,16 +1111,13 @@ const rules: Eslint = {
   // This rule enforce consistent spacing inside braces of object literals, destructuring assignments,
   // and import/export specifiers
   // https://eslint.org/docs/rules/object-curly-spacing
-  'object-curly-spacing': ['error', 'always'],
+  // covered by prettier
+  'object-curly-spacing': 'off',
 
   // enforce placing object properties on separate lines
   // https://eslint.org/docs/rules/object-property-newline
-  'object-property-newline': [
-    'error',
-    {
-      allowAllPropertiesOnSameLine: true,
-    },
-  ],
+  // covered by prettier
+  'object-property-newline': 'off',
 
   // Require Object Literal Shorthand Syntax
   // https://eslint.org/docs/rules/object-shorthand
@@ -1170,20 +1180,7 @@ const rules: Eslint = {
 
   // Prefer destructuring from arrays and objects
   // https://eslint.org/docs/rules/prefer-destructuring
-  'prefer-destructuring': [
-    'off',
-    {
-      VariableDeclarator: {
-        object: false,
-        array: false,
-      },
-      AssignmentExpression: {
-        object: false,
-        array: false,
-      },
-    },
-    {},
-  ],
+  'prefer-destructuring': 'off',
 
   // Disallow the use of Math.pow in favour of the ** operator
   // https://eslint.org/docs/rules/prefer-exponentiation-operator
@@ -1235,7 +1232,7 @@ const rules: Eslint = {
 
   // This rule enforces the consistent use of either backticks, double, or single quotes.
   // https://eslint.org/docs/rules/quotes
-  // extended in @typescript-eslint
+  // covered by prettier
   quotes: 'off',
 
   // This rule is aimed at preventing the unintended conversion of a string to a number of a different base
@@ -1254,7 +1251,7 @@ const rules: Eslint = {
 
   // Enforce the use of u flag on RegExp
   // https://eslint.org/docs/rules/require-unicode-regexp
-  'require-unicode-regexp': 'off',
+  'require-unicode-regexp': ['error'],
 
   // This rule generates warnings for generator functions that do not have the yield keyword.
   // https://eslint.org/docs/rules/require-yield
@@ -1267,7 +1264,7 @@ const rules: Eslint = {
 
   // This rule enforces consistent use of semicolons.
   // https://eslint.org/docs/rules/semi
-  // extended in @typescript-eslint
+  // covered by prettier
   semi: 'off',
 
   // This rule aims to enforce spacing around a semicolon.

@@ -8,6 +8,7 @@ type Camelcase0 =
       {
         ignoreDestructuring?: boolean;
         ignoreImports?: boolean;
+        ignoreGlobals?: boolean;
         properties?: 'always' | 'never';
         allow?: [] | [string];
       },

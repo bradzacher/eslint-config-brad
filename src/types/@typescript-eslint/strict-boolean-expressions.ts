@@ -13,6 +13,7 @@ type StrictBooleanExpressions0 =
         allowNullableString?: boolean;
         allowNullableNumber?: boolean;
         allowAny?: boolean;
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean;
       },
     ];
 

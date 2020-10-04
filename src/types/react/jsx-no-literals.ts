@@ -9,6 +9,7 @@ type JsxNoLiterals0 =
         noStrings?: boolean;
         allowedStrings?: string[];
         ignoreProps?: boolean;
+        noAttributeStrings?: boolean;
       },
     ];
 

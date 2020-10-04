@@ -9,6 +9,7 @@ type IdLength0 =
         min?: number;
         max?: number;
         exceptions?: string[];
+        exceptionPatterns?: string[];
         properties?: 'always' | 'never';
       },
     ];

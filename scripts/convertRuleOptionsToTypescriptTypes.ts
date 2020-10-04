@@ -1,14 +1,15 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import type {
+  JSONSchema,
+  TSESLint,
+} from '@typescript-eslint/experimental-utils';
 import fs from 'fs';
-// eslint-disable-next-line import/no-extraneous-dependencies -- included as @types/json-schema
-import { JSONSchema4 } from 'json-schema';
 import { compile } from 'json-schema-to-typescript';
 import mkdirp from 'mkdirp';
 import path from 'path';
 import { format } from 'prettier';
 
-import { toPascalCase } from './toPascalCase';
 import prettierConfig from '../src/prettier';
+import { toPascalCase } from './toPascalCase';
 
 type Definition = {
   defs: string;
@@ -16,7 +17,7 @@ type Definition = {
 };
 async function compileSchema(
   typeName: string,
-  schema: JSONSchema4,
+  schema: JSONSchema.JSONSchema4,
   index: number = 0,
 ): Promise<Definition> {
   const code = await compile(schema, `${typeName}${index}`, {
@@ -25,51 +26,15 @@ async function compileSchema(
   });
 
   return {
-    defs: code.replace(/export /g, ''),
+    defs: code.replace(/export /gu, ''),
     typeExport: `export type ${typeName} = 'off' | ${typeName}${index}`,
   };
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- we don't care about the types
-type RuleModule = TSESLint.RuleModule<any, any, any>;
-async function getRules(
-  pluginName: string,
-): Promise<Record<string, RuleModule>> {
-  if (pluginName === 'eslint') {
-    const lazyRules = await import('eslint/lib/rules');
-
-    const rules: Record<string, RuleModule> = {};
-    lazyRules.default.forEach((rule, ruleId) => {
-      rules[ruleId] = rule;
-    });
-
-    return rules;
-  }
-
-  // TODO
-  // - use eslint/lib/cli-engine/naming.js to resolve the name
-  // - use eslint/lib/shared/relative-module-resolver.js to resolve the path
-  // - require result from that
-
-  if (pluginName.startsWith('@') && !pluginName.includes('/')) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- dynamic import
-    const plugin: { rules: Record<string, RuleModule> } = await import(
-      `${pluginName}/eslint-plugin`
-    );
-    return plugin.rules;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- dynamic import
-  const plugin: { rules: Record<string, RuleModule> } = await import(
-    `eslint-plugin-${pluginName}`
-  );
-  return plugin.rules;
 }
 
 const ruleLevelString = {
   enum: ['off', 'error', 'warn'],
 };
-function adjustSchema(schema: JSONSchema4): JSONSchema4 {
+function adjustSchema(schema: JSONSchema.JSONSchema4): JSONSchema.JSONSchema4 {
   if (schema.anyOf != null) {
     schema.anyOf.forEach(s => adjustSchema(s));
 
@@ -110,16 +75,16 @@ function adjustSchema(schema: JSONSchema4): JSONSchema4 {
 }
 
 function recursivelyFixRefs(
-  schema: JSONSchema4 | string | null | boolean,
+  schema: JSONSchema.JSONSchema4 | string | null | boolean,
   idx: number,
 ): void {
   if (schema == null || typeof schema !== 'object') {
     return;
   }
 
-  Object.keys(schema).forEach((key: keyof JSONSchema4) => {
+  Object.keys(schema).forEach((key: keyof JSONSchema.JSONSchema4) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- known safe
-    const current: Array<JSONSchema4> | string | null = schema[key];
+    const current: Array<JSONSchema.JSONSchema4> | string | null = schema[key];
     if (current == null) {
       return;
     }
@@ -138,11 +103,16 @@ function recursivelyFixRefs(
   });
 }
 
-async function convertRuleOptionsToTypescriptTypes(
-  pluginName: string,
-): Promise<void> {
-  const rules = await getRules(pluginName);
+type Plugin = {
+  name: string;
+  rules: Record<string, TSESLint.RuleModule<string, Array<unknown>>>;
+  shortName: string;
+};
 
+async function convertRuleOptionsToTypescriptTypes({
+  shortName: pluginName,
+  rules,
+}: Plugin): Promise<void> {
   await Promise.all(
     Object.entries(rules).map(async ([ruleName, rule]) => {
       if (ruleName === 'default' && pluginName !== 'import') {
@@ -160,7 +130,7 @@ async function convertRuleOptionsToTypescriptTypes(
         code = `export type ${typeName} = 'off' | ['warn' | 'error'];\n`;
       } else {
         const schema = rule.meta.schema;
-        let fixedSchema: JSONSchema4;
+        let fixedSchema: JSONSchema.JSONSchema4;
         if (Array.isArray(schema)) {
           schema.forEach(recursivelyFixRefs);
           fixedSchema = {
@@ -205,3 +175,4 @@ async function convertRuleOptionsToTypescriptTypes(
 }
 
 export { convertRuleOptionsToTypescriptTypes };
+export type { Plugin };
