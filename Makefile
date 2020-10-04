@@ -10,12 +10,12 @@ build:
 .PHONY: ci
 ci:
 # check the format
-	@make format
+	@yarn format
 	git diff --exit-code
 # build first because the lint is based off this package!
-	@make build
+	@yarn build
 # make sure there are no lint errors
-	@make lint
+	@yarn lint
 
 .PHONY: publish-next
 publish-next:
