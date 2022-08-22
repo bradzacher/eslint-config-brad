@@ -16,7 +16,7 @@ const disabledBaseRules = Object.keys(tsEslint.configs.all).reduce<
 
 const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
   'error',
-  // basic camel case style
+
   {
     selector: 'default',
     format: ['camelCase'],
@@ -33,6 +33,11 @@ const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
   },
 
   {
+    selector: 'enumMember',
+    format: ['PascalCase'],
+  },
+
+  {
     selector: 'parameter',
     format: ['camelCase'],
     // to allow unused parameters
@@ -43,6 +48,7 @@ const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
     selector: 'typeLike',
     format: ['PascalCase'],
   },
+
   // enforce interfaces _don't_ start with an I
   {
     selector: 'interface',
@@ -52,11 +58,19 @@ const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
       match: false,
     },
   },
+
   // enforce that generics start with a T
   {
     selector: 'typeParameter',
     format: ['PascalCase'],
     prefix: ['T'],
+  },
+
+  // allow properties that require quotes as there's usually a good reason for it
+  {
+    selector: 'property',
+    modifiers: ['requiresQuotes'],
+    format: null,
   },
 ];
 

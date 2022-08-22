@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 import eslintBase from './plugins/eslint-base';
 import eslintComments from './plugins/eslint-comments';
 import imprt from './plugins/import';
@@ -6,7 +8,7 @@ import node from './plugins/node';
 import simpleImportSort from './plugins/simple-import-sort';
 import typescript from './plugins/typescript';
 
-export = {
+const config: TSESLint.Linter.Config = {
   globals: {},
   env: {
     commonjs: true,
@@ -24,7 +26,6 @@ export = {
       ],
       rules: {
         'import/prefer-default-export': 'off',
-        'max-len': 'off',
         strict: 'off',
         'typescript/no-explicit-any': 'off',
         'typescript/no-non-null-assertion': 'off',
@@ -34,7 +35,6 @@ export = {
       // disable certain rules for typings as eslint mis-detects them
       files: ['**/*.d.ts'],
       rules: {
-        'no-unused-vars': 'off',
         strict: 'off',
         'typescript/no-explicit-any': 'off',
       },
@@ -62,7 +62,7 @@ export = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     ecmaFeatures: {
       globalReturn: false,
     },
@@ -83,3 +83,4 @@ export = {
     ...imprt.settings,
   },
 };
+export = config;

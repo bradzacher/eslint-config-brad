@@ -1,7 +1,7 @@
 import type { JSONSchema, TSESLint } from '@typescript-eslint/utils';
 import * as fs from 'fs';
 import { compile } from 'json-schema-to-typescript';
-import * as mkdirp from 'mkdirp';
+import mkdirp from 'mkdirp';
 import * as path from 'path';
 import { format } from 'prettier';
 
@@ -136,6 +136,7 @@ async function convertRuleOptionsToTypescriptTypes({
           fixedSchema = {
             type: 'array',
             items: [ruleLevelString, ...schemaArray],
+            minItems: 1,
           };
         } else {
           fixedSchema = adjustSchema(schema);

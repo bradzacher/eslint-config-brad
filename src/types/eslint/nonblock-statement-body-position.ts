@@ -1,7 +1,9 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
+/**
+ * @minItems 1
+ */
 type NonblockStatementBodyPosition0 =
-  | []
   | ['off' | 'error' | 'warn']
   | ['off' | 'error' | 'warn', 'beside' | 'below' | 'any']
   | [
