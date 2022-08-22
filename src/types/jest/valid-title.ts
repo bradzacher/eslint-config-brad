@@ -8,19 +8,19 @@ type ValidTitle0 =
       {
         ignoreTypeOfDescribeName?: boolean;
         disallowedWords?: string[];
-        mustNotMatch?:
-          | string
-          | {
-              describe?: string;
-              test?: string;
-              it?: string;
-            };
         mustMatch?:
           | string
+          | [string]
+          | [string, string]
           | {
-              describe?: string;
-              test?: string;
-              it?: string;
+              [k: string]: string | [string] | [string, string];
+            };
+        mustNotMatch?:
+          | string
+          | [string]
+          | [string, string]
+          | {
+              [k: string]: string | [string] | [string, string];
             };
       },
     ];

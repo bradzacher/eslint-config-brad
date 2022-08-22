@@ -7,6 +7,8 @@ type PreferReadonlyParameterTypes0 =
       'off' | 'error' | 'warn',
       {
         checkParameterProperties?: boolean;
+        ignoreInferredTypes?: boolean;
+        treatMethodsAsReadonly?: boolean;
       },
     ];
 

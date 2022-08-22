@@ -7,7 +7,16 @@ type NoMisusedPromises0 =
       'off' | 'error' | 'warn',
       {
         checksConditionals?: boolean;
-        checksVoidReturn?: boolean;
+        checksVoidReturn?:
+          | boolean
+          | {
+              arguments?: boolean;
+              attributes?: boolean;
+              properties?: boolean;
+              returns?: boolean;
+              variables?: boolean;
+            };
+        checksSpreads?: boolean;
         [k: string]: unknown;
       },
     ];

@@ -9,9 +9,11 @@ type JsxSortProps0 =
         callbacksLast?: boolean;
         shorthandFirst?: boolean;
         shorthandLast?: boolean;
+        multiline?: 'ignore' | 'first' | 'last';
         ignoreCase?: boolean;
         noSortAlphabetically?: boolean;
         reservedFirst?: unknown[] | boolean;
+        locale?: string;
       },
     ];
 

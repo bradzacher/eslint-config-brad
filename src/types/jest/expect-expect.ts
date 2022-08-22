@@ -7,6 +7,7 @@ type ExpectExpect0 =
       'off' | 'error' | 'warn',
       {
         assertFunctionNames?: [] | [string];
+        additionalTestBlockFunctions?: string[];
       },
     ];
 

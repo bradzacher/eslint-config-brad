@@ -7,6 +7,7 @@ type RestrictPlusOperands0 =
       'off' | 'error' | 'warn',
       {
         checkCompoundAssignments?: boolean;
+        allowAny?: boolean;
       },
     ];
 

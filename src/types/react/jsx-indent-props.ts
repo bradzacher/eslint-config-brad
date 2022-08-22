@@ -3,6 +3,17 @@
 type JsxIndentProps0 =
   | []
   | ['off' | 'error' | 'warn']
-  | ['off' | 'error' | 'warn', ('tab' | 'first') | number];
+  | [
+      'off' | 'error' | 'warn',
+      (
+        | ('tab' | 'first')
+        | number
+        | {
+            indentMode?: ('tab' | 'first') | number;
+            ignoreTernaryOperator?: boolean;
+            [k: string]: unknown;
+          }
+      ),
+    ];
 
 export type JsxIndentProps = 'off' | JsxIndentProps0;

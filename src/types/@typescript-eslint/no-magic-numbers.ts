@@ -14,6 +14,7 @@ type NoMagicNumbers0 =
         ignoreNumericLiteralTypes?: boolean;
         ignoreEnums?: boolean;
         ignoreReadonlyClassProperties?: boolean;
+        ignoreTypeIndexes?: boolean;
       },
     ];
 

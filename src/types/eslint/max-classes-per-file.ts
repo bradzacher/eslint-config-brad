@@ -3,6 +3,15 @@
 type MaxClassesPerFile0 =
   | []
   | ['off' | 'error' | 'warn']
-  | ['off' | 'error' | 'warn', number];
+  | [
+      'off' | 'error' | 'warn',
+      (
+        | number
+        | {
+            ignoreExpressions?: boolean;
+            max?: number;
+          }
+      ),
+    ];
 
 export type MaxClassesPerFile = 'off' | MaxClassesPerFile0;

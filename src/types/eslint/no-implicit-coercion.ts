@@ -9,6 +9,7 @@ type NoImplicitCoercion0 =
         boolean?: boolean;
         number?: boolean;
         string?: boolean;
+        disallowTemplateShorthand?: boolean;
         allow?: ('~' | '!!' | '+' | '*')[];
       },
     ];

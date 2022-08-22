@@ -11,6 +11,7 @@ type ExplicitFunctionReturnType0 =
         allowHigherOrderFunctions?: boolean;
         allowDirectConstAssertionInArrowFunctions?: boolean;
         allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean;
+        allowedNames?: string[];
       },
     ];
 

@@ -11,6 +11,7 @@ import { Extensions } from '../import/extensions';
 import { NoRestrictedPaths } from '../import/no-restricted-paths';
 import { NoInternalModules } from '../import/no-internal-modules';
 import { GroupExports } from '../import/group-exports';
+import { NoRelativePackages } from '../import/no-relative-packages';
 import { NoRelativeParentImports } from '../import/no-relative-parent-imports';
 import { NoSelfImport } from '../import/no-self-import';
 import { NoCycle } from '../import/no-cycle';
@@ -38,6 +39,7 @@ import { Unambiguous } from '../import/unambiguous';
 import { NoUnassignedImport } from '../import/no-unassigned-import';
 import { NoUselessPathSegments } from '../import/no-useless-path-segments';
 import { DynamicImportChunkname } from '../import/dynamic-import-chunkname';
+import { NoImportModuleExports } from '../import/no-import-module-exports';
 import { ExportsLast } from '../import/exports-last';
 import { NoDeprecated } from '../import/no-deprecated';
 
@@ -53,6 +55,7 @@ interface Import {
   'import/no-restricted-paths': NoRestrictedPaths;
   'import/no-internal-modules': NoInternalModules;
   'import/group-exports': GroupExports;
+  'import/no-relative-packages': NoRelativePackages;
   'import/no-relative-parent-imports': NoRelativeParentImports;
   'import/no-self-import': NoSelfImport;
   'import/no-cycle': NoCycle;
@@ -80,6 +83,7 @@ interface Import {
   'import/no-unassigned-import': NoUnassignedImport;
   'import/no-useless-path-segments': NoUselessPathSegments;
   'import/dynamic-import-chunkname': DynamicImportChunkname;
+  'import/no-import-module-exports': NoImportModuleExports;
   'import/exports-last': ExportsLast;
   'import/no-deprecated': NoDeprecated;
 }

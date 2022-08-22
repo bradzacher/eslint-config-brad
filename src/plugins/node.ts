@@ -1,4 +1,4 @@
-import type { Node } from '../types/node';
+import type { Node } from '../types/node/index';
 
 const rules: Node = {
   // require return statements after callbacks

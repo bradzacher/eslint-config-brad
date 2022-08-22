@@ -8,6 +8,9 @@ type JsxNoTargetBlank0 =
       {
         allowReferrer?: boolean;
         enforceDynamicLinks?: 'always' | 'never';
+        warnOnSpreadAttributes?: boolean;
+        links?: boolean;
+        forms?: boolean;
       },
     ];
 

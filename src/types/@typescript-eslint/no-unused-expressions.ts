@@ -9,6 +9,7 @@ type NoUnusedExpressions0 =
         allowShortCircuit?: boolean;
         allowTernary?: boolean;
         allowTaggedTemplates?: boolean;
+        enforceForJSX?: boolean;
       },
     ];
 

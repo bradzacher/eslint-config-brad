@@ -7,6 +7,7 @@ type ClassMethodsUseThis0 =
       'off' | 'error' | 'warn',
       {
         exceptMethods?: string[];
+        enforceForClassFields?: boolean;
       },
     ];
 

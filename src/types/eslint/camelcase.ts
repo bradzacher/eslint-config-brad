@@ -10,6 +10,9 @@ type Camelcase0 =
         ignoreImports?: boolean;
         ignoreGlobals?: boolean;
         properties?: 'always' | 'never';
+        /**
+         * @minItems 0
+         */
         allow?: [] | [string];
       },
     ];

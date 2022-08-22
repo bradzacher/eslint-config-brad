@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type UnifiedSignatures = 'off' | ['warn' | 'error'];
+type UnifiedSignatures0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        ignoreDifferentlyNamedParameters?: boolean;
+      },
+    ];
+
+export type UnifiedSignatures = 'off' | UnifiedSignatures0;

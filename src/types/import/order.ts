@@ -21,7 +21,8 @@ type Order0 =
             | 'parent'
             | 'sibling'
             | 'index'
-            | 'object';
+            | 'object'
+            | 'type';
           position?: 'after' | 'before';
           [k: string]: unknown;
         }[];
@@ -34,6 +35,7 @@ type Order0 =
           caseInsensitive?: boolean;
           order?: 'ignore' | 'asc' | 'desc';
         };
+        warnOnUnassignedImports?: boolean;
       },
     ];
 

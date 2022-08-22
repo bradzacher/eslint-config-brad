@@ -9,6 +9,7 @@ type JsxCurlyBracePresence0 =
         | {
             props?: 'always' | 'never' | 'ignore';
             children?: 'always' | 'never' | 'ignore';
+            propElementValues?: 'always' | 'never' | 'ignore';
           }
         | ('always' | 'never' | 'ignore')
       ),

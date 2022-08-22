@@ -7,6 +7,7 @@ type PreferNullishCoalescing0 =
       'off' | 'error' | 'warn',
       {
         ignoreConditionalTests?: boolean;
+        ignoreTernaryTests?: boolean;
         ignoreMixedLogicalExpressions?: boolean;
         forceSuggestionFixer?: boolean;
       },

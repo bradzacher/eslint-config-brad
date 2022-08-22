@@ -9,6 +9,9 @@ type NoCycle0 =
         commonjs?: boolean;
         amd?: boolean;
         esmodule?: boolean;
+        /**
+         * @minItems 1
+         */
         ignore?: [string, ...string[]];
         maxDepth?: number | '∞';
         /**

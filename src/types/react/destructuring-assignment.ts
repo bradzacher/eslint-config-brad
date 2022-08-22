@@ -9,6 +9,7 @@ type DestructuringAssignment0 =
       'always' | 'never',
       {
         ignoreClassFields?: boolean;
+        destructureInSignature?: 'always' | 'ignore';
       },
     ];
 

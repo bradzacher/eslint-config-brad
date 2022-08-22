@@ -1,9 +1,11 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-import { Sort } from '../simple-import-sort/sort';
+import { Imports } from '../simple-import-sort/imports';
+import { Exports } from '../simple-import-sort/exports';
 
 interface SimpleImportSort {
-  'simple-import-sort/sort': Sort;
+  'simple-import-sort/imports': Imports;
+  'simple-import-sort/exports': Exports;
 }
 
 export { SimpleImportSort };

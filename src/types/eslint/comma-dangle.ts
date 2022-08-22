@@ -1,5 +1,8 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
+/**
+ * @minItems 1
+ */
 type CommaDangle0 =
   | ['off' | 'error' | 'warn']
   | [

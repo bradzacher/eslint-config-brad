@@ -93,7 +93,7 @@ type NoMixedOperators0 =
             | 'instanceof'
             | '?:'
             | '??'
-          )[]
+          )[],
         ][];
         allowSamePrecedence?: boolean;
       },

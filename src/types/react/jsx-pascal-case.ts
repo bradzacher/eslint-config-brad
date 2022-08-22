@@ -7,7 +7,12 @@ type JsxPascalCase0 =
       'off' | 'error' | 'warn',
       {
         allowAllCaps?: boolean;
-        ignore?: unknown[];
+        allowLeadingUnderscore?: boolean;
+        allowNamespace?: boolean;
+        /**
+         * @minItems 0
+         */
+        ignore?: [] | [string];
       },
     ];
 

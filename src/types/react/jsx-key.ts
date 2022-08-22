@@ -7,6 +7,8 @@ type JsxKey0 =
       'off' | 'error' | 'warn',
       {
         checkFragmentShorthand?: boolean;
+        checkKeyMustBeforeSpread?: boolean;
+        warnOnDuplicates?: boolean;
       },
     ];
 

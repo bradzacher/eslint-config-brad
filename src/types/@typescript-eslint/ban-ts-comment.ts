@@ -6,10 +6,34 @@ type BanTsComment0 =
   | [
       'off' | 'error' | 'warn',
       {
-        'ts-expect-error'?: boolean | 'allow-with-description';
-        'ts-ignore'?: boolean | 'allow-with-description';
-        'ts-nocheck'?: boolean | 'allow-with-description';
-        'ts-check'?: boolean | 'allow-with-description';
+        'ts-expect-error'?:
+          | boolean
+          | 'allow-with-description'
+          | {
+              descriptionFormat?: string;
+              [k: string]: unknown;
+            };
+        'ts-ignore'?:
+          | boolean
+          | 'allow-with-description'
+          | {
+              descriptionFormat?: string;
+              [k: string]: unknown;
+            };
+        'ts-nocheck'?:
+          | boolean
+          | 'allow-with-description'
+          | {
+              descriptionFormat?: string;
+              [k: string]: unknown;
+            };
+        'ts-check'?:
+          | boolean
+          | 'allow-with-description'
+          | {
+              descriptionFormat?: string;
+              [k: string]: unknown;
+            };
         minimumDescriptionLength?: number;
       },
     ];

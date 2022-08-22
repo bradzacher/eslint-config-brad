@@ -20,12 +20,6 @@ export = {
     // No Node.js builtin modules
     'import/no-nodejs-modules': 'error',
     // Make sure the webpack and typescript configs line up
-    'import/no-unresolved': [
-      'error',
-      {
-        commonjs: true,
-        caseSensitive: true,
-      },
-    ],
+    'import/no-unresolved': 'off',
   },
 };

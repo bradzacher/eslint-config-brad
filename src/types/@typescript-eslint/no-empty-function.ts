@@ -20,6 +20,7 @@ type NoEmptyFunction0 =
           | 'asyncFunctions'
           | 'asyncMethods'
           | 'decoratedFunctions'
+          | 'overrideMethods'
         )[];
       },
     ];

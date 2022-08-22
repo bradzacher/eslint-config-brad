@@ -5,7 +5,7 @@ build:
 	cp README.md dist
 	cp LICENCE dist
 	rm -fr dist/types
-	yarn ts-node ./scripts/removePrivate.ts
+	yarn ts-node -T ./scripts/removePrivate.ts
 
 .PHONY: ci
 ci:
@@ -25,4 +25,4 @@ publish-next:
 .PHONY: publish
 publish:
 	@make build
-	@npm publish dist
+	(cd dist && npm publish)

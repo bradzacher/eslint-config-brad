@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 
-import packageJsonImport = require('../package.json');
+import packageJsonImport from '../package.json';
 
 const packageJson: Record<keyof typeof packageJsonImport, unknown> = {
   ...packageJsonImport,

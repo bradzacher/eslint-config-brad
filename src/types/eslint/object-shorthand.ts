@@ -29,6 +29,7 @@ type ObjectShorthand0 =
       'always' | 'methods',
       {
         ignoreConstructors?: boolean;
+        methodsIgnorePattern?: string;
         avoidQuotes?: boolean;
         avoidExplicitReturnArrows?: boolean;
       },

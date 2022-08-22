@@ -6,6 +6,9 @@ type NoRestrictedPaths0 =
   | [
       'off' | 'error' | 'warn',
       {
+        /**
+         * @minItems 1
+         */
         zones?: [
           {
             target?: string;
@@ -18,7 +21,7 @@ type NoRestrictedPaths0 =
             from?: string;
             except?: string[];
             message?: string;
-          }[]
+          }[],
         ];
         basePath?: string;
       },

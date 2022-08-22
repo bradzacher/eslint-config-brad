@@ -9,6 +9,7 @@ type NoShadow0 =
         builtinGlobals?: boolean;
         hoist?: 'all' | 'functions' | 'never';
         allow?: string[];
+        ignoreOnInitialization?: boolean;
       },
     ];
 

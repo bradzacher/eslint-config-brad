@@ -9,6 +9,8 @@ type DotNotation0 =
         allowKeywords?: boolean;
         allowPattern?: string;
         allowPrivateClassPropertyAccess?: boolean;
+        allowProtectedClassPropertyAccess?: boolean;
+        allowIndexSignaturePropertyAccess?: boolean;
       },
     ];
 

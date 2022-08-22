@@ -11,6 +11,7 @@ type NoUseBeforeDefine0 =
             functions?: boolean;
             classes?: boolean;
             variables?: boolean;
+            allowNamedExports?: boolean;
           }
       ),
     ];

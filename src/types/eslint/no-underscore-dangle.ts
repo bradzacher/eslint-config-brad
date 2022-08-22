@@ -12,6 +12,7 @@ type NoUnderscoreDangle0 =
         allowAfterThisConstructor?: boolean;
         enforceInMethodNames?: boolean;
         allowFunctionParams?: boolean;
+        enforceInClassFields?: boolean;
       },
     ];
 

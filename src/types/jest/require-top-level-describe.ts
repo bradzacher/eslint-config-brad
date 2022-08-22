@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type RequireTopLevelDescribe = 'off' | ['warn' | 'error'];
+type RequireTopLevelDescribe0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        maxNumberOfTopLevelDescribes?: number;
+      },
+    ];
+
+export type RequireTopLevelDescribe = 'off' | RequireTopLevelDescribe0;

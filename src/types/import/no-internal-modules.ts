@@ -5,9 +5,14 @@ type NoInternalModules0 =
   | ['off' | 'error' | 'warn']
   | [
       'off' | 'error' | 'warn',
-      {
-        allow?: string[];
-      },
+      (
+        | {
+            allow?: string[];
+          }
+        | {
+            forbid?: string[];
+          }
+      ),
     ];
 
 export type NoInternalModules = 'off' | NoInternalModules0;

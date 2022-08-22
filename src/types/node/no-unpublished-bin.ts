@@ -9,6 +9,9 @@ type NoUnpublishedBin0 =
         convertPath?:
           | {
               /**
+               * @minItems 2
+               * @maxItems 2
+               *
                * This interface was referenced by `undefined`'s JSON-Schema definition
                * via the `patternProperty` "^.+$".
                */
@@ -16,15 +19,29 @@ type NoUnpublishedBin0 =
             }
           | [
               {
+                /**
+                 * @minItems 1
+                 */
                 include: [string, ...string[]];
                 exclude?: string[];
+                /**
+                 * @minItems 2
+                 * @maxItems 2
+                 */
                 replace: [string, string];
               },
               ...{
+                /**
+                 * @minItems 1
+                 */
                 include: [string, ...string[]];
                 exclude?: string[];
+                /**
+                 * @minItems 2
+                 * @maxItems 2
+                 */
                 replace: [string, string];
-              }[]
+              }[],
             ];
         [k: string]: unknown;
       },

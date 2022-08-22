@@ -6,6 +6,9 @@ type NoConsole0 =
   | [
       'off' | 'error' | 'warn',
       {
+        /**
+         * @minItems 1
+         */
         allow?: [string, ...string[]];
       },
     ];

@@ -21,9 +21,10 @@ module.exports = {
         format: ['camelCase', 'UPPER_CASE'],
       },
 
+      // all properties in the codebase are
       {
         selector: 'property',
-        format: ['camelCase', 'PascalCase'],
+        format: null,
       },
 
       {
@@ -46,12 +47,5 @@ module.exports = {
         prefix: ['T'],
       },
     ],
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.ts', 'json'],
-      },
-    },
   },
 };

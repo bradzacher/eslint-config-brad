@@ -14,6 +14,7 @@ type NoUseBeforeDefine0 =
             variables?: boolean;
             typedefs?: boolean;
             ignoreTypeReferences?: boolean;
+            allowNamedExports?: boolean;
           }
       ),
     ];

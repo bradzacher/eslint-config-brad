@@ -1,14 +1,11 @@
-import type {
-  JSONSchema,
-  TSESLint,
-} from '@typescript-eslint/experimental-utils';
-import fs from 'fs';
+import type { JSONSchema, TSESLint } from '@typescript-eslint/utils';
+import * as fs from 'fs';
 import { compile } from 'json-schema-to-typescript';
-import mkdirp from 'mkdirp';
-import path from 'path';
+import * as mkdirp from 'mkdirp';
+import * as path from 'path';
 import { format } from 'prettier';
 
-import prettierConfig from '../src/prettier';
+import * as prettierConfig from '../src/prettier';
 import { toPascalCase } from './toPascalCase';
 
 type Definition = {
@@ -90,7 +87,9 @@ function recursivelyFixRefs(
     }
 
     if (Array.isArray(current)) {
-      current.forEach(subSchema => recursivelyFixRefs(subSchema, idx));
+      current.forEach(subSchema => {
+        recursivelyFixRefs(subSchema, idx);
+      });
     } else if (
       key === '$ref' &&
       typeof current === 'string' &&
@@ -132,10 +131,11 @@ async function convertRuleOptionsToTypescriptTypes({
         const schema = rule.meta.schema;
         let fixedSchema: JSONSchema.JSONSchema4;
         if (Array.isArray(schema)) {
+          const schemaArray: ReadonlyArray<JSONSchema.JSONSchema4> = schema;
           schema.forEach(recursivelyFixRefs);
           fixedSchema = {
             type: 'array',
-            items: [ruleLevelString, ...schema],
+            items: [ruleLevelString, ...schemaArray],
           };
         } else {
           fixedSchema = adjustSchema(schema);

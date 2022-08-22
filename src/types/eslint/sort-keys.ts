@@ -11,6 +11,7 @@ type SortKeys0 =
         caseSensitive?: boolean;
         natural?: boolean;
         minKeys?: number;
+        allowLineSeparatedGroups?: boolean;
       },
     ];
 

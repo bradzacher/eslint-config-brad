@@ -6,6 +6,9 @@ type BooleanPropNaming0 =
   | [
       'off' | 'error' | 'warn',
       {
+        /**
+         * @minItems 1
+         */
         propTypeNames?: [string, ...string[]];
         rule?: string;
         message?: string;

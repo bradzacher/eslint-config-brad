@@ -6,6 +6,7 @@ type NoUnusedPropTypes0 =
   | [
       'off' | 'error' | 'warn',
       {
+        ignore?: string[];
         customValidators?: string[];
         skipShapeProps?: boolean;
       },

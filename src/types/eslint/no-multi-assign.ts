@@ -1,3 +1,13 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
-export type NoMultiAssign = 'off' | ['warn' | 'error'];
+type NoMultiAssign0 =
+  | []
+  | ['off' | 'error' | 'warn']
+  | [
+      'off' | 'error' | 'warn',
+      {
+        ignoreNonDeclaration?: boolean;
+      },
+    ];
+
+export type NoMultiAssign = 'off' | NoMultiAssign0;

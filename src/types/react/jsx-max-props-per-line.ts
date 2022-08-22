@@ -5,11 +5,19 @@ type JsxMaxPropsPerLine0 =
   | ['off' | 'error' | 'warn']
   | [
       'off' | 'error' | 'warn',
-      {
-        maximum?: number;
-        when?: 'always' | 'multiline';
-        [k: string]: unknown;
-      },
+      (
+        | {
+            maximum?: {
+              single?: number;
+              multi?: number;
+              [k: string]: unknown;
+            };
+          }
+        | {
+            maximum?: number;
+            when?: 'always' | 'multiline';
+          }
+      ),
     ];
 
 export type JsxMaxPropsPerLine = 'off' | JsxMaxPropsPerLine0;

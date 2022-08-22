@@ -7,6 +7,7 @@ type ValidExpect0 =
       'off' | 'error' | 'warn',
       {
         alwaysAwait?: boolean;
+        asyncMatchers?: string[];
         minArgs?: number;
         maxArgs?: number;
       },

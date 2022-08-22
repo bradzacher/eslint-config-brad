@@ -33,6 +33,7 @@ type NoTypeAlias0 =
           | 'in-unions'
           | 'in-intersections'
           | 'in-unions-and-intersections';
+        allowGenerics?: 'always' | 'never';
       },
     ];
 

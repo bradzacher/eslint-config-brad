@@ -1,0 +1,32 @@
+diff --git a/node_modules/eslint-plugin-jest/lib/rules/valid-title.js b/node_modules/eslint-plugin-jest/lib/rules/valid-title.js
+index b45b617..c2478bf 100644
+--- a/node_modules/eslint-plugin-jest/lib/rules/valid-title.js
++++ b/node_modules/eslint-plugin-jest/lib/rules/valid-title.js
+@@ -89,10 +89,23 @@ var _default = (0, _utils2.createRule)({
+           items: {
+             type: 'string'
+           }
+-        }
+-      },
+-      patternProperties: {
+-        [/^must(?:Not)?Match$/u.source]: {
++        },
++        mustMatch: {
++          oneOf: [{
++            type: 'string'
++          }, MatcherAndMessageSchema, {
++            type: 'object',
++            propertyNames: {
++              enum: ['describe', 'test', 'it']
++            },
++            additionalProperties: {
++              oneOf: [{
++                type: 'string'
++              }, MatcherAndMessageSchema]
++            }
++          }]
++        },
++        mustNotMatch: {
+           oneOf: [{
+             type: 'string'
+           }, MatcherAndMessageSchema, {

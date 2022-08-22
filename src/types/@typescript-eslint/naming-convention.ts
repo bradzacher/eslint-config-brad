@@ -1,5 +1,8 @@
 // this file is auto-generated. Run `make regenerate-types` to regenerate it.
 
+/**
+ * @minItems 1
+ */
 type NamingConvention0 = [
   'off' | 'error' | 'warn',
   ...(
@@ -19,10 +22,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -35,14 +51,20 @@ type NamingConvention0 = [
           | 'variableLike'
           | 'memberLike'
           | 'typeLike'
+          | 'method'
+          | 'property'
           | 'variable'
           | 'function'
           | 'parameter'
-          | 'property'
           | 'parameterProperty'
-          | 'method'
           | 'accessor'
           | 'enumMember'
+          | 'classMethod'
+          | 'objectLiteralMethod'
+          | 'typeMethod'
+          | 'classProperty'
+          | 'objectLiteralProperty'
+          | 'typeProperty'
           | 'class'
           | 'interface'
           | 'typeAlias'
@@ -57,6 +79,11 @@ type NamingConvention0 = [
           | 'protected'
           | 'private'
           | 'abstract'
+          | 'destructured'
+          | 'global'
+          | 'exported'
+          | 'unused'
+          | 'requiresQuotes'
         )[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
@@ -76,10 +103,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -96,6 +136,11 @@ type NamingConvention0 = [
           | 'protected'
           | 'private'
           | 'abstract'
+          | 'destructured'
+          | 'global'
+          | 'exported'
+          | 'unused'
+          | 'requiresQuotes'
         )[];
       }
     | {
@@ -114,10 +159,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -126,6 +184,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'variableLike';
+        modifiers?: 'unused'[];
       }
     | {
         format:
@@ -143,10 +202,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -155,7 +227,13 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'variable';
-        modifiers?: 'const'[];
+        modifiers?: (
+          | 'const'
+          | 'destructured'
+          | 'exported'
+          | 'global'
+          | 'unused'
+        )[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
     | {
@@ -174,10 +252,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -186,6 +277,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'function';
+        modifiers?: ('exported' | 'global' | 'unused')[];
       }
     | {
         format:
@@ -203,10 +295,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -215,6 +320,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'parameter';
+        modifiers?: ('destructured' | 'unused')[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
     | {
@@ -233,10 +339,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -246,12 +365,13 @@ type NamingConvention0 = [
             };
         selector: 'memberLike';
         modifiers?: (
+          | 'abstract'
           | 'private'
           | 'protected'
           | 'public'
-          | 'static'
           | 'readonly'
-          | 'abstract'
+          | 'requiresQuotes'
+          | 'static'
         )[];
       }
     | {
@@ -270,10 +390,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -281,14 +414,15 @@ type NamingConvention0 = [
               regex: string;
               [k: string]: unknown;
             };
-        selector: 'property';
+        selector: 'classProperty';
         modifiers?: (
+          | 'abstract'
           | 'private'
           | 'protected'
           | 'public'
-          | 'static'
           | 'readonly'
-          | 'abstract'
+          | 'requiresQuotes'
+          | 'static'
         )[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
@@ -308,10 +442,111 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'objectLiteralProperty';
+        modifiers?: ('public' | 'requiresQuotes')[];
+        types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'typeProperty';
+        modifiers?: ('public' | 'readonly' | 'requiresQuotes')[];
+        types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -339,10 +574,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -350,49 +598,15 @@ type NamingConvention0 = [
               regex: string;
               [k: string]: unknown;
             };
-        selector: 'method';
+        selector: 'property';
         modifiers?: (
+          | 'abstract'
           | 'private'
           | 'protected'
           | 'public'
+          | 'readonly'
+          | 'requiresQuotes'
           | 'static'
-          | 'abstract'
-        )[];
-      }
-    | {
-        format:
-          | (
-              | 'camelCase'
-              | 'strictCamelCase'
-              | 'PascalCase'
-              | 'StrictPascalCase'
-              | 'snake_case'
-              | 'UPPER_CASE'
-            )[]
-          | null;
-        custom?: {
-          match: boolean;
-          regex: string;
-          [k: string]: unknown;
-        };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
-        prefix?: string[];
-        suffix?: string[];
-        filter?:
-          | string
-          | {
-              match: boolean;
-              regex: string;
-              [k: string]: unknown;
-            };
-        selector: 'accessor';
-        modifiers?: (
-          | 'private'
-          | 'protected'
-          | 'public'
-          | 'static'
-          | 'abstract'
         )[];
         types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
       }
@@ -412,10 +626,260 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'classMethod';
+        modifiers?: (
+          | 'abstract'
+          | 'private'
+          | 'protected'
+          | 'public'
+          | 'requiresQuotes'
+          | 'static'
+        )[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'objectLiteralMethod';
+        modifiers?: ('public' | 'requiresQuotes')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'typeMethod';
+        modifiers?: ('public' | 'requiresQuotes')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'method';
+        modifiers?: (
+          | 'abstract'
+          | 'private'
+          | 'protected'
+          | 'public'
+          | 'requiresQuotes'
+          | 'static'
+        )[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
+        filter?:
+          | string
+          | {
+              match: boolean;
+              regex: string;
+              [k: string]: unknown;
+            };
+        selector: 'accessor';
+        modifiers?: (
+          | 'abstract'
+          | 'private'
+          | 'protected'
+          | 'public'
+          | 'requiresQuotes'
+          | 'static'
+        )[];
+        types?: ('boolean' | 'string' | 'number' | 'function' | 'array')[];
+      }
+    | {
+        format:
+          | (
+              | 'camelCase'
+              | 'strictCamelCase'
+              | 'PascalCase'
+              | 'StrictPascalCase'
+              | 'snake_case'
+              | 'UPPER_CASE'
+            )[]
+          | null;
+        custom?: {
+          match: boolean;
+          regex: string;
+          [k: string]: unknown;
+        };
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        prefix?: string[];
+        suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -424,6 +888,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'enumMember';
+        modifiers?: 'requiresQuotes'[];
       }
     | {
         format:
@@ -441,10 +906,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -453,7 +931,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'typeLike';
-        modifiers?: 'abstract'[];
+        modifiers?: ('abstract' | 'exported' | 'unused')[];
       }
     | {
         format:
@@ -471,10 +949,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -483,7 +974,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'class';
-        modifiers?: 'abstract'[];
+        modifiers?: ('abstract' | 'exported' | 'unused')[];
       }
     | {
         format:
@@ -501,10 +992,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -513,6 +1017,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'interface';
+        modifiers?: ('exported' | 'unused')[];
       }
     | {
         format:
@@ -530,10 +1035,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -542,6 +1060,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'typeAlias';
+        modifiers?: ('exported' | 'unused')[];
       }
     | {
         format:
@@ -559,10 +1078,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -571,6 +1103,7 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'enum';
+        modifiers?: ('exported' | 'unused')[];
       }
     | {
         format:
@@ -588,10 +1121,23 @@ type NamingConvention0 = [
           regex: string;
           [k: string]: unknown;
         };
-        leadingUnderscore?: 'forbid' | 'allow' | 'require';
-        trailingUnderscore?: 'forbid' | 'allow' | 'require';
+        leadingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
+        trailingUnderscore?:
+          | 'forbid'
+          | 'allow'
+          | 'require'
+          | 'requireDouble'
+          | 'allowDouble'
+          | 'allowSingleOrDouble';
         prefix?: string[];
         suffix?: string[];
+        failureMessage?: string;
         filter?:
           | string
           | {
@@ -600,8 +1146,9 @@ type NamingConvention0 = [
               [k: string]: unknown;
             };
         selector: 'typeParameter';
+        modifiers?: 'unused'[];
       }
-  )[]
+  )[],
 ];
 
 export type NamingConvention = 'off' | NamingConvention0;

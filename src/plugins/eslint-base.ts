@@ -1,7 +1,7 @@
 // the global list of restricted terms that airbnb uses
 import globals from 'eslint-restricted-globals';
 
-import type { Eslint } from '../types/eslint';
+import type { Eslint } from '../types/eslint/index';
 
 // we remove some because of how the eslint TS parser interacts with eslint when using interfaces
 const pseudoAllowedGlobals = new Set([
@@ -445,6 +445,10 @@ const rules: Eslint = {
   // covered by typescript
   'no-const-assign': 'off',
 
+  // Disallow expressions where the operation doesn't affect the value
+  // https://eslint.org/docs/rules/no-constant-binary-expression
+  'no-constant-binary-expression': ['error'],
+
   // This rule disallows constant expressions in the test condition.
   // https://eslint.org/docs/rules/no-constant-condition
   'no-constant-condition': ['error'],
@@ -743,6 +747,10 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-new-wrappers
   'no-new-wrappers': ['error'],
 
+  // Disallow \8 and \9 escape sequences in string literals
+  // https://eslint.org/docs/rules/no-nonoctal-decimal-escape
+  'no-nonoctal-decimal-escape': ['error'],
+
   // This rule disallows calling the Math, JSON and Reflect objects as functions
   // https://eslint.org/docs/rules/no-obj-calls
   'no-obj-calls': ['error'],
@@ -1002,6 +1010,10 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-unsafe-negation
   'no-unsafe-negation': ['error'],
 
+  // Disallow use of optional chaining in contexts where the undefined value is not allowed
+  // https://eslint.org/docs/rules/no-unsafe-optional-chaining
+  'no-unsafe-optional-chaining': ['error'],
+
   // disallow usage of expressions in statement position
   // https://eslint.org/docs/rules/no-unused-expressions
   // extended in @typescript-eslint
@@ -1015,6 +1027,10 @@ const rules: Eslint = {
   // https://eslint.org/docs/rules/no-unused-vars
   // extended in @typescript-eslint
   'no-unused-vars': 'off',
+
+  // Disallow unused private class members
+  // https://eslint.org/docs/rules/no-unused-private-class-members
+  'no-unused-private-class-members': ['error'],
 
   // Disallow useless back references in regular expressions
   // https://eslint.org/docs/rules/no-useless-backreference
@@ -1195,6 +1211,10 @@ const rules: Eslint = {
   // a string; and a radix option of 2 (binary), 8 (octal), or 16 (hexadecimal).
   // https://eslint.org/docs/rules/prefer-numeric-literals
   'prefer-numeric-literals': ['error'],
+
+  // Disallow use of Object.prototype.hasOwnProperty.call() and prefer use of Object.hasOwn()
+  // https://eslint.org/docs/rules/prefer-object-has-own
+  'prefer-object-has-own': ['error'],
 
   // Prefer use of an object spread over Object.assign
   // https://eslint.org/docs/rules/prefer-object-spread

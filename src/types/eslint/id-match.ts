@@ -9,6 +9,7 @@ type IdMatch0 =
       string,
       {
         properties?: boolean;
+        classFields?: boolean;
         onlyDeclarations?: boolean;
         ignoreDestructuring?: boolean;
       },

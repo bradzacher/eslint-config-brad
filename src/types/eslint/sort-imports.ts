@@ -7,6 +7,10 @@ type SortImports0 =
       'off' | 'error' | 'warn',
       {
         ignoreCase?: boolean;
+        /**
+         * @minItems 4
+         * @maxItems 4
+         */
         memberSyntaxSortOrder?: [
           'none' | 'all' | 'multiple' | 'single',
           'none' | 'all' | 'multiple' | 'single',

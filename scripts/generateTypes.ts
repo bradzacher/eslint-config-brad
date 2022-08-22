@@ -1,14 +1,13 @@
-import type { TSESLint } from '@typescript-eslint/experimental-utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import { format } from 'prettier';
 
-import prettierConfig from '../src/prettier';
+import packageJson = require('../package.json');
+import * as prettierConfig from '../src/prettier';
 import type { Plugin } from './convertRuleOptionsToTypescriptTypes';
 import { convertRuleOptionsToTypescriptTypes } from './convertRuleOptionsToTypescriptTypes';
 import { toPascalCase } from './toPascalCase';
-
-import packageJson = require('../package.json');
 
 type PendingPlugin = {
   name: string;
@@ -17,13 +16,15 @@ type PendingPlugin = {
 };
 
 async function getESLintCoreRules(): Promise<PendingPlugin> {
-  const eslintRules = await import('eslint/lib/rules');
+  const { builtinRules: eslintRules } = await import(
+    'eslint/use-at-your-own-risk'
+  );
   const plugin: Plugin = {
     name: 'eslint',
     rules: {},
     shortName: 'eslint',
   };
-  eslintRules.default.forEach((rule, ruleId) => {
+  eslintRules.forEach((rule, ruleId) => {
     // we need to explicitly iterate over each rule to ensure it gets loaded
     plugin.rules[ruleId] = rule;
   });
@@ -34,7 +35,7 @@ async function getESLintCoreRules(): Promise<PendingPlugin> {
 async function main(): Promise<void> {
   // get the list of all the eslint plugins installed
   const plugins: Array<Promise<PendingPlugin>> = Object.keys(
-    packageJson.dependencies,
+    packageJson.peerDependencies,
   )
     .filter(
       d =>

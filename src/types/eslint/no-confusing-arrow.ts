@@ -7,6 +7,7 @@ type NoConfusingArrow0 =
       'off' | 'error' | 'warn',
       {
         allowParens?: boolean;
+        onlyOneSimpleParam?: boolean;
       },
     ];
 

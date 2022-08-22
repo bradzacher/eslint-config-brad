@@ -16,10 +16,8 @@ export = {
     {
       // disable certain rules for testing as testing is messy business
       files: [
-        'src/**/*.spec.ts',
-        'src/**/*.spec.tsx',
-        'src/**/*.test.ts',
-        'src/**/*.test.tsx',
+        'src/**/*.spec.{ts,tsx,mts,cts}',
+        'src/**/*.test.{ts,tsx,mts,cts}',
         'src/**/__mocks__/**/*',
         'src/**/__mock__/**/*',
         'test/**/*',
@@ -44,12 +42,9 @@ export = {
     {
       // allow local tooling scripts to use node modules
       files: [
-        'config/**/*.ts',
-        'config/**/*.tsx',
-        'scripts/**/*.ts',
-        'scripts/**/*.tsx',
-        'tools/**/*.ts',
-        'tools/**/*.tsx',
+        'config/**/*.{ts,tsx,mts,cts}',
+        'scripts/**/*.{ts,tsx,mts,cts}',
+        'tools/**/*.{ts,tsx,mts,cts}',
       ],
       rules: {
         strict: 'off',

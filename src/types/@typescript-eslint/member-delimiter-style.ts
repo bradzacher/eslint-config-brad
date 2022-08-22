@@ -36,6 +36,7 @@ type MemberDelimiterStyle0 =
             };
           };
         };
+        multilineDetection?: 'brackets' | 'last-member';
       },
     ];
 

@@ -7,6 +7,7 @@ type MaxDependencies0 =
       'off' | 'error' | 'warn',
       {
         max?: number;
+        ignoreTypeImports?: boolean;
       },
     ];
 

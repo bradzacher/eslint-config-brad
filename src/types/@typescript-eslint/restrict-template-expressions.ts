@@ -10,6 +10,7 @@ type RestrictTemplateExpressions0 =
         allowBoolean?: boolean;
         allowAny?: boolean;
         allowNullish?: boolean;
+        allowRegExp?: boolean;
         [k: string]: unknown;
       },
     ];

@@ -3,9 +3,9 @@ import type { Options } from 'prettier';
 const options: Options = {
   arrowParens: 'avoid',
   bracketSpacing: true,
+  bracketSameLine: true,
   endOfLine: 'lf',
   jsxSingleQuote: false,
-  jsxBracketSameLine: true,
   proseWrap: 'preserve',
   quoteProps: 'as-needed',
   semi: true,

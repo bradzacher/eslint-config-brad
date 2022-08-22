@@ -5,9 +5,9 @@
     "allowUnusedLabels": false,
     "declaration": false,
     "esModuleInterop": true,
-    "lib": ["es6", "esnext.asynciterable"],
+    "lib": ["ESNext"],
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "CommonJS",
     "noEmit": false,
     "noEmitOnError": true,
     "noImplicitAny": true,
@@ -21,8 +21,8 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
+    "target": "ESNext"
   },
-  "include": ["src/**/*.ts", "types/**/*"],
+  "include": ["src/**/*", "types/**/*"],
   "exclude": ["node_modules"]
 }

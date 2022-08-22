@@ -26,6 +26,9 @@ type Indent0 =
           parameters?: number | ('first' | 'off');
           body?: number;
         };
+        StaticBlock?: {
+          body?: number;
+        };
         CallExpression?: {
           arguments?: number | ('first' | 'off');
         };
