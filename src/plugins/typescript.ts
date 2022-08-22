@@ -28,6 +28,11 @@ const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
   },
 
   {
+    selector: 'function',
+    format: ['camelCase'],
+  },
+
+  {
     selector: 'parameter',
     format: ['camelCase'],
     // to allow unused parameters

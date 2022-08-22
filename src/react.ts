@@ -29,7 +29,10 @@ export = {
         return el;
       }
 
-      if (el.selector !== 'variable' || !el.format) {
+      if (
+        (el.selector !== 'variable' && el.selector !== 'function') ||
+        el.format == null
+      ) {
         return el;
       }
 
