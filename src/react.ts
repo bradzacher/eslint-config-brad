@@ -49,11 +49,11 @@ const config: TSESLint.Linter.Config = {
         }
       }).filter(el => el != null),
 
-      // allow the __html property for dangerous react code
+      // allow the __html property
       {
         selector: 'property',
         filter: {
-          regex: /^__html$/u.toString(),
+          regex: '^__html$',
           match: true,
         },
         format: null,
