@@ -53,7 +53,7 @@ const config: TSESLint.Linter.Config = {
       {
         selector: 'property',
         filter: {
-          regex: /^__html$/u,
+          regex: /^__html$/u.toString(),
           match: true,
         },
         format: null,
