@@ -1,6 +1,7 @@
 import tsEslint from '@typescript-eslint/eslint-plugin';
 
 import type { TypescriptEslint } from '../types/@typescript-eslint/index';
+import type { NamingConvention } from '../types/@typescript-eslint/naming-convention';
 
 // disable the base eslint rules covered by ts-eslint
 const disabledBaseRules = Object.keys(tsEslint.configs.all).reduce<
@@ -12,6 +13,47 @@ const disabledBaseRules = Object.keys(tsEslint.configs.all).reduce<
 
   return acc;
 }, {});
+
+const NAMING_CONVENTION_CONFIG: Exclude<NamingConvention, string> = [
+  'error',
+  // basic camel case style
+  {
+    selector: 'default',
+    format: ['camelCase'],
+  },
+
+  {
+    selector: 'variable',
+    format: ['camelCase', 'UPPER_CASE'],
+  },
+
+  {
+    selector: 'parameter',
+    format: ['camelCase'],
+    // to allow unused parameters
+    leadingUnderscore: 'allow',
+  },
+
+  {
+    selector: 'typeLike',
+    format: ['PascalCase'],
+  },
+  // enforce interfaces _don't_ start with an I
+  {
+    selector: 'interface',
+    format: ['PascalCase'],
+    custom: {
+      regex: '^I[A-Z]',
+      match: false,
+    },
+  },
+  // enforce that generics start with a T
+  {
+    selector: 'typeParameter',
+    format: ['PascalCase'],
+    prefix: ['T'],
+  },
+];
 
 const rules: TypescriptEslint = {
   // Grouping overloaded members together can improve readability of the code.
@@ -216,46 +258,7 @@ const rules: TypescriptEslint = {
 
   // Enforces naming conventions for everything across a codebase
   // https://typescript-eslint.io/rules/naming-convention
-  '@typescript-eslint/naming-convention': [
-    'error',
-    // basic camel case style
-    {
-      selector: 'default',
-      format: ['camelCase'],
-    },
-
-    {
-      selector: 'variable',
-      format: ['camelCase', 'UPPER_CASE'],
-    },
-
-    {
-      selector: 'parameter',
-      format: ['camelCase'],
-      // to allow unused parameters
-      leadingUnderscore: 'allow',
-    },
-
-    {
-      selector: 'typeLike',
-      format: ['PascalCase'],
-    },
-    // enforce interfaces _don't_ start with an I
-    {
-      selector: 'interface',
-      format: ['PascalCase'],
-      custom: {
-        regex: '^I[A-Z]',
-        match: false,
-      },
-    },
-    // enforce that generics start with a T
-    {
-      selector: 'typeParameter',
-      format: ['PascalCase'],
-      prefix: ['T'],
-    },
-  ],
+  '@typescript-eslint/naming-convention': NAMING_CONVENTION_CONFIG,
 
   // Use of the Array constructor to construct a new array is generally discouraged in favour of array literal
   // notation because of the single-argument pitfall and because the Array global may be redefined
@@ -747,3 +750,4 @@ export default {
     tsEslint.configs['eslint-base'],
   ),
 };
+export { NAMING_CONVENTION_CONFIG };
